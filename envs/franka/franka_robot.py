@@ -101,7 +101,7 @@ class FrankaPanda(PyBulletRobot):
             # if action[-1] < 0.0:
             #     ### offset 1: robot会在刚刚卡住cube一点点的位置（z=0.06）开始lift，所以需要再real中加一个z方向向下的偏置
             #     ee_trans, ee_quat, ee_rpy = self.get_ee_position()
-            #     trans = ee_trans + np.array([0.0, 0.0, -0.02])   # limit maximum change in position
+            #     trans = ee_trans + np.array([0.0, 0.0, -0.01])   # limit maximum change in position
             #     quat = ee_quat
             #     self.set_ee_pose(trans, quat, asynchronous=asynchronous)
             #     ee_trans, ee_quat, ee_rpy = self.get_ee_position()
@@ -128,30 +128,17 @@ class FrankaPanda(PyBulletRobot):
             self.set_ee_pose(trans, quat, asynchronous=asynchronous)
             # self.set_sora_pose(trans, quat, asynchronous=asynchronous)
             print("action after clip:", ee_displacement[:3] * 0.05, fingers_ctrl)
-
-            # # mothod 2: set xy first, and set z later
-            # ee_displacement_xy = action[:3].copy()
-            # ee_displacement_xy[2] = 0.0
-            # ee_trans, ee_quat, ee_rpy = self.get_ee_position()
-            # # trans = ee_trans + ee_displacement[:3]
-            # trans = ee_trans + ee_displacement_xy[:3] * 0.05  # limit maximum change in position
-            # quat = ee_quat
-            # self.set_ee_pose(trans, quat, asynchronous=asynchronous)
-            # # self.set_sora_pose(trans, quat, asynchronous=asynchronous)
-
-            # ee_displacement_z = action[:3].copy()
-            # ee_displacement_z[1] = 0.0
-            # ee_displacement_z[0] = 0.0
-            # ee_trans, ee_quat, ee_rpy = self.get_ee_position()
-            # # trans = ee_trans + ee_displacement[:3]
-            # trans = ee_trans + ee_displacement_z[:3] * 0.05  # limit maximum change in position
-            # quat = ee_quat
-            # self.set_ee_pose(trans, quat, asynchronous=asynchronous)
-            # # self.set_sora_pose(trans, quat, asynchronous=asynchronous)
-            # print("action after clip:", ee_displacement_xy* 0.05, ee_displacement_z * 0.05, fingers_ctrl)
-
         else:
             raise NotImplementedError("Joint control is not implemented yet.")
+        
+        if self.gripping_succuss:
+            ee_trans, end_ee_quat, ee_rpy = self.get_ee_position()
+            end_action = np.array([0.6,0.02,0.07])
+            self.set_ee_pose(end_action, end_ee_quat, asynchronous=asynchronous)
+            self.gripping_succuss = False
+            self.set_gripper_opening(0.08, asynchronous=asynchronous)
+            self.reset()
+            raise NotImplementedError("Gripping succuss, reset the robot.")
 
 
     def compute_ee_velocity_from_position(self, ee_position):
@@ -244,7 +231,7 @@ class FrankaPanda(PyBulletRobot):
             print("$$$$$$$$$$$$$$$$ moving to goal")
             return
         if width < 0.060 and not reset_flag and not self.gripping_succuss:
-            width = 0.060
+            width = 0.064
             self.gripping_succuss = True
             print("$$$$$$$$$$$$$$$$ gripping succuss")
 

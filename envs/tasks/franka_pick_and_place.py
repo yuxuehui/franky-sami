@@ -61,7 +61,7 @@ class PickAndPlace(Task):
         self.prev_trans = None
         self.prev_rot = None
         self.prev_time = rospy.Time.now()
-        self.cube_position_offset = np.array([-0.01, -0.015, 0.014])
+        self.cube_position_offset = np.array([-0.01, -0.015, 0.015])
         
         signal.signal(signal.SIGINT, self.signal_handler)
 
