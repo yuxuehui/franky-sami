@@ -1,0 +1,160 @@
+observation_space: Box(-10.0, 10.0, (3,), float32) <class 'gymnasium.spaces.box.Box'>
+observation_space: Box(-10.0, 10.0, (3,), float32) <class 'gymnasium.spaces.box.Box'>
+observation_space: Box(-10.0, 10.0, (19,), float32) <class 'gymnasium.spaces.box.Box'>
+observation_space: Box(-10.0, 10.0, (6,), float32) <class 'gymnasium.spaces.box.Box'>
+observation_space: Box(-10.0, 10.0, (3,), float32) <class 'gymnasium.spaces.box.Box'>
+observation_space: Box(-10.0, 10.0, (3,), float32) <class 'gymnasium.spaces.box.Box'>
+observation_space: Box(-10.0, 10.0, (19,), float32) <class 'gymnasium.spaces.box.Box'>
+observation_space: Box(-10.0, 10.0, (6,), float32) <class 'gymnasium.spaces.box.Box'>
+observation_space: Box(-10.0, 10.0, (3,), float32) <class 'gymnasium.spaces.box.Box'>
+observation_space: Box(-10.0, 10.0, (3,), float32) <class 'gymnasium.spaces.box.Box'>
+observation_space: Box(-10.0, 10.0, (19,), float32) <class 'gymnasium.spaces.box.Box'>
+observation_space: Box(-10.0, 10.0, (6,), float32) <class 'gymnasium.spaces.box.Box'>
+ee_velocity: [0. 0. 0.]
+ee_position: [ 0.61503232 -0.05383933  0.3130388 ]
+Failed to lookup transform from franka_cube to franka_left, try again.
+Failed to lookup transform from franka_cube to franka_left, try again.
+Failed to lookup transform from franka_cube to franka_left, try again.
+Failed to lookup transform from franka_cube to franka_left, try again.
+Failed to lookup transform from franka_cube to franka_left, try again.
+Failed to lookup transform from franka_cube to franka_left, try again.
+Failed to lookup transform from franka_cube to franka_left, try again.
+Failed to lookup transform from franka_cube to franka_left, try again.
+Failed to lookup transform from franka_cube to franka_left, try again.
+Failed to lookup transform from franka_cube to franka_left, try again.
+Failed to lookup transform from franka_cube to franka_left, try again.
+Failed to lookup transform from franka_cube to franka_left, try again.
+Failed to lookup transform from franka_cube to franka_left, try again.
+Failed to lookup transform from franka_cube to franka_left, try again.
+Failed to lookup transform from franka_cube to franka_left, try again.
+Failed to lookup transform from franka_cube to franka_left, try again.
+Failed to lookup transform from franka_cube to franka_left, try again.
+Failed to lookup transform from franka_cube to franka_left, try again.
+Failed to lookup transform from franka_cube to franka_left, try again.
+Failed to lookup transform from franka_cube to franka_left, try again.
+Failed to lookup transform from franka_cube to franka_left, try again.
+Failed to lookup transform from franka_cube to franka_left, try again.
+Failed to lookup transform from franka_cube to franka_left, try again.
+Failed to lookup transform from franka_cube to franka_left, try again.
+Failed to lookup transform from franka_cube to franka_left, try again.
+Failed to lookup transform from franka_cube to franka_left, try again.
+Failed to lookup transform from franka_cube to franka_left, try again.
+Failed to lookup transform from franka_cube to franka_left, try again.
+Failed to lookup transform from franka_cube to franka_left, try again.
+Failed to lookup transform from franka_cube to franka_left, try again.
+Failed to lookup transform from franka_cube to franka_left, try again.
+Failed to lookup transform from franka_cube to franka_left, try again.
+Failed to lookup transform from franka_cube to franka_left, try again.
+Failed to lookup transform from franka_cube to franka_left, try again.
+Failed to lookup transform from franka_cube to franka_left, try again.
+Failed to lookup transform from franka_cube to franka_left, try again.
+Failed to lookup transform from franka_cube to franka_left, try again.
+Failed to lookup transform from franka_cube to franka_left, try again.
+Failed to lookup transform from franka_cube to franka_left, try again.
+Failed to lookup transform from franka_cube to franka_left, try again.
+Failed to lookup transform from franka_cube to franka_left, try again.
+Failed to lookup transform from franka_cube to franka_left, try again.
+Failed to lookup transform from franka_cube to franka_left, try again.
+Info of objects (1.0, 0.5, (0.0006, 0.0006, 0.0006), (0.0, 0.0, 0.0), (0.0, 0.0, 0.0, 1.0), 0.0, 0.0, 0.0, -1.0, -1.0, 2, 0.001)
+Info of Table (0.0, 1.0, (0.0, 0.0, 0.0), (0.0, 0.0, 0.0), (0.0, 0.0, 0.0, 1.0), 0.0, 0.0, 0.001, -1.0, -1.0, 2, 0.001)
+ee_velocity: [ 1.36781932e-06 -3.16053513e-05 -2.59759170e-05]
+ee_position: [ 0.61503241 -0.05384125  0.31303723]
+ee_velocity: [ 3.55745893e-06 -6.24509809e-05  9.52276547e-06]
+ee_position: [ 0.61503269 -0.05384618  0.31303798]
+
+ &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&& eps_i  0 &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&  
+actions: [[-0.8813207  -0.5226265  -0.38016665  0.13321364]]
+ee_rpy: [-3.00961883  1.51052178 -1.45967507]
+action after clip: [-0.04406604 -0.02613133 -0.01900833] 0.026642729
+ee_velocity: [-0.01553977 -0.00914676 -0.00685774]
+ee_position: [ 0.57092871 -0.07980594  0.29357477]
+Time difference 2.851893187
+cube observations: [[ 0.00333332 -0.08254784  0.03312115  0.12271095]]
+robot observations: [[ 0.5709287  -0.07980593  0.29357478 -0.01553977 -0.00914676 -0.00685774
+   0.07264441]]
+goal cube: [[-0.25281104  0.02139355  0.03      ]]
+rewards: [-0.27644798]
+
+ &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&& eps_i  1 &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&  
+actions: [[-0.9944838   0.9874569  -0.29418838  0.940325  ]]
+ee_rpy: [-3.02641415  1.51042966 -1.4765017 ]
+action after clip: [-0.04972419  0.04937285 -0.01470942] 0.188065
+ee_velocity: [-0.01587538  0.01566662 -0.00481403]
+ee_position: [ 0.5211449  -0.03067676  0.27847839]
+Time difference 3.135890722
+cube observations: [[ 0.00330306 -0.0826083   0.03329056  0.12204776]]
+robot observations: [[ 0.5211449  -0.03067676  0.27847838 -0.01587538  0.01566662 -0.00481403
+   0.07264441]]
+goal cube: [[-0.25281104  0.02139355  0.03      ]]
+rewards: [-0.27644467]
+
+ &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&& eps_i  2 &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&  
+actions: [[-0.99896365  0.96339047 -0.80369174  0.8996308 ]]
+ee_rpy: [-3.04287679  1.51014383 -1.49336681]
+action after clip: [-0.04994818  0.04816952 -0.04018459] 0.17992616
+ee_velocity: [-0.01529002  0.01465146 -0.01237745]
+ee_position: [0.47111688 0.01726195 0.23798012]
+Time difference 3.272150994
+cube observations: [[ 0.00343218 -0.08252805  0.03288036  0.12203686]]
+robot observations: [[ 0.47111687  0.01726195  0.23798011 -0.01529002  0.01465146 -0.01237745
+   0.07264441]]
+goal cube: [[-0.25281104  0.02139355  0.03      ]]
+rewards: [-0.27652955]
+
+ &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&& eps_i  3 &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&  
+actions: [[-0.9906537   0.40837407 -0.8759353   0.8378458 ]]
+ee_rpy: [-3.05951926  1.50991093 -1.51054958]
+action after clip: [-0.04953269  0.0204187  -0.04379677] 0.16756916
+ee_velocity: [-0.01582955  0.00643822 -0.0140602 ]
+ee_position: [0.42153773 0.03742687 0.19394269]
+Time difference 3.131812572
+cube observations: [[ 0.00344608 -0.08250964  0.03288631  0.12164244]]
+robot observations: [[ 0.42153773  0.03742687  0.1939427  -0.01582954  0.00643822 -0.0140602
+   0.07264441]]
+goal cube: [[-0.25281104  0.02139355  0.03      ]]
+rewards: [-0.27653557]
+
+ &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&& eps_i  4 &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&  
+actions: [[-0.82989275 -0.82759786 -0.76184577  0.8308008 ]]
+ee_rpy: [-3.07321178  1.50959876 -1.52483167]
+action after clip: [-0.04149464 -0.0413799  -0.03809229] 0.16616015
+ee_velocity: [-0.0111911  -0.01114201 -0.01031372]
+ee_position: [ 0.37995195 -0.0039765   0.15561721]
+Time difference 3.716027498
+cube observations: [[ 0.00337525 -0.08255518  0.03284792  0.12179208]]
+robot observations: [[ 0.37995195 -0.0039765   0.1556172  -0.0111911  -0.01114201 -0.01031372
+   0.07264441]]
+goal cube: [[-0.25281104  0.02139355  0.03      ]]
+rewards: [-0.27648667]
+
+ &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&& eps_i  5 &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&  
+actions: [[-0.66304374 -0.68767977 -0.5787008   0.78168917]]
+ee_rpy: [-3.08881437  1.5093388  -1.54096042]
+action after clip: [-0.03315219 -0.03438399 -0.02893504] 0.15633784
+ee_velocity: [-0.01287764 -0.01335877 -0.01125541]
+ee_position: [ 0.34688237 -0.03828163  0.1267135 ]
+Time difference 2.5680639750000003
+cube observations: [[ 0.00344996 -0.0821908   0.03308806  0.12159198]]
+robot observations: [[ 0.34688237 -0.03828163  0.1267135  -0.01287764 -0.01335877 -0.01125541
+   0.07264441]]
+goal cube: [[-0.25281104  0.02139355  0.03      ]]
+rewards: [-0.2764217]
+
+ &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&& eps_i  6 &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&  
+actions: [[-0.75523883  0.04972231 -0.9615479  -0.8167034 ]]
+ee_rpy: [-3.0911198   1.50946548 -1.5436791 ]
+action after clip: [-0.03776194  0.00248612 -0.0480774 ] -0.16334067
+ee_velocity: [-0.00691958  0.00045852 -0.0088267 ]
+ee_position: [ 0.30926671 -0.03578906  0.07873051]
+Time difference 5.435859441
+cube observations: [[ 0.00352976 -0.08228447  0.03350351  0.12144084]]
+robot observations: [[ 0.30926672 -0.03578906  0.07873051 -0.00691958  0.00045852 -0.0088267
+   0.00046361]]
+goal cube: [[-0.25281104  0.02139355  0.03      ]]
+rewards: [-0.27653575]
+
+ &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&& eps_i  7 &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&  
+actions: [[-0.9308809   0.29302692 -0.63497645 -0.8033302 ]]
+ee_rpy: [-3.09133001  1.50951111 -1.54404701]
+libfranka: Move command aborted: motion aborted by reflex! ["joint_velocity_violation"]
+control_command_success_rate: 1

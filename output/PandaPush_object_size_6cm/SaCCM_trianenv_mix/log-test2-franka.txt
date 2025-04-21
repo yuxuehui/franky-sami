@@ -1,0 +1,264 @@
+observation_space: Box(-10.0, 10.0, (3,), float32) <class 'gymnasium.spaces.box.Box'>
+observation_space: Box(-10.0, 10.0, (3,), float32) <class 'gymnasium.spaces.box.Box'>
+observation_space: Box(-10.0, 10.0, (19,), float32) <class 'gymnasium.spaces.box.Box'>
+observation_space: Box(-10.0, 10.0, (6,), float32) <class 'gymnasium.spaces.box.Box'>
+observation_space: Box(-10.0, 10.0, (3,), float32) <class 'gymnasium.spaces.box.Box'>
+observation_space: Box(-10.0, 10.0, (3,), float32) <class 'gymnasium.spaces.box.Box'>
+observation_space: Box(-10.0, 10.0, (19,), float32) <class 'gymnasium.spaces.box.Box'>
+observation_space: Box(-10.0, 10.0, (6,), float32) <class 'gymnasium.spaces.box.Box'>
+observation_space: Box(-10.0, 10.0, (3,), float32) <class 'gymnasium.spaces.box.Box'>
+observation_space: Box(-10.0, 10.0, (3,), float32) <class 'gymnasium.spaces.box.Box'>
+observation_space: Box(-10.0, 10.0, (19,), float32) <class 'gymnasium.spaces.box.Box'>
+observation_space: Box(-10.0, 10.0, (6,), float32) <class 'gymnasium.spaces.box.Box'>
+ee_velocity: [0. 0. 0.]
+ee_position: [ 0.45170205 -0.13695954  0.19292818]
+Failed to lookup transform from franka_cube to franka_left, try again.
+Failed to lookup transform from franka_cube to franka_left, try again.
+Failed to lookup transform from franka_cube to franka_left, try again.
+Failed to lookup transform from franka_cube to franka_left, try again.
+Failed to lookup transform from franka_cube to franka_left, try again.
+Failed to lookup transform from franka_cube to franka_left, try again.
+Failed to lookup transform from franka_cube to franka_left, try again.
+Failed to lookup transform from franka_cube to franka_left, try again.
+Failed to lookup transform from franka_cube to franka_left, try again.
+Failed to lookup transform from franka_cube to franka_left, try again.
+Failed to lookup transform from franka_cube to franka_left, try again.
+Failed to lookup transform from franka_cube to franka_left, try again.
+Failed to lookup transform from franka_cube to franka_left, try again.
+Failed to lookup transform from franka_cube to franka_left, try again.
+Failed to lookup transform from franka_cube to franka_left, try again.
+Failed to lookup transform from franka_cube to franka_left, try again.
+Failed to lookup transform from franka_cube to franka_left, try again.
+Failed to lookup transform from franka_cube to franka_left, try again.
+Failed to lookup transform from franka_cube to franka_left, try again.
+Failed to lookup transform from franka_cube to franka_left, try again.
+Failed to lookup transform from franka_cube to franka_left, try again.
+Failed to lookup transform from franka_cube to franka_left, try again.
+Failed to lookup transform from franka_cube to franka_left, try again.
+Failed to lookup transform from franka_cube to franka_left, try again.
+Failed to lookup transform from franka_cube to franka_left, try again.
+Failed to lookup transform from franka_cube to franka_left, try again.
+Failed to lookup transform from franka_cube to franka_left, try again.
+Failed to lookup transform from franka_cube to franka_left, try again.
+Failed to lookup transform from franka_cube to franka_left, try again.
+Failed to lookup transform from franka_cube to franka_left, try again.
+Failed to lookup transform from franka_cube to franka_left, try again.
+Failed to lookup transform from franka_cube to franka_left, try again.
+Failed to lookup transform from franka_cube to franka_left, try again.
+Failed to lookup transform from franka_cube to franka_left, try again.
+Failed to lookup transform from franka_cube to franka_left, try again.
+Failed to lookup transform from franka_cube to franka_left, try again.
+Failed to lookup transform from franka_cube to franka_left, try again.
+Failed to lookup transform from franka_cube to franka_left, try again.
+Failed to lookup transform from franka_cube to franka_left, try again.
+Failed to lookup transform from franka_cube to franka_left, try again.
+Failed to lookup transform from franka_cube to franka_left, try again.
+Failed to lookup transform from franka_cube to franka_left, try again.
+Failed to lookup transform from franka_cube to franka_left, try again.
+Failed to lookup transform from franka_cube to franka_left, try again.
+Failed to lookup transform from franka_cube to franka_left, try again.
+Failed to lookup transform from franka_cube to franka_left, try again.
+Failed to lookup transform from franka_cube to franka_left, try again.
+Failed to lookup transform from franka_cube to franka_left, try again.
+Failed to lookup transform from franka_cube to franka_left, try again.
+Failed to lookup transform from franka_cube to franka_left, try again.
+Failed to lookup transform from franka_cube to franka_left, try again.
+Failed to lookup transform from franka_cube to franka_left, try again.
+Failed to lookup transform from franka_cube to franka_left, try again.
+Failed to lookup transform from franka_cube to franka_left, try again.
+Failed to lookup transform from franka_cube to franka_left, try again.
+Failed to lookup transform from franka_cube to franka_left, try again.
+Failed to lookup transform from franka_cube to franka_left, try again.
+Info of objects (1.0, 0.5, (0.0006, 0.0006, 0.0006), (0.0, 0.0, 0.0), (0.0, 0.0, 0.0, 1.0), 0.0, 0.0, 0.0, -1.0, -1.0, 2, 0.001)
+Info of Table (0.0, 1.0, (0.0, 0.0, 0.0), (0.0, 0.0, 0.0), (0.0, 0.0, 0.0, 1.0), 0.0, 0.0, 0.001, -1.0, -1.0, 2, 0.001)
+ee_velocity: [0. 0. 0.]
+ee_position: [ 0.45170003 -0.13695812  0.19292728]
+ee_velocity: [0. 0. 0.]
+ee_position: [ 0.45169847 -0.13695393  0.19292477]
+
+ &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&& eps_i  0 &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&  
+actions: [[-0.9279019  -0.26541078 -0.19634175 -0.42519295]]
+ee_rpy: [0.75020295 1.5422498  2.23958883]
+action after clip: [-0.0463951  -0.01327054 -0.00981709] -0.085038595
+ee_velocity: [0. 0. 0.]
+ee_position: [ 0.40532085 -0.14991425  0.18279911]
+Time difference 2.800154925
+cube observations: [[-0.17759062 -0.06109304  0.03444586  0.09673812]]
+robot observations: [[ 4.0532085e-01 -1.4991425e-01  1.8279912e-01  0.0000000e+00
+   0.0000000e+00  0.0000000e+00  1.9700001e-06]]
+goal cube: [[-0.21579403 -0.04415236  0.03      ]]
+rewards: [-0.04202681]
+
+ &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&& eps_i  1 &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&  
+actions: [[-0.10908866 -0.5841991  -0.27094936 -0.5418329 ]]
+ee_rpy: [0.76485316 1.54133663 2.25429524]
+action after clip: [-0.00545443 -0.02920995 -0.01354747] -0.108366586
+ee_velocity: [0. 0. 0.]
+ee_position: [ 0.39984873 -0.17886723  0.16918699]
+Time difference 2.5962624549999997
+cube observations: [[-0.17762752 -0.06106583  0.03435016  0.09551287]]
+robot observations: [[ 3.9984873e-01 -1.7886722e-01  1.6918699e-01  0.0000000e+00
+   0.0000000e+00  0.0000000e+00  1.9700001e-06]]
+goal cube: [[-0.21579403 -0.04415236  0.03      ]]
+rewards: [-0.04197227]
+
+ &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&& eps_i  2 &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&  
+actions: [[-0.14610851 -0.10170931 -0.38550925 -0.80397594]]
+ee_rpy: [0.77928012 1.54116704 2.26945825]
+action after clip: [-0.00730543 -0.00508547 -0.01927546] -0.1607952
+ee_velocity: [0. 0. 0.]
+ee_position: [ 0.39276355 -0.18384045  0.15005139]
+Time difference 2.207301855
+cube observations: [[-0.17759642 -0.06103814  0.03441219  0.09549697]]
+robot observations: [[ 3.9276356e-01 -1.8384045e-01  1.5005139e-01  0.0000000e+00
+   0.0000000e+00  0.0000000e+00  1.9700001e-06]]
+goal cube: [[-0.21579403 -0.04415236  0.03      ]]
+rewards: [-0.04199588]
+
+ &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&& eps_i  3 &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&  
+actions: [[-0.39075875  0.4426391  -0.3588004  -0.5637927 ]]
+ee_rpy: [0.78533651 1.54144171 2.27617069]
+action after clip: [-0.01953794  0.02213196 -0.01794002] -0.11275854
+ee_velocity: [0. 0. 0.]
+ee_position: [ 0.37309697 -0.16173943  0.13180384]
+Time difference 2.212503671
+cube observations: [[-0.17761283 -0.06111453  0.03439476  0.09535751]]
+robot observations: [[ 3.7309697e-01 -1.6173942e-01  1.3180384e-01  0.0000000e+00
+   0.0000000e+00  0.0000000e+00  1.9700001e-06]]
+goal cube: [[-0.21579403 -0.04415236  0.03      ]]
+rewards: [-0.04200992]
+
+ &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&& eps_i  4 &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&  
+actions: [[0.554389   0.639964   0.42039204 0.7304281 ]]
+ee_rpy: [0.8016051  1.54063391 2.29236912]
+action after clip: [0.02771945 0.0319982  0.0210196 ] 0.14608562
+ee_velocity: [0. 0. 0.]
+ee_position: [ 0.40038533 -0.12972899  0.1522917 ]
+Time difference 5.187434435
+cube observations: [[-0.1776176  -0.06110822  0.03437448  0.09523156]]
+robot observations: [[ 0.40038532 -0.12972899  0.1522917   0.          0.          0.
+   0.07209478]]
+goal cube: [[-0.21579403 -0.04415236  0.03      ]]
+rewards: [-0.04200092]
+
+ &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&& eps_i  5 &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&  
+actions: [[0.5485252  0.28152525 0.21499693 0.43698895]]
+ee_rpy: [0.82133929 1.53962701 2.31189182]
+action after clip: [0.02742626 0.01407626 0.01074985] 0.08739779
+ee_velocity: [0. 0. 0.]
+ee_position: [ 0.42751409 -0.11569784  0.16274203]
+Time difference 2.515756846
+cube observations: [[-0.17857485 -0.06341051  0.0325047   0.09720384]]
+robot observations: [[ 0.4275141  -0.11569784  0.16274203  0.          0.          0.
+   0.07263784]]
+goal cube: [[-0.21579403 -0.04415236  0.03      ]]
+rewards: [-0.04198115]
+
+ &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&& eps_i  6 &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&  
+actions: [[0.31781292 0.5203084  0.28591228 0.27823353]]
+ee_rpy: [0.84031734 1.5393759  2.33140519]
+action after clip: [0.01589065 0.02601542 0.01429561] 0.055646706
+ee_velocity: [0. 0. 0.]
+ee_position: [ 0.44301131 -0.08974041  0.1765127 ]
+Time difference 2.408704519
+cube observations: [[-0.17857274 -0.06353254  0.03240226  0.09721745]]
+robot observations: [[ 0.4430113  -0.08974041  0.1765127   0.          0.          0.
+   0.07263915]]
+goal cube: [[-0.21579403 -0.04415236  0.03      ]]
+rewards: [-0.04203315]
+
+ &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&& eps_i  7 &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&  
+actions: [[0.38201404 0.10027814 0.04321301 0.8468776 ]]
+ee_rpy: [0.86604823 1.53859208 2.35723442]
+action after clip: [0.0191007  0.00501391 0.00216065] 0.16937552
+ee_velocity: [0. 0. 0.]
+ee_position: [ 0.46181921 -0.08487696  0.17839948]
+Time difference 2.171443939
+cube observations: [[-0.17846765 -0.0634469   0.03254232  0.09646432]]
+robot observations: [[ 0.4618192  -0.08487695  0.17839949  0.          0.          0.
+   0.07263981]]
+goal cube: [[-0.21579403 -0.04415236  0.03      ]]
+rewards: [-0.04209515]
+
+ &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&& eps_i  8 &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&  
+actions: [[ 0.01681781  0.40428042 -0.21593523 -0.25218976]]
+ee_rpy: [0.88584939 1.53838227 2.37742094]
+action after clip: [ 0.00084089  0.02021402 -0.01079676] -0.050437953
+ee_velocity: [0. 0. 0.]
+ee_position: [ 0.46261802 -0.06487247  0.16763295]
+Time difference 3.959559441
+cube observations: [[-0.17854701 -0.06347901  0.03204824  0.09746992]]
+robot observations: [[ 0.46261802 -0.06487247  0.16763295  0.          0.          0.
+   0.02363475]]
+goal cube: [[-0.21579403 -0.04415236  0.03      ]]
+rewards: [-0.04201256]
+
+ &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&& eps_i  9 &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&  
+actions: [[-0.6920335   0.90407753 -0.45127487 -0.87274873]]
+ee_rpy: [0.89828802 1.53845943 2.39025512]
+action after clip: [-0.03460168  0.04520388 -0.02256374] -0.17454974
+ee_velocity: [0. 0. 0.]
+ee_position: [ 0.42790618 -0.01986096  0.14479597]
+Time difference 3.772286653
+cube observations: [[-0.1784576  -0.06322644  0.03232032  0.09810447]]
+robot observations: [[ 4.2790619e-01 -1.9860959e-02  1.4479597e-01  0.0000000e+00
+   0.0000000e+00  0.0000000e+00  3.3489999e-04]]
+goal cube: [[-0.21579403 -0.04415236  0.03      ]]
+rewards: [-0.04199063]
+
+ &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&& eps_i  10 &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&  
+actions: [[-0.6809032   0.90582347 -0.16413355 -0.81779635]]
+ee_rpy: [0.9170056  1.53786109 2.40875259]
+action after clip: [-0.03404516  0.04529117 -0.00820668] -0.16355927
+ee_velocity: [0. 0. 0.]
+ee_position: [0.3938492  0.02523665 0.13640263]
+Time difference 2.8201167590000003
+cube observations: [[-0.17769551 -0.06129708  0.03474506  0.08985946]]
+robot observations: [[3.9384919e-01 2.5236655e-02 1.3640262e-01 0.0000000e+00 0.0000000e+00
+  0.0000000e+00 1.2476667e-05]]
+goal cube: [[-0.21579403 -0.04415236  0.03      ]]
+rewards: [-0.04204704]
+
+ &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&& eps_i  11 &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&  
+actions: [[-0.79267764  0.9466208  -0.76436234 -0.9236838 ]]
+ee_rpy: [0.93166825 1.53734027 2.42288602]
+action after clip: [-0.03963388  0.04733104 -0.03821812] -0.18473677
+ee_velocity: [0. 0. 0.]
+ee_position: [0.35433145 0.07242163 0.09823402]
+Time difference 2.911938905
+cube observations: [[-0.17763145 -0.06126159  0.03433458  0.0905797 ]]
+robot observations: [[3.54331434e-01 7.24216327e-02 9.82340202e-02 0.00000000e+00
+  0.00000000e+00 0.00000000e+00 1.05066665e-05]]
+goal cube: [[-0.21579403 -0.04415236  0.03      ]]
+rewards: [-0.04204636]
+
+ &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&& eps_i  12 &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&  
+actions: [[-0.77454984  0.9666287  -0.78438103 -0.95236504]]
+ee_rpy: [0.93931385 1.53745253 2.43099719]
+action after clip: [-0.03872749  0.04833144 -0.03921905] -0.190473
+ee_velocity: [0. 0. 0.]
+ee_position: [0.31573767 0.12065103 0.05903497]
+Time difference 3.003997565
+cube observations: [[-0.17765105 -0.06132813  0.03470464  0.09092215]]
+robot observations: [[3.1573766e-01 1.2065103e-01 5.9034973e-02 0.0000000e+00 0.0000000e+00
+  0.0000000e+00 8.5366664e-06]]
+goal cube: [[-0.21579403 -0.04415236  0.03      ]]
+rewards: [-0.04209546]
+
+ &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&& eps_i  13 &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&  
+actions: [[-0.86474013  0.9845592  -0.78474367 -0.6896735 ]]
+ee_rpy: [0.94335014 1.53749022 2.43501897]
+action after clip: [-0.04323701  0.04922796 -0.03923718] -0.1379347
+ee_velocity: [0. 0. 0.]
+ee_position: [0.27234783 0.16961817 0.01974007]
+Time difference 3.13587594
+cube observations: [[-0.17761882 -0.06114083  0.03431522  0.0953306 ]]
+robot observations: [[2.7234784e-01 1.6961817e-01 1.9740071e-02 0.0000000e+00 0.0000000e+00
+  0.0000000e+00 8.5366664e-06]]
+goal cube: [[-0.21579403 -0.04415236  0.03      ]]
+rewards: [-0.04200685]
+
+ &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&& eps_i  14 &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&  
+actions: [[-0.4453358   0.9579351  -0.77162206 -0.8401599 ]]
+ee_rpy: [0.95603938 1.53745215 2.44771667]
+libfranka: Move command rejected: cannot start at singular pose!

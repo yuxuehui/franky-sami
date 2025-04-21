@@ -1,0 +1,48 @@
+code_path: /home/xi/yxh_space/SaMI/SaMI/output/PandaPush_object_size_6cm/SaCCM_trianenv_mix/code.zip
+config_path: /home/xi/yxh_space/SaMI/SaMI/output/PandaPush_object_size_6cm/SaCCM_trianenv_mix/config.yaml
+log_path: /home/xi/yxh_space/SaMI/SaMI/output/PandaPush_object_size_6cm/SaCCM_trianenv_mix/log.txt
+model_parameters:
+  adversarial_loss_coef: 0.01
+  batch_size: 256
+  buffer_size: 1000
+  causal_dim: 6
+  causal_hidden_dim: 128
+  config_path: ''
+  contrast_batch_size: 256
+  contrast_buffer_type: fine_grained
+  contrast_training_interval: 1
+  encoder_tau: 0.05
+  env_hook: PandaHook
+  env_name: PandaPush-v3
+  gradient_steps: 16
+  learning_rate: 0.001
+  method: SaCCM
+  neg_radio: 0.5
+  save_video: false
+  seed: 100
+  test_envs: '[(1, 1)]'
+  test_eps_num_per_env: 10
+  time_step: 1000000
+  train_envs: '[(0, 1), (0, 5), (1, 1),(1, 5)]'
+  train_freq: 128
+  use_continue_train: false
+  use_reward_norm: false
+  use_wandb: false
+  use_weighted_info_nce: false
+  wandb_project_name: skill-aware-rl
+  wandb_team_name: skill-aware-rl
+recoder: !!python/object:tools.video.VideoRecorder
+  enabled: false
+  fps: 10
+  frames: []
+  height: 256
+  save_dir: /home/xi/yxh_space/SaMI/SaMI/output/PandaPush_object_size_6cm/SaCCM_trianenv_mix/videos
+  width: 256
+save_model_path: /home/xi/yxh_space/SaMI/SaMI/output/PandaPush_object_size_6cm/SaCCM_trianenv_mix/model.zip
+save_path: /home/xi/yxh_space/SaMI/SaMI/output
+sub_save_path: /home/xi/yxh_space/SaMI/SaMI/output/PandaPush_object_size_6cm/SaCCM_trianenv_mix
+test_image_path: /home/xi/yxh_space/SaMI/SaMI/output/PandaPush_object_size_6cm/SaCCM_trianenv_mix/images
+test_path: /home/xi/yxh_space/SaMI/SaMI/output/PandaPush_object_size_6cm/SaCCM_trianenv_mix/test_result.yaml
+test_table_path: /home/xi/yxh_space/SaMI/SaMI/output/PandaPush_object_size_6cm/SaCCM_trianenv_mix/tables
+test_tsne_path: /home/xi/yxh_space/SaMI/SaMI/output/PandaPush_object_size_6cm/SaCCM_trianenv_mix/tsne.jpg
+test_video_path: /home/xi/yxh_space/SaMI/SaMI/output/PandaPush_object_size_6cm/SaCCM_trianenv_mix/videos
