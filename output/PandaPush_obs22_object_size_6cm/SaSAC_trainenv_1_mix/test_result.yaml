@@ -1,0 +1,16 @@
+friction:1,mass:1:
+  eps_states:
+  - rrrrrrrrrrrrrrrs
+  - rrrrrrrPPrrPPPPPs
+  - rrrrrrrs
+  - rrrrrrPPPPPs
+  - rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrf
+  - rrrrrrrPPPs
+  - rrrrrrrrrPs
+  - rrrrrrrrrrrrrrrrPs
+  - rrrrrs
+  - rrrrrrrrPPPPPPPs
+  pick_and_place_rate: 0.5994005994005994
+  push_rate: 0.0
+  roll_rate: 0.3996003996003996
+  success_rate: 0.9

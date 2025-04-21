@@ -1,0 +1,113 @@
+observation_space: Box(-10.0, 10.0, (3,), float32) <class 'gymnasium.spaces.box.Box'>
+observation_space: Box(-10.0, 10.0, (3,), float32) <class 'gymnasium.spaces.box.Box'>
+observation_space: Box(-10.0, 10.0, (10,), float32) <class 'gymnasium.spaces.box.Box'>
+observation_space: Box(-10.0, 10.0, (6,), float32) <class 'gymnasium.spaces.box.Box'>
+observation_space: Box(-10.0, 10.0, (3,), float32) <class 'gymnasium.spaces.box.Box'>
+observation_space: Box(-10.0, 10.0, (3,), float32) <class 'gymnasium.spaces.box.Box'>
+observation_space: Box(-10.0, 10.0, (10,), float32) <class 'gymnasium.spaces.box.Box'>
+observation_space: Box(-10.0, 10.0, (6,), float32) <class 'gymnasium.spaces.box.Box'>
+observation_space: Box(-10.0, 10.0, (3,), float32) <class 'gymnasium.spaces.box.Box'>
+observation_space: Box(-10.0, 10.0, (3,), float32) <class 'gymnasium.spaces.box.Box'>
+observation_space: Box(-10.0, 10.0, (10,), float32) <class 'gymnasium.spaces.box.Box'>
+observation_space: Box(-10.0, 10.0, (6,), float32) <class 'gymnasium.spaces.box.Box'>
+set gripper width: 0.0
+Failed to lookup transform from franka_cube to franka_left, try again.
+Failed to lookup transform from franka_cube to franka_left, try again.
+Failed to lookup transform from franka_cube to franka_left, try again.
+Failed to lookup transform from franka_cube to franka_left, try again.
+Failed to lookup transform from franka_cube to franka_left, try again.
+Failed to lookup transform from franka_cube to franka_left, try again.
+Failed to lookup transform from franka_cube to franka_left, try again.
+Failed to lookup transform from franka_cube to franka_left, try again.
+Failed to lookup transform from franka_cube to franka_left, try again.
+Failed to lookup transform from franka_cube to franka_left, try again.
+Failed to lookup transform from franka_cube to franka_left, try again.
+Failed to lookup transform from franka_cube to franka_left, try again.
+Failed to lookup transform from franka_cube to franka_left, try again.
+Failed to lookup transform from franka_cube to franka_left, try again.
+Failed to lookup transform from franka_cube to franka_left, try again.
+Failed to lookup transform from franka_cube to franka_left, try again.
+Failed to lookup transform from franka_cube to franka_left, try again.
+Failed to lookup transform from franka_cube to franka_left, try again.
+Failed to lookup transform from franka_cube to franka_left, try again.
+Failed to lookup transform from franka_cube to franka_left, try again.
+Failed to lookup transform from franka_cube to franka_left, try again.
+Failed to lookup transform from franka_cube to franka_left, try again.
+Failed to lookup transform from franka_cube to franka_left, try again.
+ee_position: [ 6.38391966e-01 -5.56541119e-04  1.98755436e-01]
+Info of objects (1.0, 0.5, (0.0006, 0.0006, 0.0006), (0.0, 0.0, 0.0), (0.0, 0.0, 0.0, 1.0), 0.0, 0.0, 0.0, -1.0, -1.0, 2, 0.001)
+Info of Table (0.0, 1.0, (0.0, 0.0, 0.0), (0.0, 0.0, 0.0), (0.0, 0.0, 0.0, 1.0), 0.0, 0.0, 0.001, -1.0, -1.0, 2, 0.001)
+set gripper width: 0.0
+ee_position: [ 6.38389417e-01 -4.65542400e-04  1.98727460e-01]
+set gripper width: 0.0
+ee_position: [ 6.38394424e-01 -4.53721625e-04  1.98725628e-01]
+reset successful!!!
+
+ &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&& eps_i  0 &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&  
+actions: [[-0.78545225 -0.99616855  0.9999943   0.9924991 ]]
+open figger: 0.19849983
+fingers_width: 9.784333087736741e-05
+set gripper width: 0.19859767
+change fingerswidth: 0.07902851700782776
+action after clip: [-0.03927261 -0.04980843  0.        ] [0.         0.         0.04999971] 0.19849983
+ee_position: [ 0.59859214 -0.05001451  0.24687669]
+Time difference 7.22399044
+cube pos: [[ 0.56598896 -0.16180569  0.0307419 ]]
+cube rpy: [[ 0.07436333 -0.04675441 -0.08913635]]
+robot observations: [[ 0.59859216 -0.05001451  0.24687669  0.07998265]]
+goal cube: [[0.6  0.02 0.03]]
+rewards: [-0.18496111]
+
+ &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&& eps_i  1 &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&  
+actions: [[-0.15457773 -0.86357355 -0.98564976  0.6411495 ]]
+open figger: 0.1282299
+fingers_width: 0.07998265326023102
+set gripper width: 0.20821255
+change fingerswidth: 0.07998265326023102
+action after clip: [-0.00772889 -0.04317868  0.        ] [ 0.          0.         -0.04928249] 0.1282299
+ee_position: [ 0.59067403 -0.09275911  0.19665502]
+Time difference 4.839951277
+cube pos: [[ 0.56604654 -0.16160996  0.03059925]]
+cube rpy: [[ 0.07263504 -0.04715851 -0.08980183]]
+robot observations: [[ 0.59067404 -0.09275911  0.19665502  0.07998332]]
+goal cube: [[0.6  0.02 0.03]]
+rewards: [-0.1847576]
+
+ &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&& eps_i  2 &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&  
+actions: [[ 0.06096649 -0.9155106  -0.96487504  0.70683503]]
+open figger: 0.141367
+fingers_width: 0.07998397201299667
+set gripper width: 0.22135097
+change fingerswidth: 0.07998331636190414
+action after clip: [ 0.00304832 -0.04577553  0.        ] [ 0.          0.         -0.04824375] 0.141367
+ee_position: [ 0.59341037 -0.13817152  0.14795975]
+Time difference 4.683656693
+cube pos: [[ 0.5660627  -0.16151263  0.03013704]]
+cube rpy: [[ 0.07562091 -0.04826397 -0.08958013]]
+robot observations: [[ 0.5934104  -0.13817152  0.14795975  0.07998265]]
+goal cube: [[0.6  0.02 0.03]]
+rewards: [-0.18465805]
+
+ &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&& eps_i  3 &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&  
+actions: [[-0.14378536 -0.67508364 -0.9786998   0.51081586]]
+open figger: 0.10216317
+fingers_width: 0.07998331636190414
+set gripper width: 0.18214649
+change fingerswidth: 0.07998331636190414
+action after clip: [-0.00718927 -0.03375418  0.        ] [ 0.          0.         -0.04893499] 0.10216317
+ee_position: [ 0.58574285 -0.17149029  0.09828212]
+Time difference 4.304187059
+cube pos: [[ 0.5660898  -0.16153912  0.03014123]]
+cube rpy: [[ 0.07489476 -0.04796492 -0.08970581]]
+robot observations: [[ 0.58574283 -0.1714903   0.09828212  0.07998332]]
+goal cube: [[0.6  0.02 0.03]]
+rewards: [-0.1846791]
+
+ &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&& eps_i  4 &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&  
+actions: [[-0.09247017  0.98751044 -0.99313116  0.19027948]]
+open figger: 0.038055897
+fingers_width: 0.07998265326023102
+set gripper width: 0.11803855
+change fingerswidth: 0.07998331636190414
+libfranka: Move command aborted: motion aborted by reflex! ["cartesian_reflex"]
+control_command_success_rate: 1

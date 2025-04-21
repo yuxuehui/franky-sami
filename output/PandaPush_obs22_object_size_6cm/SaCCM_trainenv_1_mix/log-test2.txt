@@ -1,0 +1,62 @@
+observation_space: Box(-10.0, 10.0, (3,), float32) <class 'gymnasium.spaces.box.Box'>
+observation_space: Box(-10.0, 10.0, (3,), float32) <class 'gymnasium.spaces.box.Box'>
+observation_space: Box(-10.0, 10.0, (10,), float32) <class 'gymnasium.spaces.box.Box'>
+observation_space: Box(-10.0, 10.0, (6,), float32) <class 'gymnasium.spaces.box.Box'>
+observation_space: Box(-10.0, 10.0, (3,), float32) <class 'gymnasium.spaces.box.Box'>
+observation_space: Box(-10.0, 10.0, (3,), float32) <class 'gymnasium.spaces.box.Box'>
+observation_space: Box(-10.0, 10.0, (10,), float32) <class 'gymnasium.spaces.box.Box'>
+observation_space: Box(-10.0, 10.0, (6,), float32) <class 'gymnasium.spaces.box.Box'>
+observation_space: Box(-10.0, 10.0, (3,), float32) <class 'gymnasium.spaces.box.Box'>
+observation_space: Box(-10.0, 10.0, (3,), float32) <class 'gymnasium.spaces.box.Box'>
+observation_space: Box(-10.0, 10.0, (10,), float32) <class 'gymnasium.spaces.box.Box'>
+observation_space: Box(-10.0, 10.0, (6,), float32) <class 'gymnasium.spaces.box.Box'>
+set gripper width: 0.0
+Failed to lookup transform from franka_cube to franka_left, try again.
+Failed to lookup transform from franka_cube to franka_left, try again.
+Failed to lookup transform from franka_cube to franka_left, try again.
+Failed to lookup transform from franka_cube to franka_left, try again.
+Failed to lookup transform from franka_cube to franka_left, try again.
+Failed to lookup transform from franka_cube to franka_left, try again.
+Failed to lookup transform from franka_cube to franka_left, try again.
+Failed to lookup transform from franka_cube to franka_left, try again.
+Failed to lookup transform from franka_cube to franka_left, try again.
+Failed to lookup transform from franka_cube to franka_left, try again.
+Failed to lookup transform from franka_cube to franka_left, try again.
+Failed to lookup transform from franka_cube to franka_left, try again.
+Failed to lookup transform from franka_cube to franka_left, try again.
+Failed to lookup transform from franka_cube to franka_left, try again.
+Failed to lookup transform from franka_cube to franka_left, try again.
+Failed to lookup transform from franka_cube to franka_left, try again.
+Failed to lookup transform from franka_cube to franka_left, try again.
+Failed to lookup transform from franka_cube to franka_left, try again.
+Failed to lookup transform from franka_cube to franka_left, try again.
+Failed to lookup transform from franka_cube to franka_left, try again.
+Failed to lookup transform from franka_cube to franka_left, try again.
+Failed to lookup transform from franka_cube to franka_left, try again.
+Failed to lookup transform from franka_cube to franka_left, try again.
+Failed to lookup transform from franka_cube to franka_left, try again.
+Failed to lookup transform from franka_cube to franka_left, try again.
+Failed to lookup transform from franka_cube to franka_left, try again.
+Failed to lookup transform from franka_cube to franka_left, try again.
+Failed to lookup transform from franka_cube to franka_left, try again.
+Failed to lookup transform from franka_cube to franka_left, try again.
+Failed to lookup transform from franka_cube to franka_left, try again.
+Failed to lookup transform from franka_cube to franka_left, try again.
+Failed to lookup transform from franka_cube to franka_left, try again.
+Failed to lookup transform from franka_cube to franka_left, try again.
+Failed to lookup transform from franka_cube to franka_left, try again.
+Failed to lookup transform from franka_cube to franka_left, try again.
+Failed to lookup transform from franka_cube to franka_left, try again.
+Failed to lookup transform from franka_cube to franka_left, try again.
+Failed to lookup transform from franka_cube to franka_left, try again.
+Failed to lookup transform from franka_cube to franka_left, try again.
+Failed to lookup transform from franka_cube to franka_left, try again.
+Failed to lookup transform from franka_cube to franka_left, try again.
+Failed to lookup transform from franka_cube to franka_left, try again.
+Failed to lookup transform from franka_cube to franka_left, try again.
+Failed to lookup transform from franka_cube to franka_left, try again.
+Failed to lookup transform from franka_cube to franka_left, try again.
+Failed to lookup transform from franka_cube to franka_left, try again.
+Failed to lookup transform from franka_cube to franka_left, try again.
+Failed to lookup transform from franka_cube to franka_left, try again.
+ee_position: You pressed Ctrl+C!

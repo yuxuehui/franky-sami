@@ -1,0 +1,22 @@
+observation_space: Box(-10.0, 10.0, (3,), float32) <class 'gymnasium.spaces.box.Box'>
+observation_space: Box(-10.0, 10.0, (3,), float32) <class 'gymnasium.spaces.box.Box'>
+observation_space: Box(-10.0, 10.0, (19,), float32) <class 'gymnasium.spaces.box.Box'>
+observation_space: Box(-10.0, 10.0, (6,), float32) <class 'gymnasium.spaces.box.Box'>
+observation_space: Box(-10.0, 10.0, (3,), float32) <class 'gymnasium.spaces.box.Box'>
+observation_space: Box(-10.0, 10.0, (3,), float32) <class 'gymnasium.spaces.box.Box'>
+observation_space: Box(-10.0, 10.0, (19,), float32) <class 'gymnasium.spaces.box.Box'>
+observation_space: Box(-10.0, 10.0, (6,), float32) <class 'gymnasium.spaces.box.Box'>
+observation_space: Box(-10.0, 10.0, (3,), float32) <class 'gymnasium.spaces.box.Box'>
+observation_space: Box(-10.0, 10.0, (3,), float32) <class 'gymnasium.spaces.box.Box'>
+observation_space: Box(-10.0, 10.0, (19,), float32) <class 'gymnasium.spaces.box.Box'>
+observation_space: Box(-10.0, 10.0, (6,), float32) <class 'gymnasium.spaces.box.Box'>
+ee_velocity: [0. 0. 0.]
+ee_position: [0.63853462 0.00065277 0.05545799]
+Info of objects (1.0, 0.5, (0.0006, 0.0006, 0.0006), (0.0, 0.0, 0.0), (0.0, 0.0, 0.0, 1.0), 0.0, 0.0, 0.0, -1.0, -1.0, 2, 0.001)
+Info of Table (0.0, 1.0, (0.0, 0.0, 0.0), (0.0, 0.0, 0.0), (0.0, 0.0, 0.0, 1.0), 0.0, 0.0, 0.001, -1.0, -1.0, 2, 0.001)
+ee_velocity: [ 9.16747810e-06 -7.09132998e-05 -8.26796551e-07]
+ee_position: [6.38550424e-01 5.30524350e-04 5.54565625e-02]
+ee_velocity: [ 8.89639493e-06 -6.67818696e-05 -5.23631038e-07]
+ee_position: [6.38559320e-01 4.63746381e-04 5.54560389e-02]
+reset successful!!!
+mat1 and mat2 shapes cannot be multiplied (1x22 and 31x512)

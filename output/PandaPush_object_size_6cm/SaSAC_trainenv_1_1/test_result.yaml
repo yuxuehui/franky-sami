@@ -1,0 +1,80 @@
+friction:0,mass:10:
+  eps_states:
+  - rrrrrs
+  - rrrrrrrrrs
+  - rrrrrrrrrrrrrrrrrrrrrrrrdddddddddddddddddddddddddf
+  - rrrrrrrrrs
+  - rrrrrrrrrs
+  - s
+  - rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrddddddddddf
+  - rrrrrrrrrrrrrrs
+  - rrrrrPrPrrrrrrrrrrrrrrrrrrrrdddddddddddddddddddddf
+  - rrrrrs
+  pick_and_place_rate: 0.0999000999000999
+  push_rate: 0.0999000999000999
+  roll_rate: 0.7992007992007992
+  success_rate: 0.7
+friction:1,mass:1:
+  eps_states:
+  - rrrrrrPs
+  - s
+  - rrrrrPrrrrs
+  - rrrrrrPPs
+  - rrrrPs
+  - rrrrrs
+  - rrrrrrrPrs
+  - rrrPPs
+  - rrrrrPrrs
+  - rrrrrPrrrrrs
+  pick_and_place_rate: 0.7992007992007992
+  push_rate: 0.0999000999000999
+  roll_rate: 0.0999000999000999
+  success_rate: 1.0
+friction:1,mass:10:
+  eps_states:
+  - rrrrrrrs
+  - rrrrrrrs
+  - rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrf
+  - rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrf
+  - rrrrrrrPrrrrs
+  - rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrf
+  - rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrf
+  - rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrf
+  - rrrrrrrrrrrs
+  - rrrrrs
+  pick_and_place_rate: 0.0999000999000999
+  push_rate: 0.0
+  roll_rate: 0.8991008991008991
+  success_rate: 0.5
+friction:10,mass:10:
+  eps_states:
+  - rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrf
+  - rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrf
+  - s
+  - rrrrrPrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrf
+  - s
+  - s
+  - rrrrrrrPrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrf
+  - rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrf
+  - rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrf
+  - rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrf
+  pick_and_place_rate: 0.1998001998001998
+  push_rate: 0.2997002997002997
+  roll_rate: 0.4995004995004995
+  success_rate: 0.3
+friction:30,mass:10:
+  eps_states:
+  - rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrf
+  - rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrf
+  - rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrf
+  - rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrf
+  - rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrf
+  - rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrf
+  - rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrf
+  - rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrf
+  - rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrf
+  - rrrrrPrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrf
+  pick_and_place_rate: 0.0999000999000999
+  push_rate: 0.0
+  roll_rate: 0.8991008991008991
+  success_rate: 0.0
