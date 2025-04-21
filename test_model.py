@@ -89,6 +89,7 @@ def test_model(model, manager:Manager, hook, time_steps=-1):
                 print("robot observations:", observations['observation'][:,:4])
                 print("goal cube:", observations['desired_goal'])
                 print("rewards:", rewards)
+                    
 
                 # if ((eps_i+1) % 2 ==0 or dones) and 'hidden_h' in observations:
                 if (dones) and 'hidden_h' in observations:

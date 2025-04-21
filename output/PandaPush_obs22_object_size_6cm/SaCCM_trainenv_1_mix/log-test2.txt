@@ -47,16 +47,120 @@ Failed to lookup transform from franka_cube to franka_left, try again.
 Failed to lookup transform from franka_cube to franka_left, try again.
 Failed to lookup transform from franka_cube to franka_left, try again.
 Failed to lookup transform from franka_cube to franka_left, try again.
-Failed to lookup transform from franka_cube to franka_left, try again.
-Failed to lookup transform from franka_cube to franka_left, try again.
-Failed to lookup transform from franka_cube to franka_left, try again.
-Failed to lookup transform from franka_cube to franka_left, try again.
-Failed to lookup transform from franka_cube to franka_left, try again.
-Failed to lookup transform from franka_cube to franka_left, try again.
-Failed to lookup transform from franka_cube to franka_left, try again.
-Failed to lookup transform from franka_cube to franka_left, try again.
-Failed to lookup transform from franka_cube to franka_left, try again.
-Failed to lookup transform from franka_cube to franka_left, try again.
-Failed to lookup transform from franka_cube to franka_left, try again.
-Failed to lookup transform from franka_cube to franka_left, try again.
-ee_position: You pressed Ctrl+C!
+ee_position: [6.38189217e-01 4.64741452e-04 1.97826353e-01]
+Info of objects (1.0, 0.5, (0.0006, 0.0006, 0.0006), (0.0, 0.0, 0.0), (0.0, 0.0, 0.0, 1.0), 0.0, 0.0, 0.0, -1.0, -1.0, 2, 0.001)
+Info of Table (0.0, 1.0, (0.0, 0.0, 0.0), (0.0, 0.0, 0.0), (0.0, 0.0, 0.0, 1.0), 0.0, 0.0, 0.001, -1.0, -1.0, 2, 0.001)
+set gripper width: 0.0
+ee_position: [6.38188443e-01 4.43259252e-04 1.97828193e-01]
+set gripper width: 0.0
+ee_position: [6.38186285e-01 4.30752344e-04 1.97823619e-01]
+reset successful!!!
+
+ &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&& eps_i  0 &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&  
+actions: [[-0.42811227 -0.17356944 -0.1593715   0.348042  ]]
+open figger: 0.069608405
+fingers_width: 7.945666584419087e-05
+set gripper width: 0.06968786
+change fingerswidth: 0.06836359947919846
+ee_rpy: [3.00355646 1.56867146 2.99912396]
+action after clip: [-0.02140561 -0.00867847 -0.00796857] 0.069608405
+ee_position: [ 0.61655862 -0.00792109  0.18902451]
+Time difference 5.375305891
+cube pos: [[ 0.5425391  -0.21628739  0.03087127]]
+cube rpy: [[ 0.07794131 -0.05229186 -0.02765984]]
+robot observations: [[ 0.6165586  -0.00792109  0.18902451  0.06968547]]
+goal cube: [[0.6  0.02 0.03]]
+rewards: [-0.24317533]
+
+ &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&& eps_i  1 &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&  
+actions: [[-0.59595   -0.9798199 -0.3139813  0.5838022]]
+open figger: 0.11676045
+fingers_width: 0.06968546658754349
+set gripper width: 0.18644592
+change fingerswidth: 0.07922092080116272
+ee_rpy: [3.03895274 1.56702458 3.0347463 ]
+action after clip: [-0.0297975  -0.04899099 -0.01569906] 0.11676045
+ee_position: [ 0.58650666 -0.05660631  0.17249916]
+Time difference 3.348053932
+cube pos: [[ 0.5427368  -0.21625783  0.0304084 ]]
+cube rpy: [[ 0.07700805 -0.05269596 -0.02805669]]
+robot observations: [[ 0.58650666 -0.05660631  0.17249916  0.07998069]]
+goal cube: [[0.6  0.02 0.03]]
+rewards: [-0.24309874]
+
+ &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&& eps_i  2 &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&  
+actions: [[-0.58916426 -0.9896157  -0.46235394  0.6916392 ]]
+open figger: 0.13832784
+fingers_width: 0.07998134195804596
+set gripper width: 0.21830918
+change fingerswidth: 0.07998068630695343
+ee_rpy: [3.00588561 1.56529306 3.00166074]
+action after clip: [-0.02945821 -0.04948078 -0.0231177 ] 0.13832784
+ee_position: [ 0.55684676 -0.10574779  0.14866607]
+Time difference 3.032195806
+cube pos: [[ 0.5425873  -0.21606149  0.03022978]]
+cube rpy: [[ 0.08099875 -0.05505271 -0.02579235]]
+robot observations: [[ 0.55684674 -0.10574779  0.14866607  0.079982  ]]
+goal cube: [[0.6  0.02 0.03]]
+rewards: [-0.2429429]
+
+ &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&& eps_i  3 &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&  
+actions: [[-0.25684512 -0.9819269  -0.48938203  0.72692275]]
+open figger: 0.14538455
+fingers_width: 0.07998134195804596
+set gripper width: 0.22536589
+change fingerswidth: 0.07998134195804596
+ee_rpy: [2.96741545 1.56365343 2.96312473]
+action after clip: [-0.01284226 -0.04909635 -0.0244691 ] 0.14538455
+ee_position: [ 0.54398887 -0.15444995  0.12401888]
+Time difference 3.043677569
+cube pos: [[ 0.54254687 -0.21599096  0.02980003]]
+cube rpy: [[ 0.08057337 -0.0550161  -0.02680947]]
+robot observations: [[ 0.5439889  -0.15444995  0.12401888  0.079982  ]]
+goal cube: [[0.6  0.02 0.03]]
+rewards: [-0.242884]
+
+ &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&& eps_i  4 &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&  
+actions: [[-0.13323289 -0.97364426 -0.8614778   0.7236674 ]]
+open figger: 0.14473347
+fingers_width: 0.07998134195804596
+set gripper width: 0.22471482
+change fingerswidth: 0.07998199760913849
+ee_rpy: [2.93268418 1.56308412 2.92855348]
+action after clip: [-0.00666164 -0.04868221 -0.04307389] 0.14473347
+ee_position: [ 0.53722203 -0.20270282  0.08077262]
+Time difference 2.964069843
+cube pos: [[ 0.54301876 -0.21696123  0.02942404]]
+cube rpy: [[ 0.08780712 -0.06353052 -0.01439826]]
+robot observations: [[ 0.537222   -0.20270282  0.08077262  0.07998265]]
+goal cube: [[0.6  0.02 0.03]]
+rewards: [-0.24371669]
+
+ &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&& eps_i  5 &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&  
+actions: [[ 0.63804626 -0.03280699 -0.94954705  0.33641434]]
+open figger: 0.06728287
+fingers_width: 0.07998265326023102
+set gripper width: 0.14726552
+change fingerswidth: 0.07998265326023102
+ee_rpy: [2.90074901 1.56238724 2.8966004 ]
+action after clip: [ 0.03190231 -0.00164035 -0.04747735] 0.06728287
+ee_position: [ 0.56881582 -0.20435606  0.03315097]
+Time difference 3.051725865
+cube pos: [[ 0.54303455 -0.21692656  0.02947598]]
+cube rpy: [[ 0.0870708  -0.0632724  -0.01456513]]
+robot observations: [[ 0.5688158  -0.20435606  0.03315097  0.07998332]]
+goal cube: [[0.6  0.02 0.03]]
+rewards: [-0.24367915]
+
+ &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&& eps_i  6 &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&  
+actions: [[-0.2143634  0.9687624  0.651073  -0.6067547]]
+open figger: -0.121350944
+fingers_width: 0.07998331636190414
+set gripper width: -0.041367628
+$$$$$$$$$$$$$$$$ gripping succuss
+change fingerswidth: 0.0641622468829155
+ee_rpy: [2.88672951 1.56180902 2.8824894 ]
+action after clip: [-0.01071817  0.04843812  0.03255365] -0.121350944
+set gripper width: 0.08
+set gripper width: 0.0
+Gripping succuss, reset the robot.
