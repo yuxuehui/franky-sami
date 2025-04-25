@@ -17,24 +17,24 @@ def get_push_env(lateral_friction=1.0,spinning_friction=0.001,mass=1.0,
         #                         render_pitch=0,
         #                         render_roll=0,
         #                      render_mode="human")
-        # env = gymnasium.make(f'PandaPush-v3',
-        #                      reward_type = reward_type,
-        #                      control_type = control_type,
-        #                      object_height = object_height,
-        #                      causal_dim = causal_dim,
-        #                      causal_hidden_dim = causal_hidden_dim)
         env = gymnasium.make(f'PandaPush-v3',
                              reward_type = reward_type,
                              control_type = control_type,
                              object_height = object_height,
                              causal_dim = causal_dim,
-                             causal_hidden_dim = causal_hidden_dim,
-                            render_target_position=[0.2, -0.4, 0.1],
-                                render_distance=0.5,
-                                render_yaw=0,
-                                render_pitch=0,
-                                render_roll=0,
-                             render_mode="human",)
+                             causal_hidden_dim = causal_hidden_dim)
+        # env = gymnasium.make(f'PandaPush-v3',
+        #                      reward_type = reward_type,
+        #                      control_type = control_type,
+        #                      object_height = object_height,
+        #                      causal_dim = causal_dim,
+        #                      causal_hidden_dim = causal_hidden_dim,
+        #                     render_target_position=[0.2, -0.4, 0.1],
+        #                         render_distance=0.5,
+        #                         render_yaw=0,
+        #                         render_pitch=0,
+        #                         render_roll=0,
+        #                      render_mode="human",)
         
         env.task.set_total_train_timesteps(train_time_steps)
 

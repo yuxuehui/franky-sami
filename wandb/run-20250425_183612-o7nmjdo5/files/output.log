@@ -1,0 +1,34 @@
+0it [00:00, ?it/s]/opt/ros/noetic/lib/python3/dist-packages/rospy/impl/registration.py:486: DeprecationWarning: notifyAll() is deprecated, use notify_all() instead
+  self.cond.notifyAll()
+[33m[WARN] [1745577383.598551]: Failed to lookup transform from franka_cube to franka_left, try again.
+[0m[33m[WARN] [1745577383.600224]: Failed to lookup transform from franka_cube to franka_left, try again.
+[0m[33m[WARN] [1745577383.601214]: Failed to lookup transform from franka_cube to franka_left, try again.
+[0m[33m[WARN] [1745577383.602069]: Failed to lookup transform from franka_cube to franka_left, try again.
+[0m[33m[WARN] [1745577383.602828]: Failed to lookup transform from franka_cube to franka_left, try again.
+[0m[33m[WARN] [1745577383.603489]: Failed to lookup transform from franka_cube to franka_left, try again.
+[0m[33m[WARN] [1745577383.604040]: Failed to lookup transform from franka_cube to franka_left, try again.
+[0m[33m[WARN] [1745577383.604790]: Failed to lookup transform from franka_cube to franka_left, try again.
+[0m[33m[WARN] [1745577383.605655]: Failed to lookup transform from franka_cube to franka_left, try again.
+[0m[33m[WARN] [1745577383.606335]: Failed to lookup transform from franka_cube to franka_left, try again.
+[0m[33m[WARN] [1745577383.606969]: Failed to lookup transform from franka_cube to franka_left, try again.
+[0m[33m[WARN] [1745577383.607484]: Failed to lookup transform from franka_cube to franka_left, try again.
+[0m[33m[WARN] [1745577383.607969]: Failed to lookup transform from franka_cube to franka_left, try again.
+[0m[33m[WARN] [1745577383.608529]: Failed to lookup transform from franka_cube to franka_left, try again.
+[0m[33m[WARN] [1745577383.609095]: Failed to lookup transform from franka_cube to franka_left, try again.
+[0m[33m[WARN] [1745577383.609582]: Failed to lookup transform from franka_cube to franka_left, try again.
+[0m[33m[WARN] [1745577383.610203]: Failed to lookup transform from franka_cube to franka_left, try again.
+[0m/home/xi/anaconda3/envs/franky-sami/lib/python3.10/site-packages/gymnasium/core.py:311: UserWarning: [33mWARN: env.task to get variables from other wrappers is deprecated and will be removed in v1.0, to get this variable you can do `env.unwrapped.task` for environment variables or `env.get_wrapper_attr('task')` that will search the reminding wrappers.[0m
+  logger.warn(
+/home/xi/anaconda3/envs/franky-sami/lib/python3.10/site-packages/gymnasium/core.py:311: UserWarning: [33mWARN: env.set_obs_friction_mass to get variables from other wrappers is deprecated and will be removed in v1.0, to get this variable you can do `env.unwrapped.set_obs_friction_mass` for environment variables or `env.get_wrapper_attr('set_obs_friction_mass')` that will search the reminding wrappers.[0m
+  logger.warn(
+/home/xi/anaconda3/envs/franky-sami/lib/python3.10/site-packages/gymnasium/utils/passive_env_checker.py:135: UserWarning: [33mWARN: The obs returned by the `reset()` method was expecting numpy array dtype to be float32, actual type: float64[0m
+  logger.warn(
+/home/xi/anaconda3/envs/franky-sami/lib/python3.10/site-packages/gymnasium/utils/passive_env_checker.py:159: UserWarning: [33mWARN: The obs returned by the `reset()` method is not within the observation space.[0m
+  logger.warn(f"{pre} is not within the observation space.")
+/home/xi/anaconda3/envs/franky-sami/lib/python3.10/site-packages/gymnasium/core.py:311: UserWarning: [33mWARN: env.robot to get variables from other wrappers is deprecated and will be removed in v1.0, to get this variable you can do `env.unwrapped.robot` for environment variables or `env.get_wrapper_attr('robot')` that will search the reminding wrappers.[0m
+  logger.warn(
+/home/xi/anaconda3/envs/franky-sami/lib/python3.10/site-packages/gymnasium/utils/passive_env_checker.py:135: UserWarning: [33mWARN: The obs returned by the `step()` method was expecting numpy array dtype to be float32, actual type: float64[0m
+  logger.warn(
+/home/xi/anaconda3/envs/franky-sami/lib/python3.10/site-packages/gymnasium/utils/passive_env_checker.py:159: UserWarning: [33mWARN: The obs returned by the `step()` method is not within the observation space.[0m
+  logger.warn(f"{pre} is not within the observation space.")
+0it [00:55, ?it/s]

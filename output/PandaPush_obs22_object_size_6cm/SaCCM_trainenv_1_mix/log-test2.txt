@@ -47,120 +47,215 @@ Failed to lookup transform from franka_cube to franka_left, try again.
 Failed to lookup transform from franka_cube to franka_left, try again.
 Failed to lookup transform from franka_cube to franka_left, try again.
 Failed to lookup transform from franka_cube to franka_left, try again.
-ee_position: [6.38189217e-01 4.64741452e-04 1.97826353e-01]
+Failed to lookup transform from franka_cube to franka_left, try again.
+Failed to lookup transform from franka_cube to franka_left, try again.
+Failed to lookup transform from franka_cube to franka_left, try again.
+Failed to lookup transform from franka_cube to franka_left, try again.
+Failed to lookup transform from franka_cube to franka_left, try again.
+Failed to lookup transform from franka_cube to franka_left, try again.
+Failed to lookup transform from franka_cube to franka_left, try again.
+Failed to lookup transform from franka_cube to franka_left, try again.
+Failed to lookup transform from franka_cube to franka_left, try again.
+Failed to lookup transform from franka_cube to franka_left, try again.
+Failed to lookup transform from franka_cube to franka_left, try again.
+ee_position: [ 6.38204990e-01 -3.11596386e-04  1.97844555e-01]
 Info of objects (1.0, 0.5, (0.0006, 0.0006, 0.0006), (0.0, 0.0, 0.0), (0.0, 0.0, 0.0, 1.0), 0.0, 0.0, 0.0, -1.0, -1.0, 2, 0.001)
 Info of Table (0.0, 1.0, (0.0, 0.0, 0.0), (0.0, 0.0, 0.0), (0.0, 0.0, 0.0, 1.0), 0.0, 0.0, 0.001, -1.0, -1.0, 2, 0.001)
 set gripper width: 0.0
-ee_position: [6.38188443e-01 4.43259252e-04 1.97828193e-01]
+ee_position: [ 6.38200751e-01 -2.99851222e-04  1.97851743e-01]
 set gripper width: 0.0
-ee_position: [6.38186285e-01 4.30752344e-04 1.97823619e-01]
+ee_position: [ 6.38200631e-01 -2.87871952e-04  1.97856306e-01]
 reset successful!!!
 
  &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&& eps_i  0 &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&  
-actions: [[-0.42811227 -0.17356944 -0.1593715   0.348042  ]]
-open figger: 0.069608405
-fingers_width: 7.945666584419087e-05
-set gripper width: 0.06968786
-change fingerswidth: 0.06836359947919846
-ee_rpy: [3.00355646 1.56867146 2.99912396]
-action after clip: [-0.02140561 -0.00867847 -0.00796857] 0.069608405
-ee_position: [ 0.61655862 -0.00792109  0.18902451]
-Time difference 5.375305891
-cube pos: [[ 0.5425391  -0.21628739  0.03087127]]
-cube rpy: [[ 0.07794131 -0.05229186 -0.02765984]]
-robot observations: [[ 0.6165586  -0.00792109  0.18902451  0.06968547]]
+previous cube pos: [[ 0.5904347  -0.05829063  0.03047213]]
+previous robot observations: [[ 6.38200641e-01 -2.87871953e-04  1.97856307e-01  1.01783335e-04]]
+actions: [[-0.73585963 -0.17929727 -0.81959116  0.6298752 ]]
+set gripper width: 0.12607683
+action after clip: [-0.03679298 -0.00896486 -0.04097956] 0.12597504
+ee_position: [ 0.60120677 -0.00892833  0.15617927]
+cube pos: [[ 0.5903611  -0.05843588  0.0307445 ]]
+cube rpy: [[ 0.08398009 -0.06779767 -0.05553465]]
+robot observations: [[ 0.6012068  -0.00892833  0.15617926  0.02540381]]
 goal cube: [[0.6  0.02 0.03]]
-rewards: [-0.24317533]
+rewards: [-0.07902943]
 
  &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&& eps_i  1 &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&  
-actions: [[-0.59595   -0.9798199 -0.3139813  0.5838022]]
-open figger: 0.11676045
-fingers_width: 0.06968546658754349
-set gripper width: 0.18644592
-change fingerswidth: 0.07922092080116272
-ee_rpy: [3.03895274 1.56702458 3.0347463 ]
-action after clip: [-0.0297975  -0.04899099 -0.01569906] 0.11676045
-ee_position: [ 0.58650666 -0.05660631  0.17249916]
-Time difference 3.348053932
-cube pos: [[ 0.5427368  -0.21625783  0.0304084 ]]
-cube rpy: [[ 0.07700805 -0.05269596 -0.02805669]]
-robot observations: [[ 0.58650666 -0.05660631  0.17249916  0.07998069]]
+previous cube pos: [[ 0.5903611  -0.05843588  0.0307445 ]]
+previous robot observations: [[ 0.6012068  -0.00892833  0.15617926  0.02540381]]
+actions: [[ 0.0222578  -0.7537145  -0.8939195   0.63908076]]
+set gripper width: 0.16711108
+action after clip: [ 0.00111289 -0.03768573 -0.04469598] 0.12781616
+ee_position: [ 0.60198035 -0.04629956  0.11120024]
+cube pos: [[ 0.5900025  -0.05704334  0.03163148]]
+cube rpy: [[ 0.08636366 -0.06861071 -0.05773588]]
+robot observations: [[ 0.6019803  -0.04629956  0.11120024  0.0799971 ]]
 goal cube: [[0.6  0.02 0.03]]
-rewards: [-0.24309874]
+rewards: [-0.07770643]
 
  &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&& eps_i  2 &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&  
-actions: [[-0.58916426 -0.9896157  -0.46235394  0.6916392 ]]
-open figger: 0.13832784
-fingers_width: 0.07998134195804596
-set gripper width: 0.21830918
-change fingerswidth: 0.07998068630695343
-ee_rpy: [3.00588561 1.56529306 3.00166074]
-action after clip: [-0.02945821 -0.04948078 -0.0231177 ] 0.13832784
-ee_position: [ 0.55684676 -0.10574779  0.14866607]
-Time difference 3.032195806
-cube pos: [[ 0.5425873  -0.21606149  0.03022978]]
-cube rpy: [[ 0.08099875 -0.05505271 -0.02579235]]
-robot observations: [[ 0.55684674 -0.10574779  0.14866607  0.079982  ]]
+previous cube pos: [[ 0.5900025  -0.05704334  0.03163148]]
+previous robot observations: [[ 0.6019803  -0.04629956  0.11120024  0.0799971 ]]
+actions: [[ 0.27602196 -0.38293052 -0.96900654  0.58250475]]
+set gripper width: 0.19649805
+action after clip: [ 0.0138011  -0.01914653 -0.04845033] 0.11650095
+ee_position: [ 0.61558339 -0.06506792  0.06269412]
+cube pos: [[ 0.5893836  -0.05710405  0.03078129]]
+cube rpy: [[ 0.09138039 -0.06789397 -0.06305107]]
+robot observations: [[ 0.6155834  -0.06506792  0.06269412  0.07999842]]
 goal cube: [[0.6  0.02 0.03]]
-rewards: [-0.2429429]
+rewards: [-0.07783543]
 
  &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&& eps_i  3 &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&  
-actions: [[-0.25684512 -0.9819269  -0.48938203  0.72692275]]
-open figger: 0.14538455
-fingers_width: 0.07998134195804596
-set gripper width: 0.22536589
-change fingerswidth: 0.07998134195804596
-ee_rpy: [2.96741545 1.56365343 2.96312473]
-action after clip: [-0.01284226 -0.04909635 -0.0244691 ] 0.14538455
-ee_position: [ 0.54398887 -0.15444995  0.12401888]
-Time difference 3.043677569
-cube pos: [[ 0.54254687 -0.21599096  0.02980003]]
-cube rpy: [[ 0.08057337 -0.0550161  -0.02680947]]
-robot observations: [[ 0.5439889  -0.15444995  0.12401888  0.079982  ]]
+previous cube pos: [[ 0.5893836  -0.05710405  0.03078129]]
+previous robot observations: [[ 0.6155834  -0.06506792  0.06269412  0.07999842]]
+actions: [[ 0.05244064  0.82765937  0.26228428 -0.46520936]]
+set gripper width: -0.013043456
+action after clip: [0.00262203 0.04138297 0.01311421] -0.093041874
+ee_position: [ 0.61773796 -0.02383793  0.07496085]
+cube pos: [[ 0.4777307  -0.18889874  0.03099867]]
+cube rpy: [[ 0.09410982 -0.07192659 -0.06292837]]
+robot observations: [[ 6.1773795e-01 -2.3837931e-02  7.4960858e-02  1.0506667e-04]]
 goal cube: [[0.6  0.02 0.03]]
-rewards: [-0.242884]
+rewards: [-0.24205261]
 
  &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&& eps_i  4 &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&  
-actions: [[-0.13323289 -0.97364426 -0.8614778   0.7236674 ]]
-open figger: 0.14473347
-fingers_width: 0.07998134195804596
-set gripper width: 0.22471482
-change fingerswidth: 0.07998199760913849
-ee_rpy: [2.93268418 1.56308412 2.92855348]
-action after clip: [-0.00666164 -0.04868221 -0.04307389] 0.14473347
-ee_position: [ 0.53722203 -0.20270282  0.08077262]
-Time difference 2.964069843
-cube pos: [[ 0.54301876 -0.21696123  0.02942404]]
-cube rpy: [[ 0.08780712 -0.06353052 -0.01439826]]
-robot observations: [[ 0.537222   -0.20270282  0.08077262  0.07998265]]
+previous cube pos: [[ 0.4777307  -0.18889874  0.03099867]]
+previous robot observations: [[ 6.1773795e-01 -2.3837931e-02  7.4960858e-02  1.0506667e-04]]
+actions: [[-0.6227603  -0.23042089  0.47739267  0.4176514 ]]
+set gripper width: 0.08363535
+action after clip: [-0.03113802 -0.01152104  0.02386963] 0.083530284
+ee_position: [ 0.58642333 -0.03504694  0.09816444]
+cube pos: [[ 0.4776984  -0.18862574  0.03184251]]
+cube rpy: [[ 0.07101467 -0.05155199 -0.09261953]]
+robot observations: [[ 0.58642334 -0.03504695  0.09816444  0.07999644]]
 goal cube: [[0.6  0.02 0.03]]
-rewards: [-0.24371669]
+rewards: [-0.24183834]
 
  &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&& eps_i  5 &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&  
-actions: [[ 0.63804626 -0.03280699 -0.94954705  0.33641434]]
-open figger: 0.06728287
-fingers_width: 0.07998265326023102
-set gripper width: 0.14726552
-change fingerswidth: 0.07998265326023102
-ee_rpy: [2.90074901 1.56238724 2.8966004 ]
-action after clip: [ 0.03190231 -0.00164035 -0.04747735] 0.06728287
-ee_position: [ 0.56881582 -0.20435606  0.03315097]
-Time difference 3.051725865
-cube pos: [[ 0.54303455 -0.21692656  0.02947598]]
-cube rpy: [[ 0.0870708  -0.0632724  -0.01456513]]
-robot observations: [[ 0.5688158  -0.20435606  0.03315097  0.07998332]]
+previous cube pos: [[ 0.4776984  -0.18862574  0.03184251]]
+previous robot observations: [[ 0.58642334 -0.03504695  0.09816444  0.07999644]]
+actions: [[-0.81957626 -0.983128    0.56038404  0.76594555]]
+set gripper width: 0.23318622
+action after clip: [-0.04097882 -0.0491564   0.0280192 ] 0.15318911
+ee_position: [ 0.54526999 -0.08393739  0.12551281]
+cube pos: [[ 0.47786993 -0.18806641  0.03150367]]
+cube rpy: [[ 0.06744495 -0.04687756 -0.10249749]]
+robot observations: [[ 0.54526997 -0.08393739  0.12551281  0.07999842]]
 goal cube: [[0.6  0.02 0.03]]
-rewards: [-0.24367915]
+rewards: [-0.24126676]
 
  &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&& eps_i  6 &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&  
-actions: [[-0.2143634  0.9687624  0.651073  -0.6067547]]
-open figger: -0.121350944
-fingers_width: 0.07998331636190414
-set gripper width: -0.041367628
+previous cube pos: [[ 0.47786993 -0.18806641  0.03150367]]
+previous robot observations: [[ 0.54526997 -0.08393739  0.12551281  0.07999842]]
+actions: [[-0.9318803  -0.9875239  -0.3634503   0.73601294]]
+set gripper width: 0.22720101
+action after clip: [-0.04659402 -0.0493762  -0.01817252] 0.1472026
+ee_position: [ 0.49865003 -0.13300615  0.10713835]
+cube pos: [[ 0.47617432 -0.18856573  0.031367  ]]
+cube rpy: [[ 0.07953459 -0.03288668 -0.14751607]]
+robot observations: [[ 0.49865004 -0.13300616  0.10713835  0.07999907]]
+goal cube: [[0.6  0.02 0.03]]
+rewards: [-0.2425579]
+
+ &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&& eps_i  7 &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&  
+previous cube pos: [[ 0.47617432 -0.18856573  0.031367  ]]
+previous robot observations: [[ 0.49865004 -0.13300616  0.10713835  0.07999907]]
+actions: [[-0.7913422  -0.9747623  -0.50348747  0.75245583]]
+set gripper width: 0.23049024
+action after clip: [-0.03956711 -0.04873812 -0.02517437] 0.15049116
+ee_position: [ 0.45917777 -0.18150284  0.08192679]
+cube pos: [[ 0.47840762 -0.18770784  0.03184304]]
+cube rpy: [[ 0.09412001 -0.06799217 -0.06232686]]
+robot observations: [[ 0.45917776 -0.18150285  0.08192679  0.08000039]]
+goal cube: [[0.6  0.02 0.03]]
+rewards: [-0.24068788]
+
+ &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&& eps_i  8 &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&  
+previous cube pos: [[ 0.47840762 -0.18770784  0.03184304]]
+previous robot observations: [[ 0.45917776 -0.18150285  0.08192679  0.08000039]]
+actions: [[ 0.437487   -0.35253227 -0.98265904  0.15844774]]
+set gripper width: 0.11168994
+action after clip: [ 0.02187435 -0.01762661 -0.04913295] 0.03168955
+ee_position: [ 0.480941   -0.19871815  0.03272334]
+cube pos: [[ 0.47812688 -0.19037879  0.03104523]]
+cube rpy: [[ 0.09515081 -0.06981739 -0.06215244]]
+robot observations: [[ 0.480941   -0.19871815  0.03272334  0.08000039]]
+goal cube: [[0.6  0.02 0.03]]
+rewards: [-0.24313244]
+
+ &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&& eps_i  9 &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&  
+previous cube pos: [[ 0.47812688 -0.19037879  0.03104523]]
+previous robot observations: [[ 0.480941   -0.19871815  0.03272334  0.08000039]]
+actions: [[ 0.7542931   0.96097386  0.7412534  -0.8093464 ]]
+set gripper width: -0.08186889
 $$$$$$$$$$$$$$$$ gripping succuss
-change fingerswidth: 0.0641622468829155
-ee_rpy: [2.88672951 1.56180902 2.8824894 ]
-action after clip: [-0.01071817  0.04843812  0.03255365] -0.121350944
+action after clip: [0.03771466 0.04804869 0.03706267] -0.16186927
+ee_position: [ 0.51793239 -0.15059932  0.06883078]
+cube pos: [[ 0.47766083 -0.18930033  0.03167338]]
+cube rpy: [[ 0.07455781 -0.0519253  -0.06211001]]
+robot observations: [[ 0.5179324  -0.15059932  0.06883078  0.0640007 ]]
+goal cube: [[0.6  0.02 0.03]]
+rewards: [-0.24243824]
+
+ &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&& eps_i  10 &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&  
+previous cube pos: [[ 0.47766083 -0.18930033  0.03167338]]
+previous robot observations: [[ 0.5179324  -0.15059932  0.06883078  0.0640007 ]]
+inner_env.robot.gripping_succuss:
 set gripper width: 0.08
+ee_position: [0.59963196 0.019786   0.05965894]
+cube pos: [[ 0.51404685 -0.15019628  0.06604435]]
+cube rpy: [[ 0.10780911 -0.05030479 -0.01250314]]
+robot observations: [[0.59963197 0.019786   0.05965894 0.07977384]]
+goal cube: [[0.6  0.02 0.03]]
+rewards: [-0.19404617]
 set gripper width: 0.0
-Gripping succuss, reset the robot.
+ee_position: [6.38201636e-01 3.64782806e-04 1.97839891e-01]
+reset successful!!!
+
+ &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&& eps_i  0 &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&  
+previous cube pos: [[0.58790576 0.02368901 0.03127782]]
+previous robot observations: [[6.3820165e-01 3.6478281e-04 1.9783989e-01 1.6613667e-04]]
+actions: [[-0.16640604 -0.03304982 -0.70107824  0.5788959 ]]
+set gripper width: 0.11594532
+action after clip: [-0.0083203  -0.00165249 -0.03505391] 0.115779184
+ee_position: [ 0.62970046 -0.00098781  0.16245349]
+cube pos: [[0.58747053 0.02515988 0.0320063 ]]
+cube rpy: [[ 0.08268323 -0.04654313 -0.10999639]]
+robot observations: [[ 0.6297005  -0.00098781  0.16245349  0.07999776]]
+goal cube: [[0.6  0.02 0.03]]
+rewards: [-0.01369807]
+
+ &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&& eps_i  1 &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&  
+previous cube pos: [[0.58747053 0.02515988 0.0320063 ]]
+previous robot observations: [[ 0.6297005  -0.00098781  0.16245349  0.07999776]]
+actions: [[-0.08322525  0.32440162 -0.9616205   0.6090753 ]]
+set gripper width: 0.20181216
+action after clip: [-0.00416126  0.01622008 -0.04808103] 0.12181506
+ee_position: [0.62543494 0.01501268 0.11422724]
+cube pos: [[0.5872462  0.02480877 0.03241645]]
+cube rpy: [[ 0.0845907  -0.04536662 -0.10895686]]
+robot observations: [[0.62543494 0.01501268 0.11422724 0.07999842]]
+goal cube: [[0.6  0.02 0.03]]
+rewards: [-0.01384281]
+
+ &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&& eps_i  2 &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&  
+previous cube pos: [[0.5872462  0.02480877 0.03241645]]
+previous robot observations: [[0.62543494 0.01501268 0.11422724 0.07999842]]
+actions: [[-0.15146816 -0.1049428  -0.9580022   0.5812    ]]
+set gripper width: 0.19623843
+action after clip: [-0.00757341 -0.00524714 -0.04790011] 0.11624
+ee_position: [0.61778358 0.01001295 0.06629215]
+cube pos: [[0.58758956 0.02524382 0.0322879 ]]
+cube rpy: [[ 0.08283551 -0.0459217  -0.1097621 ]]
+robot observations: [[0.6177836  0.01001295 0.06629215 0.07999907]]
+goal cube: [[0.6  0.02 0.03]]
+rewards: [-0.01366569]
+
+ &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&& eps_i  3 &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&  
+previous cube pos: [[0.58758956 0.02524382 0.0322879 ]]
+previous robot observations: [[0.6177836  0.01001295 0.06629215 0.07999907]]
+actions: [[-0.30726904 -0.6398879  -0.6560293   0.19452465]]
+set gripper width: 0.11890401
+libfranka: Move command aborted: motion aborted by reflex! ["cartesian_reflex"]
+control_command_success_rate: 1

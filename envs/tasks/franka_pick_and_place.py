@@ -61,7 +61,7 @@ class PickAndPlace(Task):
         self.prev_trans = None
         self.prev_rot = None
         self.prev_time = rospy.Time.now()
-        self.cube_position_offset = np.array([-0.01, -0.015, 0.015])
+        self.cube_position_offset = np.array([-0.01, -0.01, 0.017])
         
         signal.signal(signal.SIGINT, self.signal_handler)
 
@@ -152,7 +152,7 @@ class PickAndPlace(Task):
             return np.zeros(3), np.zeros(3)
         # Time difference
         dt = (current_time - self.prev_time).to_sec() 
-        print("Time difference", dt)
+        # print("Time difference", dt)
         if dt == 0:
             return np.zeros(3), np.zeros(3)
         # Linear velocity
