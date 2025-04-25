@@ -37,7 +37,7 @@ def get_args():
     parser.add_argument('--config_path',default = '', type=str)
     parser.add_argument('--test_eps_num_per_env',default=100, type=int)
     parser.add_argument('--use_wandb',action="store_true", default=False)
-    parser.add_argument('--wandb_project_name',default = 'skill-aware-rl', type=str)
+    parser.add_argument('--wandb_project_name',default = 'franky-sami', type=str)
     parser.add_argument('--wandb_team_name',default = 'skill-aware-rl', type=str)
 
     args = parser.parse_args()

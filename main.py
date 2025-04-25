@@ -24,6 +24,7 @@ from stable_baselines3.common.vec_env import DummyVecEnv
 ### methods
 from algorithm import get_model
 from test_model import test_model
+from online_data_collect import collect_data
 from parsers import get_args
 
 if __name__ == '__main__':
@@ -67,7 +68,7 @@ if __name__ == '__main__':
         else:   # Test
             model = get_model(manager,causal_keys=hook.causal_keys,max_step_num=max_step)
             model.set_logger(manager.setup_logger())
-            test_model(model, manager, hook)
+            collect_data(model, manager, hook)
         
     except Exception as e:
         print(e)

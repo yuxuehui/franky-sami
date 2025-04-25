@@ -109,15 +109,14 @@ class Manager:
         # wandb
         if self.model_parameters['use_wandb']:
             import wandb
-            self.wandb = wandb
-            check_timeout(self.wandb.init, dict(
+            self.wandb = wandb.init(
                 # set the wandb project where this run will be logged
                 project=self.model_parameters['wandb_project_name'],
                 entity=self.model_parameters['wandb_team_name'],
                 name=self._wandb_name(),
                 # track hyperparameters and run metadata
                 config=self.model_parameters
-            ),20)
+            )
             # 设置超时时间为5秒
             self.wandb.config.log_timeout = 10
         

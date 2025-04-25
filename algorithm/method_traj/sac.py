@@ -282,7 +282,28 @@ class SAC(OffPolicyAlgorithm):
 
         ### Train RL
         # Sample replay buffer
-        replay_data = self.replay_buffer.sample(batch_size, env=self._vec_normalize_env)  # type: ignore[union-attr]
+        replay_data = self.replay_buffer.sample(batch_size, env=self._vec_normalize_env)
+
+        # Log sampled batch statistics
+        if self.logger is not None:
+            with th.no_grad():
+                # Log critic predictions
+                current_q_values = self.critic(observations, replay_data.actions)
+                mean_q = th.cat(current_q_values, dim=1).mean().item()
+                self.logger.record("train/q_value", mean_q)
+                
+                # Log target values
+                next_q_values = th.cat(self.critic_target(next_observations, next_actions), dim=1)
+                mean_target_q = next_q_values.mean().item()
+                self.logger.record("train/target_q_value", mean_target_q)
+                
+                # Log policy outputs
+                actions_pi, log_prob = self.actor.action_log_prob(observations)
+                mean_action = actions_pi.mean().item()
+                mean_log_prob = log_prob.mean().item()
+                self.logger.record("train/actions", mean_action)
+                self.logger.record("train/log_prob", mean_log_prob)
+
         # We need to sample because `log_std` may have changed between two gradient steps
         if self.use_sde:
             self.actor.reset_noise()
@@ -455,5 +476,5 @@ class SAC(OffPolicyAlgorithm):
             state_dicts.append("ent_coef_optimizer")
         else:
             saved_pytorch_variables = ["ent_coef_tensor"]
-        return state_dicts, saved_pytorch_variables\
+        return state_dicts, saved_pytorch_variables
     

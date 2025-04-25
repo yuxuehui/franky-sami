@@ -1,1 +1,51 @@
+# === Python cache and build files ===
+__pycache__/
+*.py[cod]
+*.so
+
+# === Jupyter Notebook checkpoints ===
+.ipynb_checkpoints/
+
+# === Environment folders ===
+.env/
+.venv/
+env/
+venv/
+
+# === IDE and Editor settings ===
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# === OS generated files ===
+.DS_Store
+Thumbs.db
+
+# === Output and log files ===
 output/**/*.log.txt
+output/**/*.log
+output/**/*.txt
+output/**/*.pth
+output/**/*.npz
+output/**/*.npy
+output/**/*.pt
+
+# === Large model or checkpoint files ===
+checkpoints/
+runs/
+logs/
+
+# === Git LFS placeholders (optional, if using LFS) ===
+*.lfs
+
+# === Personal scripts or local debug ===
+*.bak
+*.tmp
+
+# === Compiled C extensions ===
+*.c
+*.cpp
+*.o
+*.out
+*.exe
