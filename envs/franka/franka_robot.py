@@ -79,6 +79,7 @@ class FrankaPanda(PyBulletRobot):
         self.prev_ee_position = None
         self.prev_time = None
 
+
         ######## the PyBulletRobot
         self.fingers_indices = np.array([9, 10])
         self.neutral_joint_values = np.array([0.00, 0.41, 0.00, -1.85, 0.00, 2.26, 0.79, 0.00, 0.00])
@@ -92,34 +93,25 @@ class FrankaPanda(PyBulletRobot):
         """Update[2025/04/10]. Set the action of the robot."""
 
         if self.gripping_succuss:
+            # If the robot is gripping the object, use a specific action
             ee_trans, end_ee_quat, ee_rpy = self.get_ee_position()
             end_action = np.array([0.6,0.02,0.06])
             self.set_ee_pose(end_action, end_ee_quat, asynchronous=asynchronous)
             self.gripping_succuss = False
             self.set_gripper_opening(0.08, asynchronous=asynchronous)
+            # self.set_gripper_grasping(0.08, asynchronous=asynchronous)
             return
 
         action = action.copy()  # ensure action don't change
-    
         action = np.clip(action, self.action_space.low, self.action_space.high)
-
         if self.block_gripper:
             target_fingers_width = 0
         else:
-            # ### set z offset while grasping
-            # if action[-1] < 0.0:
-            #     ### offset 1: robot会在刚刚卡住cube一点点的位置（z=0.06）开始lift，所以需要再real中加一个z方向向下的偏置
-            #     ee_trans, ee_quat, ee_rpy = self.get_ee_position()
-            #     trans = ee_trans + np.array([0.0, 0.0, -0.01])   # limit maximum change in position
-            #     quat = ee_quat
-            #     self.set_ee_pose(trans, quat, asynchronous=asynchronous)
-            #     ee_trans, ee_quat, ee_rpy = self.get_ee_position()
-            #     print("offset ee position:", ee_trans)
-
             fingers_ctrl = action[-1] * 0.2  # limit maximum change in position
             fingers_width = self.get_fingers_width()
             target_fingers_width = fingers_width + fingers_ctrl
             self.set_gripper_opening(target_fingers_width, asynchronous=asynchronous)
+            # self.set_gripper_grasping(target_fingers_width, asynchronous=asynchronous)
 
         if self.control_type == "ee":
             # method 1: set ee pose all together
@@ -127,6 +119,9 @@ class FrankaPanda(PyBulletRobot):
             ee_trans, ee_quat, ee_rpy = self.get_ee_position()
             trans = ee_trans + ee_displacement[:3] * 0.05  # limit maximum change in position
             quat = ee_quat
+            # protect the ee from going through the table
+            if trans[2] < 0.0:
+                trans[2] = 0.01
             self.set_ee_pose(trans, quat, asynchronous=asynchronous)
             # self.set_sora_pose(trans, quat, asynchronous=asynchronous)
         else:
@@ -195,15 +190,11 @@ class FrankaPanda(PyBulletRobot):
 
     def set_ee_pose(self, translation, quaternion, asynchronous=True):
         shifted_translation = translation - self.pose_shift
-        # if shifted_translation[-1] < 0.02:
-        #     shifted_translation[-1] = 0.02
         motion = CartesianMotion(Affine(shifted_translation, quaternion))
         self.robot.move(motion, asynchronous=asynchronous)
 
     def set_sora_pose(self, ee_trans, ee_quat, asynchronous=False):
         target_ee_trans = ee_trans - self.pose_shift
-        # if target_ee_trans[-1] < 0.02:
-        #     target_ee_trans[-1] = 0.02
         target_ee_quat = ee_quat
         current_ee_trans = self.robot.current_pose.end_effector_pose.translation
         current_ee_quat = self.robot.current_pose.end_effector_pose.quaternion
@@ -224,18 +215,31 @@ class FrankaPanda(PyBulletRobot):
         print("set gripper width:", width)
         ### offset 2: 避免发生碰撞
         if self.gripping_succuss:
-            print("$$$$$$$$$$$$$$$$ moving to goal")
             return
         ee_trans, ee_quat, ee_rpy = self.get_ee_position()
         if width < 0.060 and not reset_flag and not self.gripping_succuss and ee_trans[-1] < 0.055:
             width = 0.064
             self.gripping_succuss = True
-            print("$$$$$$$$$$$$$$$$ gripping succuss")
-
+            print("gripping_succuss")
         if asynchronous:
             self.gripper.move_async(width, 0.03)
         else:
             self.gripper.move(width, 0.03)
+        
+    def set_gripper_grasping(self, width, reset_flag = False, asynchronous=False):
+        """commanding the gripper to grasp an object of unknown width, at a specified speed (0.03 m/s, or 3 cm/s)."""
+        print("set gripper width:", width)
+        if self.gripping_succuss:
+            return
+        ee_trans, ee_quat, ee_rpy = self.get_ee_position()
+        if width < 0.060 and not reset_flag and not self.gripping_succuss and ee_trans[-1] < 0.055:
+            self.gripping_succuss = True
+            print("gripping_succuss")
+            self.gripper.grasp(0.0, 0.03, 20.0, epsilon_outer=1.0)
+        else:
+            self.gripper.open(0.03)
+        
+        
 
     def reset(self) -> None:
         """Update[2025/04/10]. Reset the robot to its default state."""

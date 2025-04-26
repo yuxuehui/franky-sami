@@ -1,7 +1,7 @@
 friction:1,mass:1:
   eps_states:
   - rrrrrf
-  - rrrrrrrrrrrf
+  - rrrrrrf
   pick_and_place_rate: 0.0
   push_rate: 0.0
   roll_rate: 0.9950248756218907

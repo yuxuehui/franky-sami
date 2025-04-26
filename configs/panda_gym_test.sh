@@ -63,3 +63,5 @@ python main.py --env_name PandaPush-v3  --env_hook PandaHook  --method SaCCM  --
 
 
 python main.py --env_name PandaPush-v3  --env_hook PandaHook  --method SaCCM --use_wandb --config_path "/home/xi/yxh_space/SaMI/SaMI/output/PandaPush_obs22_object_size_6cm/SaCCM_trainenv_1_mix"
+
+python main.py --env_name PandaPush-v3  --env_hook PandaHook  --method SaCCM --config_path "/home/xi/yxh_space/SaMI/SaMI/output/PandaPush_obs22_object_size_6cm/SaCCM_trainenv_mix"
