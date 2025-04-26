@@ -82,14 +82,38 @@ def collect_data(model, manager:Manager, hook, time_steps=-1):
                 inner_env = test_env.envs[0] if hasattr(test_env, "envs") else test_env
                 if inner_env.robot.gripping_succuss:
                     
-                    ee_pos_bound_low = observations['observation'][:,4].copy() - 0.05
-                    ee_pos_bound_high = observations['observation'][:,4].copy() + 0.05
-                    pos = observations['observation'][0, 0].copy() # robot pos
-                    if pos < ee_pos_bound_low or pos > ee_pos_bound_high:
+                    ee_pos_bound_low_x = observations['observation'][:,4].copy() - 0.055
+                    ee_pos_bound_high_x = observations['observation'][:,4].copy() + 0.06
+                    pos_x = observations['observation'][0, 0].copy() # robot pos
+                    ee_pos_bound_low_y = observations['observation'][:,5].copy() - 0.02
+                    ee_pos_bound_high_y = observations['observation'][:,5].copy() + 0.02
+                    pos_y = observations['observation'][0, 1].copy() - 0.05 # robot pos
+                    pos_z = observations['observation'][0, 2].copy() # robot pos z
+                    ee_pos_bound_low_z = observations['observation'][:,6].copy()
+                    print("pos_x:", pos_x)
+                    print("pos_y:", pos_y)
+                    print("ee_pos_bound_low_x:", ee_pos_bound_low_x)
+                    print("ee_pos_bound_high_x:", ee_pos_bound_high_x)
+                    print("ee_pos_bound_low_y:", ee_pos_bound_low_y)
+                    print("ee_pos_bound_high_y:", ee_pos_bound_high_y)
+                    print("pos_z:", pos_z)
+                    print("ee_pos_bound_low_z:", ee_pos_bound_low_z)
+                    # Check if the robot's position is within the bounds
+                    if pos_x < ee_pos_bound_low_x or pos_x > ee_pos_bound_high_x:
                         # If it's a wrong success signal
-                        print("pos:", pos)
-                        print("ee_pos_bound_low:", ee_pos_bound_low)
-                        print("ee_pos_bound_high:", ee_pos_bound_high)
+                        print("pos:", pos_x)
+                        print("ee_pos_bound_low:", ee_pos_bound_low_x)
+                        print("ee_pos_bound_high:", ee_pos_bound_high_x)
+                        inner_env.robot.gripping_succuss = False
+                    elif pos_y < ee_pos_bound_low_y or pos_y > ee_pos_bound_high_y:
+                        # If it's a wrong success signal
+                        print("pos_y:", pos_y)
+                        print("ee_pos_bound_low_y:", ee_pos_bound_low_y)
+                        print("ee_pos_bound_high_y:", ee_pos_bound_high_y)
+                        inner_env.robot.gripping_succuss = False
+                    elif (pos_z - ee_pos_bound_low_z) > 0.03:
+                        print("pos_z:", pos_z)
+                        print("ee_pos_bound_low_z:", ee_pos_bound_low_z)
                         inner_env.robot.gripping_succuss = False
                     else:
                         # If the robot is gripping the object, use a specific action
@@ -113,6 +137,7 @@ def collect_data(model, manager:Manager, hook, time_steps=-1):
                     prev_observations = copy.deepcopy(observations)
                     observations, rewards, dones, infos = test_env.step(actions)
                     observations = next_observation(model,prev_observations,actions,observations, dones)
+
 
                 # Log metrics to wandb if enabled
                 if manager.model_parameters['use_wandb']:

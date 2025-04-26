@@ -1,7 +1,7 @@
 {
   "os": "Linux-5.15.107-rt62-x86_64-with-glibc2.31",
   "python": "CPython 3.10.16",
-  "startedAt": "2025-04-25T10:39:02.642216Z",
+  "startedAt": "2025-04-26T12:23:38.473417Z",
   "args": [
     "--env_name",
     "PandaPush-v3",
@@ -17,7 +17,7 @@
   "codePath": "main.py",
   "git": {
     "remote": "git@github.com:yuxuehui/franky-sami.git",
-    "commit": "38f58a55bdf9efd818911b04601bbab6d717af14"
+    "commit": "f053edfa51395509b95795bb79118d805884b942"
   },
   "email": "1170574199@qq.com",
   "root": "/home/xi/yxh_space/SaMI/SaMI",
@@ -31,7 +31,7 @@
   "disk": {
     "/": {
       "total": "1967317549056",
-      "used": "614862626816"
+      "used": "615030837248"
     }
   },
   "memory": {
