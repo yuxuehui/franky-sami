@@ -98,8 +98,9 @@ class FrankaPanda(PyBulletRobot):
             end_action = np.array([0.6,0.02,0.06])
             self.set_ee_pose(end_action, end_ee_quat, asynchronous=asynchronous)
             self.gripping_succuss = False
-            self.set_gripper_opening(0.08, asynchronous=asynchronous)
-            # self.set_gripper_grasping(0.08, asynchronous=asynchronous)
+            # self.set_gripper_opening(0.08, asynchronous=asynchronous)
+            self.set_gripper_grasping(0.08, asynchronous=asynchronous)
+            time.sleep(0.5)
             return
 
         action = action.copy()  # ensure action don't change
@@ -110,8 +111,8 @@ class FrankaPanda(PyBulletRobot):
             fingers_ctrl = action[-1] * 0.2  # limit maximum change in position
             fingers_width = self.get_fingers_width()
             target_fingers_width = fingers_width + fingers_ctrl
-            self.set_gripper_opening(target_fingers_width, asynchronous=asynchronous)
-            # self.set_gripper_grasping(target_fingers_width, asynchronous=asynchronous)
+            # self.set_gripper_opening(target_fingers_width, asynchronous=asynchronous)
+            self.set_gripper_grasping(target_fingers_width, asynchronous=asynchronous)
 
         if self.control_type == "ee":
             # method 1: set ee pose all together
@@ -215,6 +216,7 @@ class FrankaPanda(PyBulletRobot):
         print("set gripper width:", width)
         ### offset 2: 避免发生碰撞
         if self.gripping_succuss:
+            # time.sleep(0.5) # wait for the cube data
             return
         ee_trans, ee_quat, ee_rpy = self.get_ee_position()
         if width < 0.060 and not reset_flag and not self.gripping_succuss and ee_trans[-1] < 0.055:
@@ -230,12 +232,17 @@ class FrankaPanda(PyBulletRobot):
         """commanding the gripper to grasp an object of unknown width, at a specified speed (0.03 m/s, or 3 cm/s)."""
         print("set gripper width:", width)
         if self.gripping_succuss:
+            # time.sleep(0.5)
             return
         ee_trans, ee_quat, ee_rpy = self.get_ee_position()
         if width < 0.060 and not reset_flag and not self.gripping_succuss and ee_trans[-1] < 0.055:
             self.gripping_succuss = True
             print("gripping_succuss")
-            self.gripper.grasp(0.0, 0.03, 20.0, epsilon_outer=1.0)
+            self.gripper.grasp(0.0, 0.03, 10.0, epsilon_outer=0.06) 
+            # epsilon_outer=0.07 very tight!
+            # epsilon_outer=0.05 very loose!
+            # epsilon_outer=0.01 very loose!
+
         else:
             self.gripper.open(0.03)
         
