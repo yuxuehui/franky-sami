@@ -62,7 +62,7 @@ class PickAndPlace(Task):
         self.prev_rot = None
         self.prev_time = rospy.Time.now()
         self.cube_position_offset = np.array([0.01, -0.01, 0.015])
-        # self.cube_position_offset = np.array([-0.01, -0.01, 0.017])
+        # self.cube_position_offset = np.array([0.01, -0.01, 0.017])
         
         signal.signal(signal.SIGINT, self.signal_handler)
 
@@ -142,6 +142,8 @@ class PickAndPlace(Task):
         object_velocity, object_angular_velocity = self.compute_velocity(object_position, object_rotation, current_time)
         # observation = np.concatenate([object_position, cube_ee_rpy, object_velocity, object_angular_velocity])
         observation = np.concatenate([object_position, cube_ee_rpy])
+        if object_position[2] < 0.03:
+            object_position[2] = 0.03
         # observation = np.concatenate([object_position, np.array([0.0, 0.0, 0.0])])
         return observation
     
