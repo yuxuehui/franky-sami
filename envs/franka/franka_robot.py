@@ -100,7 +100,7 @@ class FrankaPanda(PyBulletRobot):
             self.gripping_succuss = False
             # self.set_gripper_opening(0.08, asynchronous=asynchronous)
             self.set_gripper_grasping(0.08, asynchronous=asynchronous)
-            time.sleep(0.5)
+            # time.sleep(0.5)
             return
 
         action = action.copy()  # ensure action don't change
@@ -129,7 +129,7 @@ class FrankaPanda(PyBulletRobot):
             raise NotImplementedError("Joint control is not implemented yet.")
 
         print("action after clip:", ee_displacement[:3] * 0.05, action[-1] * 0.2)
-        time.sleep(0.5)
+        # time.sleep(0.5)
         
 
 
@@ -245,6 +245,8 @@ class FrankaPanda(PyBulletRobot):
 
         else:
             self.gripper.open(0.03)
+        
+
         
         
 
