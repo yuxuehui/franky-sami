@@ -1,4 +1,6 @@
-
+"""
+This script rewrites the config.yaml file in the output folder. Used for testing.
+"""
 import os
 import glob
 import argparse

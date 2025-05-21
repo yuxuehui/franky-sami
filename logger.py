@@ -13,6 +13,8 @@ import datetime
 import logging
 import zipfile
 import sys
+import wandb  # Add this at the top of the file with other imports
+
 
 # os.environ["WANDB_MODE"] = "offline" # wandb离线
 # os.environ["WANDB_MODE"] = "dryrun"
@@ -288,7 +290,21 @@ class Manager:
         # 你还有一个目标数组y，它包含数据点的类标签
         # alpha[:] = 1
         # 创建t-SNE模型
-        tsne = TSNE(n_components=2, random_state=42)
+        # Data validation
+        n_samples = X.shape[0]
+        if n_samples < 30:
+            perplexity = min(n_samples - 1, 5)  # Set small perplexity for very small datasets
+        else:
+            perplexity = min(30, n_samples - 1)  # Default is 30, but ensure it's less than n_samples
+
+        # Create t-SNE model with adjusted perplexity
+        tsne = TSNE(
+            n_components=2, 
+            random_state=42,
+            perplexity=perplexity
+        )
+
+        # tsne = TSNE(n_components=2, random_state=42)
         # 使用fit_transform方法将特征矩阵X转换为二维
         X_embedded = tsne.fit_transform(X)
 
@@ -311,7 +327,7 @@ class Manager:
         plt.legend(handles=[plt.Line2D([0], [0], marker='o', color='w', markerfacecolor=color_list[i], markersize=8) for i in range(len(class_names))], labels=class_names)
         if self.model_parameters['use_wandb']:
             # 将图表记录到W&B
-            check_timeout(self.wandb.log, dict(data={"tsne": self.wandb.Image(plt)}))
+            check_timeout(self.wandb.log, dict(data={"tsne": wandb.Image(plt)}))
             # 关闭图表
         plt.savefig(self.test_tsne_path, dpi=300)
         plt.clf()
@@ -327,7 +343,7 @@ class Manager:
         plt.legend(handles=[plt.Line2D([0], [0], marker='o', color='w', markerfacecolor=color_list[i], markersize=8) for i in range(len(class_names))], labels=class_names)
         if self.model_parameters['use_wandb']:
             # 将图表记录到W&B
-            check_timeout(self.wandb.log, dict(data={"pca": self.wandb.Image(plt)}))
+            check_timeout(self.wandb.log, dict(data={"pca": wandb.Image(plt)}))
             # 关闭图表
         plt.savefig(self.test_tsne_path.replace('tsne','pca'), dpi=300)
         plt.clf()

@@ -91,12 +91,12 @@ def test_model(model, manager:Manager, hook, time_steps=-1):
                 print("rewards:", rewards)
                     
 
-                # if ((eps_i+1) % 2 ==0 or dones) and 'hidden_h' in observations:
-                if (dones) and 'hidden_h' in observations:
+                if ((eps_i+1) % 2 ==0 or dones) and 'hidden_h' in observations: # used for plot all steps
+                # if (dones) and 'hidden_h' in observations: # used for plot the last step
                     tsne_x.append(observations['causal'])
                     tsne_y.append(env_i)
-                    tsne_alpha.append(1.0)
-                    # tsne_alpha.append(min(eps_i/hook.max_step_num * 5, 1.0))
+                    # tsne_alpha.append(1.0) # used for plot the last step
+                    tsne_alpha.append(min(eps_i/hook.max_step_num * 5, 1.0)) # used for plot all steps, alpha value controls the transparency
                     class_name = hook.encoder_env_info(_env_info)
                     if class_name not in tsne_c:
                         tsne_c.append(class_name)
@@ -127,8 +127,8 @@ def test_model(model, manager:Manager, hook, time_steps=-1):
         sys.stdout.flush()
         test_env.close()
 
-    # if len(tsne_x) > 0: # 绘制tsne
-    #     manager.plot_scatter(np.concatenate(tsne_x,axis=0),np.array(tsne_y),tsne_c,np.array(tsne_alpha))
+    if len(tsne_x) > 0: # 绘制tsne
+        manager.plot_scatter(np.concatenate(tsne_x,axis=0),np.array(tsne_y),tsne_c,np.array(tsne_alpha))
     # ###########hook end###########
     hook.end_hook(manager, time_steps)
     # ###########hook end###########

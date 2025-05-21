@@ -282,28 +282,7 @@ class SAC(OffPolicyAlgorithm):
 
         ### Train RL
         # Sample replay buffer
-        replay_data = self.replay_buffer.sample(batch_size, env=self._vec_normalize_env)
-
-        # Log sampled batch statistics
-        if self.logger is not None:
-            with th.no_grad():
-                # Log critic predictions
-                current_q_values = self.critic(observations, replay_data.actions)
-                mean_q = th.cat(current_q_values, dim=1).mean().item()
-                self.logger.record("train/q_value", mean_q)
-                
-                # Log target values
-                next_q_values = th.cat(self.critic_target(next_observations, next_actions), dim=1)
-                mean_target_q = next_q_values.mean().item()
-                self.logger.record("train/target_q_value", mean_target_q)
-                
-                # Log policy outputs
-                actions_pi, log_prob = self.actor.action_log_prob(observations)
-                mean_action = actions_pi.mean().item()
-                mean_log_prob = log_prob.mean().item()
-                self.logger.record("train/actions", mean_action)
-                self.logger.record("train/log_prob", mean_log_prob)
-
+        replay_data = self.replay_buffer.sample(batch_size, env=self._vec_normalize_env)  # type: ignore[union-attr]
         # We need to sample because `log_std` may have changed between two gradient steps
         if self.use_sde:
             self.actor.reset_noise()
@@ -419,6 +398,480 @@ class SAC(OffPolicyAlgorithm):
         self.encoder_losses = []
         self.weights = []
 
+    def _train_add_actor_loss_to_encoder(self,gradient_step,batch_size):
+        ###  Train Encoder
+        if self.contrast_batch_size > 0 and gradient_step % self.contrast_training_interval ==0:
+            replay_data = self.replay_buffer.sample_contrast(self.contrast_batch_size)  # type: ignore[union-attr]
+            loss_fn = InfoNCE()
+            pt, pr, pd, nt, nr, nd = replay_data.pos_trajectories, replay_data.pos_trajectory_rewards, replay_data.pos_trajectory_dones, \
+                                     replay_data.neg_trajectories, replay_data.neg_trajectory_rewards, replay_data.neg_trajectory_dones
+            encoder_loss = []
+            weights = []
+            for positive_traj, positive_reward, positive_done, negative_traj, negative_reward, negative_done in zip(pt, pr, pd, nt, nr, nd):
+                weight = positive_reward.mean() - negative_reward.mean()
+                weight = th.clip(self.adversarial_loss_coef*weight,0.0,1.0)
+                query = self.encoder(positive_traj)
+                with th.no_grad():
+                    positive_key = self.encoder_target(positive_traj)
+                    negative_key = self.encoder_target(negative_traj)
+                query = query * (1-positive_done.unsqueeze(-1))
+                positive_key = positive_key * (1-positive_done.unsqueeze(-1))
+                negative_key = negative_key * (1-negative_done.unsqueeze(-1))
+                B,L = query.shape[:2]
+                B2,L2 = negative_key.shape[:2]
+                query = query.reshape(B*L,-1)
+                positive_key = positive_key.reshape(B*L,-1)
+                negative_key = negative_key.reshape(B2*L2,-1)
+                if self.use_weighted_info_nce:
+                    positive_key = self.encoder.weight_info_nce(positive_key)
+                    negative_key = self.encoder.weight_info_nce(negative_key)
+                
+                encoder_loss.append(weight * loss_fn(query, positive_key, negative_key))
+                weights.append(weight)
+
+            encoder_loss = th.stack(encoder_loss).mean()
+            self.encoder.optimizer.zero_grad()
+            encoder_loss.backward()
+            self.encoder.optimizer.step()
+            weights = th.stack(weights).mean()
+        else:
+            encoder_loss = th.tensor(0.0)
+            weights =th.tensor(0.0)
+        
+
+        ### Train RL
+        # Sample replay buffer
+        replay_data = self.replay_buffer.sample(batch_size, env=self._vec_normalize_env)
+
+        # We need to sample because `log_std` may have changed between two gradient steps
+        if self.use_sde:
+            self.actor.reset_noise()
+        causal_observations = self._process_obs(replay_data.observations,add_causal=False,add_action=True)
+
+        zeros_pad = th.zeros(batch_size, 1, device=replay_data.dones.device)
+        pad_dones = th.concatenate((zeros_pad, replay_data.dones[:,:,0]),dim=1)
+        select_ids= th.where(pad_dones == 0)
+
+        causal = self.encoder(causal_observations)[:, :-1]
+        next_causal = self.encoder_target(causal_observations)[:, 1:]
+
+        causal = causal[select_ids[0], select_ids[1]]
+        next_causal = next_causal[select_ids[0], select_ids[1]]
+        
+        _observations = self._process_obs(replay_data.observations)
+        # Action by the current actor for the sampled state
+        
+        observations = {}
+        next_observations = {}
+        for key in _observations:
+            observations[key] = _observations[key][:, :-1]
+            observations[key] = observations[key][select_ids[0], select_ids[1]]
+            next_observations[key] = _observations[key][:, 1:]
+            next_observations[key] = next_observations[key][select_ids[0], select_ids[1]]
+        observations['causal'] = causal.detach()
+
+        actions_pi, log_prob = self.actor.action_log_prob(observations)
+        log_prob = log_prob.reshape(-1, 1)
+
+        ent_coef_loss = None
+        if self.ent_coef_optimizer is not None and self.log_ent_coef is not None:
+            # Important: detach the variable from the graph
+            # so we don't change it with other losses
+            # see https://github.com/rail-berkeley/softlearning/issues/60
+            ent_coef = th.exp(self.log_ent_coef.detach())
+            ent_coef_loss = -(self.log_ent_coef * (log_prob + self.target_entropy).detach()).mean()
+            self.ent_coef_losses.append(ent_coef_loss.item())
+        else:
+            ent_coef = self.ent_coef_tensor
+
+        self.ent_coefs.append(ent_coef.item())
+
+        # Optimize entropy coefficient, also called
+        # entropy temperature or alpha in the paper
+        if ent_coef_loss is not None and self.ent_coef_optimizer is not None:
+            self.ent_coef_optimizer.zero_grad()
+            ent_coef_loss.backward()
+            self.ent_coef_optimizer.step()
+
+        with th.no_grad():
+            # Select action according to policy
+            next_observations['causal'] = next_causal
+            next_actions, next_log_prob = self.actor.action_log_prob(next_observations)
+            # Compute the next Q values: min over all critics targets
+            next_q_values = th.cat(self.critic_target(next_observations, next_actions), dim=1)
+            next_q_values, _ = th.min(next_q_values, dim=1, keepdim=True)
+            # add entropy term
+            next_q_values = next_q_values - ent_coef * next_log_prob.reshape(-1, 1)
+            # td error + entropy term
+            rewards = replay_data.rewards[select_ids[0], select_ids[1]]
+            dones = replay_data.dones[select_ids[0], select_ids[1]]
+            target_q_values = rewards + (1 - dones) * self.gamma * next_q_values
+
+        # Get current Q-values estimates for each critic network
+        # using action from the replay buffer
+        observations['causal'] = causal
+        current_q_values = self.critic(observations, replay_data.actions[select_ids[0], select_ids[1]])
+
+        # Compute critic loss 
+        critic_loss = 0.5 * sum(F.mse_loss(current_q, target_q_values) for current_q in current_q_values)
+        assert isinstance(critic_loss, th.Tensor)  # for type checker
+
+        # Clear gradients before computing new ones
+        self.encoder.optimizer.zero_grad()
+        self.critic.optimizer.zero_grad()
+        # Compute new gradients
+        # (encoder_loss + critic_loss).backward()
+        critic_loss.backward()
+        # Apply gradients in optimization step
+        self.critic.optimizer.step()
+        self.encoder.optimizer.step()
+
+        # Compute actor loss
+        # Alternative: actor_loss = th.mean(log_prob - qf1_pi)
+        # Min over all critic networks
+        for key in observations:
+            observations[key] = observations[key].detach()
+        q_values_pi = th.cat(self.critic(observations, actions_pi), dim=1)
+        min_qf_pi, _ = th.min(q_values_pi, dim=1, keepdim=True)
+        actor_loss = (ent_coef * log_prob - min_qf_pi).mean()
+
+        # Optimize the actor
+        self.encoder.optimizer.zero_grad()
+        self.actor.optimizer.zero_grad()
+        actor_loss.backward()
+        self.actor.optimizer.step()
+        self.encoder.optimizer.step()
+
+        self.actor_losses.append(actor_loss.detach().item())
+        self.critic_losses.append(critic_loss.detach().item())  # type: ignore[union-attr]
+        self.encoder_losses.append(encoder_loss.detach().item())
+        self.weights.append(weights.detach().item())
+        # Update target networks
+        if gradient_step % self.target_update_interval == 0:
+            polyak_update(self.critic.parameters(), self.critic_target.parameters(), self.tau)
+            # Copy running stats, see GH issue #996
+            polyak_update(self.batch_norm_stats, self.batch_norm_stats_target, 1.0)
+        if gradient_step % self.target_encoder_update_interval == 0:
+            polyak_update(self.encoder.parameters(), self.encoder_target.parameters(), self.encoder_tau)
+    
+
+
+    def _train_only_use_acotr_loss_to_encoder(self,gradient_step,batch_size):
+        ###  Train Encoder
+        if self.contrast_batch_size > 0 and gradient_step % self.contrast_training_interval ==0:
+            replay_data = self.replay_buffer.sample_contrast(self.contrast_batch_size)  # type: ignore[union-attr]
+            loss_fn = InfoNCE()
+            pt, pr, pd, nt, nr, nd = replay_data.pos_trajectories, replay_data.pos_trajectory_rewards, replay_data.pos_trajectory_dones, \
+                                     replay_data.neg_trajectories, replay_data.neg_trajectory_rewards, replay_data.neg_trajectory_dones
+            encoder_loss = []
+            weights = []
+            for positive_traj, positive_reward, positive_done, negative_traj, negative_reward, negative_done in zip(pt, pr, pd, nt, nr, nd):
+                weight = positive_reward.mean() - negative_reward.mean()
+                weight = th.clip(self.adversarial_loss_coef*weight,0.0,1.0)
+                query = self.encoder(positive_traj)
+                with th.no_grad():
+                    positive_key = self.encoder_target(positive_traj)
+                    negative_key = self.encoder_target(negative_traj)
+                query = query * (1-positive_done.unsqueeze(-1))
+                positive_key = positive_key * (1-positive_done.unsqueeze(-1))
+                negative_key = negative_key * (1-negative_done.unsqueeze(-1))
+                B,L = query.shape[:2]
+                B2,L2 = negative_key.shape[:2]
+                query = query.reshape(B*L,-1)
+                positive_key = positive_key.reshape(B*L,-1)
+                negative_key = negative_key.reshape(B2*L2,-1)
+                if self.use_weighted_info_nce:
+                    positive_key = self.encoder.weight_info_nce(positive_key)
+                    negative_key = self.encoder.weight_info_nce(negative_key)
+                
+                encoder_loss.append(weight * loss_fn(query, positive_key, negative_key))
+                weights.append(weight)
+
+            encoder_loss = th.stack(encoder_loss).mean()
+            self.encoder.optimizer.zero_grad()
+            encoder_loss.backward()
+            self.encoder.optimizer.step()
+            weights = th.stack(weights).mean()
+        else:
+            encoder_loss = th.tensor(0.0)
+            weights =th.tensor(0.0)
+        
+
+        ### Train RL
+        # Sample replay buffer
+        replay_data = self.replay_buffer.sample(batch_size, env=self._vec_normalize_env)
+
+        # We need to sample because `log_std` may have changed between two gradient steps
+        if self.use_sde:
+            self.actor.reset_noise()
+        causal_observations = self._process_obs(replay_data.observations,add_causal=False,add_action=True)
+
+        zeros_pad = th.zeros(batch_size, 1, device=replay_data.dones.device)
+        pad_dones = th.concatenate((zeros_pad, replay_data.dones[:,:,0]),dim=1)
+        select_ids= th.where(pad_dones == 0)
+
+        causal = self.encoder(causal_observations)[:, :-1]
+        next_causal = self.encoder_target(causal_observations)[:, 1:]
+
+        causal = causal[select_ids[0], select_ids[1]]
+        next_causal = next_causal[select_ids[0], select_ids[1]]
+        
+        _observations = self._process_obs(replay_data.observations)
+        # Action by the current actor for the sampled state
+        
+        observations = {}
+        next_observations = {}
+        for key in _observations:
+            observations[key] = _observations[key][:, :-1]
+            observations[key] = observations[key][select_ids[0], select_ids[1]]
+            next_observations[key] = _observations[key][:, 1:]
+            next_observations[key] = next_observations[key][select_ids[0], select_ids[1]]
+        observations['causal'] = causal.detach()
+
+        actions_pi, log_prob = self.actor.action_log_prob(observations)
+        log_prob = log_prob.reshape(-1, 1)
+
+        ent_coef_loss = None
+        if self.ent_coef_optimizer is not None and self.log_ent_coef is not None:
+            # Important: detach the variable from the graph
+            # so we don't change it with other losses
+            # see https://github.com/rail-berkeley/softlearning/issues/60
+            ent_coef = th.exp(self.log_ent_coef.detach())
+            ent_coef_loss = -(self.log_ent_coef * (log_prob + self.target_entropy).detach()).mean()
+            self.ent_coef_losses.append(ent_coef_loss.item())
+        else:
+            ent_coef = self.ent_coef_tensor
+
+        self.ent_coefs.append(ent_coef.item())
+
+        # Optimize entropy coefficient, also called
+        # entropy temperature or alpha in the paper
+        if ent_coef_loss is not None and self.ent_coef_optimizer is not None:
+            self.ent_coef_optimizer.zero_grad()
+            ent_coef_loss.backward()
+            self.ent_coef_optimizer.step()
+
+        with th.no_grad():
+            # Select action according to policy
+            next_observations['causal'] = next_causal
+            next_actions, next_log_prob = self.actor.action_log_prob(next_observations)
+            # Compute the next Q values: min over all critics targets
+            next_q_values = th.cat(self.critic_target(next_observations, next_actions), dim=1)
+            next_q_values, _ = th.min(next_q_values, dim=1, keepdim=True)
+            # add entropy term
+            next_q_values = next_q_values - ent_coef * next_log_prob.reshape(-1, 1)
+            # td error + entropy term
+            rewards = replay_data.rewards[select_ids[0], select_ids[1]]
+            dones = replay_data.dones[select_ids[0], select_ids[1]]
+            target_q_values = rewards + (1 - dones) * self.gamma * next_q_values
+
+        # Get current Q-values estimates for each critic network
+        # using action from the replay buffer
+        observations['causal'] = causal
+        current_q_values = self.critic(observations, replay_data.actions[select_ids[0], select_ids[1]])
+
+        # Compute critic loss 
+        critic_loss = 0.5 * sum(F.mse_loss(current_q, target_q_values) for current_q in current_q_values)
+        assert isinstance(critic_loss, th.Tensor)  # for type checker
+
+        # Clear gradients before computing new ones
+        # self.encoder.optimizer.zero_grad()
+        self.critic.optimizer.zero_grad()
+        # Compute new gradients
+        # (encoder_loss + critic_loss).backward()
+        critic_loss.backward()
+        # Apply gradients in optimization step
+        # self.critic.optimizer.step()
+        self.encoder.optimizer.step()
+
+        # Compute actor loss
+        # Alternative: actor_loss = th.mean(log_prob - qf1_pi)
+        # Min over all critic networks
+        for key in observations:
+            observations[key] = observations[key].detach()
+        q_values_pi = th.cat(self.critic(observations, actions_pi), dim=1)
+        min_qf_pi, _ = th.min(q_values_pi, dim=1, keepdim=True)
+        actor_loss = (ent_coef * log_prob - min_qf_pi).mean()
+
+        # Optimize the actor
+        self.encoder.optimizer.zero_grad()
+        self.actor.optimizer.zero_grad()
+        actor_loss.backward()
+        self.actor.optimizer.step()
+        self.encoder.optimizer.step()
+
+        self.actor_losses.append(actor_loss.detach().item())
+        self.critic_losses.append(critic_loss.detach().item())  # type: ignore[union-attr]
+        self.encoder_losses.append(encoder_loss.detach().item())
+        self.weights.append(weights.detach().item())
+        # Update target networks
+        if gradient_step % self.target_update_interval == 0:
+            polyak_update(self.critic.parameters(), self.critic_target.parameters(), self.tau)
+            # Copy running stats, see GH issue #996
+            polyak_update(self.batch_norm_stats, self.batch_norm_stats_target, 1.0)
+        if gradient_step % self.target_encoder_update_interval == 0:
+            polyak_update(self.encoder.parameters(), self.encoder_target.parameters(), self.encoder_tau)
+    
+    def _train_only_use_entropy_loss_to_encoder(self,gradient_step,batch_size):
+        ###  Train Encoder
+        if self.contrast_batch_size > 0 and gradient_step % self.contrast_training_interval ==0:
+            replay_data = self.replay_buffer.sample_contrast(self.contrast_batch_size)  # type: ignore[union-attr]
+            loss_fn = InfoNCE()
+            pt, pr, pd, nt, nr, nd = replay_data.pos_trajectories, replay_data.pos_trajectory_rewards, replay_data.pos_trajectory_dones, \
+                                     replay_data.neg_trajectories, replay_data.neg_trajectory_rewards, replay_data.neg_trajectory_dones
+            encoder_loss = []
+            weights = []
+            for positive_traj, positive_reward, positive_done, negative_traj, negative_reward, negative_done in zip(pt, pr, pd, nt, nr, nd):
+                weight = positive_reward.mean() - negative_reward.mean()
+                weight = th.clip(self.adversarial_loss_coef*weight,0.0,1.0)
+                query = self.encoder(positive_traj)
+                with th.no_grad():
+                    positive_key = self.encoder_target(positive_traj)
+                    negative_key = self.encoder_target(negative_traj)
+                query = query * (1-positive_done.unsqueeze(-1))
+                positive_key = positive_key * (1-positive_done.unsqueeze(-1))
+                negative_key = negative_key * (1-negative_done.unsqueeze(-1))
+                B,L = query.shape[:2]
+                B2,L2 = negative_key.shape[:2]
+                query = query.reshape(B*L,-1)
+                positive_key = positive_key.reshape(B*L,-1)
+                negative_key = negative_key.reshape(B2*L2,-1)
+                if self.use_weighted_info_nce:
+                    positive_key = self.encoder.weight_info_nce(positive_key)
+                    negative_key = self.encoder.weight_info_nce(negative_key)
+                
+                encoder_loss.append(weight * loss_fn(query, positive_key, negative_key))
+                weights.append(weight)
+
+            encoder_loss = th.stack(encoder_loss).mean()
+            self.encoder.optimizer.zero_grad()
+            encoder_loss.backward()
+            self.encoder.optimizer.step()
+            weights = th.stack(weights).mean()
+        else:
+            encoder_loss = th.tensor(0.0)
+            weights =th.tensor(0.0)
+        
+
+        ### Train RL
+        # Sample replay buffer
+        replay_data = self.replay_buffer.sample(batch_size, env=self._vec_normalize_env)
+
+        # We need to sample because `log_std` may have changed between two gradient steps
+        if self.use_sde:
+            self.actor.reset_noise()
+        causal_observations = self._process_obs(replay_data.observations,add_causal=False,add_action=True)
+
+        zeros_pad = th.zeros(batch_size, 1, device=replay_data.dones.device)
+        pad_dones = th.concatenate((zeros_pad, replay_data.dones[:,:,0]),dim=1)
+        select_ids= th.where(pad_dones == 0)
+
+        causal = self.encoder(causal_observations)[:, :-1]
+        next_causal = self.encoder_target(causal_observations)[:, 1:]
+
+        causal = causal[select_ids[0], select_ids[1]]
+        next_causal = next_causal[select_ids[0], select_ids[1]]
+        
+        _observations = self._process_obs(replay_data.observations)
+        # Action by the current actor for the sampled state
+        
+        observations = {}
+        next_observations = {}
+        for key in _observations:
+            observations[key] = _observations[key][:, :-1]
+            observations[key] = observations[key][select_ids[0], select_ids[1]]
+            next_observations[key] = _observations[key][:, 1:]
+            next_observations[key] = next_observations[key][select_ids[0], select_ids[1]]
+        observations['causal'] = causal.detach()
+
+        actions_pi, log_prob = self.actor.action_log_prob(observations)
+        log_prob = log_prob.reshape(-1, 1)
+
+        ent_coef_loss = None
+        if self.ent_coef_optimizer is not None and self.log_ent_coef is not None:
+            # Important: detach the variable from the graph
+            # so we don't change it with other losses
+            # see https://github.com/rail-berkeley/softlearning/issues/60
+            ent_coef = th.exp(self.log_ent_coef.detach())
+            ent_coef_loss = -(self.log_ent_coef * (log_prob + self.target_entropy).detach()).mean()
+            self.ent_coef_losses.append(ent_coef_loss.item())
+        else:
+            ent_coef = self.ent_coef_tensor
+
+        self.ent_coefs.append(ent_coef.item())
+
+        # Optimize entropy coefficient, also called
+        # entropy temperature or alpha in the paper
+        if ent_coef_loss is not None and self.ent_coef_optimizer is not None:
+            self.encoder.optimizer.zero_grad()
+            self.ent_coef_optimizer.zero_grad()
+            ent_coef_loss.backward()
+            self.ent_coef_optimizer.step()
+            self.encoder.optimizer.step()
+
+        with th.no_grad():
+            # Select action according to policy
+            next_observations['causal'] = next_causal
+            next_actions, next_log_prob = self.actor.action_log_prob(next_observations)
+            # Compute the next Q values: min over all critics targets
+            next_q_values = th.cat(self.critic_target(next_observations, next_actions), dim=1)
+            next_q_values, _ = th.min(next_q_values, dim=1, keepdim=True)
+            # add entropy term
+            next_q_values = next_q_values - ent_coef * next_log_prob.reshape(-1, 1)
+            # td error + entropy term
+            rewards = replay_data.rewards[select_ids[0], select_ids[1]]
+            dones = replay_data.dones[select_ids[0], select_ids[1]]
+            target_q_values = rewards + (1 - dones) * self.gamma * next_q_values
+
+        # Get current Q-values estimates for each critic network
+        # using action from the replay buffer
+        observations['causal'] = causal
+        current_q_values = self.critic(observations, replay_data.actions[select_ids[0], select_ids[1]])
+
+        # Compute critic loss 
+        critic_loss = 0.5 * sum(F.mse_loss(current_q, target_q_values) for current_q in current_q_values)
+        assert isinstance(critic_loss, th.Tensor)  # for type checker
+
+        # Clear gradients before computing new ones
+        # self.encoder.optimizer.zero_grad()
+        self.critic.optimizer.zero_grad()
+        # Compute new gradients
+        # (encoder_loss + critic_loss).backward()
+        critic_loss.backward()
+        # Apply gradients in optimization step
+        self.critic.optimizer.step()
+        # self.encoder.optimizer.step()
+
+        # Compute actor loss
+        # Alternative: actor_loss = th.mean(log_prob - qf1_pi)
+        # Min over all critic networks
+        for key in observations:
+            observations[key] = observations[key].detach()
+        q_values_pi = th.cat(self.critic(observations, actions_pi), dim=1)
+        min_qf_pi, _ = th.min(q_values_pi, dim=1, keepdim=True)
+        actor_loss = (ent_coef * log_prob - min_qf_pi).mean()
+
+        # Optimize the actor
+        # self.encoder.optimizer.zero_grad()
+        self.actor.optimizer.zero_grad()
+        actor_loss.backward()
+        self.actor.optimizer.step()
+        # self.encoder.optimizer.step()
+
+        self.actor_losses.append(actor_loss.detach().item())
+        self.critic_losses.append(critic_loss.detach().item())  # type: ignore[union-attr]
+        self.encoder_losses.append(encoder_loss.detach().item())
+        self.weights.append(weights.detach().item())
+        # Update target networks
+        if gradient_step % self.target_update_interval == 0:
+            polyak_update(self.critic.parameters(), self.critic_target.parameters(), self.tau)
+            # Copy running stats, see GH issue #996
+            polyak_update(self.batch_norm_stats, self.batch_norm_stats_target, 1.0)
+        if gradient_step % self.target_encoder_update_interval == 0:
+            polyak_update(self.encoder.parameters(), self.encoder_target.parameters(), self.encoder_tau)
+    
+
+
     @profile
     def train(self, gradient_steps: int, batch_size: int = 64) -> None:
         # Switch to train mode (this affects batch norm / dropout)
@@ -436,6 +889,9 @@ class SAC(OffPolicyAlgorithm):
         
         for gradient_step in range(gradient_steps):
             self._train(gradient_step,batch_size)
+            # self._train_add_actor_loss_to_encoder(gradient_step,batch_size)
+            # self._train_only_use_acotr_loss_to_encoder(gradient_step,batch_size)
+            # self._train_only_use_entropy_loss_to_encoder(gradient_step,batch_size)
 
         self._n_updates += gradient_steps
 

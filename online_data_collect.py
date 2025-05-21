@@ -85,9 +85,9 @@ def collect_data(model, manager:Manager, hook, time_steps=-1):
                     ee_pos_bound_low_x = observations['observation'][:,4].copy() - 0.055
                     ee_pos_bound_high_x = observations['observation'][:,4].copy() + 0.06
                     pos_x = observations['observation'][0, 0].copy() # robot pos
-                    ee_pos_bound_low_y = observations['observation'][:,5].copy() - 0.02
-                    ee_pos_bound_high_y = observations['observation'][:,5].copy() + 0.02
-                    pos_y = observations['observation'][0, 1].copy() - 0.05 # robot pos
+                    ee_pos_bound_low_y = observations['observation'][:,5].copy() - 0.045
+                    ee_pos_bound_high_y = observations['observation'][:,5].copy() + 0.03
+                    pos_y = observations['observation'][0, 1].copy() - 0.032 # robot pos
                     pos_z = observations['observation'][0, 2].copy() # robot pos z
                     ee_pos_bound_low_z = observations['observation'][:,6].copy()
                     print("pos_x:", pos_x)
@@ -111,7 +111,7 @@ def collect_data(model, manager:Manager, hook, time_steps=-1):
                         print("ee_pos_bound_low_y:", ee_pos_bound_low_y)
                         print("ee_pos_bound_high_y:", ee_pos_bound_high_y)
                         inner_env.robot.gripping_succuss = False
-                    elif (pos_z - ee_pos_bound_low_z) > 0.03:
+                    elif (pos_z - ee_pos_bound_low_z) > 0.063:
                         print("pos_z:", pos_z)
                         print("ee_pos_bound_low_z:", ee_pos_bound_low_z)
                         inner_env.robot.gripping_succuss = False
@@ -168,12 +168,12 @@ def collect_data(model, manager:Manager, hook, time_steps=-1):
                 print("rewards:", rewards)
                     
 
-                # if ((eps_i+1) % 2 ==0 or dones) and 'hidden_h' in observations:
-                if (dones) and 'hidden_h' in observations:
+                if ((eps_i+1) % 2 ==0 or dones) and 'hidden_h' in observations: # used for plot all steps
+                # if (dones) and 'hidden_h' in observations: # used for plot the last step
                     tsne_x.append(observations['causal'])
                     tsne_y.append(env_i)
-                    tsne_alpha.append(1.0)
-                    # tsne_alpha.append(min(eps_i/hook.max_step_num * 5, 1.0))
+                    # tsne_alpha.append(1.0) # used for plot the last step
+                    tsne_alpha.append(min(eps_i/hook.max_step_num * 5, 1.0)) # used for plot all steps, alpha value controls the transparency
                     class_name = hook.encoder_env_info(_env_info)
                     if class_name not in tsne_c:
                         tsne_c.append(class_name)
@@ -204,8 +204,8 @@ def collect_data(model, manager:Manager, hook, time_steps=-1):
         sys.stdout.flush()
         test_env.close()
 
-    # if len(tsne_x) > 0: # 绘制tsne
-    #     manager.plot_scatter(np.concatenate(tsne_x,axis=0),np.array(tsne_y),tsne_c,np.array(tsne_alpha))
+    if len(tsne_x) > 0: # 绘制tsne
+        manager.plot_scatter(np.concatenate(tsne_x,axis=0),np.array(tsne_y),tsne_c,np.array(tsne_alpha))
     # ###########hook end###########
     hook.end_hook(manager, time_steps)
     # ###########hook end###########
@@ -218,7 +218,141 @@ def collect_data(model, manager:Manager, hook, time_steps=-1):
     print(manager.wandb.path)
     df = run.history() 
     # Append history to CSV, writing header only if file doesn't exist
-    output_path = "history.csv"
+    output_path = os.path.join(manager.sub_save_path, "history.csv")
+    df.to_csv(
+        output_path,
+        mode='a',
+        header=not os.path.exists(output_path),
+        index=False
+    )
+
+def collect_sim_data(model, manager:Manager, hook, time_steps=-1):
+    # global step counter for wandb logging
+    global_step = 0
+
+    # #############hook init#############
+    hook.start_test(manager.model_parameters['train_envs'],test_envs = manager.model_parameters['test_envs'])
+    # #############hook init#############
+    tsne_x,tsne_y,tsne_c,tsne_alpha = [],[],[],[]
+    for env_i, _env_info in tqdm(enumerate(hook.test_envs)):
+        # test env
+        env = hook.make_env(manager, _env_info)
+        test_env = DummyVecEnv([env])
+        test_env.envs[0].env.render()
+
+        # ###########hook env start###########
+        hook.start_env(_env_info)
+        # ###########hook env start###########
+
+        if manager.model_parameters['save_video']:
+            manager.enable_video()
+        else:
+            manager.disable_video()
+        
+        while len(hook.test_infos[hook.encoder_env_info(_env_info)]['eps_states']) < manager.model_parameters['test_eps_num_per_env']:
+            observations = test_env.reset()
+            print("reset successful!!!")
+            states = None
+            episode_starts = np.ones((test_env.num_envs,), dtype=bool)
+            _eps_states = []
+            manager.reset_video()
+            for eps_i in range(hook.max_step_num):
+                manager.record_video(test_env)
+                actions, states = model.predict(
+                    observations,
+                    state=states,
+                    episode_start=episode_starts,
+                    deterministic=True,
+                )
+
+                print("\n","&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&& eps_i ", eps_i, "&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&  ")
+                print("actions:", actions)
+
+                prev_observations = copy.deepcopy(observations)
+                observations, rewards, dones, infos = test_env.step(actions)
+                observations = next_observation(model,prev_observations,actions,observations, dones)
+
+
+                # Log metrics to wandb if enabled
+                if manager.model_parameters['use_wandb']:
+                    wandb_data = {
+                        'test/action': actions[0].copy(),  # Action taken
+                        'test/reward': rewards[0].copy(),  
+                        'test/observations': observations['observation'].copy(),  
+                        'test/desired_goal': observations['desired_goal'][0].copy(),  # Desired goal
+                        'test/achieved_goal': observations['achieved_goal'][0].copy(),  # Achieved goal
+                        'test/steps': eps_i,  # Current step in the episode
+                        'test/episode': len(hook.test_infos[hook.encoder_env_info(_env_info)]['eps_states']),  # Current episode number
+                        'test/env_info': _env_info,  # Environment index
+                        'test/done': dones[0].copy(),  # Done flag
+                        # 'test/infos': infos[0].copy(),  # Info dictionary
+                    }
+                    if 'causal' in observations:
+                        wandb_data['test/causal_embedding'] = observations['causal'][0]
+                    # include the step index in the log
+                    wandb_data['global_step'] = global_step
+                    manager.wandb.log(wandb_data, step=global_step)
+                    global_step += 1
+
+
+                print("cube pos:", observations['observation'][:,4:7])
+                print("cube rpy:", observations['observation'][:,7:10])
+                print("robot observations:", observations['observation'][:,:4])
+                print("goal cube:", observations['desired_goal'])
+                print("rewards:", rewards)
+                    
+
+                if ((eps_i+1) % 2 ==0 or dones) and 'hidden_h' in observations: # used for plot all steps
+                # if (dones) and 'hidden_h' in observations: # used for plot the last step
+                    tsne_x.append(observations['causal'])
+                    tsne_y.append(env_i)
+                    # tsne_alpha.append(1.0) # used for plot the last step
+                    tsne_alpha.append(min(eps_i/hook.max_step_num * 5, 1.0)) # used for plot all steps, alpha value controls the transparency
+                    class_name = hook.encoder_env_info(_env_info)
+                    if class_name not in tsne_c:
+                        tsne_c.append(class_name)
+
+                if not dones:
+                    _eps_states.append(hook.get_state(test_env, infos))
+                else:
+                    if infos[0]['is_success']:
+                        _eps_states.append('success')
+                    else:
+                        _eps_states.append('fail')
+                    break
+
+            # if _eps_states[-1] == 'success':
+            manager.save_video(f'{str(_env_info)}-{len(hook.test_infos[hook.encoder_env_info(_env_info)]["eps_states"])}.mp4')
+            # manager.disable_video()
+
+            # ###########hook eps end###########
+            hook.end_eps(_env_info, _eps_states)
+            # ###########hook eps end###########
+
+            # if cur_tsne == per_tsne: break
+
+        # ###########hook env end###########
+        hook.end_env(_env_info, model.logger)
+        # ###########hook env end###########
+
+        sys.stdout.flush()
+        test_env.close()
+
+    if len(tsne_x) > 0: # 绘制tsne
+        manager.plot_scatter(np.concatenate(tsne_x,axis=0),np.array(tsne_y),tsne_c,np.array(tsne_alpha))
+    # ###########hook end###########
+    hook.end_hook(manager, time_steps)
+    # ###########hook end###########
+
+    # ###########convert to csv###########
+    # 在所有日志都打完之后：
+    wandb.finish()  # <—— 保证上面所有 wandb.log 都同步到服务器
+    api = wandb.Api()
+    run = api.run(manager.wandb.path)
+    print(manager.wandb.path)
+    df = run.history() 
+    # Append history to CSV, writing header only if file doesn't exist
+    output_path = os.path.join(manager.sub_save_path, "history.csv")
     df.to_csv(
         output_path,
         mode='a',
