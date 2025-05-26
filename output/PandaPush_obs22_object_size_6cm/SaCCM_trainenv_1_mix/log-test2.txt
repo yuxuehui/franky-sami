@@ -23,267 +23,58 @@ Failed to lookup transform from franka_cube to franka_left, try again.
 Failed to lookup transform from franka_cube to franka_left, try again.
 Failed to lookup transform from franka_cube to franka_left, try again.
 Failed to lookup transform from franka_cube to franka_left, try again.
-Failed to lookup transform from franka_cube to franka_left, try again.
-Failed to lookup transform from franka_cube to franka_left, try again.
-Failed to lookup transform from franka_cube to franka_left, try again.
-Failed to lookup transform from franka_cube to franka_left, try again.
-Failed to lookup transform from franka_cube to franka_left, try again.
-Failed to lookup transform from franka_cube to franka_left, try again.
-Failed to lookup transform from franka_cube to franka_left, try again.
-Failed to lookup transform from franka_cube to franka_left, try again.
-Failed to lookup transform from franka_cube to franka_left, try again.
-Failed to lookup transform from franka_cube to franka_left, try again.
-Failed to lookup transform from franka_cube to franka_left, try again.
-Failed to lookup transform from franka_cube to franka_left, try again.
-Failed to lookup transform from franka_cube to franka_left, try again.
-Failed to lookup transform from franka_cube to franka_left, try again.
-Failed to lookup transform from franka_cube to franka_left, try again.
-Failed to lookup transform from franka_cube to franka_left, try again.
-Failed to lookup transform from franka_cube to franka_left, try again.
-Failed to lookup transform from franka_cube to franka_left, try again.
-Failed to lookup transform from franka_cube to franka_left, try again.
-Failed to lookup transform from franka_cube to franka_left, try again.
-Failed to lookup transform from franka_cube to franka_left, try again.
-Failed to lookup transform from franka_cube to franka_left, try again.
-Failed to lookup transform from franka_cube to franka_left, try again.
-Failed to lookup transform from franka_cube to franka_left, try again.
-Failed to lookup transform from franka_cube to franka_left, try again.
-Failed to lookup transform from franka_cube to franka_left, try again.
-Failed to lookup transform from franka_cube to franka_left, try again.
-Failed to lookup transform from franka_cube to franka_left, try again.
-Failed to lookup transform from franka_cube to franka_left, try again.
-Failed to lookup transform from franka_cube to franka_left, try again.
-Failed to lookup transform from franka_cube to franka_left, try again.
-Failed to lookup transform from franka_cube to franka_left, try again.
-Failed to lookup transform from franka_cube to franka_left, try again.
-Failed to lookup transform from franka_cube to franka_left, try again.
-Failed to lookup transform from franka_cube to franka_left, try again.
-Failed to lookup transform from franka_cube to franka_left, try again.
-Failed to lookup transform from franka_cube to franka_left, try again.
-Failed to lookup transform from franka_cube to franka_left, try again.
-Failed to lookup transform from franka_cube to franka_left, try again.
-Failed to lookup transform from franka_cube to franka_left, try again.
-Failed to lookup transform from franka_cube to franka_left, try again.
-Failed to lookup transform from franka_cube to franka_left, try again.
-Failed to lookup transform from franka_cube to franka_left, try again.
-Failed to lookup transform from franka_cube to franka_left, try again.
-Failed to lookup transform from franka_cube to franka_left, try again.
-Failed to lookup transform from franka_cube to franka_left, try again.
-Failed to lookup transform from franka_cube to franka_left, try again.
-Failed to lookup transform from franka_cube to franka_left, try again.
-Failed to lookup transform from franka_cube to franka_left, try again.
-Failed to lookup transform from franka_cube to franka_left, try again.
-Failed to lookup transform from franka_cube to franka_left, try again.
-Failed to lookup transform from franka_cube to franka_left, try again.
-Failed to lookup transform from franka_cube to franka_left, try again.
-Failed to lookup transform from franka_cube to franka_left, try again.
-Failed to lookup transform from franka_cube to franka_left, try again.
-Failed to lookup transform from franka_cube to franka_left, try again.
-Failed to lookup transform from franka_cube to franka_left, try again.
-Failed to lookup transform from franka_cube to franka_left, try again.
-Failed to lookup transform from franka_cube to franka_left, try again.
-Failed to lookup transform from franka_cube to franka_left, try again.
-Failed to lookup transform from franka_cube to franka_left, try again.
-Failed to lookup transform from franka_cube to franka_left, try again.
-Failed to lookup transform from franka_cube to franka_left, try again.
-Failed to lookup transform from franka_cube to franka_left, try again.
-Failed to lookup transform from franka_cube to franka_left, try again.
-Failed to lookup transform from franka_cube to franka_left, try again.
-Failed to lookup transform from franka_cube to franka_left, try again.
-Failed to lookup transform from franka_cube to franka_left, try again.
-Failed to lookup transform from franka_cube to franka_left, try again.
-Failed to lookup transform from franka_cube to franka_left, try again.
-Failed to lookup transform from franka_cube to franka_left, try again.
-Failed to lookup transform from franka_cube to franka_left, try again.
-Failed to lookup transform from franka_cube to franka_left, try again.
-Failed to lookup transform from franka_cube to franka_left, try again.
-Failed to lookup transform from franka_cube to franka_left, try again.
-Failed to lookup transform from franka_cube to franka_left, try again.
-Failed to lookup transform from franka_cube to franka_left, try again.
-Failed to lookup transform from franka_cube to franka_left, try again.
-Failed to lookup transform from franka_cube to franka_left, try again.
-Failed to lookup transform from franka_cube to franka_left, try again.
-Failed to lookup transform from franka_cube to franka_left, try again.
-Failed to lookup transform from franka_cube to franka_left, try again.
-Failed to lookup transform from franka_cube to franka_left, try again.
-Failed to lookup transform from franka_cube to franka_left, try again.
-Failed to lookup transform from franka_cube to franka_left, try again.
-Failed to lookup transform from franka_cube to franka_left, try again.
-Failed to lookup transform from franka_cube to franka_left, try again.
-Failed to lookup transform from franka_cube to franka_left, try again.
-Failed to lookup transform from franka_cube to franka_left, try again.
-Failed to lookup transform from franka_cube to franka_left, try again.
-Failed to lookup transform from franka_cube to franka_left, try again.
-Failed to lookup transform from franka_cube to franka_left, try again.
-Failed to lookup transform from franka_cube to franka_left, try again.
-Failed to lookup transform from franka_cube to franka_left, try again.
-Failed to lookup transform from franka_cube to franka_left, try again.
-Failed to lookup transform from franka_cube to franka_left, try again.
-Failed to lookup transform from franka_cube to franka_left, try again.
-Failed to lookup transform from franka_cube to franka_left, try again.
-Failed to lookup transform from franka_cube to franka_left, try again.
-Failed to lookup transform from franka_cube to franka_left, try again.
-Failed to lookup transform from franka_cube to franka_left, try again.
-Failed to lookup transform from franka_cube to franka_left, try again.
-Failed to lookup transform from franka_cube to franka_left, try again.
-Failed to lookup transform from franka_cube to franka_left, try again.
-Failed to lookup transform from franka_cube to franka_left, try again.
-Failed to lookup transform from franka_cube to franka_left, try again.
-Failed to lookup transform from franka_cube to franka_left, try again.
-ee_position: [6.38210979e-01 3.79185865e-04 1.97826180e-01]
+ee_position: [ 6.38437266e-01 -2.10996594e-04  1.98342283e-01]
 Info of objects (1.0, 0.5, (0.0006, 0.0006, 0.0006), (0.0, 0.0, 0.0), (0.0, 0.0, 0.0, 1.0), 0.0, 0.0, 0.0, -1.0, -1.0, 2, 0.001)
 Info of Table (0.0, 1.0, (0.0, 0.0, 0.0), (0.0, 0.0, 0.0), (0.0, 0.0, 0.0, 1.0), 0.0, 0.0, 0.001, -1.0, -1.0, 2, 0.001)
 set gripper width: 0.0
-ee_position: [6.38209436e-01 3.74992198e-04 1.97833852e-01]
+ee_position: [ 6.38437491e-01 -1.82946917e-04  1.98362683e-01]
 set gripper width: 0.0
-ee_position: [6.38210441e-01 3.57596843e-04 1.97832760e-01]
+ee_position: [ 6.38440272e-01 -1.68960789e-04  1.98374142e-01]
 reset successful!!!
 
  &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&& eps_i  0 &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&  
-previous cube pos: [[ 0.5453666  -0.08308943  0.03196915]]
-previous robot observations: [[6.3821042e-01 3.5759684e-04 1.9783276e-01 9.8500001e-05]]
-actions: [[-0.38289082 -0.19607794 -0.31892788  0.47488225]]
-set gripper width: 0.095074944
-expected ee position: [ 0.61906543 -0.00943636  0.18188718]
-action after clip: [-0.01914454 -0.0098039  -0.01594639] 0.09497645
-ee_position: [ 0.61885419 -0.00908715  0.18109341]
-cube pos: [[ 0.54504776 -0.08331355  0.03185578]]
-cube rpy: [[ 0.07639085 -0.07451411 -0.03853835]]
-robot observations: [[ 0.61885417 -0.00908715  0.18109341  0.07999317]]
+previous cube pos: [[ 0.62128305 -0.00882117  0.03114112]]
+previous robot observations: [[ 6.3844025e-01 -1.6896079e-04  1.9837414e-01  1.8911999e-04]]
+actions: [[-0.6618165  -0.48995697 -0.9007331   0.7507541 ]]
+set gripper width: 0.15033995
+action after clip: [-0.03309083 -0.02449785 -0.04503665] 0.15015082
+ee_position: [ 0.60528939 -0.02433651  0.15299143]
+cube pos: [[ 0.6212374  -0.00886714  0.03114856]]
+cube rpy: [[ 0.09214424 -0.06211611  0.00025031]]
+robot observations: [[ 0.6052894  -0.02433651  0.15299143  0.08017375]]
 goal cube: [[0.6  0.02 0.03]]
-rewards: [-0.11703368]
+rewards: [-0.03585607]
 
  &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&& eps_i  1 &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&  
-previous cube pos: [[ 0.54504776 -0.08331355  0.03185578]]
-previous robot observations: [[ 0.61885417 -0.00908715  0.18109341  0.07999317]]
-actions: [[-0.7349309 -0.8614509 -0.9786284  0.693315 ]]
-set gripper width: 0.21865684
-expected ee position: [ 0.58209782 -0.0521504   0.13215153]
-action after clip: [-0.03674654 -0.04307255 -0.04893142] 0.13866301
-ee_position: [ 0.58191187 -0.05183791  0.13166622]
-cube pos: [[ 0.54503673 -0.08327782  0.03189961]]
-cube rpy: [[ 0.07679051 -0.07485738 -0.03774438]]
-robot observations: [[ 0.58191186 -0.05183791  0.13166621  0.07999382]]
+previous cube pos: [[ 0.6212374  -0.00886714  0.03114856]]
+previous robot observations: [[ 0.6052894  -0.02433651  0.15299143  0.08017375]]
+actions: [[ 0.7375437   0.35619354 -0.9671684   0.6500008 ]]
+set gripper width: 0.2101739
+action after clip: [ 0.03687719  0.01780968 -0.04835842] 0.13000016
+ee_position: [ 0.64208862 -0.00666877  0.10477994]
+cube pos: [[ 0.6212497  -0.00884674  0.03114836]]
+cube rpy: [[ 0.09078421 -0.06130999 -0.00014303]]
+robot observations: [[ 0.6420886  -0.00666877  0.10477994  0.0801744 ]]
 goal cube: [[0.6  0.02 0.03]]
-rewards: [-0.11700802]
+rewards: [-0.03584692]
 
  &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&& eps_i  2 &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&  
-previous cube pos: [[ 0.54503673 -0.08327782  0.03189961]]
-previous robot observations: [[ 0.58191186 -0.05183791  0.13166621  0.07999382]]
-actions: [[-0.48304462 -0.773925   -0.97401184  0.8318367 ]]
-set gripper width: 0.24636248
-expected ee position: [ 0.55776384 -0.09053722  0.08296554]
-action after clip: [-0.02415223 -0.03869625 -0.04870059] 0.16636734
-ee_position: [ 0.55778805 -0.0902937   0.08297569]
-cube pos: [[ 0.5441485  -0.08493904  0.03017089]]
-cube rpy: [[ 0.08043487 -0.07901122 -0.03378061]]
-robot observations: [[ 0.5577881  -0.0902937   0.08297569  0.07999513]]
+previous cube pos: [[ 0.6212497  -0.00884674  0.03114836]]
+previous robot observations: [[ 0.6420886  -0.00666877  0.10477994  0.0801744 ]]
+actions: [[ 0.13091338 -0.63918555 -0.80985093  0.5760584 ]]
+set gripper width: 0.19538608
+action after clip: [ 0.00654567 -0.03195928 -0.04049255] 0.11521168
+ee_position: [ 0.64857788 -0.03823676  0.06449344]
+cube pos: [[ 0.6212193  -0.0088818   0.03114442]]
+cube rpy: [[ 0.09131296 -0.06162678  0.00012309]]
+robot observations: [[ 0.64857787 -0.03823676  0.06449343  0.0801744 ]]
 goal cube: [[0.6  0.02 0.03]]
-rewards: [-0.11887649]
+rewards: [-0.03585702]
 
  &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&& eps_i  3 &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&  
-previous cube pos: [[ 0.5441485  -0.08493904  0.03017089]]
-previous robot observations: [[ 0.5577881  -0.0902937   0.08297569  0.07999513]]
-actions: [[ 0.2527969  0.5448662 -0.7855545  0.3711927]]
-set gripper width: 0.15423366
-expected ee position: [ 0.57042687 -0.06304712  0.04369552]
-action after clip: [ 0.01263984  0.02724331 -0.03927773] 0.07423854
-ee_position: [ 0.57008727 -0.06317821  0.0436124 ]
-cube pos: [[ 0.54004174 -0.08857236  0.02811882]]
-cube rpy: [[ 0.08788704 -0.11703075  0.07275169]]
-robot observations: [[ 0.57008725 -0.06317821  0.04361239  0.07999513]]
-goal cube: [[0.6  0.02 0.03]]
-rewards: [-0.12404229]
-
- &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&& eps_i  4 &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&  
-previous cube pos: [[ 0.54004174 -0.08857236  0.02811882]]
-previous robot observations: [[ 0.57008725 -0.06317821  0.04361239  0.07999513]]
-actions: [[-0.00876093  0.63248384  0.66175103 -0.8051792 ]]
-set gripper width: -0.0810407
-gripping_succuss
-expected ee position: [ 0.56962706 -0.03155438  0.07668325]
-action after clip: [-0.00043805  0.03162419  0.03308755] -0.16103584
-ee_position: [ 0.56930855 -0.03172686  0.07594559]
-cube pos: [[ 0.5478716  -0.07078092  0.03612579]]
-cube rpy: [[ 0.10822704 -0.14341272  0.09682149]]
-robot observations: [[ 0.5693086  -0.03172686  0.07594559  0.0640007 ]]
-goal cube: [[0.6  0.02 0.03]]
-rewards: [-0.10486215]
-
- &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&& eps_i  5 &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&  
-previous cube pos: [[ 0.5478716  -0.07078092  0.03612579]]
-previous robot observations: [[ 0.5693086  -0.03172686  0.07594559  0.0640007 ]]
-inner_env.robot.gripping_succuss:
-set gripper width: 0.08
-ee_position: [0.5995568  0.01967394 0.05959287]
-cube pos: [[ 0.55390716 -0.02843888  0.08581663]]
-cube rpy: [[ 0.10395824 -0.0533383  -0.01127569]]
-robot observations: [[0.5995568  0.01967394 0.05959287 0.07745121]]
-goal cube: [[0.6  0.02 0.03]]
-rewards: [-0.08709978]
-set gripper width: 0.0
-ee_position: [6.38190521e-01 4.31824183e-04 1.97796721e-01]
-reset successful!!!
-
- &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&& eps_i  0 &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&  
-previous cube pos: [[0.57277995 0.01496812 0.03149338]]
-previous robot observations: [[6.3819051e-01 4.3182418e-04 1.9779672e-01 3.7364333e-04]]
-actions: [[-0.56817573  0.21708798 -0.690109    0.5359459 ]]
-set gripper width: 0.107562825
-expected ee position: [0.60978526 0.01128838 0.16329072]
-action after clip: [-0.02840879  0.0108544  -0.03450545] 0.10718918
-ee_position: [0.60949499 0.01099679 0.16237328]
-cube pos: [[ 0.539725   -0.11269028  0.02788234]]
-cube rpy: [[ 0.10858962 -0.11321767 -0.04030207]]
-robot observations: [[0.609495   0.01099679 0.16237327 0.07999382]]
-goal cube: [[0.6  0.02 0.03]]
-rewards: [-0.14575414]
-
- &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&& eps_i  1 &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&  
-previous cube pos: [[ 0.539725   -0.11269028  0.02788234]]
-previous robot observations: [[0.609495   0.01099679 0.16237327 0.07999382]]
-actions: [[-0.6011029  -0.9396656  -0.2033844   0.74859476]]
-set gripper width: 0.22971278
-expected ee position: [ 0.57943764 -0.03598889  0.15219643]
-action after clip: [-0.03005514 -0.04698328 -0.01016922] 0.14971896
-ee_position: [ 0.57915426 -0.03571869  0.15139837]
-cube pos: [[ 0.54287106 -0.10812385  0.05115164]]
-cube rpy: [[ 0.02682867 -0.02578173 -0.03377803]]
-robot observations: [[ 0.57915425 -0.03571869  0.15139836  0.07999513]]
-goal cube: [[0.6  0.02 0.03]]
-rewards: [-0.14186905]
-
- &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&& eps_i  2 &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&  
-previous cube pos: [[ 0.54287106 -0.10812385  0.05115164]]
-previous robot observations: [[ 0.57915425 -0.03571869  0.15139836  0.07999513]]
-actions: [[-0.6687585  -0.96396136 -0.9465284   0.7426375 ]]
-set gripper width: 0.22852197
-expected ee position: [ 0.54571339 -0.08392307  0.10406586]
-action after clip: [-0.03343793 -0.04819807 -0.04732642] 0.1485275
-ee_position: [ 0.54575018 -0.08369036  0.10410375]
-cube pos: [[ 0.54136926 -0.10862253  0.03062375]]
-cube rpy: [[ 0.0751331  -0.07262898 -0.04633562]]
-robot observations: [[ 0.5457502  -0.08369037  0.10410375  0.07999579]]
-goal cube: [[0.6  0.02 0.03]]
-rewards: [-0.14135666]
-
- &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&& eps_i  3 &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&  
-previous cube pos: [[ 0.54136926 -0.10862253  0.03062375]]
-previous robot observations: [[ 0.5457502  -0.08369037  0.10410375  0.07999579]]
-actions: [[ 0.08924818 -0.66197115 -0.9578125   0.5608109 ]]
-set gripper width: 0.19215798
-expected ee position: [ 0.55020845 -0.11678485  0.05620805]
-action after clip: [ 0.00446241 -0.03309856 -0.04789063] 0.11216219
-ee_position: [ 0.54993217 -0.11640717  0.05609079]
-cube pos: [[ 0.54223436 -0.10673175  0.0314684 ]]
-cube rpy: [[ 0.07280546 -0.0655608  -0.05035592]]
-robot observations: [[ 0.5499322  -0.11640716  0.05609079  0.07999776]]
-goal cube: [[0.6  0.02 0.03]]
-rewards: [-0.13928375]
-
- &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&& eps_i  4 &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&  
-previous cube pos: [[ 0.54223436 -0.10673175  0.0314684 ]]
-previous robot observations: [[ 0.5499322  -0.11640716  0.05609079  0.07999776]]
-actions: [[ 0.7553091   0.92877245  0.4923786  -0.48369366]]
-set gripper width: -0.01674097
-You pressed Ctrl+C!
+previous cube pos: [[ 0.6212193  -0.0088818   0.03114442]]
+previous robot observations: [[ 0.64857787 -0.03823676  0.06449343  0.0801744 ]]
+actions: [[-0.61536884  0.81590784 -0.6664827   0.5640216 ]]
+set gripper width: 0.19297871
+libfranka: Move command aborted: motion aborted by reflex! ["joint_reflex"]
+control_command_success_rate: 1

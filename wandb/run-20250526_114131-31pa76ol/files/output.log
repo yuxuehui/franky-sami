@@ -1,0 +1,13 @@
+0it [00:00, ?it/s]/home/xi/anaconda3/envs/franky-sami/lib/python3.10/site-packages/gymnasium/core.py:311: UserWarning: [33mWARN: env.task to get variables from other wrappers is deprecated and will be removed in v1.0, to get this variable you can do `env.unwrapped.task` for environment variables or `env.get_wrapper_attr('task')` that will search the reminding wrappers.[0m
+  logger.warn(
+/home/xi/anaconda3/envs/franky-sami/lib/python3.10/site-packages/gymnasium/core.py:311: UserWarning: [33mWARN: env.set_obs_friction_mass to get variables from other wrappers is deprecated and will be removed in v1.0, to get this variable you can do `env.unwrapped.set_obs_friction_mass` for environment variables or `env.get_wrapper_attr('set_obs_friction_mass')` that will search the reminding wrappers.[0m
+  logger.warn(
+/home/xi/anaconda3/envs/franky-sami/lib/python3.10/site-packages/gymnasium/utils/passive_env_checker.py:135: UserWarning: [33mWARN: The obs returned by the `reset()` method was expecting numpy array dtype to be float32, actual type: float64[0m
+  logger.warn(
+/home/xi/anaconda3/envs/franky-sami/lib/python3.10/site-packages/gymnasium/utils/passive_env_checker.py:159: UserWarning: [33mWARN: The obs returned by the `reset()` method is not within the observation space.[0m
+  logger.warn(f"{pre} is not within the observation space.")
+/home/xi/anaconda3/envs/franky-sami/lib/python3.10/site-packages/gymnasium/utils/passive_env_checker.py:135: UserWarning: [33mWARN: The obs returned by the `step()` method was expecting numpy array dtype to be float32, actual type: float64[0m
+  logger.warn(
+/home/xi/anaconda3/envs/franky-sami/lib/python3.10/site-packages/gymnasium/utils/passive_env_checker.py:159: UserWarning: [33mWARN: The obs returned by the `step()` method is not within the observation space.[0m
+  logger.warn(f"{pre} is not within the observation space.")
+0it [00:00, ?it/s]

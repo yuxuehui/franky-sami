@@ -15,8 +15,8 @@ import numpy as np
 from .franka.core import PyBulletRobot, RobotTaskEnv, Task
 from panda_gym.envs.robots.panda import Panda
 from panda_gym.pybullet import PyBullet
-from .tasks.franka_pick_and_place import PickAndPlace # vicon 
-# from .tasks.pick_and_place import PickAndPlace # simulated cube
+# from .tasks.franka_pick_and_place import PickAndPlace # vicon 
+from .tasks.pick_and_place import PickAndPlace # simulated cube
 
 import gymnasium
 

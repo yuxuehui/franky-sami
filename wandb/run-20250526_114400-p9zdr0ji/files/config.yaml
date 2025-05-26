@@ -1,0 +1,115 @@
+wandb_version: 1
+
+_wandb:
+  desc: null
+  value:
+    python_version: 3.10.16
+    cli_version: 0.19.9
+    framework: torch
+    is_jupyter_run: false
+    is_kaggle_kernel: false
+    start_time: 1748231040
+    t:
+      1:
+      - 1
+      - 5
+      - 53
+      - 55
+      3:
+      - 13
+      - 16
+      - 23
+      - 42
+      - 55
+      4: 3.10.16
+      5: 0.19.9
+      8:
+      - 5
+      13: linux-x86_64
+method:
+  desc: null
+  value: SaCCM
+adversarial_loss_coef:
+  desc: null
+  value: 0.1
+batch_size:
+  desc: null
+  value: 256
+contrast_batch_size:
+  desc: null
+  value: 256
+contrast_buffer_type:
+  desc: null
+  value: fine_grained
+contrast_training_interval:
+  desc: null
+  value: 1
+time_step:
+  desc: null
+  value: 500000
+causal_dim:
+  desc: null
+  value: 6
+causal_hidden_dim:
+  desc: null
+  value: 128
+buffer_size:
+  desc: null
+  value: 1000
+use_weighted_info_nce:
+  desc: null
+  value: false
+use_reward_norm:
+  desc: null
+  value: false
+learning_rate:
+  desc: null
+  value: 0.001
+train_freq:
+  desc: null
+  value: 128
+gradient_steps:
+  desc: null
+  value: 16
+encoder_tau:
+  desc: null
+  value: 0.05
+neg_radio:
+  desc: null
+  value: 0.5
+env_name:
+  desc: null
+  value: PandaPush-v3
+env_hook:
+  desc: null
+  value: PandaHook
+train_envs:
+  desc: null
+  value: '[(0, 30), (1, 1), (1, 30), (1, 5)]'
+test_envs:
+  desc: null
+  value: '[(0, 30), (1, 1), (1, 30), (1, 5)]'
+use_continue_train:
+  desc: null
+  value: false
+save_video:
+  desc: null
+  value: true
+seed:
+  desc: null
+  value: 100
+config_path:
+  desc: null
+  value: /home/xi/yxh_space/SaMI/SaMI/output/PandaPush_obs22_object_size_6cm_gripper_constraint/SaCCM_trainenv_mix_cube_height_coef_0_1
+test_eps_num_per_env:
+  desc: null
+  value: 50
+use_wandb:
+  desc: null
+  value: true
+wandb_project_name:
+  desc: null
+  value: franky-sami
+wandb_team_name:
+  desc: null
+  value: skill-aware-rl

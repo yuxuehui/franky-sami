@@ -31,7 +31,8 @@ class PushWrapper(PandaBaseWrapper):
         goal += noise
         goal[2] = 0.03
 
-        return np.array([0.6,0.02,0.03])
+        # return np.array([0.6,0.02,0.03])
+        return goal
     
 
 class PandaPushEnv(PandaBaseEnv):
@@ -72,7 +73,7 @@ class PandaPushEnv(PandaBaseEnv):
         causal_hidden_dim:int = -1
     ) -> None:
         sim = PyBullet(render_mode=render_mode, renderer=renderer)
-        robot = FrankaPanda(sim, block_gripper=False, base_position=np.array([0.0, 0.0, 0.0]), control_type=control_type)
+        robot = Panda(sim, block_gripper=False, base_position=np.array([0.0, 0.0, 0.0]), control_type=control_type)
         task = PushWrapper(sim, reward_type=reward_type,object_height=object_height,goal_z_range=0.0)
         self.friction = 1.0
         self.mass = 1.0

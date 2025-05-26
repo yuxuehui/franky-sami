@@ -4,9 +4,13 @@ from .method_step import SAC as OURSACStep
 from .method_step import DictReplayBuffer as OURDictReplayBufferStep
 from .method_step import MultiInputPolicy as OURMultiInputPolicyStep
 
-from .method_traj import SAC as OURSACTraj
-from .method_traj import DictReplayBuffer as OURDictReplayBufferTraj
-from .method_traj import MultiInputPolicy as OURMultiInputPolicyTraj
+# from .method_traj import SAC as OURSACTraj
+# from .method_traj import DictReplayBuffer as OURDictReplayBufferTraj
+# from .method_traj import MultiInputPolicy as OURMultiInputPolicyTraj
+
+from .method_traj_distance import SAC as OURSACTraj
+from .method_traj_distance import DictReplayBuffer as OURDictReplayBufferTraj
+from .method_traj_distance import MultiInputPolicy as OURMultiInputPolicyTraj
 
 
 def get_model(manager,train_env=None, causal_keys = None, max_step_num=50):

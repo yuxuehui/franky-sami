@@ -279,6 +279,9 @@ def collect_sim_data(model, manager:Manager, hook, time_steps=-1):
                         'test/action': actions[0].copy(),  # Action taken
                         'test/reward': rewards[0].copy(),  
                         'test/observations': observations['observation'].copy(),  
+                        'test/robot_constraint': actions[0][:3]*0.05 - (observations['observation'][:,:3].copy() - prev_observations['observation'][:,:3].copy()),  # Robot xyz displacement
+                        'test/cube_pos_constraint': actions[0][:3]*0.05 - (observations['observation'][:,4:7].copy() - prev_observations['observation'][:,4:7].copy()),  # Cube position displacement
+                        
                         'test/desired_goal': observations['desired_goal'][0].copy(),  # Desired goal
                         'test/achieved_goal': observations['achieved_goal'][0].copy(),  # Achieved goal
                         'test/steps': eps_i,  # Current step in the episode
