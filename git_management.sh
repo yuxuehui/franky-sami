@@ -8,6 +8,9 @@ set -e  # 脚本出错即退出
 git config user.name "yuxuehui"
 git config user.email "1170574199@qq.com"
 
+# 设置远程仓库 URL
+git remote set-url origin https://github.com/yuxuehui/franky-sami.git
+
 # 确保使用正确的 SSH 密钥
 eval "$(ssh-agent -s)" > /dev/null
 ssh-add ~/.ssh/id_rsa_yxh > /dev/null 2>&1
