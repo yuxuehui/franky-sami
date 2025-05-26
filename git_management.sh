@@ -4,6 +4,10 @@
 
 set -e  # 脚本出错即退出
 
+# 确保使用正确的 SSH 密钥
+eval "$(ssh-agent -s)" > /dev/null
+ssh-add ~/.ssh/id_rsa_yxh > /dev/null 2>&1
+
 # 当前分支
 branch=$(git symbolic-ref --short HEAD)
 
@@ -27,3 +31,6 @@ git commit -m "$msg"
 # 3️⃣ 推送
 ############################################
 git push origin "$branch"
+
+# 清理 SSH 代理
+ssh-agent -k > /dev/null 2>&1 || true
