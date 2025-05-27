@@ -3210,3 +3210,162 @@ pybullet build time: Jan 29 2025 23:16:28
   logger.warn(
 /home/xi/anaconda3/envs/franky-sami/lib/python3.10/site-packages/gymnasium/utils/passive_env_checker.py:159: UserWarning: [33mWARN: The obs returned by the `step()` method is not within the observation space.[0m
   logger.warn(f"{pre} is not within the observation space.")
+pybullet build time: Jan 29 2025 23:16:28
+pybullet build time: Jan 29 2025 23:16:28
+/home/xi/anaconda3/envs/franky-sami/lib/python3.10/site-packages/gymnasium/envs/registration.py:694: UserWarning: [33mWARN: Overriding environment PandaPush-v3 already in registry.[0m
+  logger.warn(f"Overriding environment {new_spec.id} already in registry.")
+/home/xi/anaconda3/envs/franky-sami/lib/python3.10/site-packages/gymnasium/envs/registration.py:694: UserWarning: [33mWARN: Overriding environment PandaPickAndPlace-v3 already in registry.[0m
+  logger.warn(f"Overriding environment {new_spec.id} already in registry.")
+/home/xi/anaconda3/envs/franky-sami/lib/python3.10/site-packages/gymnasium/envs/registration.py:694: UserWarning: [33mWARN: Overriding environment PandaPush-v3 already in registry.[0m
+  logger.warn(f"Overriding environment {new_spec.id} already in registry.")
+/home/xi/anaconda3/envs/franky-sami/lib/python3.10/site-packages/gymnasium/envs/registration.py:694: UserWarning: [33mWARN: Overriding environment PandaPickAndPlace-v3 already in registry.[0m
+  logger.warn(f"Overriding environment {new_spec.id} already in registry.")
+/home/xi/anaconda3/envs/franky-sami/lib/python3.10/site-packages/gymnasium/core.py:311: UserWarning: [33mWARN: env.task to get variables from other wrappers is deprecated and will be removed in v1.0, to get this variable you can do `env.unwrapped.task` for environment variables or `env.get_wrapper_attr('task')` that will search the reminding wrappers.[0m
+  logger.warn(
+/home/xi/anaconda3/envs/franky-sami/lib/python3.10/site-packages/gymnasium/core.py:311: UserWarning: [33mWARN: env.set_obs_friction_mass to get variables from other wrappers is deprecated and will be removed in v1.0, to get this variable you can do `env.unwrapped.set_obs_friction_mass` for environment variables or `env.get_wrapper_attr('set_obs_friction_mass')` that will search the reminding wrappers.[0m
+  logger.warn(
+/home/xi/anaconda3/envs/franky-sami/lib/python3.10/site-packages/gymnasium/utils/passive_env_checker.py:135: UserWarning: [33mWARN: The obs returned by the `reset()` method was expecting numpy array dtype to be float32, actual type: float64[0m
+  logger.warn(
+/home/xi/anaconda3/envs/franky-sami/lib/python3.10/site-packages/gymnasium/utils/passive_env_checker.py:159: UserWarning: [33mWARN: The obs returned by the `reset()` method is not within the observation space.[0m
+  logger.warn(f"{pre} is not within the observation space.")
+/home/xi/anaconda3/envs/franky-sami/lib/python3.10/site-packages/gymnasium/core.py:311: UserWarning: [33mWARN: env.task to get variables from other wrappers is deprecated and will be removed in v1.0, to get this variable you can do `env.unwrapped.task` for environment variables or `env.get_wrapper_attr('task')` that will search the reminding wrappers.[0m
+  logger.warn(
+/home/xi/anaconda3/envs/franky-sami/lib/python3.10/site-packages/gymnasium/core.py:311: UserWarning: [33mWARN: env.set_obs_friction_mass to get variables from other wrappers is deprecated and will be removed in v1.0, to get this variable you can do `env.unwrapped.set_obs_friction_mass` for environment variables or `env.get_wrapper_attr('set_obs_friction_mass')` that will search the reminding wrappers.[0m
+  logger.warn(
+/home/xi/anaconda3/envs/franky-sami/lib/python3.10/site-packages/gymnasium/utils/passive_env_checker.py:135: UserWarning: [33mWARN: The obs returned by the `reset()` method was expecting numpy array dtype to be float32, actual type: float64[0m
+  logger.warn(
+/home/xi/anaconda3/envs/franky-sami/lib/python3.10/site-packages/gymnasium/utils/passive_env_checker.py:159: UserWarning: [33mWARN: The obs returned by the `reset()` method is not within the observation space.[0m
+  logger.warn(f"{pre} is not within the observation space.")
+pybullet build time: Jan 29 2025 23:16:28
+pybullet build time: Jan 29 2025 23:16:28
+/home/xi/anaconda3/envs/franky-sami/lib/python3.10/site-packages/gymnasium/envs/registration.py:694: UserWarning: [33mWARN: Overriding environment PandaPush-v3 already in registry.[0m
+  logger.warn(f"Overriding environment {new_spec.id} already in registry.")
+/home/xi/anaconda3/envs/franky-sami/lib/python3.10/site-packages/gymnasium/envs/registration.py:694: UserWarning: [33mWARN: Overriding environment PandaPickAndPlace-v3 already in registry.[0m
+  logger.warn(f"Overriding environment {new_spec.id} already in registry.")
+/home/xi/anaconda3/envs/franky-sami/lib/python3.10/site-packages/gymnasium/envs/registration.py:694: UserWarning: [33mWARN: Overriding environment PandaPush-v3 already in registry.[0m
+  logger.warn(f"Overriding environment {new_spec.id} already in registry.")
+/home/xi/anaconda3/envs/franky-sami/lib/python3.10/site-packages/gymnasium/envs/registration.py:694: UserWarning: [33mWARN: Overriding environment PandaPickAndPlace-v3 already in registry.[0m
+  logger.warn(f"Overriding environment {new_spec.id} already in registry.")
+/home/xi/anaconda3/envs/franky-sami/lib/python3.10/site-packages/gymnasium/core.py:311: UserWarning: [33mWARN: env.task to get variables from other wrappers is deprecated and will be removed in v1.0, to get this variable you can do `env.unwrapped.task` for environment variables or `env.get_wrapper_attr('task')` that will search the reminding wrappers.[0m
+  logger.warn(
+/home/xi/anaconda3/envs/franky-sami/lib/python3.10/site-packages/gymnasium/core.py:311: UserWarning: [33mWARN: env.set_obs_friction_mass to get variables from other wrappers is deprecated and will be removed in v1.0, to get this variable you can do `env.unwrapped.set_obs_friction_mass` for environment variables or `env.get_wrapper_attr('set_obs_friction_mass')` that will search the reminding wrappers.[0m
+  logger.warn(
+/home/xi/anaconda3/envs/franky-sami/lib/python3.10/site-packages/gymnasium/utils/passive_env_checker.py:135: UserWarning: [33mWARN: The obs returned by the `reset()` method was expecting numpy array dtype to be float32, actual type: float64[0m
+  logger.warn(
+/home/xi/anaconda3/envs/franky-sami/lib/python3.10/site-packages/gymnasium/utils/passive_env_checker.py:159: UserWarning: [33mWARN: The obs returned by the `reset()` method is not within the observation space.[0m
+  logger.warn(f"{pre} is not within the observation space.")
+/home/xi/anaconda3/envs/franky-sami/lib/python3.10/site-packages/gymnasium/core.py:311: UserWarning: [33mWARN: env.task to get variables from other wrappers is deprecated and will be removed in v1.0, to get this variable you can do `env.unwrapped.task` for environment variables or `env.get_wrapper_attr('task')` that will search the reminding wrappers.[0m
+  logger.warn(
+/home/xi/anaconda3/envs/franky-sami/lib/python3.10/site-packages/gymnasium/core.py:311: UserWarning: [33mWARN: env.set_obs_friction_mass to get variables from other wrappers is deprecated and will be removed in v1.0, to get this variable you can do `env.unwrapped.set_obs_friction_mass` for environment variables or `env.get_wrapper_attr('set_obs_friction_mass')` that will search the reminding wrappers.[0m
+  logger.warn(
+/home/xi/anaconda3/envs/franky-sami/lib/python3.10/site-packages/gymnasium/utils/passive_env_checker.py:135: UserWarning: [33mWARN: The obs returned by the `reset()` method was expecting numpy array dtype to be float32, actual type: float64[0m
+  logger.warn(
+/home/xi/anaconda3/envs/franky-sami/lib/python3.10/site-packages/gymnasium/utils/passive_env_checker.py:159: UserWarning: [33mWARN: The obs returned by the `reset()` method is not within the observation space.[0m
+  logger.warn(f"{pre} is not within the observation space.")
+/home/xi/anaconda3/envs/franky-sami/lib/python3.10/site-packages/gymnasium/utils/passive_env_checker.py:135: UserWarning: [33mWARN: The obs returned by the `step()` method was expecting numpy array dtype to be float32, actual type: float64[0m
+  logger.warn(
+/home/xi/anaconda3/envs/franky-sami/lib/python3.10/site-packages/gymnasium/utils/passive_env_checker.py:159: UserWarning: [33mWARN: The obs returned by the `step()` method is not within the observation space.[0m
+  logger.warn(f"{pre} is not within the observation space.")
+/home/xi/anaconda3/envs/franky-sami/lib/python3.10/site-packages/gymnasium/utils/passive_env_checker.py:135: UserWarning: [33mWARN: The obs returned by the `step()` method was expecting numpy array dtype to be float32, actual type: float64[0m
+  logger.warn(
+/home/xi/anaconda3/envs/franky-sami/lib/python3.10/site-packages/gymnasium/utils/passive_env_checker.py:159: UserWarning: [33mWARN: The obs returned by the `step()` method is not within the observation space.[0m
+  logger.warn(f"{pre} is not within the observation space.")
+/home/xi/anaconda3/envs/franky-sami/lib/python3.10/site-packages/gymnasium/utils/passive_env_checker.py:135: UserWarning: [33mWARN: The obs returned by the `step()` method was expecting numpy array dtype to be float32, actual type: float64[0m
+  logger.warn(
+/home/xi/anaconda3/envs/franky-sami/lib/python3.10/site-packages/gymnasium/utils/passive_env_checker.py:159: UserWarning: [33mWARN: The obs returned by the `step()` method is not within the observation space.[0m
+  logger.warn(f"{pre} is not within the observation space.")
+/home/xi/anaconda3/envs/franky-sami/lib/python3.10/site-packages/gymnasium/utils/passive_env_checker.py:135: UserWarning: [33mWARN: The obs returned by the `step()` method was expecting numpy array dtype to be float32, actual type: float64[0m
+  logger.warn(
+/home/xi/anaconda3/envs/franky-sami/lib/python3.10/site-packages/gymnasium/utils/passive_env_checker.py:159: UserWarning: [33mWARN: The obs returned by the `step()` method is not within the observation space.[0m
+  logger.warn(f"{pre} is not within the observation space.")
+{'model_parameters': {'method': 'SaCCM', 'adversarial_loss_coef': 0.01, 'batch_size': 256, 'contrast_batch_size': 256, 'contrast_buffer_type': 'fine_grained', 'contrast_training_interval': 1, 'time_step': 5000000, 'causal_dim': 6, 'causal_hidden_dim': 128, 'buffer_size': 1000, 'use_weighted_info_nce': False, 'use_reward_norm': False, 'learning_rate': 0.001, 'train_freq': 128, 'gradient_steps': 16, 'encoder_tau': 0.05, 'neg_radio': 0.5, 'env_name': 'PandaPush-v3', 'env_hook': 'PandaHook', 'train_envs': '[(0, 30), (1, 1), (1, 30), (1, 5)]', 'test_envs': '[(0, 30), (1, 1), (1, 30), (1, 5)]', 'use_continue_train': False, 'save_video': False, 'seed': 100, 'config_path': '', 'test_eps_num_per_env': 50, 'use_wandb': False, 'wandb_project_name': 'franky-sami', 'wandb_team_name': 'skill-aware-rl'}, 'save_path': '/home/xi/yxh_space/SaMI/SaMI/output', 'sub_save_path': '/home/xi/yxh_space/SaMI/SaMI/output/2025-05-27-18:36:25-761693', 'save_model_path': '/home/xi/yxh_space/SaMI/SaMI/output/2025-05-27-18:36:25-761693/model.zip', 'log_path': '/home/xi/yxh_space/SaMI/SaMI/output/2025-05-27-18:36:25-761693/log.txt', 'code_path': '/home/xi/yxh_space/SaMI/SaMI/output/2025-05-27-18:36:25-761693/code.zip', 'config_path': '/home/xi/yxh_space/SaMI/SaMI/output/2025-05-27-18:36:25-761693/config.yaml', 'test_path': '/home/xi/yxh_space/SaMI/SaMI/output/2025-05-27-18:36:25-761693/test_result.yaml', 'test_tsne_path': '/home/xi/yxh_space/SaMI/SaMI/output/2025-05-27-18:36:25-761693/tsne.jpg', 'test_table_path': '/home/xi/yxh_space/SaMI/SaMI/output/2025-05-27-18:36:25-761693/tables', 'test_image_path': '/home/xi/yxh_space/SaMI/SaMI/output/2025-05-27-18:36:25-761693/images', 'test_video_path': '/home/xi/yxh_space/SaMI/SaMI/output/2025-05-27-18:36:25-761693/videos'}
+Traceback (most recent call last):
+  File "/home/xi/yxh_space/SaMI/SaMI/configs/../main.py", line 77, in <module>
+    raise e
+  File "/home/xi/yxh_space/SaMI/SaMI/configs/../main.py", line 57, in <module>
+    model.learn(total_timesteps=1_00_000,
+  File "/home/xi/yxh_space/SaMI/SaMI/algorithm/method_traj_distance_weight/sac.py", line 916, in learn
+    return super().learn(
+  File "/home/xi/yxh_space/SaMI/SaMI/algorithm/method_traj_distance_weight/off_policy_algorithm.py", line 637, in learn
+    self.train(batch_size=self.batch_size, gradient_steps=gradient_steps)
+  File "/home/xi/yxh_space/SaMI/SaMI/algorithm/method_traj_distance_weight/sac.py", line 891, in train
+    self._train(gradient_step,batch_size)
+  File "/home/xi/yxh_space/SaMI/SaMI/algorithm/method_traj_distance_weight/sac.py", line 270, in _train
+    encoder_loss.append(weight * loss_fn(query, positive_key, negative_key))
+  File "/home/xi/anaconda3/envs/franky-sami/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1739, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/xi/anaconda3/envs/franky-sami/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1750, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/xi/yxh_space/SaMI/SaMI/algorithm/method_traj_distance_weight/info_nce_loss.py", line 57, in forward
+    return info_nce(query, positive_key, negative_keys,
+  File "/home/xi/yxh_space/SaMI/SaMI/algorithm/method_traj_distance_weight/info_nce_loss.py", line 98, in info_nce
+    loss = -(torch.log(torch.sigmoid(positive_logit/temperature))).mean() - (torch.log(1-torch.sigmoid(negative_logits/temperature))).mean()
+torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 164.00 MiB. GPU 0 has a total capacity of 23.53 GiB of which 27.38 MiB is free. Process 3082007 has 1.65 GiB memory in use. Process 3082006 has 1.65 GiB memory in use. Process 3092074 has 492.00 MiB memory in use. Process 2948472 has 1.65 GiB memory in use. Process 2948471 has 1.65 GiB memory in use. Process 3982494 has 1.64 GiB memory in use. Process 3982495 has 1.64 GiB memory in use. Process 4093763 has 1.65 GiB memory in use. Process 4093765 has 1.65 GiB memory in use. Process 4093766 has 1.65 GiB memory in use. Process 4093764 has 1.65 GiB memory in use. Process 239537 has 1.65 GiB memory in use. Process 239538 has 1.65 GiB memory in use. Process 239536 has 1.65 GiB memory in use. Including non-PyTorch memory, this process has 1.49 GiB memory in use. Of the allocated memory 887.50 MiB is allocated by PyTorch, and 174.50 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+pybullet build time: Jan 29 2025 23:16:28
+/home/xi/anaconda3/envs/franky-sami/lib/python3.10/site-packages/gymnasium/envs/registration.py:694: UserWarning: [33mWARN: Overriding environment PandaPush-v3 already in registry.[0m
+  logger.warn(f"Overriding environment {new_spec.id} already in registry.")
+/home/xi/anaconda3/envs/franky-sami/lib/python3.10/site-packages/gymnasium/envs/registration.py:694: UserWarning: [33mWARN: Overriding environment PandaPickAndPlace-v3 already in registry.[0m
+  logger.warn(f"Overriding environment {new_spec.id} already in registry.")
+pybullet build time: Jan 29 2025 23:16:28
+/home/xi/anaconda3/envs/franky-sami/lib/python3.10/site-packages/gymnasium/envs/registration.py:694: UserWarning: [33mWARN: Overriding environment PandaPush-v3 already in registry.[0m
+  logger.warn(f"Overriding environment {new_spec.id} already in registry.")
+/home/xi/anaconda3/envs/franky-sami/lib/python3.10/site-packages/gymnasium/envs/registration.py:694: UserWarning: [33mWARN: Overriding environment PandaPickAndPlace-v3 already in registry.[0m
+  logger.warn(f"Overriding environment {new_spec.id} already in registry.")
+/home/xi/anaconda3/envs/franky-sami/lib/python3.10/site-packages/gymnasium/core.py:311: UserWarning: [33mWARN: env.task to get variables from other wrappers is deprecated and will be removed in v1.0, to get this variable you can do `env.unwrapped.task` for environment variables or `env.get_wrapper_attr('task')` that will search the reminding wrappers.[0m
+  logger.warn(
+/home/xi/anaconda3/envs/franky-sami/lib/python3.10/site-packages/gymnasium/core.py:311: UserWarning: [33mWARN: env.set_obs_friction_mass to get variables from other wrappers is deprecated and will be removed in v1.0, to get this variable you can do `env.unwrapped.set_obs_friction_mass` for environment variables or `env.get_wrapper_attr('set_obs_friction_mass')` that will search the reminding wrappers.[0m
+  logger.warn(
+/home/xi/anaconda3/envs/franky-sami/lib/python3.10/site-packages/gymnasium/utils/passive_env_checker.py:135: UserWarning: [33mWARN: The obs returned by the `reset()` method was expecting numpy array dtype to be float32, actual type: float64[0m
+  logger.warn(
+/home/xi/anaconda3/envs/franky-sami/lib/python3.10/site-packages/gymnasium/utils/passive_env_checker.py:159: UserWarning: [33mWARN: The obs returned by the `reset()` method is not within the observation space.[0m
+  logger.warn(f"{pre} is not within the observation space.")
+/home/xi/anaconda3/envs/franky-sami/lib/python3.10/site-packages/gymnasium/core.py:311: UserWarning: [33mWARN: env.task to get variables from other wrappers is deprecated and will be removed in v1.0, to get this variable you can do `env.unwrapped.task` for environment variables or `env.get_wrapper_attr('task')` that will search the reminding wrappers.[0m
+  logger.warn(
+/home/xi/anaconda3/envs/franky-sami/lib/python3.10/site-packages/gymnasium/core.py:311: UserWarning: [33mWARN: env.set_obs_friction_mass to get variables from other wrappers is deprecated and will be removed in v1.0, to get this variable you can do `env.unwrapped.set_obs_friction_mass` for environment variables or `env.get_wrapper_attr('set_obs_friction_mass')` that will search the reminding wrappers.[0m
+  logger.warn(
+/home/xi/anaconda3/envs/franky-sami/lib/python3.10/site-packages/gymnasium/utils/passive_env_checker.py:135: UserWarning: [33mWARN: The obs returned by the `reset()` method was expecting numpy array dtype to be float32, actual type: float64[0m
+  logger.warn(
+/home/xi/anaconda3/envs/franky-sami/lib/python3.10/site-packages/gymnasium/utils/passive_env_checker.py:159: UserWarning: [33mWARN: The obs returned by the `reset()` method is not within the observation space.[0m
+  logger.warn(f"{pre} is not within the observation space.")
+pybullet build time: Jan 29 2025 23:16:28
+/home/xi/anaconda3/envs/franky-sami/lib/python3.10/site-packages/gymnasium/envs/registration.py:694: UserWarning: [33mWARN: Overriding environment PandaPush-v3 already in registry.[0m
+  logger.warn(f"Overriding environment {new_spec.id} already in registry.")
+/home/xi/anaconda3/envs/franky-sami/lib/python3.10/site-packages/gymnasium/envs/registration.py:694: UserWarning: [33mWARN: Overriding environment PandaPickAndPlace-v3 already in registry.[0m
+  logger.warn(f"Overriding environment {new_spec.id} already in registry.")
+/home/xi/anaconda3/envs/franky-sami/lib/python3.10/site-packages/gymnasium/utils/passive_env_checker.py:135: UserWarning: [33mWARN: The obs returned by the `step()` method was expecting numpy array dtype to be float32, actual type: float64[0m
+  logger.warn(
+/home/xi/anaconda3/envs/franky-sami/lib/python3.10/site-packages/gymnasium/utils/passive_env_checker.py:159: UserWarning: [33mWARN: The obs returned by the `step()` method is not within the observation space.[0m
+  logger.warn(f"{pre} is not within the observation space.")
+pybullet build time: Jan 29 2025 23:16:28
+/home/xi/anaconda3/envs/franky-sami/lib/python3.10/site-packages/gymnasium/core.py:311: UserWarning: [33mWARN: env.task to get variables from other wrappers is deprecated and will be removed in v1.0, to get this variable you can do `env.unwrapped.task` for environment variables or `env.get_wrapper_attr('task')` that will search the reminding wrappers.[0m
+  logger.warn(
+/home/xi/anaconda3/envs/franky-sami/lib/python3.10/site-packages/gymnasium/core.py:311: UserWarning: [33mWARN: env.set_obs_friction_mass to get variables from other wrappers is deprecated and will be removed in v1.0, to get this variable you can do `env.unwrapped.set_obs_friction_mass` for environment variables or `env.get_wrapper_attr('set_obs_friction_mass')` that will search the reminding wrappers.[0m
+  logger.warn(
+/home/xi/anaconda3/envs/franky-sami/lib/python3.10/site-packages/gymnasium/utils/passive_env_checker.py:135: UserWarning: [33mWARN: The obs returned by the `reset()` method was expecting numpy array dtype to be float32, actual type: float64[0m
+  logger.warn(
+/home/xi/anaconda3/envs/franky-sami/lib/python3.10/site-packages/gymnasium/utils/passive_env_checker.py:159: UserWarning: [33mWARN: The obs returned by the `reset()` method is not within the observation space.[0m
+  logger.warn(f"{pre} is not within the observation space.")
+/home/xi/anaconda3/envs/franky-sami/lib/python3.10/site-packages/gymnasium/envs/registration.py:694: UserWarning: [33mWARN: Overriding environment PandaPush-v3 already in registry.[0m
+  logger.warn(f"Overriding environment {new_spec.id} already in registry.")
+/home/xi/anaconda3/envs/franky-sami/lib/python3.10/site-packages/gymnasium/envs/registration.py:694: UserWarning: [33mWARN: Overriding environment PandaPickAndPlace-v3 already in registry.[0m
+  logger.warn(f"Overriding environment {new_spec.id} already in registry.")
+/home/xi/anaconda3/envs/franky-sami/lib/python3.10/site-packages/gymnasium/utils/passive_env_checker.py:135: UserWarning: [33mWARN: The obs returned by the `step()` method was expecting numpy array dtype to be float32, actual type: float64[0m
+  logger.warn(
+/home/xi/anaconda3/envs/franky-sami/lib/python3.10/site-packages/gymnasium/utils/passive_env_checker.py:159: UserWarning: [33mWARN: The obs returned by the `step()` method is not within the observation space.[0m
+  logger.warn(f"{pre} is not within the observation space.")
+/home/xi/anaconda3/envs/franky-sami/lib/python3.10/site-packages/gymnasium/core.py:311: UserWarning: [33mWARN: env.task to get variables from other wrappers is deprecated and will be removed in v1.0, to get this variable you can do `env.unwrapped.task` for environment variables or `env.get_wrapper_attr('task')` that will search the reminding wrappers.[0m
+  logger.warn(
+/home/xi/anaconda3/envs/franky-sami/lib/python3.10/site-packages/gymnasium/core.py:311: UserWarning: [33mWARN: env.set_obs_friction_mass to get variables from other wrappers is deprecated and will be removed in v1.0, to get this variable you can do `env.unwrapped.set_obs_friction_mass` for environment variables or `env.get_wrapper_attr('set_obs_friction_mass')` that will search the reminding wrappers.[0m
+  logger.warn(
+/home/xi/anaconda3/envs/franky-sami/lib/python3.10/site-packages/gymnasium/utils/passive_env_checker.py:135: UserWarning: [33mWARN: The obs returned by the `reset()` method was expecting numpy array dtype to be float32, actual type: float64[0m
+  logger.warn(
+/home/xi/anaconda3/envs/franky-sami/lib/python3.10/site-packages/gymnasium/utils/passive_env_checker.py:159: UserWarning: [33mWARN: The obs returned by the `reset()` method is not within the observation space.[0m
+  logger.warn(f"{pre} is not within the observation space.")
+/home/xi/anaconda3/envs/franky-sami/lib/python3.10/site-packages/gymnasium/utils/passive_env_checker.py:135: UserWarning: [33mWARN: The obs returned by the `step()` method was expecting numpy array dtype to be float32, actual type: float64[0m
+  logger.warn(
+/home/xi/anaconda3/envs/franky-sami/lib/python3.10/site-packages/gymnasium/utils/passive_env_checker.py:159: UserWarning: [33mWARN: The obs returned by the `step()` method is not within the observation space.[0m
+  logger.warn(f"{pre} is not within the observation space.")
+/home/xi/anaconda3/envs/franky-sami/lib/python3.10/site-packages/gymnasium/utils/passive_env_checker.py:135: UserWarning: [33mWARN: The obs returned by the `step()` method was expecting numpy array dtype to be float32, actual type: float64[0m
+  logger.warn(
+/home/xi/anaconda3/envs/franky-sami/lib/python3.10/site-packages/gymnasium/utils/passive_env_checker.py:159: UserWarning: [33mWARN: The obs returned by the `step()` method is not within the observation space.[0m
+  logger.warn(f"{pre} is not within the observation space.")

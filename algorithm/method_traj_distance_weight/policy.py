@@ -2,7 +2,6 @@ from typing import Any, Dict, List, Optional, Tuple, Type, Union
 import numpy as np
 from copy import deepcopy
 
-import torch
 import torch as th
 from gymnasium import spaces
 from torch import nn
@@ -139,96 +138,9 @@ class EncoderCube(BaseModel):
         
         # 提取相关特征并通过Transformer
         x_slice = x[:, :, 4:10]
-        H, (_, _) = self.lstm(x_slice)
+        H,(_,_) = self.lstm(x_slice)
         logits = self.fc(th.relu(H))
         return logits
-
-class EncoderCubeAttention(BaseModel):
-    def __init__(
-        self,
-        observation_space: spaces.Space,
-        action_space: spaces.Box,
-        hidden_dim : int = 128,
-        optimizer_kwargs: dict = {'eps':1e-5, 'lr':1e-3}
-    ):
-        super().__init__(
-            observation_space,
-            action_space,
-            optimizer_kwargs=optimizer_kwargs
-        )
-        self.action_dim = get_action_dim(action_space)
-        obs_shapes = get_obs_shape(observation_space)
-        self.observation_dim = sum([obs_shape[0] for obs_shape in obs_shapes.values()])
-        # Input-level attention layers
-        self.attn_fc = nn.Linear((self.observation_dim - 14) + hidden_dim, self.observation_dim - 14, bias=True)
-        self.attn_softmax = nn.Softmax(dim=-1)
-        self.lstm = nn.LSTM(self.observation_dim - 14, hidden_dim, 1,
-                            bidirectional=False, batch_first=True, bias=False)
-        self.fc = nn.Linear(hidden_dim,self.action_dim)
-        self.weight_info_nce = nn.Linear(self.action_dim,self.action_dim,bias=False)
-        
-    @th.no_grad()
-    def forward_one_step(self, x, h, c):
-        """
-        Obtain the causal representation of the next step during the trajectory collection
-        """
-        keys = list(x.keys())
-        keys.remove('achieved_goal')
-        keys.remove('desired_goal')
-        keys.remove('action')
-        keys.sort()
-        x = th.cat(([x[_x] for _x in keys]),dim = -1).unsqueeze(1)
-        h = th.cat(([h[_h] for _h in h]),dim = -1).unsqueeze(0)
-        c = th.cat(([c[_c] for _c in c]),dim = -1).unsqueeze(0)
-        batch_size = x.size(0)
-        # Slice features along last dimension before feeding to LSTM
-        x_slice = x[:, :, 4:10]
-        # Compute attention scores over input channels
-        # x_slice: [batch, 1, input_dim], h: tuple of [1, batch, hidden_dim]
-        prev_h = h.squeeze(0)  # [batch, hidden_dim]
-        inp = x_slice.squeeze(1)  # [batch, input_dim]
-        attn_input = torch.cat((inp, prev_h), dim=-1)  # [batch, input_dim + hidden_dim]
-        attn_scores = torch.tanh(self.attn_fc(attn_input))  # [batch, input_dim]
-        attn_weights = self.attn_softmax(attn_scores)  # [batch, input_dim]
-        # Reweight input channels
-        x_slice = (inp * attn_weights).unsqueeze(1)  # [batch, 1, input_dim]
-        H,(h,c) = self.lstm(x_slice, (h,c))
-        logits = self.fc(th.relu(H)[np.arange(batch_size),0,:])
-        return logits, (h.squeeze(0),c.squeeze(0))
-
-    @profile
-    def forward(self, obs):
-        """
-        Obtain the causal representation of entire trajectory during train
-        """
-        keys = list(obs.keys()) # keys = ['achieved_goal', 'desired_goal', 'observation', 'action']
-        keys.remove('achieved_goal')
-        keys.remove('desired_goal')
-        keys.remove('action')
-        keys.sort()
-        x = th.cat([obs[_x] for _x in keys], dim=-1)
-        
-        # 提取相关特征并通过Transformer
-        x_slice = x[:, :, 4:10]
-        # Input-level attention before LSTM
-        batch_size, seq_len, input_dim = x_slice.size()
-        # Derive hidden_dim from attention layer weight
-        hidden_dim = self.attn_fc.weight.shape[1] - input_dim
-        # Zero previous hidden state for attention
-        prev_h = x_slice.new_zeros(batch_size, hidden_dim)  # [batch, hidden_dim]
-        # Flatten time steps for attention computation
-        inp = x_slice.reshape(batch_size * seq_len, input_dim)  # [batch*seq_len, input_dim]
-        prev_h_exp = prev_h.unsqueeze(1).expand(-1, seq_len, -1).reshape(batch_size * seq_len, hidden_dim)
-        attn_input = torch.cat((inp, prev_h_exp), dim=-1)  # [batch*seq_len, input_dim+hidden_dim]
-        attn_scores = torch.tanh(self.attn_fc(attn_input))  # [batch*seq_len, input_dim]
-        attn_weights = self.attn_softmax(attn_scores) \
-            .view(batch_size, seq_len, input_dim)  # [batch, seq_len, input_dim]
-        # Reweight LSTM input channels
-        x_slice = x_slice * attn_weights  # [batch, seq_len, input_dim]
-        H, (_, _) = self.lstm(x_slice)
-        logits = self.fc(th.relu(H))
-        return logits
-
 
 class EncoderCubeHeight(BaseModel):
     """action_space is the dimension of the embedding"""
@@ -290,16 +202,153 @@ class EncoderCubeHeight(BaseModel):
         logits = self.fc(th.relu(H))
         return logits
 
+class EncoderCubeHeightDis(BaseModel):
+    """action_space is the dimension of the embedding"""
+    def __init__(
+        self,
+        observation_space: spaces.Space,
+        action_space: spaces.Box,
+        hidden_dim : int = 128,
+        optimizer_kwargs: dict = {'eps':1e-5, 'lr':1e-3}
+    ):
+        super().__init__(
+            observation_space,
+            action_space,
+            optimizer_kwargs=optimizer_kwargs
+        )
+        self.action_dim = get_action_dim(action_space)
+        obs_shapes = get_obs_shape(observation_space)
+        self.observation_dim = sum([obs_shape[0] for obs_shape in obs_shapes.values()])
+        self.lstm = nn.LSTM(1, hidden_dim, 1,
+                            bidirectional=False, batch_first=True, bias=False)
+        self.fc = nn.Linear(hidden_dim,self.action_dim)
+        self.weight_info_nce = nn.Linear(self.action_dim,self.action_dim,bias=False)
+        
+    @th.no_grad()
+    def forward_one_step(self, x, h, c):
+        """
+        Obtain the causal representation of the next step during the trajectory collection
+        """
+        keys = list(x.keys())
+        keys.remove('achieved_goal')
+        keys.remove('desired_goal')
+        keys.remove('action')
+        keys.sort()
+        x = th.cat(([x[_x] for _x in keys]),dim = -1).unsqueeze(1)
+        h = th.cat(([h[_h] for _h in h]),dim = -1).unsqueeze(0)
+        c = th.cat(([c[_c] for _c in c]),dim = -1).unsqueeze(0)
+        batch_size = x.size(0)
+        # Slice features along last dimension before feeding to LSTM
+        x_slice = x[:, :, 6:7] - 0.028
+        H,(h,c) = self.lstm(x_slice, (h,c))
+        logits = self.fc(th.relu(H)[np.arange(batch_size),0,:])
+        return logits, (h.squeeze(0),c.squeeze(0))
+
+    @profile
+    def forward(self, obs):
+        """
+        Obtain the causal representation of entire trajectory during train
+        """
+        keys = list(obs.keys()) # keys = ['achieved_goal', 'desired_goal', 'observation', 'action']
+        keys.remove('achieved_goal')
+        keys.remove('desired_goal')
+        keys.remove('action')
+        keys.sort()
+        x = th.cat(([obs[_x] for _x in keys]),dim = -1)
+        # Slice features along the last dimension before feeding to LSTM
+        # x shape: [batch_size, seq_len, feature_dim]
+        x_slice = x[:, :, 6:7]  - 0.028
+        H, (_, _) = self.lstm(x_slice)
+        logits = self.fc(th.relu(H))
+        return logits
+    
+class EncoderCubeHeightDistance(BaseModel):
+    """action_space is the dimension of the embedding"""
+    def __init__(
+        self,
+        observation_space: spaces.Space,
+        action_space: spaces.Box,
+        hidden_dim : int = 128,
+        optimizer_kwargs: dict = {'eps':1e-5, 'lr':1e-3}
+    ):
+        super().__init__(
+            observation_space,
+            action_space,
+            optimizer_kwargs=optimizer_kwargs
+        )
+        self.action_dim = get_action_dim(action_space)
+        obs_shapes = get_obs_shape(observation_space)
+        self.observation_dim = sum([obs_shape[0] for obs_shape in obs_shapes.values()])
+        self.lstm = nn.LSTM(2, hidden_dim, 1,
+                            bidirectional=False, batch_first=True, bias=False)
+        self.fc = nn.Linear(hidden_dim,self.action_dim)
+        self.weight_info_nce = nn.Linear(self.action_dim,self.action_dim,bias=False)
+        
+    @th.no_grad()
+    def forward_one_step(self, x, h, c):
+        """
+        Obtain the causal representation of the next step during the trajectory collection
+        """
+        keys = list(x.keys())
+        keys.remove('achieved_goal')
+        keys.remove('desired_goal')
+        keys.remove('action')
+        keys.sort()
+        x = th.cat(([x[_x] for _x in keys]),dim = -1).unsqueeze(1)
+        h = th.cat(([h[_h] for _h in h]),dim = -1).unsqueeze(0)
+        c = th.cat(([c[_c] for _c in c]),dim = -1).unsqueeze(0)
+        batch_size = x.size(0)
+
+        # Extract cube height and normalize
+        height = x[:, :, 6:7] - 0.028
+
+        # Calculate Euclidean distance between end effector and object
+        end_effector_pos = x[:, :, 0:3]  # Robot end effector position
+        object_pos = x[:, :, 4:7]       # Object position 
+        distance = th.norm(end_effector_pos - object_pos, dim=-1, keepdim=True)
+
+        # Concatenate height and distance features
+        x_slice = th.cat([height, distance], dim=-1)
+        
+        # Process through LSTM
+        H,(h,c) = self.lstm(x_slice, (h,c))
+        logits = self.fc(th.relu(H)[np.arange(batch_size),0,:])
+        return logits, (h.squeeze(0),c.squeeze(0))
+
+    @profile
+    def forward(self, obs):
+        """
+        Obtain the causal representation of entire trajectory during train
+        """
+        keys = list(obs.keys()) # keys = ['achieved_goal', 'desired_goal', 'observation', 'action']
+        keys.remove('achieved_goal')
+        keys.remove('desired_goal')
+        keys.remove('action')
+        keys.sort()
+        x = th.cat(([obs[_x] for _x in keys]),dim = -1)
+
+        # Extract cube height and normalize
+        height = x[:, :, 6:7] - 0.028
+
+        # Calculate Euclidean distance between end effector and object
+        end_effector_pos = x[:, :, 0:3]  # Robot end effector position
+        object_pos = x[:, :, 4:7]       # Object position
+        distance = th.norm(end_effector_pos - object_pos, dim=-1, keepdim=True)
+        # Concatenate height and distance features
+        x_slice = th.cat([height, distance], dim=-1)
+        
+        # Process through LSTM
+        H, (_, _) = self.lstm(x_slice)
+        logits = self.fc(th.relu(H))
+        return logits
+
 class TransformerEncoder(nn.Module):
     def __init__(self, input_dim, hidden_dim, nhead=4, num_layers=2, dropout=0.1):
         super().__init__()
         
-        # Input projection to make dimension divisible by nhead
-        self.input_proj = nn.Linear(input_dim, hidden_dim)
-        
         # Transformer encoder层
         encoder_layer = nn.TransformerEncoderLayer(
-            d_model=hidden_dim,  # Use hidden_dim as model dimension
+            d_model=input_dim,
             nhead=nhead,
             dim_feedforward=hidden_dim * 4,
             dropout=dropout,
@@ -308,11 +357,24 @@ class TransformerEncoder(nn.Module):
         self.transformer = nn.TransformerEncoder(encoder_layer, num_layers=num_layers)
             
     def forward(self, x, mask=None):
-        # Project input to higher dimension
-        x = self.input_proj(x)  # [batch_size, seq_len, hidden_dim]
+        # 清除之前的attention maps
+        for hook in self.attention_hooks:
+            hook.attention_maps = []
+
+        # 如果提供了mask，确保其形状正确
+        if mask is not None:
+            # 确保mask的形状正确
+            if mask.dim() == 2:
+                # 如果是2D mask (batch_size, seq_len)，保持原样
+                src_key_padding_mask = mask
+            else:
+                # 如果是3D mask (batch_size, seq_len, seq_len)，取最后两个维度
+                src_key_padding_mask = mask[:, -1]
+        else:
+            src_key_padding_mask = None
             
         # Transformer编码
-        output = self.transformer(x, src_key_padding_mask=mask)
+        output = self.transformer(x, src_key_padding_mask=src_key_padding_mask)
         return output
         
 
@@ -359,16 +421,15 @@ class TransformerEncoderHeight(BaseModel):
         keys.remove('action')
         keys.sort()
         x = th.cat([x[_x] for _x in keys], dim=-1).unsqueeze(1)
-        h = th.cat(([h[_h] for _h in h]),dim = -1).unsqueeze(0)
-        c = th.cat(([c[_c] for _c in c]),dim = -1).unsqueeze(0)
         x_slice = x[:, :, 6:7]  - 0.028
         H = self.transformer(x_slice)
         logits = self.fc(th.relu(H[:, -1, :]))  # 使用最后一个时间步的输出
-
+        
+        # 创建与输入隐藏状态和单元状态相同形状的零张量
         dummy_h = th.zeros_like(h)
         dummy_c = th.zeros_like(c)
         
-        return logits, (dummy_h.squeeze(0), dummy_c.squeeze(0))
+        return logits, (dummy_h, dummy_c)
 
     @profile
     def forward(self, obs):
@@ -471,8 +532,8 @@ class MultiInputPolicy(SACPolicy):
         trajectory_space['action'] = spaces.Box(-10,10,(self.action_dim,),dtype=np.float32)
 
         causal_space = spaces.Box(-10,10,(self.causal_out_dim,),dtype=np.float32)
-        self.encoder = EncoderCubeAttention(trajectory_space, causal_space, hidden_dim=self.causal_hidden_dim).to(self.device)
-        self.encoder_target = EncoderCubeAttention(trajectory_space, causal_space, hidden_dim=self.causal_hidden_dim).to(self.device)
+        self.encoder = EncoderCubeHeightDistance(trajectory_space, causal_space, hidden_dim=self.causal_hidden_dim).to(self.device)
+        self.encoder_target = EncoderCubeHeightDistance(trajectory_space, causal_space, hidden_dim=self.causal_hidden_dim).to(self.device)
         self.encoder_target.load_state_dict(self.encoder.state_dict())
         self.encoder_target.set_training_mode(False)
         self.encoder.optimizer = self.optimizer_class(
