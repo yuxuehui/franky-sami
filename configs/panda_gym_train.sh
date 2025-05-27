@@ -648,7 +648,9 @@
 #     --seed 100 \
 #     --test_envs "[(0, 30), (1, 1), (1, 30), (1, 5)]" \
 #     --test_eps_num_per_env 50 \
-#     --time_step 5_000_000 \
+#     --time_step 3_000_000 \
+#     --use_continue_train \
+#     --config_path "/home/xi/yxh_space/SaMI/SaMI/saved_models/PandaPush_obs22_object_size_6cm_gripper_constraint/SaCCM_trainenv_mix_cube_height_coef_0_1_continue_training" \
 #     --train_envs "[(0, 30), (1, 1), (1, 30), (1, 5)]" &
 
 # CUDA_VISIBLE_DEVICES=1 nohup python ../main.py \
@@ -666,11 +668,31 @@
 #     --seed 100 \
 #     --test_envs "[(0, 30), (1, 1), (1, 30), (1, 5)]" \
 #     --test_eps_num_per_env 50 \
-#     --time_step 5_000_000 \
+#     --time_step 3_000_000 \
+#     --use_continue_train \
+#     --config_path "/home/xi/yxh_space/SaMI/SaMI/saved_models/PandaPush_obs22_object_size_6cm_gripper_constraint/SaSAC_trainenv_mix_cube_height_coef_0_1" \
 #     --train_envs "[(0, 30), (1, 1), (1, 30), (1, 5)]" &
 # /home/xi/yxh_space/SaMI/SaMI/output/2025-05-26-14:23:02-470782
 # /home/xi/yxh_space/SaMI/SaMI/output/2025-05-26-14:23:02-500600
 
+# CUDA_VISIBLE_DEVICES=0 nohup python ../main.py \
+#     --env_name PandaPush-v3 \
+#     --env_hook PandaHook \
+#     --method TESAC \
+#     --adversarial_loss_coef 0.1 \
+#     --buffer_size 1000 \
+#     --train_freq 128 \
+#     --gradient_steps 16 \
+#     --learning_rate 1e-3 \
+#     --batch_size 256 \
+#     --contrast_batch_size 256 \
+#     --encoder_tau 0.05 \
+#     --seed 100 \
+#     --test_envs "[(0, 30), (1, 1), (1, 30), (1, 5)]" \
+#     --test_eps_num_per_env 50 \
+#     --time_step 5_000_000 \
+#     --train_envs "[(0, 30), (1, 1), (1, 30), (1, 5)]" &
+# /home/xi/yxh_space/SaMI/SaMI/output/2025-05-27-11:00:25-314369
 
 
 # #     [updated 2025/5/26] make sure the RL see all of the skills during training
@@ -678,78 +700,79 @@
 # #     2. Transformer only input the observation of cube, remove the action, desired_goal and achieved_goal
 # #     3. use algorithms in algorithm/method_traj_distance, and EncoderActionEffect
 
-CUDA_VISIBLE_DEVICES=1 nohup python ../main.py \
-    --env_name PandaPush-v3 \
-    --env_hook PandaHook \
-    --method SaCCM \
-    --adversarial_loss_coef 0.1 \
-    --buffer_size 1000 \
-    --train_freq 128 \
-    --gradient_steps 16 \
-    --learning_rate 1e-3 \
-    --batch_size 256 \
-    --contrast_batch_size 256 \
-    --encoder_tau 0.05 \
-    --seed 100 \
-    --test_envs "[(0, 30), (1, 1), (1, 30), (1, 5)]" \
-    --test_eps_num_per_env 50 \
-    --time_step 5_000_000 \
-    --train_envs "[(0, 30), (1, 1), (1, 30), (1, 5)]" &
+# CUDA_VISIBLE_DEVICES=1 nohup python ../main.py \
+#     --env_name PandaPush-v3 \
+#     --env_hook PandaHook \
+#     --method SaCCM \
+#     --adversarial_loss_coef 0.1 \
+#     --buffer_size 1000 \
+#     --train_freq 128 \
+#     --gradient_steps 16 \
+#     --learning_rate 1e-3 \
+#     --batch_size 256 \
+#     --contrast_batch_size 256 \
+#     --encoder_tau 0.05 \
+#     --seed 100 \
+#     --test_envs "[(0, 30), (1, 1), (1, 30), (1, 5)]" \
+#     --test_eps_num_per_env 50 \
+#     --time_step 5_000_000 \
+#     --train_envs "[(0, 30), (1, 1), (1, 30), (1, 5)]" &
 
-CUDA_VISIBLE_DEVICES=1 nohup python ../main.py \
-    --env_name PandaPush-v3 \
-    --env_hook PandaHook \
-    --method SaSAC \
-    --adversarial_loss_coef 0.1 \
-    --buffer_size 1000 \
-    --train_freq 128 \
-    --gradient_steps 16 \
-    --learning_rate 1e-3 \
-    --batch_size 256 \
-    --contrast_batch_size 256 \
-    --encoder_tau 0.05 \
-    --seed 100 \
-    --test_envs "[(0, 30), (1, 1), (1, 30), (1, 5)]" \
-    --test_eps_num_per_env 50 \
-    --time_step 5_000_000 \
-    --train_envs "[(0, 30), (1, 1), (1, 30), (1, 5)]" &
+# CUDA_VISIBLE_DEVICES=1 nohup python ../main.py \
+#     --env_name PandaPush-v3 \
+#     --env_hook PandaHook \
+#     --method SaSAC \
+#     --adversarial_loss_coef 0.1 \
+#     --buffer_size 1000 \
+#     --train_freq 128 \
+#     --gradient_steps 16 \
+#     --learning_rate 1e-3 \
+#     --batch_size 256 \
+#     --contrast_batch_size 256 \
+#     --encoder_tau 0.05 \
+#     --seed 100 \
+#     --test_envs "[(0, 30), (1, 1), (1, 30), (1, 5)]" \
+#     --test_eps_num_per_env 50 \
+#     --time_step 5_000_000 \
+#     --train_envs "[(0, 30), (1, 1), (1, 30), (1, 5)]" &
 
 
-CUDA_VISIBLE_DEVICES=1 nohup python ../main.py \
-    --env_name PandaPush-v3 \
-    --env_hook PandaHook \
-    --method SaCCM \
-    --adversarial_loss_coef 0.01 \
-    --buffer_size 1000 \
-    --train_freq 128 \
-    --gradient_steps 16 \
-    --learning_rate 1e-3 \
-    --batch_size 256 \
-    --contrast_batch_size 256 \
-    --encoder_tau 0.05 \
-    --seed 100 \
-    --test_envs "[(0, 30), (1, 1), (1, 30), (1, 5)]" \
-    --test_eps_num_per_env 50 \
-    --time_step 5_000_000 \
-    --train_envs "[(0, 30), (1, 1), (1, 30), (1, 5)]" &
+# CUDA_VISIBLE_DEVICES=1 nohup python ../main.py \
+#     --env_name PandaPush-v3 \
+#     --env_hook PandaHook \
+#     --method SaCCM \
+#     --adversarial_loss_coef 0.01 \
+#     --buffer_size 1000 \
+#     --train_freq 128 \
+#     --gradient_steps 16 \
+#     --learning_rate 1e-3 \
+#     --batch_size 256 \
+#     --contrast_batch_size 256 \
+#     --encoder_tau 0.05 \
+#     --seed 100 \
+#     --test_envs "[(0, 30), (1, 1), (1, 30), (1, 5)]" \
+#     --test_eps_num_per_env 50 \
+#     --time_step 5_000_000 \
+#     --train_envs "[(0, 30), (1, 1), (1, 30), (1, 5)]" &
 
-CUDA_VISIBLE_DEVICES=1 nohup python ../main.py \
-    --env_name PandaPush-v3 \
-    --env_hook PandaHook \
-    --method SaSAC \
-    --adversarial_loss_coef 0.01 \
-    --buffer_size 1000 \
-    --train_freq 128 \
-    --gradient_steps 16 \
-    --learning_rate 1e-3 \
-    --batch_size 256 \
-    --contrast_batch_size 256 \
-    --encoder_tau 0.05 \
-    --seed 100 \
-    --test_envs "[(0, 30), (1, 1), (1, 30), (1, 5)]" \
-    --test_eps_num_per_env 50 \
-    --time_step 5_000_000 \
-    --train_envs "[(0, 30), (1, 1), (1, 30), (1, 5)]" &
+# CUDA_VISIBLE_DEVICES=1 nohup python ../main.py \
+#     --env_name PandaPush-v3 \
+#     --env_hook PandaHook \
+#     --method SaSAC \
+#     --adversarial_loss_coef 0.01 \
+#     --buffer_size 1000 \
+#     --train_freq 128 \
+#     --gradient_steps 16 \
+#     --learning_rate 1e-3 \
+#     --batch_size 256 \
+#     --contrast_batch_size 256 \
+#     --encoder_tau 0.05 \
+#     --seed 100 \
+#     --test_envs "[(0, 30), (1, 1), (1, 30), (1, 5)]" \
+#     --test_eps_num_per_env 50 \
+#     --time_step 5_000_000 \
+#     --train_envs "[(0, 30), (1, 1), (1, 30), (1, 5)]" &
+
 
 # /home/xi/yxh_space/SaMI/SaMI/output/2025-05-26-15:21:56-799025
 # /home/xi/yxh_space/SaMI/SaMI/output/2025-05-26-15:21:56-867421
@@ -760,5 +783,120 @@ CUDA_VISIBLE_DEVICES=1 nohup python ../main.py \
 
 
 
+# #     [updated 2025/5/27] make sure the RL see all of the skills during training
+# #     1. --train_envs [(0, 30), (1, 1), (1, 30), (1, 5)]
+# #     2. Transformer only input the height of cube, remove the action, desired_goal and achieved_goal
+# #     3. use algorithms in /home/xi/yxh_space/SaMI/SaMI/algorithm/method_traj_distance_weight, and TransformerEncoderHeight
+# CUDA_VISIBLE_DEVICES=1 nohup python ../main.py \
+#     --env_name PandaPush-v3 \
+#     --env_hook PandaHook \
+#     --method SaCCM \
+#     --adversarial_loss_coef 0.1 \
+#     --buffer_size 1000 \
+#     --train_freq 128 \
+#     --gradient_steps 16 \
+#     --learning_rate 1e-3 \
+#     --batch_size 256 \
+#     --contrast_batch_size 256 \
+#     --encoder_tau 0.05 \
+#     --seed 100 \
+#     --test_envs "[(0, 30), (1, 1), (1, 30), (1, 5)]" \
+#     --test_eps_num_per_env 50 \
+#     --time_step 5_000_000 \
+#     --train_envs "[(0, 30), (1, 1), (1, 30), (1, 5)]" &
 
+# CUDA_VISIBLE_DEVICES=1 nohup python ../main.py \
+#     --env_name PandaPush-v3 \
+#     --env_hook PandaHook \
+#     --method SaSAC \
+#     --adversarial_loss_coef 0.1 \
+#     --buffer_size 1000 \
+#     --train_freq 128 \
+#     --gradient_steps 16 \
+#     --learning_rate 1e-3 \
+#     --batch_size 256 \
+#     --contrast_batch_size 256 \
+#     --encoder_tau 0.05 \
+#     --seed 100 \
+#     --test_envs "[(0, 30), (1, 1), (1, 30), (1, 5)]" \
+#     --test_eps_num_per_env 50 \
+#     --time_step 5_000_000 \
+#     --train_envs "[(0, 30), (1, 1), (1, 30), (1, 5)]" &
+# /home/xi/yxh_space/SaMI/SaMI/output/2025-05-27-16:21:40-039164
+# /home/xi/yxh_space/SaMI/SaMI/output/2025-05-27-16:21:40-269924
 
+# #     [updated 2025/5/27] make sure the RL see all of the skills during training
+# #     1. --train_envs [(0, 30), (1, 1), (1, 30), (1, 5)]
+# #     2. Attention-weighted LSTM only input the observation of cube, remove the action, desired_goal and achieved_goal
+# #     3. use algorithms in /home/xi/yxh_space/SaMI/SaMI/algorithm/method_traj_distance_transformer, and EncoderCubeAttention
+CUDA_VISIBLE_DEVICES=1 nohup python ../main.py \
+    --env_name PandaPush-v3 \
+    --env_hook PandaHook \
+    --method SaCCM \
+    --adversarial_loss_coef 0.01 \
+    --buffer_size 1000 \
+    --train_freq 128 \
+    --gradient_steps 16 \
+    --learning_rate 1e-3 \
+    --batch_size 256 \
+    --contrast_batch_size 256 \
+    --encoder_tau 0.05 \
+    --seed 100 \
+    --test_envs "[(0, 30), (1, 1), (1, 30), (1, 5)]" \
+    --test_eps_num_per_env 50 \
+    --time_step 5_000_000 \
+    --train_envs "[(0, 30), (1, 1), (1, 30), (1, 5)]" &
+
+CUDA_VISIBLE_DEVICES=1 nohup python ../main.py \
+    --env_name PandaPush-v3 \
+    --env_hook PandaHook \
+    --method SaSAC \
+    --adversarial_loss_coef 0.01 \
+    --buffer_size 1000 \
+    --train_freq 128 \
+    --gradient_steps 16 \
+    --learning_rate 1e-3 \
+    --batch_size 256 \
+    --contrast_batch_size 256 \
+    --encoder_tau 0.05 \
+    --seed 100 \
+    --test_envs "[(0, 30), (1, 1), (1, 30), (1, 5)]" \
+    --test_eps_num_per_env 50 \
+    --time_step 5_000_000 \
+    --train_envs "[(0, 30), (1, 1), (1, 30), (1, 5)]" &
+
+CUDA_VISIBLE_DEVICES=1 nohup python ../main.py \
+    --env_name PandaPush-v3 \
+    --env_hook PandaHook \
+    --method SaCCM \
+    --adversarial_loss_coef 0.1 \
+    --buffer_size 1000 \
+    --train_freq 128 \
+    --gradient_steps 16 \
+    --learning_rate 1e-3 \
+    --batch_size 256 \
+    --contrast_batch_size 256 \
+    --encoder_tau 0.05 \
+    --seed 100 \
+    --test_envs "[(0, 30), (1, 1), (1, 30), (1, 5)]" \
+    --test_eps_num_per_env 50 \
+    --time_step 5_000_000 \
+    --train_envs "[(0, 30), (1, 1), (1, 30), (1, 5)]" &
+
+CUDA_VISIBLE_DEVICES=1 nohup python ../main.py \
+    --env_name PandaPush-v3 \
+    --env_hook PandaHook \
+    --method SaSAC \
+    --adversarial_loss_coef 0.1 \
+    --buffer_size 1000 \
+    --train_freq 128 \
+    --gradient_steps 16 \
+    --learning_rate 1e-3 \
+    --batch_size 256 \
+    --contrast_batch_size 256 \
+    --encoder_tau 0.05 \
+    --seed 100 \
+    --test_envs "[(0, 30), (1, 1), (1, 30), (1, 5)]" \
+    --test_eps_num_per_env 50 \
+    --time_step 5_000_000 \
+    --train_envs "[(0, 30), (1, 1), (1, 30), (1, 5)]" &

@@ -8,10 +8,13 @@ from .method_step import MultiInputPolicy as OURMultiInputPolicyStep
 # from .method_traj import DictReplayBuffer as OURDictReplayBufferTraj
 # from .method_traj import MultiInputPolicy as OURMultiInputPolicyTraj
 
-from .method_traj_distance import SAC as OURSACTraj
-from .method_traj_distance import DictReplayBuffer as OURDictReplayBufferTraj
-from .method_traj_distance import MultiInputPolicy as OURMultiInputPolicyTraj
+# from .method_traj_distance import SAC as OURSACTraj
+# from .method_traj_distance import DictReplayBuffer as OURDictReplayBufferTraj
+# from .method_traj_distance import MultiInputPolicy as OURMultiInputPolicyTraj
 
+from .method_traj_distance_weight import SAC as OURSACTraj
+from .method_traj_distance_weight import DictReplayBuffer as OURDictReplayBufferTraj
+from .method_traj_distance_weight import MultiInputPolicy as OURMultiInputPolicyTraj
 
 def get_model(manager,train_env=None, causal_keys = None, max_step_num=50):
     if train_env is not None:

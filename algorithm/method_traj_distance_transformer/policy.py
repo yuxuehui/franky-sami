@@ -3,12 +3,34 @@ import numpy as np
 from copy import deepcopy
 
 import torch as th
+import torch
 from gymnasium import spaces
 from torch import nn
 import matplotlib.pyplot as plt
 import seaborn as sns
 import os
 import math
+from .iTransformer import ITransformer
+
+
+class Config:
+    """Configuration class for ITransformer"""
+    def __init__(self, task_name, seq_len, pred_len, d_model, embed, freq, dropout,
+                 factor, n_heads, d_ff, e_layers, activation, enc_in, num_class):
+        self.task_name = task_name
+        self.seq_len = seq_len
+        self.pred_len = pred_len
+        self.d_model = d_model
+        self.embed = embed
+        self.freq = freq
+        self.dropout = dropout
+        self.factor = factor
+        self.n_heads = n_heads
+        self.d_ff = d_ff
+        self.e_layers = e_layers
+        self.activation = activation
+        self.enc_in = enc_in
+        self.num_class = num_class
 
 
 from stable_baselines3.common.preprocessing import get_action_dim, is_image_space, maybe_transpose
@@ -147,8 +169,8 @@ class EncoderCubeHeight(BaseModel):
         self,
         observation_space: spaces.Space,
         action_space: spaces.Box,
-        hidden_dim : int = 128,
-        optimizer_kwargs: dict = {'eps':1e-5, 'lr':1e-3}
+        hidden_dim: int = 128,
+        optimizer_kwargs: dict = {'eps': 1e-5, 'lr': 1e-3}
     ):
         super().__init__(
             observation_space,
@@ -158,170 +180,77 @@ class EncoderCubeHeight(BaseModel):
         self.action_dim = get_action_dim(action_space)
         obs_shapes = get_obs_shape(observation_space)
         self.observation_dim = sum([obs_shape[0] for obs_shape in obs_shapes.values()])
-        self.lstm = nn.LSTM(1, hidden_dim, 1,
-                            bidirectional=False, batch_first=True, bias=False)
-        self.fc = nn.Linear(hidden_dim,self.action_dim)
-        self.weight_info_nce = nn.Linear(self.action_dim,self.action_dim,bias=False)
+        
+        # Configure the transformer
+        self.config = Config(
+            task_name='height_prediction',
+            seq_len=1,  # Single step processing
+            pred_len=1,
+            d_model=hidden_dim,
+            embed='timeF',
+            freq='h',
+            dropout=0.1,
+            factor=5,
+            n_heads=8,
+            d_ff=hidden_dim * 4,
+            e_layers=2,
+            activation='gelu',
+            enc_in=1,  # Single feature (height)
+            num_class=self.action_dim
+        )
+        
+        self.transformer = ITransformer(self.config)
+        self.fc = nn.Linear(hidden_dim, self.action_dim)
+        self.weight_info_nce = nn.Linear(self.action_dim, self.action_dim, bias=False)
         
     @th.no_grad()
     def forward_one_step(self, x, h, c):
         """
-        Obtain the causal representation of the next step during the trajectory collection
+        Process a single step using the transformer
         """
         keys = list(x.keys())
         keys.remove('achieved_goal')
         keys.remove('desired_goal')
         keys.remove('action')
         keys.sort()
-        x = th.cat(([x[_x] for _x in keys]),dim = -1).unsqueeze(1)
-        h = th.cat(([h[_h] for _h in h]),dim = -1).unsqueeze(0)
-        c = th.cat(([c[_c] for _c in c]),dim = -1).unsqueeze(0)
+        
+        # Extract and reshape height feature
+        x = th.cat([x[_x] for _x in keys], dim=-1).unsqueeze(1)
         batch_size = x.size(0)
-        # Slice features along last dimension before feeding to LSTM
-        x_slice = x[:, :, 6:7] - 0.028
-        H,(h,c) = self.lstm(x_slice, (h,c))
-        logits = self.fc(th.relu(H)[np.arange(batch_size),0,:])
-        return logits, (h.squeeze(0),c.squeeze(0))
+        height_feature = x[:, :, [2]]  # Extract height feature
+        
+        # Process through transformer
+        transformed = self.transformer(height_feature)
+        logits = self.fc(th.relu(transformed[:, -1, :]))  # Use the last sequence output
+        
+        # Return empty h, c as they're not used by transformer
+        return logits, (None, None)
 
-    @profile
     def forward(self, obs):
         """
-        Obtain the causal representation of entire trajectory during train
+        Process the full sequence through the transformer
         """
-        keys = list(obs.keys()) # keys = ['achieved_goal', 'desired_goal', 'observation', 'action']
+        keys = list(obs.keys())
         keys.remove('achieved_goal')
         keys.remove('desired_goal')
         keys.remove('action')
         keys.sort()
-        x = th.cat(([obs[_x] for _x in keys]),dim = -1)
-        # Slice features along the last dimension before feeding to LSTM
-        # x shape: [batch_size, seq_len, feature_dim]
-        x_slice = x[:, :, 6:7]  - 0.028
-        H, (_, _) = self.lstm(x_slice)
-        logits = self.fc(th.relu(H))
+        
+        # Extract and process height feature
+        x = th.cat([obs[_x] for _x in keys], dim=-1)
+        height_feature = x[:, :, [2]]  # Extract height feature
+        
+        # Process through transformer
+        transformed = self.transformer(height_feature)
+        logits = self.fc(th.relu(transformed))
         return logits
 
 
 
-class TransformerEncoder(nn.Module):
-    def __init__(self, input_dim, hidden_dim, nhead=4, num_layers=2, dropout=0.1):
-        super().__init__()
-        
-        # 输入投影层
-        self.input_proj = nn.Linear(input_dim, hidden_dim)
-        
-        # Transformer encoder层
-        encoder_layer = nn.TransformerEncoderLayer(
-            d_model=hidden_dim,
-            nhead=nhead,
-            dim_feedforward=hidden_dim * 4,
-            dropout=dropout,
-            batch_first=True
-        )
-        self.transformer = nn.TransformerEncoder(encoder_layer, num_layers=num_layers)
-        
-        # 添加attention hooks用于收集attention weights
-        self.attention_hooks = []
-        for i in range(num_layers):
-            hook = AttentionHook()
-            self.attention_hooks.append(hook)
-            # 为每一层的self-attention注册hook
-            self.transformer.layers[i].self_attn.register_forward_hook(hook)
-            
-    def forward(self, src, mask=None):
-        # 清除之前的attention maps
-        for hook in self.attention_hooks:
-            hook.attention_maps = []
-            
-        # 输入投影
-        x = self.input_proj(src)
-        
-        # 如果提供了mask，确保其形状正确
-        if mask is not None:
-            # 确保mask的形状正确
-            if mask.dim() == 2:
-                # 如果是2D mask (batch_size, seq_len)，保持原样
-                src_key_padding_mask = mask
-            else:
-                # 如果是3D mask (batch_size, seq_len, seq_len)，取最后两个维度
-                src_key_padding_mask = mask[:, -1]
-        else:
-            src_key_padding_mask = None
-            
-        # Transformer编码
-        output = self.transformer(x, src_key_padding_mask=src_key_padding_mask)
-        return output
-        
-    def visualize_attention(self, save_dir: str, batch_idx: int = 0, head_idx: int = 0):
-        """可视化所有层的attention matrix
-        
-        Args:
-            save_dir: 保存可视化结果的目录
-            batch_idx: 要可视化的batch索引
-            head_idx: 要可视化的attention head索引
-        """
-        os.makedirs(save_dir, exist_ok=True)
-        
-        num_layers = len(self.attention_hooks)
-        fig, axes = plt.subplots(1, num_layers, figsize=(5*num_layers, 4))
-        if num_layers == 1:
-            axes = [axes]
-            
-        for layer_idx, hook in enumerate(self.attention_hooks):
-            if not hook.attention_maps:
-                continue
-                
-            attn_map = hook.attention_maps[-1][batch_idx, head_idx].numpy()
-            sns.heatmap(attn_map, ax=axes[layer_idx], cmap='viridis')
-            axes[layer_idx].set_title(f'Layer {layer_idx+1}')
-            axes[layer_idx].set_xlabel('Key position')
-            axes[layer_idx].set_ylabel('Query position')
-            
-        plt.tight_layout()
-        plt.savefig(os.path.join(save_dir, f'attention_batch{batch_idx}_head{head_idx}.png'))
-        plt.close()
-
-    def get_attention_weights(self) -> List[th.Tensor]:
-        """获取所有层的attention weights
-        
-        Returns:
-            List[torch.Tensor]: 每一层的attention weights
-        """
-        return [hook.attention_maps[-1] if hook.attention_maps else None 
-                for hook in self.attention_hooks]
-class AttentionHook:
-    def __init__(self):
-        self.attention_maps = []
-        
-    def __call__(self, module, input, output):
-        # 在新版本PyTorch中，MultiheadAttention的输出不再包含attention weights
-        # 我们需要手动计算attention weights
-        if isinstance(output, tuple):
-            attn_output = output[0]
-            # 如果output有第二个元素且不为None，那就是attention weights
-            if len(output) > 1 and output[1] is not None:
-                attn_weights = output[1]
-            else:
-                # 手动计算attention weights
-                q, k, v = input
-                d_k = q.size(-1)
-                scores = th.matmul(q, k.transpose(-2, -1)) / math.sqrt(d_k)
-                attn_weights = th.softmax(scores, dim=-1)
-        else:
-            attn_output = output
-            # 手动计算attention weights
-            q, k, v = input
-            d_k = q.size(-1)
-            scores = th.matmul(q, k.transpose(-2, -1)) / math.sqrt(d_k)
-            attn_weights = th.softmax(scores, dim=-1)
-            
-        self.attention_maps.append(attn_weights.detach().cpu())
-
 class EncoderActionEffect(BaseModel):
     """
-    Encoder for action effect, using Transformer instead of LSTM.
+    Encoder for action effect, using ITransformer.
     This encoder processes the observation of cube.
-    We want to test whether the attention for cube height will be learned
     """
     def __init__(
         self,
@@ -339,15 +268,29 @@ class EncoderActionEffect(BaseModel):
         obs_shapes = get_obs_shape(observation_space)
         self.observation_dim = sum([obs_shape[0] for obs_shape in obs_shapes.values()])
         
-        # Transformer
-        self.transformer = TransformerEncoder(
-            input_dim=self.observation_dim - 14,  # 与原LSTM输入维度保持一致
-            hidden_dim=hidden_dim,
-            nhead=4,  # 多头注意力机制的头数
-            num_layers=2  # Transformer层数
-        )
+        # Calculate input features dimension
+        self.feature_dim = 6  # Number of features we use (4:10)
         
-        self.fc = nn.Linear(hidden_dim, self.action_dim)
+        # ITransformer configuration
+        encoder_config = Config(
+            task_name="classification",
+            seq_len=1,  # Single step processing
+            pred_len=1,
+            d_model=hidden_dim,
+            embed='fixed',  # Use fixed embedding for single-step
+            freq='h',
+            dropout=0.1,
+            factor=5,
+            n_heads=4,
+            d_ff=hidden_dim * 4,
+            e_layers=2,
+            activation='gelu',
+            enc_in=1,  # Use 1 for classification task since we process all features together
+            num_class=self.action_dim
+        )
+        self.transformer = ITransformer(encoder_config)
+        self.pre_transform = nn.Linear(self.feature_dim, hidden_dim)  # Add input projection
+        self.transformer = ITransformer(encoder_config)
         self.weight_info_nce = nn.Linear(self.action_dim, self.action_dim, bias=False)
         
     @th.no_grad()
@@ -361,18 +304,23 @@ class EncoderActionEffect(BaseModel):
         keys.remove('action')
         keys.sort()
         x = th.cat([x[_x] for _x in keys], dim=-1).unsqueeze(1)
-        batch_size = x.size(0)
+        h = th.cat(([h[_h] for _h in h]),dim = -1).unsqueeze(0)
+        c = th.cat(([c[_c] for _c in c]),dim = -1).unsqueeze(0)
         
-        x_slice = x[:, :, 4:10]
+        # Extract relevant features
+        x_slice = x[:, :, 4:10]  # Shape: [batch_size, 1, 6]
         
-        H = self.transformer(x_slice)
-        logits = self.fc(th.relu(H[:, -1, :]))  # 使用最后一个时间步的输出
+        # Project features to transformer dimension
+        x_transformed = self.pre_transform(x_slice)  # Shape: [batch_size, 1, hidden_dim]
         
-        # 创建与输入隐藏状态和单元状态相同形状的零张量
+        # Forward through transformer for classification
+        logits = self.transformer(x_transformed, None, None, None)
+        
+        # Create dummy states with same device as input
         dummy_h = th.zeros_like(h)
         dummy_c = th.zeros_like(c)
         
-        return logits, (dummy_h, dummy_c)
+        return logits, (dummy_h.squeeze(0), dummy_c.squeeze(0))
 
     @profile
     def forward(self, obs):
@@ -386,26 +334,112 @@ class EncoderActionEffect(BaseModel):
         keys.sort()
         x = th.cat([obs[_x] for _x in keys], dim=-1)
         
-        # 提取相关特征并通过Transformer
+        # Extract relevant features
         x_slice = x[:, :, 4:10]
-        H = self.transformer(x_slice)
-        logits = self.fc(th.relu(H))
+        
+        # Project features to transformer dimension
+        x_transformed = self.pre_transform(x_slice)  # Shape: [batch_size, seq_len, hidden_dim]
+        
+        # Forward through ITransformer
+        logits = self.transformer(x_transformed, None, None, None)
         return logits
-    
-    def visualize_attention_weights(self, save_dir: str, batch_idx: int = 0, head_idx: int = 0):
-        """可视化transformer的attention weights
+
+
+class EncoderCubeObsAction(BaseModel):
+    """
+    Encoder for action effect, using ITransformer.
+    This encoder processes the observation and action.
+    """
+    def __init__(
+        self,
+        observation_space: spaces.Space,
+        action_space: spaces.Box,
+        hidden_dim: int = 128,
+        optimizer_kwargs: dict = {'eps':1e-5, 'lr':1e-3}
+    ):
+        super().__init__(
+            observation_space,
+            action_space,
+            optimizer_kwargs=optimizer_kwargs
+        )
+        self.action_dim = get_action_dim(action_space)
+        obs_shapes = get_obs_shape(observation_space)
+        self.observation_dim = sum([obs_shape[0] for obs_shape in obs_shapes.values()])
         
-        Args:
-            save_dir: str, 保存可视化结果的目录
-            batch_idx: int, 要可视化的batch索引
-            head_idx: int, 要可视化的attention head索引
+        # Calculate input dimension (observation_dim - achieved_goal and desired_goal dims)
+        input_dim = self.observation_dim - 6  # Remove achieved_goal and desired_goal dimensions
+        
+        # ITransformer configuration
+        self.encoder_config = Config(
+            task_name="classification",
+            seq_len=1,  # Single step processing
+            pred_len=1,
+            d_model=hidden_dim,
+            embed='fixed',
+            freq='h',
+            dropout=0.1,
+            factor=5,
+            n_heads=4,
+            d_ff=hidden_dim * 4,
+            e_layers=2,
+            activation='gelu',
+            enc_in=input_dim,
+            num_class=self.action_dim
+        )
+        self.transformer = ITransformer(self.encoder_config)
+        self.weight_info_nce = nn.Linear(self.action_dim, self.action_dim, bias=False)
+        
+    @th.no_grad()
+    def forward_one_step(self, x, h, c):
         """
-        # 确保保存目录存在
-        os.makedirs(save_dir, exist_ok=True)
-        print("save_dir:", save_dir)
+        Process a single step through the transformer
+        """
+        keys = list(x.keys())
+        keys.remove('achieved_goal')
+        keys.remove('desired_goal')
+        # keys.remove('action')
+        keys.sort()
         
-        # 调用transformer的可视化方法
-        self.transformer.visualize_attention(save_dir, batch_idx, head_idx)
+        # Concatenate inputs and reshape for transformer
+        x = th.cat([x[_x] for _x in keys], dim=-1).unsqueeze(1)  # [batch_size, 1, feature_dim]
+        
+        # Reshape input to match transformer's expected shape [batch_size, seq_len, enc_in]
+        batch_size = x.size(0)
+        x = x.reshape(batch_size, -1, self.encoder_config.enc_in)
+        h = th.cat(([h[_h] for _h in h]),dim = -1).unsqueeze(0)
+        c = th.cat(([c[_c] for _c in c]),dim = -1).unsqueeze(0)
+        
+        # Forward through ITransformer
+        logits = self.transformer(x, None, None, None)
+        
+        # Create dummy states (transformer doesn't use LSTM states)
+        dummy_h = th.zeros_like(h)
+        dummy_c = th.zeros_like(c)
+        
+        return logits, (dummy_h.squeeze(0), dummy_c.squeeze(0))
+
+    @profile
+    def forward(self, obs):
+        """
+        Process the full trajectory through transformer
+        """
+        keys = list(obs.keys())
+        keys.remove('achieved_goal')
+        keys.remove('desired_goal')
+        # keys.remove('action')
+        keys.sort()
+        
+        # Concatenate inputs
+        x = th.cat([obs[_x] for _x in keys], dim=-1)  # [batch_size, seq_len, feature_dim]
+        
+        # Reshape input to match transformer's expected shape [batch_size, seq_len, enc_in]
+        batch_size = x.size(0)
+        seq_len = x.size(1)
+        x = x.reshape(batch_size, seq_len, -1)
+        
+        # Forward through ITransformer
+        logits = self.transformer(x, None, None, None)
+        return logits
 
 class MultiInputPolicy(SACPolicy):
     """
@@ -491,8 +525,8 @@ class MultiInputPolicy(SACPolicy):
         trajectory_space['action'] = spaces.Box(-10,10,(self.action_dim,),dtype=np.float32)
 
         causal_space = spaces.Box(-10,10,(self.causal_out_dim,),dtype=np.float32)
-        self.encoder = EncoderCubeHeight(trajectory_space, causal_space, hidden_dim=self.causal_hidden_dim).to(self.device)
-        self.encoder_target = EncoderCubeHeight(trajectory_space, causal_space, hidden_dim=self.causal_hidden_dim).to(self.device)
+        self.encoder = EncoderActionEffect(trajectory_space, causal_space, hidden_dim=self.causal_hidden_dim).to(self.device)
+        self.encoder_target = EncoderActionEffect(trajectory_space, causal_space, hidden_dim=self.causal_hidden_dim).to(self.device)
         self.encoder_target.load_state_dict(self.encoder.state_dict())
         self.encoder_target.set_training_mode(False)
         self.encoder.optimizer = self.optimizer_class(
@@ -520,18 +554,15 @@ class MultiInputPolicy(SACPolicy):
 
         causal_keys = {'hidden_c','hidden_h','causal'}
         encoder_observation = {k:v for k,v in observation.items() if k not in causal_keys}
+        encoder_hidden_h = {'hidden_h': observation['hidden_h']}
+        encoder_hidden_c = {'hidden_c': observation['hidden_c']}
         
-        # Convert hidden states to tensors first
-        h = observation['hidden_h']
-        c = observation['hidden_c']
-        
-        # Convert observations and states to tensors
         encoder_observation, _ = self.obs_to_tensor(encoder_observation)
-        h = obs_as_tensor(h, self.device)
-        c = obs_as_tensor(c, self.device)
+        encoder_hidden_h, _ = self.obs_to_tensor(encoder_hidden_h)
+        encoder_hidden_c, _ = self.obs_to_tensor(encoder_hidden_c)
 
         encoder_logits, (encoder_hidden_h, encoder_hidden_c) = \
-            self.encoder.forward_one_step(encoder_observation, h=h, c=c)
+            self.encoder.forward_one_step(encoder_observation, h=encoder_hidden_h, c=encoder_hidden_c)
         
         state = (encoder_logits.detach().cpu().numpy(),
                  encoder_hidden_h.detach().cpu().numpy(),
@@ -602,6 +633,54 @@ class MultiInputPolicy(SACPolicy):
     def set_training_mode(self, mode: bool) -> None:
         self.encoder.set_training_mode(mode)
         return super().set_training_mode(mode)
+
+class TransformerEncoder(nn.Module):
+    def __init__(self, input_dim, hidden_dim, nhead=4, num_layers=2, dropout=0.1):
+        super().__init__()
+        
+        # Input projection layer to match d_model dimension
+        self.input_proj = nn.Linear(input_dim, hidden_dim)
+        
+        # Layer normalization and positional encoding
+        self.layer_norm = nn.LayerNorm(hidden_dim)
+        self.pos_encoder = nn.Parameter(torch.zeros(1, 1000, hidden_dim))  # Max sequence length of 1000
+        
+        # Transformer encoder layers
+        encoder_layer = nn.TransformerEncoderLayer(
+            d_model=hidden_dim,
+            nhead=nhead,
+            dim_feedforward=hidden_dim * 4,
+            dropout=dropout,
+            batch_first=True  # (batch, seq, feature)
+        )
+        self.transformer = nn.TransformerEncoder(encoder_layer, num_layers=num_layers)
+        
+        # Store config
+        self.hidden_dim = hidden_dim
+        
+    def forward(self, x, mask=None):
+        # Input shape: (batch_size, seq_len, input_dim)
+        batch_size, seq_len = x.shape[0], x.shape[1]
+        
+        # Project input to hidden dimension
+        x = self.input_proj(x)  # Shape: (batch_size, seq_len, hidden_dim)
+        
+        # Add positional encoding
+        x = x + self.pos_encoder[:, :seq_len, :]
+        
+        # Apply layer normalization
+        x = self.layer_norm(x)
+        
+        # Create attention mask if needed
+        if mask is not None:
+            # Convert boolean mask to float mask where True = -inf (masked positions)
+            mask = mask.float().masked_fill(mask == 0, float('-inf')).masked_fill(mask == 1, float(0.0))
+        
+        # Pass through transformer
+        # Shape remains (batch_size, seq_len, hidden_dim)
+        output = self.transformer(x, src_key_padding_mask=mask)
+        
+        return output  # Shape: (batch_size, seq_len, hidden_dim)
 
 
 
