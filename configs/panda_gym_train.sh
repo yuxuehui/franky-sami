@@ -822,8 +822,8 @@
 #     --test_eps_num_per_env 50 \
 #     --time_step 5_000_000 \
 #     --train_envs "[(0, 30), (1, 1), (1, 30), (1, 5)]" &
-# /home/xi/yxh_space/SaMI/SaMI/output/2025-05-27-16:21:40-039164
-# /home/xi/yxh_space/SaMI/SaMI/output/2025-05-27-16:21:40-269924
+# /home/xi/yxh_space/SaMI/SaMI/output/2025-05-27-16:21:40-039164 no work
+# /home/xi/yxh_space/SaMI/SaMI/output/2025-05-27-16:21:40-269924 no work
 
 # # #     [updated 2025/5/27] make sure the RL see all of the skills during training
 # # #     1. --train_envs [(0, 30), (1, 1), (1, 30), (1, 5)]
@@ -900,12 +900,96 @@
 #     --test_eps_num_per_env 50 \
 #     --time_step 5_000_000 \
 #     --train_envs "[(0, 30), (1, 1), (1, 30), (1, 5)]" &
+# /home/xi/yxh_space/SaMI/SaMI/output/2025-05-27-16:53:22-911869
+# /home/xi/yxh_space/SaMI/SaMI/output/2025-05-27-16:53:23-093840    SaCCM/0.1
+# /home/xi/yxh_space/SaMI/SaMI/output/2025-05-27-16:53:23-249013
+# /home/xi/yxh_space/SaMI/SaMI/output/2025-05-27-16:53:23-286286
+
+
+
 
 # #     [updated 2025/5/27] make sure the RL see all of the skills during training
 # #     1. --train_envs [(0, 30), (1, 1), (1, 30), (1, 5)]
 # #     2. LSTM only input the height of cube & the distance of cube and robot, remove the action, desired_goal and achieved_goal
 # #     3. use algorithms in /home/xi/yxh_space/SaMI/SaMI/algorithm/method_traj_distance_transformer, and EncoderCubeHeightDistance
-CUDA_VISIBLE_DEVICES=0 nohup python ../main.py \
+# CUDA_VISIBLE_DEVICES=0 nohup python ../main.py \
+#     --env_name PandaPush-v3 \
+#     --env_hook PandaHook \
+#     --method SaCCM \
+#     --adversarial_loss_coef 0.01 \
+#     --buffer_size 1000 \
+#     --train_freq 128 \
+#     --gradient_steps 16 \
+#     --learning_rate 1e-3 \
+#     --batch_size 256 \
+#     --contrast_batch_size 256 \
+#     --encoder_tau 0.05 \
+#     --seed 100 \
+#     --test_envs "[(0, 30), (1, 1), (1, 30), (1, 5)]" \
+#     --test_eps_num_per_env 50 \
+#     --time_step 5_000_000 \
+#     --train_envs "[(0, 30), (1, 1), (1, 30), (1, 5)]" &
+
+# CUDA_VISIBLE_DEVICES=0 nohup python ../main.py \
+#     --env_name PandaPush-v3 \
+#     --env_hook PandaHook \
+#     --method SaSAC \
+#     --adversarial_loss_coef 0.01 \
+#     --buffer_size 1000 \
+#     --train_freq 128 \
+#     --gradient_steps 16 \
+#     --learning_rate 1e-3 \
+#     --batch_size 256 \
+#     --contrast_batch_size 256 \
+#     --encoder_tau 0.05 \
+#     --seed 100 \
+#     --test_envs "[(0, 30), (1, 1), (1, 30), (1, 5)]" \
+#     --test_eps_num_per_env 50 \
+#     --time_step 5_000_000 \
+#     --train_envs "[(0, 30), (1, 1), (1, 30), (1, 5)]" &
+
+# CUDA_VISIBLE_DEVICES=0 nohup python ../main.py \
+#     --env_name PandaPush-v3 \
+#     --env_hook PandaHook \
+#     --method SaCCM \
+#     --adversarial_loss_coef 0.1 \
+#     --buffer_size 1000 \
+#     --train_freq 128 \
+#     --gradient_steps 16 \
+#     --learning_rate 1e-3 \
+#     --batch_size 256 \
+#     --contrast_batch_size 256 \
+#     --encoder_tau 0.05 \
+#     --seed 100 \
+#     --test_envs "[(0, 30), (1, 1), (1, 30), (1, 5)]" \
+#     --test_eps_num_per_env 50 \
+#     --time_step 5_000_000 \
+#     --train_envs "[(0, 30), (1, 1), (1, 30), (1, 5)]" &
+
+# CUDA_VISIBLE_DEVICES=0 nohup python ../main.py \
+#     --env_name PandaPush-v3 \
+#     --env_hook PandaHook \
+#     --method SaSAC \
+#     --adversarial_loss_coef 0.1 \
+#     --buffer_size 1000 \
+#     --train_freq 128 \
+#     --gradient_steps 16 \
+#     --learning_rate 1e-3 \
+#     --batch_size 256 \
+#     --contrast_batch_size 256 \
+#     --encoder_tau 0.05 \
+#     --seed 100 \
+#     --test_envs "[(0, 30), (1, 1), (1, 30), (1, 5)]" \
+#     --test_eps_num_per_env 50 \
+#     --time_step 5_000_000 \
+#     --train_envs "[(0, 30), (1, 1), (1, 30), (1, 5)]" &
+
+# VQ
+# #     [updated 2025/5/27] make sure the RL see all of the skills during training
+# #     1. --train_envs [(0, 30), (1, 1), (1, 30), (1, 5)]
+# #     2. DQ-LSTM only input the height of cube & the distance of cube and robot, remove the action, desired_goal and achieved_goal
+# #     3. use algorithms in /home/xi/yxh_space/SaMI/SaMI/algorithm/method_traj_distance_transformer, and EncoderCubeHeightDis
+CUDA_VISIBLE_DEVICES=1 nohup python ../main.py \
     --env_name PandaPush-v3 \
     --env_hook PandaHook \
     --method SaCCM \
@@ -923,7 +1007,7 @@ CUDA_VISIBLE_DEVICES=0 nohup python ../main.py \
     --time_step 5_000_000 \
     --train_envs "[(0, 30), (1, 1), (1, 30), (1, 5)]" &
 
-CUDA_VISIBLE_DEVICES=0 nohup python ../main.py \
+CUDA_VISIBLE_DEVICES=1 nohup python ../main.py \
     --env_name PandaPush-v3 \
     --env_hook PandaHook \
     --method SaSAC \
@@ -941,7 +1025,7 @@ CUDA_VISIBLE_DEVICES=0 nohup python ../main.py \
     --time_step 5_000_000 \
     --train_envs "[(0, 30), (1, 1), (1, 30), (1, 5)]" &
 
-CUDA_VISIBLE_DEVICES=0 nohup python ../main.py \
+CUDA_VISIBLE_DEVICES=1 nohup python ../main.py \
     --env_name PandaPush-v3 \
     --env_hook PandaHook \
     --method SaCCM \
@@ -959,7 +1043,7 @@ CUDA_VISIBLE_DEVICES=0 nohup python ../main.py \
     --time_step 5_000_000 \
     --train_envs "[(0, 30), (1, 1), (1, 30), (1, 5)]" &
 
-CUDA_VISIBLE_DEVICES=0 nohup python ../main.py \
+CUDA_VISIBLE_DEVICES=1 nohup python ../main.py \
     --env_name PandaPush-v3 \
     --env_hook PandaHook \
     --method SaSAC \

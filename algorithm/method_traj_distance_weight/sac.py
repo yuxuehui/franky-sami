@@ -271,6 +271,13 @@ class SAC(OffPolicyAlgorithm):
                 weights.append(weight)
 
             encoder_loss = th.stack(encoder_loss).mean()
+            
+            # Add VQ loss if encoder has vector quantization
+            vq_loss = th.tensor(0.0, device=encoder_loss.device)
+            if hasattr(self.encoder, 'vq_loss'):
+                vq_loss = self.encoder.vq_loss
+                encoder_loss = encoder_loss + vq_loss
+            
             self.encoder.optimizer.zero_grad()
             encoder_loss.backward()
             self.encoder.optimizer.step()
@@ -278,6 +285,7 @@ class SAC(OffPolicyAlgorithm):
         else:
             encoder_loss = th.tensor(0.0)
             weights =th.tensor(0.0)
+            vq_loss = th.tensor(0.0)
         
 
         ### Train RL
@@ -356,11 +364,20 @@ class SAC(OffPolicyAlgorithm):
         critic_loss = 0.5 * sum(F.mse_loss(current_q, target_q_values) for current_q in current_q_values)
         assert isinstance(critic_loss, th.Tensor)  # for type checker
 
+        # Add VQ loss if encoder has vector quantization
+        vq_loss_rl = th.tensor(0.0, device=critic_loss.device)
+        if hasattr(self.encoder, 'vq_loss'):
+            vq_loss_rl = self.encoder.vq_loss
+            # Add VQ loss to the overall loss for encoder training
+            total_encoder_critic_loss = critic_loss + vq_loss_rl
+        else:
+            total_encoder_critic_loss = critic_loss
+
         # Optimize the critic
         self.encoder.optimizer.zero_grad()
         self.critic.optimizer.zero_grad()
         # (encoder_loss + critic_loss).backward()
-        critic_loss.backward()
+        total_encoder_critic_loss.backward()
         self.critic.optimizer.step()
         self.encoder.optimizer.step()
 
@@ -430,6 +447,13 @@ class SAC(OffPolicyAlgorithm):
                 weights.append(weight)
 
             encoder_loss = th.stack(encoder_loss).mean()
+            
+            # Add VQ loss if encoder has vector quantization
+            vq_loss = th.tensor(0.0, device=encoder_loss.device)
+            if hasattr(self.encoder, 'vq_loss'):
+                vq_loss = self.encoder.vq_loss
+                encoder_loss = encoder_loss + vq_loss
+            
             self.encoder.optimizer.zero_grad()
             encoder_loss.backward()
             self.encoder.optimizer.step()
@@ -437,6 +461,7 @@ class SAC(OffPolicyAlgorithm):
         else:
             encoder_loss = th.tensor(0.0)
             weights =th.tensor(0.0)
+            vq_loss = th.tensor(0.0)
         
 
         ### Train RL
@@ -516,12 +541,21 @@ class SAC(OffPolicyAlgorithm):
         critic_loss = 0.5 * sum(F.mse_loss(current_q, target_q_values) for current_q in current_q_values)
         assert isinstance(critic_loss, th.Tensor)  # for type checker
 
+        # Add VQ loss if encoder has vector quantization
+        vq_loss_rl = th.tensor(0.0, device=critic_loss.device)
+        if hasattr(self.encoder, 'vq_loss'):
+            vq_loss_rl = self.encoder.vq_loss
+            # Add VQ loss to the overall loss for encoder training
+            total_encoder_critic_loss = critic_loss + vq_loss_rl
+        else:
+            total_encoder_critic_loss = critic_loss
+
         # Clear gradients before computing new ones
         self.encoder.optimizer.zero_grad()
         self.critic.optimizer.zero_grad()
         # Compute new gradients
         # (encoder_loss + critic_loss).backward()
-        critic_loss.backward()
+        total_encoder_critic_loss.backward()
         # Apply gradients in optimization step
         self.critic.optimizer.step()
         self.encoder.optimizer.step()
@@ -588,6 +622,13 @@ class SAC(OffPolicyAlgorithm):
                 weights.append(weight)
 
             encoder_loss = th.stack(encoder_loss).mean()
+            
+            # Add VQ loss if encoder has vector quantization
+            vq_loss = th.tensor(0.0, device=encoder_loss.device)
+            if hasattr(self.encoder, 'vq_loss'):
+                vq_loss = self.encoder.vq_loss
+                encoder_loss = encoder_loss + vq_loss
+            
             self.encoder.optimizer.zero_grad()
             encoder_loss.backward()
             self.encoder.optimizer.step()
@@ -595,6 +636,7 @@ class SAC(OffPolicyAlgorithm):
         else:
             encoder_loss = th.tensor(0.0)
             weights =th.tensor(0.0)
+            vq_loss = th.tensor(0.0)
         
 
         ### Train RL
@@ -693,10 +735,18 @@ class SAC(OffPolicyAlgorithm):
         min_qf_pi, _ = th.min(q_values_pi, dim=1, keepdim=True)
         actor_loss = (ent_coef * log_prob - min_qf_pi).mean()
 
+        # Add VQ loss if encoder has vector quantization for actor-encoder training
+        vq_loss_actor = th.tensor(0.0, device=actor_loss.device)
+        if hasattr(self.encoder, 'vq_loss'):
+            vq_loss_actor = self.encoder.vq_loss
+            total_actor_loss = actor_loss + vq_loss_actor
+        else:
+            total_actor_loss = actor_loss
+
         # Optimize the actor
         self.encoder.optimizer.zero_grad()
         self.actor.optimizer.zero_grad()
-        actor_loss.backward()
+        total_actor_loss.backward()
         self.actor.optimizer.step()
         self.encoder.optimizer.step()
 
@@ -744,6 +794,13 @@ class SAC(OffPolicyAlgorithm):
                 weights.append(weight)
 
             encoder_loss = th.stack(encoder_loss).mean()
+            
+            # Add VQ loss if encoder has vector quantization
+            vq_loss = th.tensor(0.0, device=encoder_loss.device)
+            if hasattr(self.encoder, 'vq_loss'):
+                vq_loss = self.encoder.vq_loss
+                encoder_loss = encoder_loss + vq_loss
+            
             self.encoder.optimizer.zero_grad()
             encoder_loss.backward()
             self.encoder.optimizer.step()
@@ -751,6 +808,7 @@ class SAC(OffPolicyAlgorithm):
         else:
             encoder_loss = th.tensor(0.0)
             weights =th.tensor(0.0)
+            vq_loss = th.tensor(0.0)
         
 
         ### Train RL

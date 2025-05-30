@@ -3369,3 +3369,797 @@ pybullet build time: Jan 29 2025 23:16:28
   logger.warn(
 /home/xi/anaconda3/envs/franky-sami/lib/python3.10/site-packages/gymnasium/utils/passive_env_checker.py:159: UserWarning: [33mWARN: The obs returned by the `step()` method is not within the observation space.[0m
   logger.warn(f"{pre} is not within the observation space.")
+0it [00:00, ?it/s]/home/xi/anaconda3/envs/franky-sami/lib/python3.10/site-packages/gymnasium/core.py:311: UserWarning: [33mWARN: env.task to get variables from other wrappers is deprecated and will be removed in v1.0, to get this variable you can do `env.unwrapped.task` for environment variables or `env.get_wrapper_attr('task')` that will search the reminding wrappers.[0m
+  logger.warn(
+/home/xi/anaconda3/envs/franky-sami/lib/python3.10/site-packages/gymnasium/core.py:311: UserWarning: [33mWARN: env.set_obs_friction_mass to get variables from other wrappers is deprecated and will be removed in v1.0, to get this variable you can do `env.unwrapped.set_obs_friction_mass` for environment variables or `env.get_wrapper_attr('set_obs_friction_mass')` that will search the reminding wrappers.[0m
+  logger.warn(
+/home/xi/anaconda3/envs/franky-sami/lib/python3.10/site-packages/gymnasium/utils/passive_env_checker.py:135: UserWarning: [33mWARN: The obs returned by the `reset()` method was expecting numpy array dtype to be float32, actual type: float64[0m
+  logger.warn(
+/home/xi/anaconda3/envs/franky-sami/lib/python3.10/site-packages/gymnasium/utils/passive_env_checker.py:159: UserWarning: [33mWARN: The obs returned by the `reset()` method is not within the observation space.[0m
+  logger.warn(f"{pre} is not within the observation space.")
+/home/xi/anaconda3/envs/franky-sami/lib/python3.10/site-packages/gymnasium/utils/passive_env_checker.py:135: UserWarning: [33mWARN: The obs returned by the `step()` method was expecting numpy array dtype to be float32, actual type: float64[0m
+  logger.warn(
+/home/xi/anaconda3/envs/franky-sami/lib/python3.10/site-packages/gymnasium/utils/passive_env_checker.py:159: UserWarning: [33mWARN: The obs returned by the `step()` method is not within the observation space.[0m
+  logger.warn(f"{pre} is not within the observation space.")
+1it [00:30, 30.27s/it]2it [00:58, 28.81s/it]3it [01:34, 32.44s/it]4it [02:07, 32.52s/it]4it [02:07, 31.87s/it]
+{'model_parameters': {'method': 'SaSAC', 'adversarial_loss_coef': 1.0, 'batch_size': 256, 'contrast_batch_size': 256, 'contrast_buffer_type': 'fine_grained', 'contrast_training_interval': 1, 'time_step': 5000000, 'causal_dim': 6, 'causal_hidden_dim': 128, 'buffer_size': 1000, 'use_weighted_info_nce': False, 'use_reward_norm': False, 'learning_rate': 0.001, 'train_freq': 128, 'gradient_steps': 16, 'encoder_tau': 0.05, 'neg_radio': 0.5, 'env_name': 'PandaPush-v3', 'env_hook': 'PandaHook', 'train_envs': '[(0, 30), (1, 1), (1, 30), (1, 5)]', 'test_envs': '[(0, 30), (1, 1), (1, 30), (1, 5)]', 'use_continue_train': False, 'save_video': False, 'seed': 100, 'config_path': '', 'test_eps_num_per_env': 50, 'use_wandb': False, 'wandb_project_name': 'franky-sami', 'wandb_team_name': 'skill-aware-rl'}, 'save_path': '/home/xi/yxh_space/SaMI/SaMI/output', 'sub_save_path': '/home/xi/yxh_space/SaMI/SaMI/output/2025-05-26-14:23:02-470782', 'save_model_path': '/home/xi/yxh_space/SaMI/SaMI/output/2025-05-26-14:23:02-470782/model.zip', 'log_path': '/home/xi/yxh_space/SaMI/SaMI/output/2025-05-26-14:23:02-470782/log.txt', 'code_path': '/home/xi/yxh_space/SaMI/SaMI/output/2025-05-26-14:23:02-470782/code.zip', 'config_path': '/home/xi/yxh_space/SaMI/SaMI/output/2025-05-26-14:23:02-470782/config.yaml', 'test_path': '/home/xi/yxh_space/SaMI/SaMI/output/2025-05-26-14:23:02-470782/test_result.yaml', 'test_tsne_path': '/home/xi/yxh_space/SaMI/SaMI/output/2025-05-26-14:23:02-470782/tsne.jpg', 'test_table_path': '/home/xi/yxh_space/SaMI/SaMI/output/2025-05-26-14:23:02-470782/tables', 'test_image_path': '/home/xi/yxh_space/SaMI/SaMI/output/2025-05-26-14:23:02-470782/images', 'test_video_path': '/home/xi/yxh_space/SaMI/SaMI/output/2025-05-26-14:23:02-470782/videos'}
+argv[0]=--background_color_red=0.8745098114013672
+argv[1]=--background_color_green=0.21176470816135406
+argv[2]=--background_color_blue=0.1764705926179886
+argv[0]=--background_color_red=0.8745098114013672
+argv[1]=--background_color_green=0.21176470816135406
+argv[2]=--background_color_blue=0.1764705926179886
+argv[0]=--background_color_red=0.8745098114013672
+argv[1]=--background_color_green=0.21176470816135406
+argv[2]=--background_color_blue=0.1764705926179886
+argv[0]=--background_color_red=0.8745098114013672
+argv[1]=--background_color_green=0.21176470816135406
+argv[2]=--background_color_blue=0.1764705926179886
+argv[0]=--background_color_red=0.8745098114013672
+argv[1]=--background_color_green=0.21176470816135406
+argv[2]=--background_color_blue=0.1764705926179886
+argv[0]=--background_color_red=0.8745098114013672
+argv[1]=--background_color_green=0.21176470816135406
+argv[2]=--background_color_blue=0.1764705926179886
+argv[0]=--background_color_red=0.8745098114013672
+argv[1]=--background_color_green=0.21176470816135406
+argv[2]=--background_color_blue=0.1764705926179886
+argv[0]=--background_color_red=0.8745098114013672
+argv[1]=--background_color_green=0.21176470816135406
+argv[2]=--background_color_blue=0.1764705926179886
+0it [00:00, ?it/s]/home/xi/anaconda3/envs/franky-sami/lib/python3.10/site-packages/gymnasium/core.py:311: UserWarning: [33mWARN: env.task to get variables from other wrappers is deprecated and will be removed in v1.0, to get this variable you can do `env.unwrapped.task` for environment variables or `env.get_wrapper_attr('task')` that will search the reminding wrappers.[0m
+  logger.warn(
+/home/xi/anaconda3/envs/franky-sami/lib/python3.10/site-packages/gymnasium/core.py:311: UserWarning: [33mWARN: env.set_obs_friction_mass to get variables from other wrappers is deprecated and will be removed in v1.0, to get this variable you can do `env.unwrapped.set_obs_friction_mass` for environment variables or `env.get_wrapper_attr('set_obs_friction_mass')` that will search the reminding wrappers.[0m
+  logger.warn(
+/home/xi/anaconda3/envs/franky-sami/lib/python3.10/site-packages/gymnasium/utils/passive_env_checker.py:135: UserWarning: [33mWARN: The obs returned by the `reset()` method was expecting numpy array dtype to be float32, actual type: float64[0m
+  logger.warn(
+/home/xi/anaconda3/envs/franky-sami/lib/python3.10/site-packages/gymnasium/utils/passive_env_checker.py:159: UserWarning: [33mWARN: The obs returned by the `reset()` method is not within the observation space.[0m
+  logger.warn(f"{pre} is not within the observation space.")
+/home/xi/anaconda3/envs/franky-sami/lib/python3.10/site-packages/gymnasium/utils/passive_env_checker.py:135: UserWarning: [33mWARN: The obs returned by the `step()` method was expecting numpy array dtype to be float32, actual type: float64[0m
+  logger.warn(
+/home/xi/anaconda3/envs/franky-sami/lib/python3.10/site-packages/gymnasium/utils/passive_env_checker.py:159: UserWarning: [33mWARN: The obs returned by the `step()` method is not within the observation space.[0m
+  logger.warn(f"{pre} is not within the observation space.")
+1it [00:24, 24.39s/it]2it [00:47, 23.41s/it]3it [01:19, 27.53s/it]4it [01:49, 28.30s/it]4it [01:49, 27.26s/it]
+{'model_parameters': {'method': 'SaCCM', 'adversarial_loss_coef': 1.0, 'batch_size': 256, 'contrast_batch_size': 256, 'contrast_buffer_type': 'fine_grained', 'contrast_training_interval': 1, 'time_step': 5000000, 'causal_dim': 6, 'causal_hidden_dim': 128, 'buffer_size': 1000, 'use_weighted_info_nce': False, 'use_reward_norm': False, 'learning_rate': 0.001, 'train_freq': 128, 'gradient_steps': 16, 'encoder_tau': 0.05, 'neg_radio': 0.5, 'env_name': 'PandaPush-v3', 'env_hook': 'PandaHook', 'train_envs': '[(0, 30), (1, 1), (1, 30), (1, 5)]', 'test_envs': '[(0, 30), (1, 1), (1, 30), (1, 5)]', 'use_continue_train': False, 'save_video': False, 'seed': 100, 'config_path': '', 'test_eps_num_per_env': 50, 'use_wandb': False, 'wandb_project_name': 'franky-sami', 'wandb_team_name': 'skill-aware-rl'}, 'save_path': '/home/xi/yxh_space/SaMI/SaMI/output', 'sub_save_path': '/home/xi/yxh_space/SaMI/SaMI/output/2025-05-26-14:23:02-500600', 'save_model_path': '/home/xi/yxh_space/SaMI/SaMI/output/2025-05-26-14:23:02-500600/model.zip', 'log_path': '/home/xi/yxh_space/SaMI/SaMI/output/2025-05-26-14:23:02-500600/log.txt', 'code_path': '/home/xi/yxh_space/SaMI/SaMI/output/2025-05-26-14:23:02-500600/code.zip', 'config_path': '/home/xi/yxh_space/SaMI/SaMI/output/2025-05-26-14:23:02-500600/config.yaml', 'test_path': '/home/xi/yxh_space/SaMI/SaMI/output/2025-05-26-14:23:02-500600/test_result.yaml', 'test_tsne_path': '/home/xi/yxh_space/SaMI/SaMI/output/2025-05-26-14:23:02-500600/tsne.jpg', 'test_table_path': '/home/xi/yxh_space/SaMI/SaMI/output/2025-05-26-14:23:02-500600/tables', 'test_image_path': '/home/xi/yxh_space/SaMI/SaMI/output/2025-05-26-14:23:02-500600/images', 'test_video_path': '/home/xi/yxh_space/SaMI/SaMI/output/2025-05-26-14:23:02-500600/videos'}
+argv[0]=--background_color_red=0.8745098114013672
+argv[1]=--background_color_green=0.21176470816135406
+argv[2]=--background_color_blue=0.1764705926179886
+argv[0]=--background_color_red=0.8745098114013672
+argv[1]=--background_color_green=0.21176470816135406
+argv[2]=--background_color_blue=0.1764705926179886
+argv[0]=--background_color_red=0.8745098114013672
+argv[1]=--background_color_green=0.21176470816135406
+argv[2]=--background_color_blue=0.1764705926179886
+argv[0]=--background_color_red=0.8745098114013672
+argv[1]=--background_color_green=0.21176470816135406
+argv[2]=--background_color_blue=0.1764705926179886
+argv[0]=--background_color_red=0.8745098114013672
+argv[1]=--background_color_green=0.21176470816135406
+argv[2]=--background_color_blue=0.1764705926179886
+argv[0]=--background_color_red=0.8745098114013672
+argv[1]=--background_color_green=0.21176470816135406
+argv[2]=--background_color_blue=0.1764705926179886
+argv[0]=--background_color_red=0.8745098114013672
+argv[1]=--background_color_green=0.21176470816135406
+argv[2]=--background_color_blue=0.1764705926179886
+argv[0]=--background_color_red=0.8745098114013672
+argv[1]=--background_color_green=0.21176470816135406
+argv[2]=--background_color_blue=0.1764705926179886
+pybullet build time: Jan 29 2025 23:16:28
+/home/xi/anaconda3/envs/franky-sami/lib/python3.10/site-packages/gymnasium/envs/registration.py:694: UserWarning: [33mWARN: Overriding environment PandaPush-v3 already in registry.[0m
+  logger.warn(f"Overriding environment {new_spec.id} already in registry.")
+/home/xi/anaconda3/envs/franky-sami/lib/python3.10/site-packages/gymnasium/envs/registration.py:694: UserWarning: [33mWARN: Overriding environment PandaPickAndPlace-v3 already in registry.[0m
+  logger.warn(f"Overriding environment {new_spec.id} already in registry.")
+pybullet build time: Jan 29 2025 23:16:28
+/home/xi/anaconda3/envs/franky-sami/lib/python3.10/site-packages/gymnasium/envs/registration.py:694: UserWarning: [33mWARN: Overriding environment PandaPush-v3 already in registry.[0m
+  logger.warn(f"Overriding environment {new_spec.id} already in registry.")
+/home/xi/anaconda3/envs/franky-sami/lib/python3.10/site-packages/gymnasium/envs/registration.py:694: UserWarning: [33mWARN: Overriding environment PandaPickAndPlace-v3 already in registry.[0m
+  logger.warn(f"Overriding environment {new_spec.id} already in registry.")
+/home/xi/anaconda3/envs/franky-sami/lib/python3.10/site-packages/gymnasium/core.py:311: UserWarning: [33mWARN: env.task to get variables from other wrappers is deprecated and will be removed in v1.0, to get this variable you can do `env.unwrapped.task` for environment variables or `env.get_wrapper_attr('task')` that will search the reminding wrappers.[0m
+  logger.warn(
+/home/xi/anaconda3/envs/franky-sami/lib/python3.10/site-packages/gymnasium/core.py:311: UserWarning: [33mWARN: env.set_obs_friction_mass to get variables from other wrappers is deprecated and will be removed in v1.0, to get this variable you can do `env.unwrapped.set_obs_friction_mass` for environment variables or `env.get_wrapper_attr('set_obs_friction_mass')` that will search the reminding wrappers.[0m
+  logger.warn(
+/home/xi/anaconda3/envs/franky-sami/lib/python3.10/site-packages/gymnasium/utils/passive_env_checker.py:135: UserWarning: [33mWARN: The obs returned by the `reset()` method was expecting numpy array dtype to be float32, actual type: float64[0m
+  logger.warn(
+/home/xi/anaconda3/envs/franky-sami/lib/python3.10/site-packages/gymnasium/utils/passive_env_checker.py:159: UserWarning: [33mWARN: The obs returned by the `reset()` method is not within the observation space.[0m
+  logger.warn(f"{pre} is not within the observation space.")
+/home/xi/anaconda3/envs/franky-sami/lib/python3.10/site-packages/gymnasium/core.py:311: UserWarning: [33mWARN: env.task to get variables from other wrappers is deprecated and will be removed in v1.0, to get this variable you can do `env.unwrapped.task` for environment variables or `env.get_wrapper_attr('task')` that will search the reminding wrappers.[0m
+  logger.warn(
+/home/xi/anaconda3/envs/franky-sami/lib/python3.10/site-packages/gymnasium/core.py:311: UserWarning: [33mWARN: env.set_obs_friction_mass to get variables from other wrappers is deprecated and will be removed in v1.0, to get this variable you can do `env.unwrapped.set_obs_friction_mass` for environment variables or `env.get_wrapper_attr('set_obs_friction_mass')` that will search the reminding wrappers.[0m
+  logger.warn(
+/home/xi/anaconda3/envs/franky-sami/lib/python3.10/site-packages/gymnasium/utils/passive_env_checker.py:135: UserWarning: [33mWARN: The obs returned by the `reset()` method was expecting numpy array dtype to be float32, actual type: float64[0m
+  logger.warn(
+/home/xi/anaconda3/envs/franky-sami/lib/python3.10/site-packages/gymnasium/utils/passive_env_checker.py:159: UserWarning: [33mWARN: The obs returned by the `reset()` method is not within the observation space.[0m
+  logger.warn(f"{pre} is not within the observation space.")
+pybullet build time: Jan 29 2025 23:16:28
+pybullet build time: Jan 29 2025 23:16:28
+/home/xi/anaconda3/envs/franky-sami/lib/python3.10/site-packages/gymnasium/utils/passive_env_checker.py:135: UserWarning: [33mWARN: The obs returned by the `step()` method was expecting numpy array dtype to be float32, actual type: float64[0m
+  logger.warn(
+/home/xi/anaconda3/envs/franky-sami/lib/python3.10/site-packages/gymnasium/utils/passive_env_checker.py:159: UserWarning: [33mWARN: The obs returned by the `step()` method is not within the observation space.[0m
+  logger.warn(f"{pre} is not within the observation space.")
+/home/xi/anaconda3/envs/franky-sami/lib/python3.10/site-packages/gymnasium/envs/registration.py:694: UserWarning: [33mWARN: Overriding environment PandaPush-v3 already in registry.[0m
+  logger.warn(f"Overriding environment {new_spec.id} already in registry.")
+/home/xi/anaconda3/envs/franky-sami/lib/python3.10/site-packages/gymnasium/envs/registration.py:694: UserWarning: [33mWARN: Overriding environment PandaPickAndPlace-v3 already in registry.[0m
+  logger.warn(f"Overriding environment {new_spec.id} already in registry.")
+/home/xi/anaconda3/envs/franky-sami/lib/python3.10/site-packages/gymnasium/envs/registration.py:694: UserWarning: [33mWARN: Overriding environment PandaPush-v3 already in registry.[0m
+  logger.warn(f"Overriding environment {new_spec.id} already in registry.")
+/home/xi/anaconda3/envs/franky-sami/lib/python3.10/site-packages/gymnasium/envs/registration.py:694: UserWarning: [33mWARN: Overriding environment PandaPickAndPlace-v3 already in registry.[0m
+  logger.warn(f"Overriding environment {new_spec.id} already in registry.")
+/home/xi/anaconda3/envs/franky-sami/lib/python3.10/site-packages/gymnasium/utils/passive_env_checker.py:135: UserWarning: [33mWARN: The obs returned by the `step()` method was expecting numpy array dtype to be float32, actual type: float64[0m
+  logger.warn(
+/home/xi/anaconda3/envs/franky-sami/lib/python3.10/site-packages/gymnasium/utils/passive_env_checker.py:159: UserWarning: [33mWARN: The obs returned by the `step()` method is not within the observation space.[0m
+  logger.warn(f"{pre} is not within the observation space.")
+/home/xi/anaconda3/envs/franky-sami/lib/python3.10/site-packages/gymnasium/core.py:311: UserWarning: [33mWARN: env.task to get variables from other wrappers is deprecated and will be removed in v1.0, to get this variable you can do `env.unwrapped.task` for environment variables or `env.get_wrapper_attr('task')` that will search the reminding wrappers.[0m
+  logger.warn(
+/home/xi/anaconda3/envs/franky-sami/lib/python3.10/site-packages/gymnasium/core.py:311: UserWarning: [33mWARN: env.set_obs_friction_mass to get variables from other wrappers is deprecated and will be removed in v1.0, to get this variable you can do `env.unwrapped.set_obs_friction_mass` for environment variables or `env.get_wrapper_attr('set_obs_friction_mass')` that will search the reminding wrappers.[0m
+  logger.warn(
+/home/xi/anaconda3/envs/franky-sami/lib/python3.10/site-packages/gymnasium/utils/passive_env_checker.py:135: UserWarning: [33mWARN: The obs returned by the `reset()` method was expecting numpy array dtype to be float32, actual type: float64[0m
+  logger.warn(
+/home/xi/anaconda3/envs/franky-sami/lib/python3.10/site-packages/gymnasium/utils/passive_env_checker.py:159: UserWarning: [33mWARN: The obs returned by the `reset()` method is not within the observation space.[0m
+  logger.warn(f"{pre} is not within the observation space.")
+/home/xi/anaconda3/envs/franky-sami/lib/python3.10/site-packages/gymnasium/core.py:311: UserWarning: [33mWARN: env.task to get variables from other wrappers is deprecated and will be removed in v1.0, to get this variable you can do `env.unwrapped.task` for environment variables or `env.get_wrapper_attr('task')` that will search the reminding wrappers.[0m
+  logger.warn(
+/home/xi/anaconda3/envs/franky-sami/lib/python3.10/site-packages/gymnasium/core.py:311: UserWarning: [33mWARN: env.set_obs_friction_mass to get variables from other wrappers is deprecated and will be removed in v1.0, to get this variable you can do `env.unwrapped.set_obs_friction_mass` for environment variables or `env.get_wrapper_attr('set_obs_friction_mass')` that will search the reminding wrappers.[0m
+  logger.warn(
+/home/xi/anaconda3/envs/franky-sami/lib/python3.10/site-packages/gymnasium/utils/passive_env_checker.py:135: UserWarning: [33mWARN: The obs returned by the `reset()` method was expecting numpy array dtype to be float32, actual type: float64[0m
+  logger.warn(
+/home/xi/anaconda3/envs/franky-sami/lib/python3.10/site-packages/gymnasium/utils/passive_env_checker.py:159: UserWarning: [33mWARN: The obs returned by the `reset()` method is not within the observation space.[0m
+  logger.warn(f"{pre} is not within the observation space.")
+/home/xi/anaconda3/envs/franky-sami/lib/python3.10/site-packages/gymnasium/utils/passive_env_checker.py:135: UserWarning: [33mWARN: The obs returned by the `step()` method was expecting numpy array dtype to be float32, actual type: float64[0m
+  logger.warn(
+/home/xi/anaconda3/envs/franky-sami/lib/python3.10/site-packages/gymnasium/utils/passive_env_checker.py:159: UserWarning: [33mWARN: The obs returned by the `step()` method is not within the observation space.[0m
+  logger.warn(f"{pre} is not within the observation space.")
+/home/xi/anaconda3/envs/franky-sami/lib/python3.10/site-packages/gymnasium/utils/passive_env_checker.py:135: UserWarning: [33mWARN: The obs returned by the `step()` method was expecting numpy array dtype to be float32, actual type: float64[0m
+  logger.warn(
+/home/xi/anaconda3/envs/franky-sami/lib/python3.10/site-packages/gymnasium/utils/passive_env_checker.py:159: UserWarning: [33mWARN: The obs returned by the `step()` method is not within the observation space.[0m
+  logger.warn(f"{pre} is not within the observation space.")
+0it [00:00, ?it/s]/home/xi/anaconda3/envs/franky-sami/lib/python3.10/site-packages/gymnasium/core.py:311: UserWarning: [33mWARN: env.task to get variables from other wrappers is deprecated and will be removed in v1.0, to get this variable you can do `env.unwrapped.task` for environment variables or `env.get_wrapper_attr('task')` that will search the reminding wrappers.[0m
+  logger.warn(
+/home/xi/anaconda3/envs/franky-sami/lib/python3.10/site-packages/gymnasium/core.py:311: UserWarning: [33mWARN: env.set_obs_friction_mass to get variables from other wrappers is deprecated and will be removed in v1.0, to get this variable you can do `env.unwrapped.set_obs_friction_mass` for environment variables or `env.get_wrapper_attr('set_obs_friction_mass')` that will search the reminding wrappers.[0m
+  logger.warn(
+/home/xi/anaconda3/envs/franky-sami/lib/python3.10/site-packages/gymnasium/utils/passive_env_checker.py:135: UserWarning: [33mWARN: The obs returned by the `reset()` method was expecting numpy array dtype to be float32, actual type: float64[0m
+  logger.warn(
+/home/xi/anaconda3/envs/franky-sami/lib/python3.10/site-packages/gymnasium/utils/passive_env_checker.py:159: UserWarning: [33mWARN: The obs returned by the `reset()` method is not within the observation space.[0m
+  logger.warn(f"{pre} is not within the observation space.")
+/home/xi/anaconda3/envs/franky-sami/lib/python3.10/site-packages/gymnasium/utils/passive_env_checker.py:135: UserWarning: [33mWARN: The obs returned by the `step()` method was expecting numpy array dtype to be float32, actual type: float64[0m
+  logger.warn(
+/home/xi/anaconda3/envs/franky-sami/lib/python3.10/site-packages/gymnasium/utils/passive_env_checker.py:159: UserWarning: [33mWARN: The obs returned by the `step()` method is not within the observation space.[0m
+  logger.warn(f"{pre} is not within the observation space.")
+1it [00:09,  9.06s/it]2it [00:14,  6.68s/it]3it [00:23,  7.80s/it]4it [00:27,  6.44s/it]4it [00:27,  6.89s/it]
+{'model_parameters': {'method': 'TESAC', 'adversarial_loss_coef': 0.1, 'batch_size': 256, 'contrast_batch_size': 256, 'contrast_buffer_type': 'fine_grained', 'contrast_training_interval': 1, 'time_step': 5000000, 'causal_dim': 6, 'causal_hidden_dim': 128, 'buffer_size': 1000, 'use_weighted_info_nce': False, 'use_reward_norm': False, 'learning_rate': 0.001, 'train_freq': 128, 'gradient_steps': 16, 'encoder_tau': 0.05, 'neg_radio': 0.5, 'env_name': 'PandaPush-v3', 'env_hook': 'PandaHook', 'train_envs': '[(0, 30), (1, 1), (1, 30), (1, 5)]', 'test_envs': '[(0, 30), (1, 1), (1, 30), (1, 5)]', 'use_continue_train': False, 'save_video': False, 'seed': 100, 'config_path': '', 'test_eps_num_per_env': 50, 'use_wandb': False, 'wandb_project_name': 'franky-sami', 'wandb_team_name': 'skill-aware-rl'}, 'save_path': '/home/xi/yxh_space/SaMI/SaMI/output', 'sub_save_path': '/home/xi/yxh_space/SaMI/SaMI/output/2025-05-27-11:00:25-314369', 'save_model_path': '/home/xi/yxh_space/SaMI/SaMI/output/2025-05-27-11:00:25-314369/model.zip', 'log_path': '/home/xi/yxh_space/SaMI/SaMI/output/2025-05-27-11:00:25-314369/log.txt', 'code_path': '/home/xi/yxh_space/SaMI/SaMI/output/2025-05-27-11:00:25-314369/code.zip', 'config_path': '/home/xi/yxh_space/SaMI/SaMI/output/2025-05-27-11:00:25-314369/config.yaml', 'test_path': '/home/xi/yxh_space/SaMI/SaMI/output/2025-05-27-11:00:25-314369/test_result.yaml', 'test_tsne_path': '/home/xi/yxh_space/SaMI/SaMI/output/2025-05-27-11:00:25-314369/tsne.jpg', 'test_table_path': '/home/xi/yxh_space/SaMI/SaMI/output/2025-05-27-11:00:25-314369/tables', 'test_image_path': '/home/xi/yxh_space/SaMI/SaMI/output/2025-05-27-11:00:25-314369/images', 'test_video_path': '/home/xi/yxh_space/SaMI/SaMI/output/2025-05-27-11:00:25-314369/videos'}
+argv[0]=--background_color_red=0.8745098114013672
+argv[1]=--background_color_green=0.21176470816135406
+argv[2]=--background_color_blue=0.1764705926179886
+argv[0]=--background_color_red=0.8745098114013672
+argv[1]=--background_color_green=0.21176470816135406
+argv[2]=--background_color_blue=0.1764705926179886
+argv[0]=--background_color_red=0.8745098114013672
+argv[1]=--background_color_green=0.21176470816135406
+argv[2]=--background_color_blue=0.1764705926179886
+argv[0]=--background_color_red=0.8745098114013672
+argv[1]=--background_color_green=0.21176470816135406
+argv[2]=--background_color_blue=0.1764705926179886
+argv[0]=--background_color_red=0.8745098114013672
+argv[1]=--background_color_green=0.21176470816135406
+argv[2]=--background_color_blue=0.1764705926179886
+argv[0]=--background_color_red=0.8745098114013672
+argv[1]=--background_color_green=0.21176470816135406
+argv[2]=--background_color_blue=0.1764705926179886
+argv[0]=--background_color_red=0.8745098114013672
+argv[1]=--background_color_green=0.21176470816135406
+argv[2]=--background_color_blue=0.1764705926179886
+argv[0]=--background_color_red=0.8745098114013672
+argv[1]=--background_color_green=0.21176470816135406
+argv[2]=--background_color_blue=0.1764705926179886
+0it [00:00, ?it/s]/home/xi/anaconda3/envs/franky-sami/lib/python3.10/site-packages/gymnasium/core.py:311: UserWarning: [33mWARN: env.task to get variables from other wrappers is deprecated and will be removed in v1.0, to get this variable you can do `env.unwrapped.task` for environment variables or `env.get_wrapper_attr('task')` that will search the reminding wrappers.[0m
+  logger.warn(
+/home/xi/anaconda3/envs/franky-sami/lib/python3.10/site-packages/gymnasium/core.py:311: UserWarning: [33mWARN: env.set_obs_friction_mass to get variables from other wrappers is deprecated and will be removed in v1.0, to get this variable you can do `env.unwrapped.set_obs_friction_mass` for environment variables or `env.get_wrapper_attr('set_obs_friction_mass')` that will search the reminding wrappers.[0m
+  logger.warn(
+/home/xi/anaconda3/envs/franky-sami/lib/python3.10/site-packages/gymnasium/utils/passive_env_checker.py:135: UserWarning: [33mWARN: The obs returned by the `reset()` method was expecting numpy array dtype to be float32, actual type: float64[0m
+  logger.warn(
+/home/xi/anaconda3/envs/franky-sami/lib/python3.10/site-packages/gymnasium/utils/passive_env_checker.py:159: UserWarning: [33mWARN: The obs returned by the `reset()` method is not within the observation space.[0m
+  logger.warn(f"{pre} is not within the observation space.")
+/home/xi/anaconda3/envs/franky-sami/lib/python3.10/site-packages/gymnasium/utils/passive_env_checker.py:135: UserWarning: [33mWARN: The obs returned by the `step()` method was expecting numpy array dtype to be float32, actual type: float64[0m
+  logger.warn(
+/home/xi/anaconda3/envs/franky-sami/lib/python3.10/site-packages/gymnasium/utils/passive_env_checker.py:159: UserWarning: [33mWARN: The obs returned by the `step()` method is not within the observation space.[0m
+  logger.warn(f"{pre} is not within the observation space.")
+1it [00:50, 50.65s/it]2it [01:47, 54.08s/it]3it [02:37, 52.52s/it]4it [03:35, 54.72s/it]4it [03:35, 53.97s/it]
+{'model_parameters': {'method': 'SaCCM', 'adversarial_loss_coef': 1.0, 'batch_size': 256, 'contrast_batch_size': 256, 'contrast_buffer_type': 'fine_grained', 'contrast_training_interval': 1, 'time_step': 3000000, 'causal_dim': 6, 'causal_hidden_dim': 128, 'buffer_size': 1000, 'use_weighted_info_nce': False, 'use_reward_norm': False, 'learning_rate': 0.001, 'train_freq': 128, 'gradient_steps': 16, 'encoder_tau': 0.05, 'neg_radio': 0.5, 'env_name': 'PandaPush-v3', 'env_hook': 'PandaHook', 'train_envs': '[(0, 30), (1, 1), (1, 30), (1, 5)]', 'test_envs': '[(0, 30), (1, 1), (1, 30), (1, 5)]', 'use_continue_train': True, 'save_video': False, 'seed': 100, 'config_path': '/home/xi/yxh_space/SaMI/SaMI/saved_models/PandaPush_obs22_object_size_6cm_gripper_constraint/SaCCM_trainenv_mix_cube_height_coef_0_1_continue_training', 'test_eps_num_per_env': 50, 'use_wandb': False, 'wandb_project_name': 'franky-sami', 'wandb_team_name': 'skill-aware-rl'}, 'save_path': '/home/xi/yxh_space/SaMI/SaMI/output', 'sub_save_path': '/home/xi/yxh_space/SaMI/SaMI/output/2025-05-27-11:08:46-594686', 'save_model_path': '/home/xi/yxh_space/SaMI/SaMI/output/2025-05-27-11:08:46-594686/model.zip', 'log_path': '/home/xi/yxh_space/SaMI/SaMI/output/2025-05-27-11:08:46-594686/log.txt', 'code_path': '/home/xi/yxh_space/SaMI/SaMI/output/2025-05-27-11:08:46-594686/code.zip', 'config_path': '/home/xi/yxh_space/SaMI/SaMI/output/2025-05-27-11:08:46-594686/config.yaml', 'test_path': '/home/xi/yxh_space/SaMI/SaMI/output/2025-05-27-11:08:46-594686/test_result.yaml', 'test_tsne_path': '/home/xi/yxh_space/SaMI/SaMI/output/2025-05-27-11:08:46-594686/tsne.jpg', 'test_table_path': '/home/xi/yxh_space/SaMI/SaMI/output/2025-05-27-11:08:46-594686/tables', 'test_image_path': '/home/xi/yxh_space/SaMI/SaMI/output/2025-05-27-11:08:46-594686/images', 'test_video_path': '/home/xi/yxh_space/SaMI/SaMI/output/2025-05-27-11:08:46-594686/videos'}
+loading from config, origin model_parameters setting is out of date.
+loading from config, origin model_parameters setting is out of date.
+argv[0]=--background_color_red=0.8745098114013672
+argv[1]=--background_color_green=0.21176470816135406
+argv[2]=--background_color_blue=0.1764705926179886
+argv[0]=--background_color_red=0.8745098114013672
+argv[1]=--background_color_green=0.21176470816135406
+argv[2]=--background_color_blue=0.1764705926179886
+argv[0]=--background_color_red=0.8745098114013672
+argv[1]=--background_color_green=0.21176470816135406
+argv[2]=--background_color_blue=0.1764705926179886
+argv[0]=--background_color_red=0.8745098114013672
+argv[1]=--background_color_green=0.21176470816135406
+argv[2]=--background_color_blue=0.1764705926179886
+argv[0]=--background_color_red=0.8745098114013672
+argv[1]=--background_color_green=0.21176470816135406
+argv[2]=--background_color_blue=0.1764705926179886
+argv[0]=--background_color_red=0.8745098114013672
+argv[1]=--background_color_green=0.21176470816135406
+argv[2]=--background_color_blue=0.1764705926179886
+argv[0]=--background_color_red=0.8745098114013672
+argv[1]=--background_color_green=0.21176470816135406
+argv[2]=--background_color_blue=0.1764705926179886
+argv[0]=--background_color_red=0.8745098114013672
+argv[1]=--background_color_green=0.21176470816135406
+argv[2]=--background_color_blue=0.1764705926179886
+0it [00:00, ?it/s]/home/xi/anaconda3/envs/franky-sami/lib/python3.10/site-packages/gymnasium/core.py:311: UserWarning: [33mWARN: env.task to get variables from other wrappers is deprecated and will be removed in v1.0, to get this variable you can do `env.unwrapped.task` for environment variables or `env.get_wrapper_attr('task')` that will search the reminding wrappers.[0m
+  logger.warn(
+/home/xi/anaconda3/envs/franky-sami/lib/python3.10/site-packages/gymnasium/core.py:311: UserWarning: [33mWARN: env.set_obs_friction_mass to get variables from other wrappers is deprecated and will be removed in v1.0, to get this variable you can do `env.unwrapped.set_obs_friction_mass` for environment variables or `env.get_wrapper_attr('set_obs_friction_mass')` that will search the reminding wrappers.[0m
+  logger.warn(
+/home/xi/anaconda3/envs/franky-sami/lib/python3.10/site-packages/gymnasium/utils/passive_env_checker.py:135: UserWarning: [33mWARN: The obs returned by the `reset()` method was expecting numpy array dtype to be float32, actual type: float64[0m
+  logger.warn(
+/home/xi/anaconda3/envs/franky-sami/lib/python3.10/site-packages/gymnasium/utils/passive_env_checker.py:159: UserWarning: [33mWARN: The obs returned by the `reset()` method is not within the observation space.[0m
+  logger.warn(f"{pre} is not within the observation space.")
+/home/xi/anaconda3/envs/franky-sami/lib/python3.10/site-packages/gymnasium/utils/passive_env_checker.py:135: UserWarning: [33mWARN: The obs returned by the `step()` method was expecting numpy array dtype to be float32, actual type: float64[0m
+  logger.warn(
+/home/xi/anaconda3/envs/franky-sami/lib/python3.10/site-packages/gymnasium/utils/passive_env_checker.py:159: UserWarning: [33mWARN: The obs returned by the `step()` method is not within the observation space.[0m
+  logger.warn(f"{pre} is not within the observation space.")
+1it [00:31, 31.26s/it]2it [01:12, 36.84s/it]3it [01:57, 40.97s/it]4it [02:35, 39.83s/it]4it [02:35, 38.99s/it]
+{'model_parameters': {'method': 'SaSAC', 'adversarial_loss_coef': 1.0, 'batch_size': 256, 'contrast_batch_size': 256, 'contrast_buffer_type': 'fine_grained', 'contrast_training_interval': 1, 'time_step': 3000000, 'causal_dim': 6, 'causal_hidden_dim': 128, 'buffer_size': 1000, 'use_weighted_info_nce': False, 'use_reward_norm': False, 'learning_rate': 0.001, 'train_freq': 128, 'gradient_steps': 16, 'encoder_tau': 0.05, 'neg_radio': 0.5, 'env_name': 'PandaPush-v3', 'env_hook': 'PandaHook', 'train_envs': '[(0, 30), (1, 1), (1, 30), (1, 5)]', 'test_envs': '[(0, 30), (1, 1), (1, 30), (1, 5)]', 'use_continue_train': True, 'save_video': False, 'seed': 100, 'config_path': '/home/xi/yxh_space/SaMI/SaMI/saved_models/PandaPush_obs22_object_size_6cm_gripper_constraint/SaSAC_trainenv_mix_cube_height_coef_0_1', 'test_eps_num_per_env': 50, 'use_wandb': False, 'wandb_project_name': 'franky-sami', 'wandb_team_name': 'skill-aware-rl'}, 'save_path': '/home/xi/yxh_space/SaMI/SaMI/output', 'sub_save_path': '/home/xi/yxh_space/SaMI/SaMI/output/2025-05-27-11:08:46-351421', 'save_model_path': '/home/xi/yxh_space/SaMI/SaMI/output/2025-05-27-11:08:46-351421/model.zip', 'log_path': '/home/xi/yxh_space/SaMI/SaMI/output/2025-05-27-11:08:46-351421/log.txt', 'code_path': '/home/xi/yxh_space/SaMI/SaMI/output/2025-05-27-11:08:46-351421/code.zip', 'config_path': '/home/xi/yxh_space/SaMI/SaMI/output/2025-05-27-11:08:46-351421/config.yaml', 'test_path': '/home/xi/yxh_space/SaMI/SaMI/output/2025-05-27-11:08:46-351421/test_result.yaml', 'test_tsne_path': '/home/xi/yxh_space/SaMI/SaMI/output/2025-05-27-11:08:46-351421/tsne.jpg', 'test_table_path': '/home/xi/yxh_space/SaMI/SaMI/output/2025-05-27-11:08:46-351421/tables', 'test_image_path': '/home/xi/yxh_space/SaMI/SaMI/output/2025-05-27-11:08:46-351421/images', 'test_video_path': '/home/xi/yxh_space/SaMI/SaMI/output/2025-05-27-11:08:46-351421/videos'}
+loading from config, origin model_parameters setting is out of date.
+loading from config, origin model_parameters setting is out of date.
+argv[0]=--background_color_red=0.8745098114013672
+argv[1]=--background_color_green=0.21176470816135406
+argv[2]=--background_color_blue=0.1764705926179886
+argv[0]=--background_color_red=0.8745098114013672
+argv[1]=--background_color_green=0.21176470816135406
+argv[2]=--background_color_blue=0.1764705926179886
+argv[0]=--background_color_red=0.8745098114013672
+argv[1]=--background_color_green=0.21176470816135406
+argv[2]=--background_color_blue=0.1764705926179886
+argv[0]=--background_color_red=0.8745098114013672
+argv[1]=--background_color_green=0.21176470816135406
+argv[2]=--background_color_blue=0.1764705926179886
+argv[0]=--background_color_red=0.8745098114013672
+argv[1]=--background_color_green=0.21176470816135406
+argv[2]=--background_color_blue=0.1764705926179886
+argv[0]=--background_color_red=0.8745098114013672
+argv[1]=--background_color_green=0.21176470816135406
+argv[2]=--background_color_blue=0.1764705926179886
+argv[0]=--background_color_red=0.8745098114013672
+argv[1]=--background_color_green=0.21176470816135406
+argv[2]=--background_color_blue=0.1764705926179886
+argv[0]=--background_color_red=0.8745098114013672
+argv[1]=--background_color_green=0.21176470816135406
+argv[2]=--background_color_blue=0.1764705926179886
+0it [00:00, ?it/s]/home/xi/anaconda3/envs/franky-sami/lib/python3.10/site-packages/gymnasium/core.py:311: UserWarning: [33mWARN: env.task to get variables from other wrappers is deprecated and will be removed in v1.0, to get this variable you can do `env.unwrapped.task` for environment variables or `env.get_wrapper_attr('task')` that will search the reminding wrappers.[0m
+  logger.warn(
+/home/xi/anaconda3/envs/franky-sami/lib/python3.10/site-packages/gymnasium/core.py:311: UserWarning: [33mWARN: env.set_obs_friction_mass to get variables from other wrappers is deprecated and will be removed in v1.0, to get this variable you can do `env.unwrapped.set_obs_friction_mass` for environment variables or `env.get_wrapper_attr('set_obs_friction_mass')` that will search the reminding wrappers.[0m
+  logger.warn(
+/home/xi/anaconda3/envs/franky-sami/lib/python3.10/site-packages/gymnasium/utils/passive_env_checker.py:135: UserWarning: [33mWARN: The obs returned by the `reset()` method was expecting numpy array dtype to be float32, actual type: float64[0m
+  logger.warn(
+/home/xi/anaconda3/envs/franky-sami/lib/python3.10/site-packages/gymnasium/utils/passive_env_checker.py:159: UserWarning: [33mWARN: The obs returned by the `reset()` method is not within the observation space.[0m
+  logger.warn(f"{pre} is not within the observation space.")
+/home/xi/anaconda3/envs/franky-sami/lib/python3.10/site-packages/gymnasium/utils/passive_env_checker.py:135: UserWarning: [33mWARN: The obs returned by the `step()` method was expecting numpy array dtype to be float32, actual type: float64[0m
+  logger.warn(
+/home/xi/anaconda3/envs/franky-sami/lib/python3.10/site-packages/gymnasium/utils/passive_env_checker.py:159: UserWarning: [33mWARN: The obs returned by the `step()` method is not within the observation space.[0m
+  logger.warn(f"{pre} is not within the observation space.")
+1it [00:41, 41.64s/it]2it [01:18, 38.70s/it]3it [01:41, 31.77s/it]4it [02:21, 35.08s/it]4it [02:21, 35.49s/it]
+{'model_parameters': {'method': 'SaSAC', 'adversarial_loss_coef': 0.01, 'batch_size': 256, 'contrast_batch_size': 256, 'contrast_buffer_type': 'fine_grained', 'contrast_training_interval': 1, 'time_step': 5000000, 'causal_dim': 6, 'causal_hidden_dim': 128, 'buffer_size': 1000, 'use_weighted_info_nce': False, 'use_reward_norm': False, 'learning_rate': 0.001, 'train_freq': 128, 'gradient_steps': 16, 'encoder_tau': 0.05, 'neg_radio': 0.5, 'env_name': 'PandaPush-v3', 'env_hook': 'PandaHook', 'train_envs': '[(0, 30), (1, 1), (1, 30), (1, 5)]', 'test_envs': '[(0, 30), (1, 1), (1, 30), (1, 5)]', 'use_continue_train': False, 'save_video': False, 'seed': 100, 'config_path': '', 'test_eps_num_per_env': 50, 'use_wandb': False, 'wandb_project_name': 'franky-sami', 'wandb_team_name': 'skill-aware-rl'}, 'save_path': '/home/xi/yxh_space/SaMI/SaMI/output', 'sub_save_path': '/home/xi/yxh_space/SaMI/SaMI/output/2025-05-27-18:38:40-235021', 'save_model_path': '/home/xi/yxh_space/SaMI/SaMI/output/2025-05-27-18:38:40-235021/model.zip', 'log_path': '/home/xi/yxh_space/SaMI/SaMI/output/2025-05-27-18:38:40-235021/log.txt', 'code_path': '/home/xi/yxh_space/SaMI/SaMI/output/2025-05-27-18:38:40-235021/code.zip', 'config_path': '/home/xi/yxh_space/SaMI/SaMI/output/2025-05-27-18:38:40-235021/config.yaml', 'test_path': '/home/xi/yxh_space/SaMI/SaMI/output/2025-05-27-18:38:40-235021/test_result.yaml', 'test_tsne_path': '/home/xi/yxh_space/SaMI/SaMI/output/2025-05-27-18:38:40-235021/tsne.jpg', 'test_table_path': '/home/xi/yxh_space/SaMI/SaMI/output/2025-05-27-18:38:40-235021/tables', 'test_image_path': '/home/xi/yxh_space/SaMI/SaMI/output/2025-05-27-18:38:40-235021/images', 'test_video_path': '/home/xi/yxh_space/SaMI/SaMI/output/2025-05-27-18:38:40-235021/videos'}
+argv[0]=--background_color_red=0.8745098114013672
+argv[1]=--background_color_green=0.21176470816135406
+argv[2]=--background_color_blue=0.1764705926179886
+argv[0]=--background_color_red=0.8745098114013672
+argv[1]=--background_color_green=0.21176470816135406
+argv[2]=--background_color_blue=0.1764705926179886
+argv[0]=--background_color_red=0.8745098114013672
+argv[1]=--background_color_green=0.21176470816135406
+argv[2]=--background_color_blue=0.1764705926179886
+argv[0]=--background_color_red=0.8745098114013672
+argv[1]=--background_color_green=0.21176470816135406
+argv[2]=--background_color_blue=0.1764705926179886
+argv[0]=--background_color_red=0.8745098114013672
+argv[1]=--background_color_green=0.21176470816135406
+argv[2]=--background_color_blue=0.1764705926179886
+argv[0]=--background_color_red=0.8745098114013672
+argv[1]=--background_color_green=0.21176470816135406
+argv[2]=--background_color_blue=0.1764705926179886
+argv[0]=--background_color_red=0.8745098114013672
+argv[1]=--background_color_green=0.21176470816135406
+argv[2]=--background_color_blue=0.1764705926179886
+argv[0]=--background_color_red=0.8745098114013672
+argv[1]=--background_color_green=0.21176470816135406
+argv[2]=--background_color_blue=0.1764705926179886
+0it [00:00, ?it/s]/home/xi/anaconda3/envs/franky-sami/lib/python3.10/site-packages/gymnasium/core.py:311: UserWarning: [33mWARN: env.task to get variables from other wrappers is deprecated and will be removed in v1.0, to get this variable you can do `env.unwrapped.task` for environment variables or `env.get_wrapper_attr('task')` that will search the reminding wrappers.[0m
+  logger.warn(
+/home/xi/anaconda3/envs/franky-sami/lib/python3.10/site-packages/gymnasium/core.py:311: UserWarning: [33mWARN: env.set_obs_friction_mass to get variables from other wrappers is deprecated and will be removed in v1.0, to get this variable you can do `env.unwrapped.set_obs_friction_mass` for environment variables or `env.get_wrapper_attr('set_obs_friction_mass')` that will search the reminding wrappers.[0m
+  logger.warn(
+/home/xi/anaconda3/envs/franky-sami/lib/python3.10/site-packages/gymnasium/utils/passive_env_checker.py:135: UserWarning: [33mWARN: The obs returned by the `reset()` method was expecting numpy array dtype to be float32, actual type: float64[0m
+  logger.warn(
+/home/xi/anaconda3/envs/franky-sami/lib/python3.10/site-packages/gymnasium/utils/passive_env_checker.py:159: UserWarning: [33mWARN: The obs returned by the `reset()` method is not within the observation space.[0m
+  logger.warn(f"{pre} is not within the observation space.")
+/home/xi/anaconda3/envs/franky-sami/lib/python3.10/site-packages/gymnasium/utils/passive_env_checker.py:135: UserWarning: [33mWARN: The obs returned by the `step()` method was expecting numpy array dtype to be float32, actual type: float64[0m
+  logger.warn(
+/home/xi/anaconda3/envs/franky-sami/lib/python3.10/site-packages/gymnasium/utils/passive_env_checker.py:159: UserWarning: [33mWARN: The obs returned by the `step()` method is not within the observation space.[0m
+  logger.warn(f"{pre} is not within the observation space.")
+1it [00:22, 22.19s/it]2it [00:33, 15.91s/it]3it [01:00, 21.01s/it]4it [01:18, 19.76s/it]4it [01:18, 19.65s/it]
+{'model_parameters': {'method': 'SaSAC', 'adversarial_loss_coef': 0.1, 'batch_size': 256, 'contrast_batch_size': 256, 'contrast_buffer_type': 'fine_grained', 'contrast_training_interval': 1, 'time_step': 5000000, 'causal_dim': 6, 'causal_hidden_dim': 128, 'buffer_size': 1000, 'use_weighted_info_nce': False, 'use_reward_norm': False, 'learning_rate': 0.001, 'train_freq': 128, 'gradient_steps': 16, 'encoder_tau': 0.05, 'neg_radio': 0.5, 'env_name': 'PandaPush-v3', 'env_hook': 'PandaHook', 'train_envs': '[(0, 30), (1, 1), (1, 30), (1, 5)]', 'test_envs': '[(0, 30), (1, 1), (1, 30), (1, 5)]', 'use_continue_train': False, 'save_video': False, 'seed': 100, 'config_path': '', 'test_eps_num_per_env': 50, 'use_wandb': False, 'wandb_project_name': 'franky-sami', 'wandb_team_name': 'skill-aware-rl'}, 'save_path': '/home/xi/yxh_space/SaMI/SaMI/output', 'sub_save_path': '/home/xi/yxh_space/SaMI/SaMI/output/2025-05-27-18:38:39-862331', 'save_model_path': '/home/xi/yxh_space/SaMI/SaMI/output/2025-05-27-18:38:39-862331/model.zip', 'log_path': '/home/xi/yxh_space/SaMI/SaMI/output/2025-05-27-18:38:39-862331/log.txt', 'code_path': '/home/xi/yxh_space/SaMI/SaMI/output/2025-05-27-18:38:39-862331/code.zip', 'config_path': '/home/xi/yxh_space/SaMI/SaMI/output/2025-05-27-18:38:39-862331/config.yaml', 'test_path': '/home/xi/yxh_space/SaMI/SaMI/output/2025-05-27-18:38:39-862331/test_result.yaml', 'test_tsne_path': '/home/xi/yxh_space/SaMI/SaMI/output/2025-05-27-18:38:39-862331/tsne.jpg', 'test_table_path': '/home/xi/yxh_space/SaMI/SaMI/output/2025-05-27-18:38:39-862331/tables', 'test_image_path': '/home/xi/yxh_space/SaMI/SaMI/output/2025-05-27-18:38:39-862331/images', 'test_video_path': '/home/xi/yxh_space/SaMI/SaMI/output/2025-05-27-18:38:39-862331/videos'}
+argv[0]=--background_color_red=0.8745098114013672
+argv[1]=--background_color_green=0.21176470816135406
+argv[2]=--background_color_blue=0.1764705926179886
+argv[0]=--background_color_red=0.8745098114013672
+argv[1]=--background_color_green=0.21176470816135406
+argv[2]=--background_color_blue=0.1764705926179886
+argv[0]=--background_color_red=0.8745098114013672
+argv[1]=--background_color_green=0.21176470816135406
+argv[2]=--background_color_blue=0.1764705926179886
+argv[0]=--background_color_red=0.8745098114013672
+argv[1]=--background_color_green=0.21176470816135406
+argv[2]=--background_color_blue=0.1764705926179886
+argv[0]=--background_color_red=0.8745098114013672
+argv[1]=--background_color_green=0.21176470816135406
+argv[2]=--background_color_blue=0.1764705926179886
+argv[0]=--background_color_red=0.8745098114013672
+argv[1]=--background_color_green=0.21176470816135406
+argv[2]=--background_color_blue=0.1764705926179886
+argv[0]=--background_color_red=0.8745098114013672
+argv[1]=--background_color_green=0.21176470816135406
+argv[2]=--background_color_blue=0.1764705926179886
+argv[0]=--background_color_red=0.8745098114013672
+argv[1]=--background_color_green=0.21176470816135406
+argv[2]=--background_color_blue=0.1764705926179886
+0it [00:00, ?it/s]/home/xi/anaconda3/envs/franky-sami/lib/python3.10/site-packages/gymnasium/core.py:311: UserWarning: [33mWARN: env.task to get variables from other wrappers is deprecated and will be removed in v1.0, to get this variable you can do `env.unwrapped.task` for environment variables or `env.get_wrapper_attr('task')` that will search the reminding wrappers.[0m
+  logger.warn(
+/home/xi/anaconda3/envs/franky-sami/lib/python3.10/site-packages/gymnasium/core.py:311: UserWarning: [33mWARN: env.set_obs_friction_mass to get variables from other wrappers is deprecated and will be removed in v1.0, to get this variable you can do `env.unwrapped.set_obs_friction_mass` for environment variables or `env.get_wrapper_attr('set_obs_friction_mass')` that will search the reminding wrappers.[0m
+  logger.warn(
+/home/xi/anaconda3/envs/franky-sami/lib/python3.10/site-packages/gymnasium/utils/passive_env_checker.py:135: UserWarning: [33mWARN: The obs returned by the `reset()` method was expecting numpy array dtype to be float32, actual type: float64[0m
+  logger.warn(
+/home/xi/anaconda3/envs/franky-sami/lib/python3.10/site-packages/gymnasium/utils/passive_env_checker.py:159: UserWarning: [33mWARN: The obs returned by the `reset()` method is not within the observation space.[0m
+  logger.warn(f"{pre} is not within the observation space.")
+/home/xi/anaconda3/envs/franky-sami/lib/python3.10/site-packages/gymnasium/utils/passive_env_checker.py:135: UserWarning: [33mWARN: The obs returned by the `step()` method was expecting numpy array dtype to be float32, actual type: float64[0m
+  logger.warn(
+/home/xi/anaconda3/envs/franky-sami/lib/python3.10/site-packages/gymnasium/utils/passive_env_checker.py:159: UserWarning: [33mWARN: The obs returned by the `step()` method is not within the observation space.[0m
+  logger.warn(f"{pre} is not within the observation space.")
+1it [00:06,  6.85s/it]2it [00:34, 19.11s/it]3it [00:53, 19.15s/it]4it [01:11, 18.44s/it]4it [01:11, 17.78s/it]
+{'model_parameters': {'method': 'SaCCM', 'adversarial_loss_coef': 0.1, 'batch_size': 256, 'contrast_batch_size': 256, 'contrast_buffer_type': 'fine_grained', 'contrast_training_interval': 1, 'time_step': 5000000, 'causal_dim': 6, 'causal_hidden_dim': 128, 'buffer_size': 1000, 'use_weighted_info_nce': False, 'use_reward_norm': False, 'learning_rate': 0.001, 'train_freq': 128, 'gradient_steps': 16, 'encoder_tau': 0.05, 'neg_radio': 0.5, 'env_name': 'PandaPush-v3', 'env_hook': 'PandaHook', 'train_envs': '[(0, 30), (1, 1), (1, 30), (1, 5)]', 'test_envs': '[(0, 30), (1, 1), (1, 30), (1, 5)]', 'use_continue_train': False, 'save_video': False, 'seed': 100, 'config_path': '', 'test_eps_num_per_env': 50, 'use_wandb': False, 'wandb_project_name': 'franky-sami', 'wandb_team_name': 'skill-aware-rl'}, 'save_path': '/home/xi/yxh_space/SaMI/SaMI/output', 'sub_save_path': '/home/xi/yxh_space/SaMI/SaMI/output/2025-05-27-18:38:41-206249', 'save_model_path': '/home/xi/yxh_space/SaMI/SaMI/output/2025-05-27-18:38:41-206249/model.zip', 'log_path': '/home/xi/yxh_space/SaMI/SaMI/output/2025-05-27-18:38:41-206249/log.txt', 'code_path': '/home/xi/yxh_space/SaMI/SaMI/output/2025-05-27-18:38:41-206249/code.zip', 'config_path': '/home/xi/yxh_space/SaMI/SaMI/output/2025-05-27-18:38:41-206249/config.yaml', 'test_path': '/home/xi/yxh_space/SaMI/SaMI/output/2025-05-27-18:38:41-206249/test_result.yaml', 'test_tsne_path': '/home/xi/yxh_space/SaMI/SaMI/output/2025-05-27-18:38:41-206249/tsne.jpg', 'test_table_path': '/home/xi/yxh_space/SaMI/SaMI/output/2025-05-27-18:38:41-206249/tables', 'test_image_path': '/home/xi/yxh_space/SaMI/SaMI/output/2025-05-27-18:38:41-206249/images', 'test_video_path': '/home/xi/yxh_space/SaMI/SaMI/output/2025-05-27-18:38:41-206249/videos'}
+argv[0]=--background_color_red=0.8745098114013672
+argv[1]=--background_color_green=0.21176470816135406
+argv[2]=--background_color_blue=0.1764705926179886
+argv[0]=--background_color_red=0.8745098114013672
+argv[1]=--background_color_green=0.21176470816135406
+argv[2]=--background_color_blue=0.1764705926179886
+argv[0]=--background_color_red=0.8745098114013672
+argv[1]=--background_color_green=0.21176470816135406
+argv[2]=--background_color_blue=0.1764705926179886
+argv[0]=--background_color_red=0.8745098114013672
+argv[1]=--background_color_green=0.21176470816135406
+argv[2]=--background_color_blue=0.1764705926179886
+argv[0]=--background_color_red=0.8745098114013672
+argv[1]=--background_color_green=0.21176470816135406
+argv[2]=--background_color_blue=0.1764705926179886
+argv[0]=--background_color_red=0.8745098114013672
+argv[1]=--background_color_green=0.21176470816135406
+argv[2]=--background_color_blue=0.1764705926179886
+argv[0]=--background_color_red=0.8745098114013672
+argv[1]=--background_color_green=0.21176470816135406
+argv[2]=--background_color_blue=0.1764705926179886
+argv[0]=--background_color_red=0.8745098114013672
+argv[1]=--background_color_green=0.21176470816135406
+argv[2]=--background_color_blue=0.1764705926179886
+0it [00:00, ?it/s]/home/xi/anaconda3/envs/franky-sami/lib/python3.10/site-packages/gymnasium/core.py:311: UserWarning: [33mWARN: env.task to get variables from other wrappers is deprecated and will be removed in v1.0, to get this variable you can do `env.unwrapped.task` for environment variables or `env.get_wrapper_attr('task')` that will search the reminding wrappers.[0m
+  logger.warn(
+/home/xi/anaconda3/envs/franky-sami/lib/python3.10/site-packages/gymnasium/core.py:311: UserWarning: [33mWARN: env.set_obs_friction_mass to get variables from other wrappers is deprecated and will be removed in v1.0, to get this variable you can do `env.unwrapped.set_obs_friction_mass` for environment variables or `env.get_wrapper_attr('set_obs_friction_mass')` that will search the reminding wrappers.[0m
+  logger.warn(
+/home/xi/anaconda3/envs/franky-sami/lib/python3.10/site-packages/gymnasium/utils/passive_env_checker.py:135: UserWarning: [33mWARN: The obs returned by the `reset()` method was expecting numpy array dtype to be float32, actual type: float64[0m
+  logger.warn(
+/home/xi/anaconda3/envs/franky-sami/lib/python3.10/site-packages/gymnasium/utils/passive_env_checker.py:159: UserWarning: [33mWARN: The obs returned by the `reset()` method is not within the observation space.[0m
+  logger.warn(f"{pre} is not within the observation space.")
+/home/xi/anaconda3/envs/franky-sami/lib/python3.10/site-packages/gymnasium/utils/passive_env_checker.py:135: UserWarning: [33mWARN: The obs returned by the `step()` method was expecting numpy array dtype to be float32, actual type: float64[0m
+  logger.warn(
+/home/xi/anaconda3/envs/franky-sami/lib/python3.10/site-packages/gymnasium/utils/passive_env_checker.py:159: UserWarning: [33mWARN: The obs returned by the `step()` method is not within the observation space.[0m
+  logger.warn(f"{pre} is not within the observation space.")
+1it [00:15, 15.23s/it]2it [00:20,  9.16s/it]3it [00:42, 14.99s/it]4it [01:00, 16.27s/it]4it [01:00, 15.07s/it]
+{'model_parameters': {'method': 'SaCCM', 'adversarial_loss_coef': 0.01, 'batch_size': 256, 'contrast_batch_size': 256, 'contrast_buffer_type': 'fine_grained', 'contrast_training_interval': 1, 'time_step': 5000000, 'causal_dim': 6, 'causal_hidden_dim': 128, 'buffer_size': 1000, 'use_weighted_info_nce': False, 'use_reward_norm': False, 'learning_rate': 0.001, 'train_freq': 128, 'gradient_steps': 16, 'encoder_tau': 0.05, 'neg_radio': 0.5, 'env_name': 'PandaPush-v3', 'env_hook': 'PandaHook', 'train_envs': '[(0, 30), (1, 1), (1, 30), (1, 5)]', 'test_envs': '[(0, 30), (1, 1), (1, 30), (1, 5)]', 'use_continue_train': False, 'save_video': False, 'seed': 100, 'config_path': '', 'test_eps_num_per_env': 50, 'use_wandb': False, 'wandb_project_name': 'franky-sami', 'wandb_team_name': 'skill-aware-rl'}, 'save_path': '/home/xi/yxh_space/SaMI/SaMI/output', 'sub_save_path': '/home/xi/yxh_space/SaMI/SaMI/output/2025-05-27-18:38:41-829248', 'save_model_path': '/home/xi/yxh_space/SaMI/SaMI/output/2025-05-27-18:38:41-829248/model.zip', 'log_path': '/home/xi/yxh_space/SaMI/SaMI/output/2025-05-27-18:38:41-829248/log.txt', 'code_path': '/home/xi/yxh_space/SaMI/SaMI/output/2025-05-27-18:38:41-829248/code.zip', 'config_path': '/home/xi/yxh_space/SaMI/SaMI/output/2025-05-27-18:38:41-829248/config.yaml', 'test_path': '/home/xi/yxh_space/SaMI/SaMI/output/2025-05-27-18:38:41-829248/test_result.yaml', 'test_tsne_path': '/home/xi/yxh_space/SaMI/SaMI/output/2025-05-27-18:38:41-829248/tsne.jpg', 'test_table_path': '/home/xi/yxh_space/SaMI/SaMI/output/2025-05-27-18:38:41-829248/tables', 'test_image_path': '/home/xi/yxh_space/SaMI/SaMI/output/2025-05-27-18:38:41-829248/images', 'test_video_path': '/home/xi/yxh_space/SaMI/SaMI/output/2025-05-27-18:38:41-829248/videos'}
+argv[0]=--background_color_red=0.8745098114013672
+argv[1]=--background_color_green=0.21176470816135406
+argv[2]=--background_color_blue=0.1764705926179886
+argv[0]=--background_color_red=0.8745098114013672
+argv[1]=--background_color_green=0.21176470816135406
+argv[2]=--background_color_blue=0.1764705926179886
+argv[0]=--background_color_red=0.8745098114013672
+argv[1]=--background_color_green=0.21176470816135406
+argv[2]=--background_color_blue=0.1764705926179886
+argv[0]=--background_color_red=0.8745098114013672
+argv[1]=--background_color_green=0.21176470816135406
+argv[2]=--background_color_blue=0.1764705926179886
+argv[0]=--background_color_red=0.8745098114013672
+argv[1]=--background_color_green=0.21176470816135406
+argv[2]=--background_color_blue=0.1764705926179886
+argv[0]=--background_color_red=0.8745098114013672
+argv[1]=--background_color_green=0.21176470816135406
+argv[2]=--background_color_blue=0.1764705926179886
+argv[0]=--background_color_red=0.8745098114013672
+argv[1]=--background_color_green=0.21176470816135406
+argv[2]=--background_color_blue=0.1764705926179886
+argv[0]=--background_color_red=0.8745098114013672
+argv[1]=--background_color_green=0.21176470816135406
+argv[2]=--background_color_blue=0.1764705926179886
+0it [00:00, ?it/s]/home/xi/anaconda3/envs/franky-sami/lib/python3.10/site-packages/gymnasium/core.py:311: UserWarning: [33mWARN: env.task to get variables from other wrappers is deprecated and will be removed in v1.0, to get this variable you can do `env.unwrapped.task` for environment variables or `env.get_wrapper_attr('task')` that will search the reminding wrappers.[0m
+  logger.warn(
+/home/xi/anaconda3/envs/franky-sami/lib/python3.10/site-packages/gymnasium/core.py:311: UserWarning: [33mWARN: env.set_obs_friction_mass to get variables from other wrappers is deprecated and will be removed in v1.0, to get this variable you can do `env.unwrapped.set_obs_friction_mass` for environment variables or `env.get_wrapper_attr('set_obs_friction_mass')` that will search the reminding wrappers.[0m
+  logger.warn(
+/home/xi/anaconda3/envs/franky-sami/lib/python3.10/site-packages/gymnasium/utils/passive_env_checker.py:135: UserWarning: [33mWARN: The obs returned by the `reset()` method was expecting numpy array dtype to be float32, actual type: float64[0m
+  logger.warn(
+/home/xi/anaconda3/envs/franky-sami/lib/python3.10/site-packages/gymnasium/utils/passive_env_checker.py:159: UserWarning: [33mWARN: The obs returned by the `reset()` method is not within the observation space.[0m
+  logger.warn(f"{pre} is not within the observation space.")
+/home/xi/anaconda3/envs/franky-sami/lib/python3.10/site-packages/gymnasium/utils/passive_env_checker.py:135: UserWarning: [33mWARN: The obs returned by the `step()` method was expecting numpy array dtype to be float32, actual type: float64[0m
+  logger.warn(
+/home/xi/anaconda3/envs/franky-sami/lib/python3.10/site-packages/gymnasium/utils/passive_env_checker.py:159: UserWarning: [33mWARN: The obs returned by the `step()` method is not within the observation space.[0m
+  logger.warn(f"{pre} is not within the observation space.")
+1it [00:41, 41.71s/it]2it [01:20, 40.06s/it]3it [01:59, 39.73s/it]4it [02:38, 39.19s/it]4it [02:38, 39.58s/it]
+{'model_parameters': {'method': 'SaSAC', 'adversarial_loss_coef': 0.1, 'batch_size': 256, 'contrast_batch_size': 256, 'contrast_buffer_type': 'fine_grained', 'contrast_training_interval': 1, 'time_step': 5000000, 'causal_dim': 6, 'causal_hidden_dim': 128, 'buffer_size': 1000, 'use_weighted_info_nce': False, 'use_reward_norm': False, 'learning_rate': 0.001, 'train_freq': 128, 'gradient_steps': 16, 'encoder_tau': 0.05, 'neg_radio': 0.5, 'env_name': 'PandaPush-v3', 'env_hook': 'PandaHook', 'train_envs': '[(0, 30), (1, 1), (1, 30), (1, 5)]', 'test_envs': '[(0, 30), (1, 1), (1, 30), (1, 5)]', 'use_continue_train': False, 'save_video': False, 'seed': 100, 'config_path': '', 'test_eps_num_per_env': 50, 'use_wandb': False, 'wandb_project_name': 'franky-sami', 'wandb_team_name': 'skill-aware-rl'}, 'save_path': '/home/xi/yxh_space/SaMI/SaMI/output', 'sub_save_path': '/home/xi/yxh_space/SaMI/SaMI/output/2025-05-27-16:21:40-269924', 'save_model_path': '/home/xi/yxh_space/SaMI/SaMI/output/2025-05-27-16:21:40-269924/model.zip', 'log_path': '/home/xi/yxh_space/SaMI/SaMI/output/2025-05-27-16:21:40-269924/log.txt', 'code_path': '/home/xi/yxh_space/SaMI/SaMI/output/2025-05-27-16:21:40-269924/code.zip', 'config_path': '/home/xi/yxh_space/SaMI/SaMI/output/2025-05-27-16:21:40-269924/config.yaml', 'test_path': '/home/xi/yxh_space/SaMI/SaMI/output/2025-05-27-16:21:40-269924/test_result.yaml', 'test_tsne_path': '/home/xi/yxh_space/SaMI/SaMI/output/2025-05-27-16:21:40-269924/tsne.jpg', 'test_table_path': '/home/xi/yxh_space/SaMI/SaMI/output/2025-05-27-16:21:40-269924/tables', 'test_image_path': '/home/xi/yxh_space/SaMI/SaMI/output/2025-05-27-16:21:40-269924/images', 'test_video_path': '/home/xi/yxh_space/SaMI/SaMI/output/2025-05-27-16:21:40-269924/videos'}
+argv[0]=--background_color_red=0.8745098114013672
+argv[1]=--background_color_green=0.21176470816135406
+argv[2]=--background_color_blue=0.1764705926179886
+argv[0]=--background_color_red=0.8745098114013672
+argv[1]=--background_color_green=0.21176470816135406
+argv[2]=--background_color_blue=0.1764705926179886
+argv[0]=--background_color_red=0.8745098114013672
+argv[1]=--background_color_green=0.21176470816135406
+argv[2]=--background_color_blue=0.1764705926179886
+argv[0]=--background_color_red=0.8745098114013672
+argv[1]=--background_color_green=0.21176470816135406
+argv[2]=--background_color_blue=0.1764705926179886
+argv[0]=--background_color_red=0.8745098114013672
+argv[1]=--background_color_green=0.21176470816135406
+argv[2]=--background_color_blue=0.1764705926179886
+argv[0]=--background_color_red=0.8745098114013672
+argv[1]=--background_color_green=0.21176470816135406
+argv[2]=--background_color_blue=0.1764705926179886
+argv[0]=--background_color_red=0.8745098114013672
+argv[1]=--background_color_green=0.21176470816135406
+argv[2]=--background_color_blue=0.1764705926179886
+argv[0]=--background_color_red=0.8745098114013672
+argv[1]=--background_color_green=0.21176470816135406
+argv[2]=--background_color_blue=0.1764705926179886
+0it [00:00, ?it/s]/home/xi/anaconda3/envs/franky-sami/lib/python3.10/site-packages/gymnasium/core.py:311: UserWarning: [33mWARN: env.task to get variables from other wrappers is deprecated and will be removed in v1.0, to get this variable you can do `env.unwrapped.task` for environment variables or `env.get_wrapper_attr('task')` that will search the reminding wrappers.[0m
+  logger.warn(
+/home/xi/anaconda3/envs/franky-sami/lib/python3.10/site-packages/gymnasium/core.py:311: UserWarning: [33mWARN: env.set_obs_friction_mass to get variables from other wrappers is deprecated and will be removed in v1.0, to get this variable you can do `env.unwrapped.set_obs_friction_mass` for environment variables or `env.get_wrapper_attr('set_obs_friction_mass')` that will search the reminding wrappers.[0m
+  logger.warn(
+/home/xi/anaconda3/envs/franky-sami/lib/python3.10/site-packages/gymnasium/utils/passive_env_checker.py:135: UserWarning: [33mWARN: The obs returned by the `reset()` method was expecting numpy array dtype to be float32, actual type: float64[0m
+  logger.warn(
+/home/xi/anaconda3/envs/franky-sami/lib/python3.10/site-packages/gymnasium/utils/passive_env_checker.py:159: UserWarning: [33mWARN: The obs returned by the `reset()` method is not within the observation space.[0m
+  logger.warn(f"{pre} is not within the observation space.")
+/home/xi/anaconda3/envs/franky-sami/lib/python3.10/site-packages/gymnasium/utils/passive_env_checker.py:135: UserWarning: [33mWARN: The obs returned by the `step()` method was expecting numpy array dtype to be float32, actual type: float64[0m
+  logger.warn(
+/home/xi/anaconda3/envs/franky-sami/lib/python3.10/site-packages/gymnasium/utils/passive_env_checker.py:159: UserWarning: [33mWARN: The obs returned by the `step()` method is not within the observation space.[0m
+  logger.warn(f"{pre} is not within the observation space.")
+1it [00:28, 28.83s/it]2it [01:01, 30.88s/it]3it [01:20, 25.67s/it]4it [01:41, 23.61s/it]4it [01:41, 25.27s/it]
+{'model_parameters': {'method': 'SaCCM', 'adversarial_loss_coef': 0.1, 'batch_size': 256, 'contrast_batch_size': 256, 'contrast_buffer_type': 'fine_grained', 'contrast_training_interval': 1, 'time_step': 5000000, 'causal_dim': 6, 'causal_hidden_dim': 128, 'buffer_size': 1000, 'use_weighted_info_nce': False, 'use_reward_norm': False, 'learning_rate': 0.001, 'train_freq': 128, 'gradient_steps': 16, 'encoder_tau': 0.05, 'neg_radio': 0.5, 'env_name': 'PandaPush-v3', 'env_hook': 'PandaHook', 'train_envs': '[(0, 30), (1, 1), (1, 30), (1, 5)]', 'test_envs': '[(0, 30), (1, 1), (1, 30), (1, 5)]', 'use_continue_train': False, 'save_video': False, 'seed': 100, 'config_path': '', 'test_eps_num_per_env': 50, 'use_wandb': False, 'wandb_project_name': 'franky-sami', 'wandb_team_name': 'skill-aware-rl'}, 'save_path': '/home/xi/yxh_space/SaMI/SaMI/output', 'sub_save_path': '/home/xi/yxh_space/SaMI/SaMI/output/2025-05-27-16:21:40-039164', 'save_model_path': '/home/xi/yxh_space/SaMI/SaMI/output/2025-05-27-16:21:40-039164/model.zip', 'log_path': '/home/xi/yxh_space/SaMI/SaMI/output/2025-05-27-16:21:40-039164/log.txt', 'code_path': '/home/xi/yxh_space/SaMI/SaMI/output/2025-05-27-16:21:40-039164/code.zip', 'config_path': '/home/xi/yxh_space/SaMI/SaMI/output/2025-05-27-16:21:40-039164/config.yaml', 'test_path': '/home/xi/yxh_space/SaMI/SaMI/output/2025-05-27-16:21:40-039164/test_result.yaml', 'test_tsne_path': '/home/xi/yxh_space/SaMI/SaMI/output/2025-05-27-16:21:40-039164/tsne.jpg', 'test_table_path': '/home/xi/yxh_space/SaMI/SaMI/output/2025-05-27-16:21:40-039164/tables', 'test_image_path': '/home/xi/yxh_space/SaMI/SaMI/output/2025-05-27-16:21:40-039164/images', 'test_video_path': '/home/xi/yxh_space/SaMI/SaMI/output/2025-05-27-16:21:40-039164/videos'}
+argv[0]=--background_color_red=0.8745098114013672
+argv[1]=--background_color_green=0.21176470816135406
+argv[2]=--background_color_blue=0.1764705926179886
+argv[0]=--background_color_red=0.8745098114013672
+argv[1]=--background_color_green=0.21176470816135406
+argv[2]=--background_color_blue=0.1764705926179886
+argv[0]=--background_color_red=0.8745098114013672
+argv[1]=--background_color_green=0.21176470816135406
+argv[2]=--background_color_blue=0.1764705926179886
+argv[0]=--background_color_red=0.8745098114013672
+argv[1]=--background_color_green=0.21176470816135406
+argv[2]=--background_color_blue=0.1764705926179886
+argv[0]=--background_color_red=0.8745098114013672
+argv[1]=--background_color_green=0.21176470816135406
+argv[2]=--background_color_blue=0.1764705926179886
+argv[0]=--background_color_red=0.8745098114013672
+argv[1]=--background_color_green=0.21176470816135406
+argv[2]=--background_color_blue=0.1764705926179886
+argv[0]=--background_color_red=0.8745098114013672
+argv[1]=--background_color_green=0.21176470816135406
+argv[2]=--background_color_blue=0.1764705926179886
+argv[0]=--background_color_red=0.8745098114013672
+argv[1]=--background_color_green=0.21176470816135406
+argv[2]=--background_color_blue=0.1764705926179886
+0it [00:00, ?it/s]/home/xi/anaconda3/envs/franky-sami/lib/python3.10/site-packages/gymnasium/core.py:311: UserWarning: [33mWARN: env.task to get variables from other wrappers is deprecated and will be removed in v1.0, to get this variable you can do `env.unwrapped.task` for environment variables or `env.get_wrapper_attr('task')` that will search the reminding wrappers.[0m
+  logger.warn(
+/home/xi/anaconda3/envs/franky-sami/lib/python3.10/site-packages/gymnasium/core.py:311: UserWarning: [33mWARN: env.set_obs_friction_mass to get variables from other wrappers is deprecated and will be removed in v1.0, to get this variable you can do `env.unwrapped.set_obs_friction_mass` for environment variables or `env.get_wrapper_attr('set_obs_friction_mass')` that will search the reminding wrappers.[0m
+  logger.warn(
+/home/xi/anaconda3/envs/franky-sami/lib/python3.10/site-packages/gymnasium/utils/passive_env_checker.py:135: UserWarning: [33mWARN: The obs returned by the `reset()` method was expecting numpy array dtype to be float32, actual type: float64[0m
+  logger.warn(
+/home/xi/anaconda3/envs/franky-sami/lib/python3.10/site-packages/gymnasium/utils/passive_env_checker.py:159: UserWarning: [33mWARN: The obs returned by the `reset()` method is not within the observation space.[0m
+  logger.warn(f"{pre} is not within the observation space.")
+/home/xi/anaconda3/envs/franky-sami/lib/python3.10/site-packages/gymnasium/utils/passive_env_checker.py:135: UserWarning: [33mWARN: The obs returned by the `step()` method was expecting numpy array dtype to be float32, actual type: float64[0m
+  logger.warn(
+/home/xi/anaconda3/envs/franky-sami/lib/python3.10/site-packages/gymnasium/utils/passive_env_checker.py:159: UserWarning: [33mWARN: The obs returned by the `step()` method is not within the observation space.[0m
+  logger.warn(f"{pre} is not within the observation space.")
+1it [00:20, 20.79s/it]2it [00:36, 17.66s/it]3it [00:56, 18.91s/it]4it [01:14, 18.41s/it]4it [01:14, 18.57s/it]
+{'model_parameters': {'method': 'SaSAC', 'adversarial_loss_coef': 0.01, 'batch_size': 256, 'contrast_batch_size': 256, 'contrast_buffer_type': 'fine_grained', 'contrast_training_interval': 1, 'time_step': 5000000, 'causal_dim': 6, 'causal_hidden_dim': 128, 'buffer_size': 1000, 'use_weighted_info_nce': False, 'use_reward_norm': False, 'learning_rate': 0.001, 'train_freq': 128, 'gradient_steps': 16, 'encoder_tau': 0.05, 'neg_radio': 0.5, 'env_name': 'PandaPush-v3', 'env_hook': 'PandaHook', 'train_envs': '[(0, 30), (1, 1), (1, 30), (1, 5)]', 'test_envs': '[(0, 30), (1, 1), (1, 30), (1, 5)]', 'use_continue_train': False, 'save_video': False, 'seed': 100, 'config_path': '', 'test_eps_num_per_env': 50, 'use_wandb': False, 'wandb_project_name': 'franky-sami', 'wandb_team_name': 'skill-aware-rl'}, 'save_path': '/home/xi/yxh_space/SaMI/SaMI/output', 'sub_save_path': '/home/xi/yxh_space/SaMI/SaMI/output/2025-05-27-16:53:23-286286', 'save_model_path': '/home/xi/yxh_space/SaMI/SaMI/output/2025-05-27-16:53:23-286286/model.zip', 'log_path': '/home/xi/yxh_space/SaMI/SaMI/output/2025-05-27-16:53:23-286286/log.txt', 'code_path': '/home/xi/yxh_space/SaMI/SaMI/output/2025-05-27-16:53:23-286286/code.zip', 'config_path': '/home/xi/yxh_space/SaMI/SaMI/output/2025-05-27-16:53:23-286286/config.yaml', 'test_path': '/home/xi/yxh_space/SaMI/SaMI/output/2025-05-27-16:53:23-286286/test_result.yaml', 'test_tsne_path': '/home/xi/yxh_space/SaMI/SaMI/output/2025-05-27-16:53:23-286286/tsne.jpg', 'test_table_path': '/home/xi/yxh_space/SaMI/SaMI/output/2025-05-27-16:53:23-286286/tables', 'test_image_path': '/home/xi/yxh_space/SaMI/SaMI/output/2025-05-27-16:53:23-286286/images', 'test_video_path': '/home/xi/yxh_space/SaMI/SaMI/output/2025-05-27-16:53:23-286286/videos'}
+argv[0]=--background_color_red=0.8745098114013672
+argv[1]=--background_color_green=0.21176470816135406
+argv[2]=--background_color_blue=0.1764705926179886
+argv[0]=--background_color_red=0.8745098114013672
+argv[1]=--background_color_green=0.21176470816135406
+argv[2]=--background_color_blue=0.1764705926179886
+argv[0]=--background_color_red=0.8745098114013672
+argv[1]=--background_color_green=0.21176470816135406
+argv[2]=--background_color_blue=0.1764705926179886
+argv[0]=--background_color_red=0.8745098114013672
+argv[1]=--background_color_green=0.21176470816135406
+argv[2]=--background_color_blue=0.1764705926179886
+argv[0]=--background_color_red=0.8745098114013672
+argv[1]=--background_color_green=0.21176470816135406
+argv[2]=--background_color_blue=0.1764705926179886
+argv[0]=--background_color_red=0.8745098114013672
+argv[1]=--background_color_green=0.21176470816135406
+argv[2]=--background_color_blue=0.1764705926179886
+argv[0]=--background_color_red=0.8745098114013672
+argv[1]=--background_color_green=0.21176470816135406
+argv[2]=--background_color_blue=0.1764705926179886
+argv[0]=--background_color_red=0.8745098114013672
+argv[1]=--background_color_green=0.21176470816135406
+argv[2]=--background_color_blue=0.1764705926179886
+0it [00:00, ?it/s]/home/xi/anaconda3/envs/franky-sami/lib/python3.10/site-packages/gymnasium/core.py:311: UserWarning: [33mWARN: env.task to get variables from other wrappers is deprecated and will be removed in v1.0, to get this variable you can do `env.unwrapped.task` for environment variables or `env.get_wrapper_attr('task')` that will search the reminding wrappers.[0m
+  logger.warn(
+/home/xi/anaconda3/envs/franky-sami/lib/python3.10/site-packages/gymnasium/core.py:311: UserWarning: [33mWARN: env.set_obs_friction_mass to get variables from other wrappers is deprecated and will be removed in v1.0, to get this variable you can do `env.unwrapped.set_obs_friction_mass` for environment variables or `env.get_wrapper_attr('set_obs_friction_mass')` that will search the reminding wrappers.[0m
+  logger.warn(
+/home/xi/anaconda3/envs/franky-sami/lib/python3.10/site-packages/gymnasium/utils/passive_env_checker.py:135: UserWarning: [33mWARN: The obs returned by the `reset()` method was expecting numpy array dtype to be float32, actual type: float64[0m
+  logger.warn(
+/home/xi/anaconda3/envs/franky-sami/lib/python3.10/site-packages/gymnasium/utils/passive_env_checker.py:159: UserWarning: [33mWARN: The obs returned by the `reset()` method is not within the observation space.[0m
+  logger.warn(f"{pre} is not within the observation space.")
+/home/xi/anaconda3/envs/franky-sami/lib/python3.10/site-packages/gymnasium/utils/passive_env_checker.py:135: UserWarning: [33mWARN: The obs returned by the `step()` method was expecting numpy array dtype to be float32, actual type: float64[0m
+  logger.warn(
+/home/xi/anaconda3/envs/franky-sami/lib/python3.10/site-packages/gymnasium/utils/passive_env_checker.py:159: UserWarning: [33mWARN: The obs returned by the `step()` method is not within the observation space.[0m
+  logger.warn(f"{pre} is not within the observation space.")
+1it [00:08,  8.65s/it]2it [00:19,  9.79s/it]3it [00:35, 12.84s/it]4it [00:44, 11.32s/it]4it [00:44, 11.17s/it]
+{'model_parameters': {'method': 'SaSAC', 'adversarial_loss_coef': 0.1, 'batch_size': 256, 'contrast_batch_size': 256, 'contrast_buffer_type': 'fine_grained', 'contrast_training_interval': 1, 'time_step': 5000000, 'causal_dim': 6, 'causal_hidden_dim': 128, 'buffer_size': 1000, 'use_weighted_info_nce': False, 'use_reward_norm': False, 'learning_rate': 0.001, 'train_freq': 128, 'gradient_steps': 16, 'encoder_tau': 0.05, 'neg_radio': 0.5, 'env_name': 'PandaPush-v3', 'env_hook': 'PandaHook', 'train_envs': '[(0, 30), (1, 1), (1, 30), (1, 5)]', 'test_envs': '[(0, 30), (1, 1), (1, 30), (1, 5)]', 'use_continue_train': False, 'save_video': False, 'seed': 100, 'config_path': '', 'test_eps_num_per_env': 50, 'use_wandb': False, 'wandb_project_name': 'franky-sami', 'wandb_team_name': 'skill-aware-rl'}, 'save_path': '/home/xi/yxh_space/SaMI/SaMI/output', 'sub_save_path': '/home/xi/yxh_space/SaMI/SaMI/output/2025-05-27-16:53:23-249013', 'save_model_path': '/home/xi/yxh_space/SaMI/SaMI/output/2025-05-27-16:53:23-249013/model.zip', 'log_path': '/home/xi/yxh_space/SaMI/SaMI/output/2025-05-27-16:53:23-249013/log.txt', 'code_path': '/home/xi/yxh_space/SaMI/SaMI/output/2025-05-27-16:53:23-249013/code.zip', 'config_path': '/home/xi/yxh_space/SaMI/SaMI/output/2025-05-27-16:53:23-249013/config.yaml', 'test_path': '/home/xi/yxh_space/SaMI/SaMI/output/2025-05-27-16:53:23-249013/test_result.yaml', 'test_tsne_path': '/home/xi/yxh_space/SaMI/SaMI/output/2025-05-27-16:53:23-249013/tsne.jpg', 'test_table_path': '/home/xi/yxh_space/SaMI/SaMI/output/2025-05-27-16:53:23-249013/tables', 'test_image_path': '/home/xi/yxh_space/SaMI/SaMI/output/2025-05-27-16:53:23-249013/images', 'test_video_path': '/home/xi/yxh_space/SaMI/SaMI/output/2025-05-27-16:53:23-249013/videos'}
+argv[0]=--background_color_red=0.8745098114013672
+argv[1]=--background_color_green=0.21176470816135406
+argv[2]=--background_color_blue=0.1764705926179886
+argv[0]=--background_color_red=0.8745098114013672
+argv[1]=--background_color_green=0.21176470816135406
+argv[2]=--background_color_blue=0.1764705926179886
+argv[0]=--background_color_red=0.8745098114013672
+argv[1]=--background_color_green=0.21176470816135406
+argv[2]=--background_color_blue=0.1764705926179886
+argv[0]=--background_color_red=0.8745098114013672
+argv[1]=--background_color_green=0.21176470816135406
+argv[2]=--background_color_blue=0.1764705926179886
+argv[0]=--background_color_red=0.8745098114013672
+argv[1]=--background_color_green=0.21176470816135406
+argv[2]=--background_color_blue=0.1764705926179886
+argv[0]=--background_color_red=0.8745098114013672
+argv[1]=--background_color_green=0.21176470816135406
+argv[2]=--background_color_blue=0.1764705926179886
+argv[0]=--background_color_red=0.8745098114013672
+argv[1]=--background_color_green=0.21176470816135406
+argv[2]=--background_color_blue=0.1764705926179886
+argv[0]=--background_color_red=0.8745098114013672
+argv[1]=--background_color_green=0.21176470816135406
+argv[2]=--background_color_blue=0.1764705926179886
+0it [00:00, ?it/s]/home/xi/anaconda3/envs/franky-sami/lib/python3.10/site-packages/gymnasium/core.py:311: UserWarning: [33mWARN: env.task to get variables from other wrappers is deprecated and will be removed in v1.0, to get this variable you can do `env.unwrapped.task` for environment variables or `env.get_wrapper_attr('task')` that will search the reminding wrappers.[0m
+  logger.warn(
+/home/xi/anaconda3/envs/franky-sami/lib/python3.10/site-packages/gymnasium/core.py:311: UserWarning: [33mWARN: env.set_obs_friction_mass to get variables from other wrappers is deprecated and will be removed in v1.0, to get this variable you can do `env.unwrapped.set_obs_friction_mass` for environment variables or `env.get_wrapper_attr('set_obs_friction_mass')` that will search the reminding wrappers.[0m
+  logger.warn(
+/home/xi/anaconda3/envs/franky-sami/lib/python3.10/site-packages/gymnasium/utils/passive_env_checker.py:135: UserWarning: [33mWARN: The obs returned by the `reset()` method was expecting numpy array dtype to be float32, actual type: float64[0m
+  logger.warn(
+/home/xi/anaconda3/envs/franky-sami/lib/python3.10/site-packages/gymnasium/utils/passive_env_checker.py:159: UserWarning: [33mWARN: The obs returned by the `reset()` method is not within the observation space.[0m
+  logger.warn(f"{pre} is not within the observation space.")
+/home/xi/anaconda3/envs/franky-sami/lib/python3.10/site-packages/gymnasium/utils/passive_env_checker.py:135: UserWarning: [33mWARN: The obs returned by the `step()` method was expecting numpy array dtype to be float32, actual type: float64[0m
+  logger.warn(
+/home/xi/anaconda3/envs/franky-sami/lib/python3.10/site-packages/gymnasium/utils/passive_env_checker.py:159: UserWarning: [33mWARN: The obs returned by the `step()` method is not within the observation space.[0m
+  logger.warn(f"{pre} is not within the observation space.")
+1it [00:06,  6.69s/it]2it [00:12,  6.33s/it]3it [00:22,  7.67s/it]4it [00:27,  6.87s/it]4it [00:27,  6.92s/it]
+{'model_parameters': {'method': 'SaCCM', 'adversarial_loss_coef': 0.1, 'batch_size': 256, 'contrast_batch_size': 256, 'contrast_buffer_type': 'fine_grained', 'contrast_training_interval': 1, 'time_step': 5000000, 'causal_dim': 6, 'causal_hidden_dim': 128, 'buffer_size': 1000, 'use_weighted_info_nce': False, 'use_reward_norm': False, 'learning_rate': 0.001, 'train_freq': 128, 'gradient_steps': 16, 'encoder_tau': 0.05, 'neg_radio': 0.5, 'env_name': 'PandaPush-v3', 'env_hook': 'PandaHook', 'train_envs': '[(0, 30), (1, 1), (1, 30), (1, 5)]', 'test_envs': '[(0, 30), (1, 1), (1, 30), (1, 5)]', 'use_continue_train': False, 'save_video': False, 'seed': 100, 'config_path': '', 'test_eps_num_per_env': 50, 'use_wandb': False, 'wandb_project_name': 'franky-sami', 'wandb_team_name': 'skill-aware-rl'}, 'save_path': '/home/xi/yxh_space/SaMI/SaMI/output', 'sub_save_path': '/home/xi/yxh_space/SaMI/SaMI/output/2025-05-27-16:53:23-093840', 'save_model_path': '/home/xi/yxh_space/SaMI/SaMI/output/2025-05-27-16:53:23-093840/model.zip', 'log_path': '/home/xi/yxh_space/SaMI/SaMI/output/2025-05-27-16:53:23-093840/log.txt', 'code_path': '/home/xi/yxh_space/SaMI/SaMI/output/2025-05-27-16:53:23-093840/code.zip', 'config_path': '/home/xi/yxh_space/SaMI/SaMI/output/2025-05-27-16:53:23-093840/config.yaml', 'test_path': '/home/xi/yxh_space/SaMI/SaMI/output/2025-05-27-16:53:23-093840/test_result.yaml', 'test_tsne_path': '/home/xi/yxh_space/SaMI/SaMI/output/2025-05-27-16:53:23-093840/tsne.jpg', 'test_table_path': '/home/xi/yxh_space/SaMI/SaMI/output/2025-05-27-16:53:23-093840/tables', 'test_image_path': '/home/xi/yxh_space/SaMI/SaMI/output/2025-05-27-16:53:23-093840/images', 'test_video_path': '/home/xi/yxh_space/SaMI/SaMI/output/2025-05-27-16:53:23-093840/videos'}
+argv[0]=--background_color_red=0.8745098114013672
+argv[1]=--background_color_green=0.21176470816135406
+argv[2]=--background_color_blue=0.1764705926179886
+argv[0]=--background_color_red=0.8745098114013672
+argv[1]=--background_color_green=0.21176470816135406
+argv[2]=--background_color_blue=0.1764705926179886
+argv[0]=--background_color_red=0.8745098114013672
+argv[1]=--background_color_green=0.21176470816135406
+argv[2]=--background_color_blue=0.1764705926179886
+argv[0]=--background_color_red=0.8745098114013672
+argv[1]=--background_color_green=0.21176470816135406
+argv[2]=--background_color_blue=0.1764705926179886
+argv[0]=--background_color_red=0.8745098114013672
+argv[1]=--background_color_green=0.21176470816135406
+argv[2]=--background_color_blue=0.1764705926179886
+argv[0]=--background_color_red=0.8745098114013672
+argv[1]=--background_color_green=0.21176470816135406
+argv[2]=--background_color_blue=0.1764705926179886
+argv[0]=--background_color_red=0.8745098114013672
+argv[1]=--background_color_green=0.21176470816135406
+argv[2]=--background_color_blue=0.1764705926179886
+argv[0]=--background_color_red=0.8745098114013672
+argv[1]=--background_color_green=0.21176470816135406
+argv[2]=--background_color_blue=0.1764705926179886
+0it [00:00, ?it/s]/home/xi/anaconda3/envs/franky-sami/lib/python3.10/site-packages/gymnasium/core.py:311: UserWarning: [33mWARN: env.task to get variables from other wrappers is deprecated and will be removed in v1.0, to get this variable you can do `env.unwrapped.task` for environment variables or `env.get_wrapper_attr('task')` that will search the reminding wrappers.[0m
+  logger.warn(
+/home/xi/anaconda3/envs/franky-sami/lib/python3.10/site-packages/gymnasium/core.py:311: UserWarning: [33mWARN: env.set_obs_friction_mass to get variables from other wrappers is deprecated and will be removed in v1.0, to get this variable you can do `env.unwrapped.set_obs_friction_mass` for environment variables or `env.get_wrapper_attr('set_obs_friction_mass')` that will search the reminding wrappers.[0m
+  logger.warn(
+/home/xi/anaconda3/envs/franky-sami/lib/python3.10/site-packages/gymnasium/utils/passive_env_checker.py:135: UserWarning: [33mWARN: The obs returned by the `reset()` method was expecting numpy array dtype to be float32, actual type: float64[0m
+  logger.warn(
+/home/xi/anaconda3/envs/franky-sami/lib/python3.10/site-packages/gymnasium/utils/passive_env_checker.py:159: UserWarning: [33mWARN: The obs returned by the `reset()` method is not within the observation space.[0m
+  logger.warn(f"{pre} is not within the observation space.")
+/home/xi/anaconda3/envs/franky-sami/lib/python3.10/site-packages/gymnasium/utils/passive_env_checker.py:135: UserWarning: [33mWARN: The obs returned by the `step()` method was expecting numpy array dtype to be float32, actual type: float64[0m
+  logger.warn(
+/home/xi/anaconda3/envs/franky-sami/lib/python3.10/site-packages/gymnasium/utils/passive_env_checker.py:159: UserWarning: [33mWARN: The obs returned by the `step()` method is not within the observation space.[0m
+  logger.warn(f"{pre} is not within the observation space.")
+1it [00:04,  4.66s/it]2it [00:09,  4.89s/it]3it [00:14,  4.99s/it]4it [00:18,  4.55s/it]4it [00:18,  4.67s/it]
+{'model_parameters': {'method': 'SaCCM', 'adversarial_loss_coef': 0.01, 'batch_size': 256, 'contrast_batch_size': 256, 'contrast_buffer_type': 'fine_grained', 'contrast_training_interval': 1, 'time_step': 5000000, 'causal_dim': 6, 'causal_hidden_dim': 128, 'buffer_size': 1000, 'use_weighted_info_nce': False, 'use_reward_norm': False, 'learning_rate': 0.001, 'train_freq': 128, 'gradient_steps': 16, 'encoder_tau': 0.05, 'neg_radio': 0.5, 'env_name': 'PandaPush-v3', 'env_hook': 'PandaHook', 'train_envs': '[(0, 30), (1, 1), (1, 30), (1, 5)]', 'test_envs': '[(0, 30), (1, 1), (1, 30), (1, 5)]', 'use_continue_train': False, 'save_video': False, 'seed': 100, 'config_path': '', 'test_eps_num_per_env': 50, 'use_wandb': False, 'wandb_project_name': 'franky-sami', 'wandb_team_name': 'skill-aware-rl'}, 'save_path': '/home/xi/yxh_space/SaMI/SaMI/output', 'sub_save_path': '/home/xi/yxh_space/SaMI/SaMI/output/2025-05-27-16:53:22-911869', 'save_model_path': '/home/xi/yxh_space/SaMI/SaMI/output/2025-05-27-16:53:22-911869/model.zip', 'log_path': '/home/xi/yxh_space/SaMI/SaMI/output/2025-05-27-16:53:22-911869/log.txt', 'code_path': '/home/xi/yxh_space/SaMI/SaMI/output/2025-05-27-16:53:22-911869/code.zip', 'config_path': '/home/xi/yxh_space/SaMI/SaMI/output/2025-05-27-16:53:22-911869/config.yaml', 'test_path': '/home/xi/yxh_space/SaMI/SaMI/output/2025-05-27-16:53:22-911869/test_result.yaml', 'test_tsne_path': '/home/xi/yxh_space/SaMI/SaMI/output/2025-05-27-16:53:22-911869/tsne.jpg', 'test_table_path': '/home/xi/yxh_space/SaMI/SaMI/output/2025-05-27-16:53:22-911869/tables', 'test_image_path': '/home/xi/yxh_space/SaMI/SaMI/output/2025-05-27-16:53:22-911869/images', 'test_video_path': '/home/xi/yxh_space/SaMI/SaMI/output/2025-05-27-16:53:22-911869/videos'}
+argv[0]=--background_color_red=0.8745098114013672
+argv[1]=--background_color_green=0.21176470816135406
+argv[2]=--background_color_blue=0.1764705926179886
+argv[0]=--background_color_red=0.8745098114013672
+argv[1]=--background_color_green=0.21176470816135406
+argv[2]=--background_color_blue=0.1764705926179886
+argv[0]=--background_color_red=0.8745098114013672
+argv[1]=--background_color_green=0.21176470816135406
+argv[2]=--background_color_blue=0.1764705926179886
+argv[0]=--background_color_red=0.8745098114013672
+argv[1]=--background_color_green=0.21176470816135406
+argv[2]=--background_color_blue=0.1764705926179886
+argv[0]=--background_color_red=0.8745098114013672
+argv[1]=--background_color_green=0.21176470816135406
+argv[2]=--background_color_blue=0.1764705926179886
+argv[0]=--background_color_red=0.8745098114013672
+argv[1]=--background_color_green=0.21176470816135406
+argv[2]=--background_color_blue=0.1764705926179886
+argv[0]=--background_color_red=0.8745098114013672
+argv[1]=--background_color_green=0.21176470816135406
+argv[2]=--background_color_blue=0.1764705926179886
+argv[0]=--background_color_red=0.8745098114013672
+argv[1]=--background_color_green=0.21176470816135406
+argv[2]=--background_color_blue=0.1764705926179886
+0it [00:00, ?it/s]/home/xi/anaconda3/envs/franky-sami/lib/python3.10/site-packages/gymnasium/core.py:311: UserWarning: [33mWARN: env.task to get variables from other wrappers is deprecated and will be removed in v1.0, to get this variable you can do `env.unwrapped.task` for environment variables or `env.get_wrapper_attr('task')` that will search the reminding wrappers.[0m
+  logger.warn(
+/home/xi/anaconda3/envs/franky-sami/lib/python3.10/site-packages/gymnasium/core.py:311: UserWarning: [33mWARN: env.set_obs_friction_mass to get variables from other wrappers is deprecated and will be removed in v1.0, to get this variable you can do `env.unwrapped.set_obs_friction_mass` for environment variables or `env.get_wrapper_attr('set_obs_friction_mass')` that will search the reminding wrappers.[0m
+  logger.warn(
+/home/xi/anaconda3/envs/franky-sami/lib/python3.10/site-packages/gymnasium/utils/passive_env_checker.py:135: UserWarning: [33mWARN: The obs returned by the `reset()` method was expecting numpy array dtype to be float32, actual type: float64[0m
+  logger.warn(
+/home/xi/anaconda3/envs/franky-sami/lib/python3.10/site-packages/gymnasium/utils/passive_env_checker.py:159: UserWarning: [33mWARN: The obs returned by the `reset()` method is not within the observation space.[0m
+  logger.warn(f"{pre} is not within the observation space.")
+/home/xi/anaconda3/envs/franky-sami/lib/python3.10/site-packages/gymnasium/utils/passive_env_checker.py:135: UserWarning: [33mWARN: The obs returned by the `step()` method was expecting numpy array dtype to be float32, actual type: float64[0m
+  logger.warn(
+/home/xi/anaconda3/envs/franky-sami/lib/python3.10/site-packages/gymnasium/utils/passive_env_checker.py:159: UserWarning: [33mWARN: The obs returned by the `step()` method is not within the observation space.[0m
+  logger.warn(f"{pre} is not within the observation space.")
+1it [00:09,  9.41s/it]2it [00:19, 10.07s/it]3it [00:29,  9.96s/it]4it [00:38,  9.65s/it]4it [00:38,  9.74s/it]
+{'model_parameters': {'method': 'SaCCM', 'adversarial_loss_coef': 0.01, 'batch_size': 256, 'contrast_batch_size': 256, 'contrast_buffer_type': 'fine_grained', 'contrast_training_interval': 1, 'time_step': 5000000, 'causal_dim': 6, 'causal_hidden_dim': 128, 'buffer_size': 1000, 'use_weighted_info_nce': False, 'use_reward_norm': False, 'learning_rate': 0.001, 'train_freq': 128, 'gradient_steps': 16, 'encoder_tau': 0.05, 'neg_radio': 0.5, 'env_name': 'PandaPush-v3', 'env_hook': 'PandaHook', 'train_envs': '[(0, 30), (1, 1), (1, 30), (1, 5)]', 'test_envs': '[(0, 30), (1, 1), (1, 30), (1, 5)]', 'use_continue_train': False, 'save_video': False, 'seed': 100, 'config_path': '', 'test_eps_num_per_env': 50, 'use_wandb': False, 'wandb_project_name': 'franky-sami', 'wandb_team_name': 'skill-aware-rl'}, 'save_path': '/home/xi/yxh_space/SaMI/SaMI/output', 'sub_save_path': '/home/xi/yxh_space/SaMI/SaMI/output/2025-05-28-13:57:20-122838', 'save_model_path': '/home/xi/yxh_space/SaMI/SaMI/output/2025-05-28-13:57:20-122838/model.zip', 'log_path': '/home/xi/yxh_space/SaMI/SaMI/output/2025-05-28-13:57:20-122838/log.txt', 'code_path': '/home/xi/yxh_space/SaMI/SaMI/output/2025-05-28-13:57:20-122838/code.zip', 'config_path': '/home/xi/yxh_space/SaMI/SaMI/output/2025-05-28-13:57:20-122838/config.yaml', 'test_path': '/home/xi/yxh_space/SaMI/SaMI/output/2025-05-28-13:57:20-122838/test_result.yaml', 'test_tsne_path': '/home/xi/yxh_space/SaMI/SaMI/output/2025-05-28-13:57:20-122838/tsne.jpg', 'test_table_path': '/home/xi/yxh_space/SaMI/SaMI/output/2025-05-28-13:57:20-122838/tables', 'test_image_path': '/home/xi/yxh_space/SaMI/SaMI/output/2025-05-28-13:57:20-122838/images', 'test_video_path': '/home/xi/yxh_space/SaMI/SaMI/output/2025-05-28-13:57:20-122838/videos'}
+argv[0]=--background_color_red=0.8745098114013672
+argv[1]=--background_color_green=0.21176470816135406
+argv[2]=--background_color_blue=0.1764705926179886
+argv[0]=--background_color_red=0.8745098114013672
+argv[1]=--background_color_green=0.21176470816135406
+argv[2]=--background_color_blue=0.1764705926179886
+argv[0]=--background_color_red=0.8745098114013672
+argv[1]=--background_color_green=0.21176470816135406
+argv[2]=--background_color_blue=0.1764705926179886
+argv[0]=--background_color_red=0.8745098114013672
+argv[1]=--background_color_green=0.21176470816135406
+argv[2]=--background_color_blue=0.1764705926179886
+argv[0]=--background_color_red=0.8745098114013672
+argv[1]=--background_color_green=0.21176470816135406
+argv[2]=--background_color_blue=0.1764705926179886
+argv[0]=--background_color_red=0.8745098114013672
+argv[1]=--background_color_green=0.21176470816135406
+argv[2]=--background_color_blue=0.1764705926179886
+argv[0]=--background_color_red=0.8745098114013672
+argv[1]=--background_color_green=0.21176470816135406
+argv[2]=--background_color_blue=0.1764705926179886
+argv[0]=--background_color_red=0.8745098114013672
+argv[1]=--background_color_green=0.21176470816135406
+argv[2]=--background_color_blue=0.1764705926179886
+0it [00:00, ?it/s]/home/xi/anaconda3/envs/franky-sami/lib/python3.10/site-packages/gymnasium/core.py:311: UserWarning: [33mWARN: env.task to get variables from other wrappers is deprecated and will be removed in v1.0, to get this variable you can do `env.unwrapped.task` for environment variables or `env.get_wrapper_attr('task')` that will search the reminding wrappers.[0m
+  logger.warn(
+/home/xi/anaconda3/envs/franky-sami/lib/python3.10/site-packages/gymnasium/core.py:311: UserWarning: [33mWARN: env.set_obs_friction_mass to get variables from other wrappers is deprecated and will be removed in v1.0, to get this variable you can do `env.unwrapped.set_obs_friction_mass` for environment variables or `env.get_wrapper_attr('set_obs_friction_mass')` that will search the reminding wrappers.[0m
+  logger.warn(
+/home/xi/anaconda3/envs/franky-sami/lib/python3.10/site-packages/gymnasium/utils/passive_env_checker.py:135: UserWarning: [33mWARN: The obs returned by the `reset()` method was expecting numpy array dtype to be float32, actual type: float64[0m
+  logger.warn(
+/home/xi/anaconda3/envs/franky-sami/lib/python3.10/site-packages/gymnasium/utils/passive_env_checker.py:159: UserWarning: [33mWARN: The obs returned by the `reset()` method is not within the observation space.[0m
+  logger.warn(f"{pre} is not within the observation space.")
+/home/xi/anaconda3/envs/franky-sami/lib/python3.10/site-packages/gymnasium/utils/passive_env_checker.py:135: UserWarning: [33mWARN: The obs returned by the `step()` method was expecting numpy array dtype to be float32, actual type: float64[0m
+  logger.warn(
+/home/xi/anaconda3/envs/franky-sami/lib/python3.10/site-packages/gymnasium/utils/passive_env_checker.py:159: UserWarning: [33mWARN: The obs returned by the `step()` method is not within the observation space.[0m
+  logger.warn(f"{pre} is not within the observation space.")
+1it [00:07,  7.64s/it]2it [00:16,  8.12s/it]3it [00:23,  7.90s/it]4it [00:32,  8.11s/it]4it [00:32,  8.04s/it]
+{'model_parameters': {'method': 'SaCCM', 'adversarial_loss_coef': 0.1, 'batch_size': 256, 'contrast_batch_size': 256, 'contrast_buffer_type': 'fine_grained', 'contrast_training_interval': 1, 'time_step': 5000000, 'causal_dim': 6, 'causal_hidden_dim': 128, 'buffer_size': 1000, 'use_weighted_info_nce': False, 'use_reward_norm': False, 'learning_rate': 0.001, 'train_freq': 128, 'gradient_steps': 16, 'encoder_tau': 0.05, 'neg_radio': 0.5, 'env_name': 'PandaPush-v3', 'env_hook': 'PandaHook', 'train_envs': '[(0, 30), (1, 1), (1, 30), (1, 5)]', 'test_envs': '[(0, 30), (1, 1), (1, 30), (1, 5)]', 'use_continue_train': False, 'save_video': False, 'seed': 100, 'config_path': '', 'test_eps_num_per_env': 50, 'use_wandb': False, 'wandb_project_name': 'franky-sami', 'wandb_team_name': 'skill-aware-rl'}, 'save_path': '/home/xi/yxh_space/SaMI/SaMI/output', 'sub_save_path': '/home/xi/yxh_space/SaMI/SaMI/output/2025-05-28-13:57:21-827052', 'save_model_path': '/home/xi/yxh_space/SaMI/SaMI/output/2025-05-28-13:57:21-827052/model.zip', 'log_path': '/home/xi/yxh_space/SaMI/SaMI/output/2025-05-28-13:57:21-827052/log.txt', 'code_path': '/home/xi/yxh_space/SaMI/SaMI/output/2025-05-28-13:57:21-827052/code.zip', 'config_path': '/home/xi/yxh_space/SaMI/SaMI/output/2025-05-28-13:57:21-827052/config.yaml', 'test_path': '/home/xi/yxh_space/SaMI/SaMI/output/2025-05-28-13:57:21-827052/test_result.yaml', 'test_tsne_path': '/home/xi/yxh_space/SaMI/SaMI/output/2025-05-28-13:57:21-827052/tsne.jpg', 'test_table_path': '/home/xi/yxh_space/SaMI/SaMI/output/2025-05-28-13:57:21-827052/tables', 'test_image_path': '/home/xi/yxh_space/SaMI/SaMI/output/2025-05-28-13:57:21-827052/images', 'test_video_path': '/home/xi/yxh_space/SaMI/SaMI/output/2025-05-28-13:57:21-827052/videos'}
+argv[0]=--background_color_red=0.8745098114013672
+argv[1]=--background_color_green=0.21176470816135406
+argv[2]=--background_color_blue=0.1764705926179886
+argv[0]=--background_color_red=0.8745098114013672
+argv[1]=--background_color_green=0.21176470816135406
+argv[2]=--background_color_blue=0.1764705926179886
+argv[0]=--background_color_red=0.8745098114013672
+argv[1]=--background_color_green=0.21176470816135406
+argv[2]=--background_color_blue=0.1764705926179886
+argv[0]=--background_color_red=0.8745098114013672
+argv[1]=--background_color_green=0.21176470816135406
+argv[2]=--background_color_blue=0.1764705926179886
+argv[0]=--background_color_red=0.8745098114013672
+argv[1]=--background_color_green=0.21176470816135406
+argv[2]=--background_color_blue=0.1764705926179886
+argv[0]=--background_color_red=0.8745098114013672
+argv[1]=--background_color_green=0.21176470816135406
+argv[2]=--background_color_blue=0.1764705926179886
+argv[0]=--background_color_red=0.8745098114013672
+argv[1]=--background_color_green=0.21176470816135406
+argv[2]=--background_color_blue=0.1764705926179886
+argv[0]=--background_color_red=0.8745098114013672
+argv[1]=--background_color_green=0.21176470816135406
+argv[2]=--background_color_blue=0.1764705926179886
+0it [00:00, ?it/s]/home/xi/anaconda3/envs/franky-sami/lib/python3.10/site-packages/gymnasium/core.py:311: UserWarning: [33mWARN: env.task to get variables from other wrappers is deprecated and will be removed in v1.0, to get this variable you can do `env.unwrapped.task` for environment variables or `env.get_wrapper_attr('task')` that will search the reminding wrappers.[0m
+  logger.warn(
+/home/xi/anaconda3/envs/franky-sami/lib/python3.10/site-packages/gymnasium/core.py:311: UserWarning: [33mWARN: env.set_obs_friction_mass to get variables from other wrappers is deprecated and will be removed in v1.0, to get this variable you can do `env.unwrapped.set_obs_friction_mass` for environment variables or `env.get_wrapper_attr('set_obs_friction_mass')` that will search the reminding wrappers.[0m
+  logger.warn(
+/home/xi/anaconda3/envs/franky-sami/lib/python3.10/site-packages/gymnasium/utils/passive_env_checker.py:135: UserWarning: [33mWARN: The obs returned by the `reset()` method was expecting numpy array dtype to be float32, actual type: float64[0m
+  logger.warn(
+/home/xi/anaconda3/envs/franky-sami/lib/python3.10/site-packages/gymnasium/utils/passive_env_checker.py:159: UserWarning: [33mWARN: The obs returned by the `reset()` method is not within the observation space.[0m
+  logger.warn(f"{pre} is not within the observation space.")
+/home/xi/anaconda3/envs/franky-sami/lib/python3.10/site-packages/gymnasium/utils/passive_env_checker.py:135: UserWarning: [33mWARN: The obs returned by the `step()` method was expecting numpy array dtype to be float32, actual type: float64[0m
+  logger.warn(
+/home/xi/anaconda3/envs/franky-sami/lib/python3.10/site-packages/gymnasium/utils/passive_env_checker.py:159: UserWarning: [33mWARN: The obs returned by the `step()` method is not within the observation space.[0m
+  logger.warn(f"{pre} is not within the observation space.")
+1it [00:05,  5.19s/it]2it [00:10,  5.48s/it]3it [00:17,  5.80s/it]4it [00:23,  6.10s/it]4it [00:23,  5.90s/it]
+{'model_parameters': {'method': 'SaSAC', 'adversarial_loss_coef': 0.1, 'batch_size': 256, 'contrast_batch_size': 256, 'contrast_buffer_type': 'fine_grained', 'contrast_training_interval': 1, 'time_step': 5000000, 'causal_dim': 6, 'causal_hidden_dim': 128, 'buffer_size': 1000, 'use_weighted_info_nce': False, 'use_reward_norm': False, 'learning_rate': 0.001, 'train_freq': 128, 'gradient_steps': 16, 'encoder_tau': 0.05, 'neg_radio': 0.5, 'env_name': 'PandaPush-v3', 'env_hook': 'PandaHook', 'train_envs': '[(0, 30), (1, 1), (1, 30), (1, 5)]', 'test_envs': '[(0, 30), (1, 1), (1, 30), (1, 5)]', 'use_continue_train': False, 'save_video': False, 'seed': 100, 'config_path': '', 'test_eps_num_per_env': 50, 'use_wandb': False, 'wandb_project_name': 'franky-sami', 'wandb_team_name': 'skill-aware-rl'}, 'save_path': '/home/xi/yxh_space/SaMI/SaMI/output', 'sub_save_path': '/home/xi/yxh_space/SaMI/SaMI/output/2025-05-28-13:57:19-759652', 'save_model_path': '/home/xi/yxh_space/SaMI/SaMI/output/2025-05-28-13:57:19-759652/model.zip', 'log_path': '/home/xi/yxh_space/SaMI/SaMI/output/2025-05-28-13:57:19-759652/log.txt', 'code_path': '/home/xi/yxh_space/SaMI/SaMI/output/2025-05-28-13:57:19-759652/code.zip', 'config_path': '/home/xi/yxh_space/SaMI/SaMI/output/2025-05-28-13:57:19-759652/config.yaml', 'test_path': '/home/xi/yxh_space/SaMI/SaMI/output/2025-05-28-13:57:19-759652/test_result.yaml', 'test_tsne_path': '/home/xi/yxh_space/SaMI/SaMI/output/2025-05-28-13:57:19-759652/tsne.jpg', 'test_table_path': '/home/xi/yxh_space/SaMI/SaMI/output/2025-05-28-13:57:19-759652/tables', 'test_image_path': '/home/xi/yxh_space/SaMI/SaMI/output/2025-05-28-13:57:19-759652/images', 'test_video_path': '/home/xi/yxh_space/SaMI/SaMI/output/2025-05-28-13:57:19-759652/videos'}
+argv[0]=--background_color_red=0.8745098114013672
+argv[1]=--background_color_green=0.21176470816135406
+argv[2]=--background_color_blue=0.1764705926179886
+argv[0]=--background_color_red=0.8745098114013672
+argv[1]=--background_color_green=0.21176470816135406
+argv[2]=--background_color_blue=0.1764705926179886
+argv[0]=--background_color_red=0.8745098114013672
+argv[1]=--background_color_green=0.21176470816135406
+argv[2]=--background_color_blue=0.1764705926179886
+argv[0]=--background_color_red=0.8745098114013672
+argv[1]=--background_color_green=0.21176470816135406
+argv[2]=--background_color_blue=0.1764705926179886
+argv[0]=--background_color_red=0.8745098114013672
+argv[1]=--background_color_green=0.21176470816135406
+argv[2]=--background_color_blue=0.1764705926179886
+argv[0]=--background_color_red=0.8745098114013672
+argv[1]=--background_color_green=0.21176470816135406
+argv[2]=--background_color_blue=0.1764705926179886
+argv[0]=--background_color_red=0.8745098114013672
+argv[1]=--background_color_green=0.21176470816135406
+argv[2]=--background_color_blue=0.1764705926179886
+argv[0]=--background_color_red=0.8745098114013672
+argv[1]=--background_color_green=0.21176470816135406
+argv[2]=--background_color_blue=0.1764705926179886
+0it [00:00, ?it/s]/home/xi/anaconda3/envs/franky-sami/lib/python3.10/site-packages/gymnasium/core.py:311: UserWarning: [33mWARN: env.task to get variables from other wrappers is deprecated and will be removed in v1.0, to get this variable you can do `env.unwrapped.task` for environment variables or `env.get_wrapper_attr('task')` that will search the reminding wrappers.[0m
+  logger.warn(
+/home/xi/anaconda3/envs/franky-sami/lib/python3.10/site-packages/gymnasium/core.py:311: UserWarning: [33mWARN: env.set_obs_friction_mass to get variables from other wrappers is deprecated and will be removed in v1.0, to get this variable you can do `env.unwrapped.set_obs_friction_mass` for environment variables or `env.get_wrapper_attr('set_obs_friction_mass')` that will search the reminding wrappers.[0m
+  logger.warn(
+/home/xi/anaconda3/envs/franky-sami/lib/python3.10/site-packages/gymnasium/utils/passive_env_checker.py:135: UserWarning: [33mWARN: The obs returned by the `reset()` method was expecting numpy array dtype to be float32, actual type: float64[0m
+  logger.warn(
+/home/xi/anaconda3/envs/franky-sami/lib/python3.10/site-packages/gymnasium/utils/passive_env_checker.py:159: UserWarning: [33mWARN: The obs returned by the `reset()` method is not within the observation space.[0m
+  logger.warn(f"{pre} is not within the observation space.")
+/home/xi/anaconda3/envs/franky-sami/lib/python3.10/site-packages/gymnasium/utils/passive_env_checker.py:135: UserWarning: [33mWARN: The obs returned by the `step()` method was expecting numpy array dtype to be float32, actual type: float64[0m
+  logger.warn(
+/home/xi/anaconda3/envs/franky-sami/lib/python3.10/site-packages/gymnasium/utils/passive_env_checker.py:159: UserWarning: [33mWARN: The obs returned by the `step()` method is not within the observation space.[0m
+  logger.warn(f"{pre} is not within the observation space.")
+1it [00:04,  4.49s/it]2it [00:09,  4.64s/it]3it [00:14,  4.98s/it]4it [00:19,  4.89s/it]4it [00:19,  4.84s/it]
+{'model_parameters': {'method': 'SaSAC', 'adversarial_loss_coef': 0.01, 'batch_size': 256, 'contrast_batch_size': 256, 'contrast_buffer_type': 'fine_grained', 'contrast_training_interval': 1, 'time_step': 5000000, 'causal_dim': 6, 'causal_hidden_dim': 128, 'buffer_size': 1000, 'use_weighted_info_nce': False, 'use_reward_norm': False, 'learning_rate': 0.001, 'train_freq': 128, 'gradient_steps': 16, 'encoder_tau': 0.05, 'neg_radio': 0.5, 'env_name': 'PandaPush-v3', 'env_hook': 'PandaHook', 'train_envs': '[(0, 30), (1, 1), (1, 30), (1, 5)]', 'test_envs': '[(0, 30), (1, 1), (1, 30), (1, 5)]', 'use_continue_train': False, 'save_video': False, 'seed': 100, 'config_path': '', 'test_eps_num_per_env': 50, 'use_wandb': False, 'wandb_project_name': 'franky-sami', 'wandb_team_name': 'skill-aware-rl'}, 'save_path': '/home/xi/yxh_space/SaMI/SaMI/output', 'sub_save_path': '/home/xi/yxh_space/SaMI/SaMI/output/2025-05-28-13:57:21-838644', 'save_model_path': '/home/xi/yxh_space/SaMI/SaMI/output/2025-05-28-13:57:21-838644/model.zip', 'log_path': '/home/xi/yxh_space/SaMI/SaMI/output/2025-05-28-13:57:21-838644/log.txt', 'code_path': '/home/xi/yxh_space/SaMI/SaMI/output/2025-05-28-13:57:21-838644/code.zip', 'config_path': '/home/xi/yxh_space/SaMI/SaMI/output/2025-05-28-13:57:21-838644/config.yaml', 'test_path': '/home/xi/yxh_space/SaMI/SaMI/output/2025-05-28-13:57:21-838644/test_result.yaml', 'test_tsne_path': '/home/xi/yxh_space/SaMI/SaMI/output/2025-05-28-13:57:21-838644/tsne.jpg', 'test_table_path': '/home/xi/yxh_space/SaMI/SaMI/output/2025-05-28-13:57:21-838644/tables', 'test_image_path': '/home/xi/yxh_space/SaMI/SaMI/output/2025-05-28-13:57:21-838644/images', 'test_video_path': '/home/xi/yxh_space/SaMI/SaMI/output/2025-05-28-13:57:21-838644/videos'}
+argv[0]=--background_color_red=0.8745098114013672
+argv[1]=--background_color_green=0.21176470816135406
+argv[2]=--background_color_blue=0.1764705926179886
+argv[0]=--background_color_red=0.8745098114013672
+argv[1]=--background_color_green=0.21176470816135406
+argv[2]=--background_color_blue=0.1764705926179886
+argv[0]=--background_color_red=0.8745098114013672
+argv[1]=--background_color_green=0.21176470816135406
+argv[2]=--background_color_blue=0.1764705926179886
+argv[0]=--background_color_red=0.8745098114013672
+argv[1]=--background_color_green=0.21176470816135406
+argv[2]=--background_color_blue=0.1764705926179886
+argv[0]=--background_color_red=0.8745098114013672
+argv[1]=--background_color_green=0.21176470816135406
+argv[2]=--background_color_blue=0.1764705926179886
+argv[0]=--background_color_red=0.8745098114013672
+argv[1]=--background_color_green=0.21176470816135406
+argv[2]=--background_color_blue=0.1764705926179886
+argv[0]=--background_color_red=0.8745098114013672
+argv[1]=--background_color_green=0.21176470816135406
+argv[2]=--background_color_blue=0.1764705926179886
+argv[0]=--background_color_red=0.8745098114013672
+argv[1]=--background_color_green=0.21176470816135406
+argv[2]=--background_color_blue=0.1764705926179886

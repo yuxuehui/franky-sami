@@ -290,12 +290,12 @@ def collect_sim_data(model, manager:Manager, hook, time_steps=-1):
                         'test/done': dones[0].copy(),  # Done flag
                         # 'test/infos': infos[0].copy(),  # Info dictionary
                     }
-                    if 'causal' in observations:
-                        wandb_data['test/causal_embedding'] = observations['causal'][0]
-                    # include the step index in the log
-                    wandb_data['global_step'] = global_step
-                    manager.wandb.log(wandb_data, step=global_step)
-                    global_step += 1
+                if 'causal' in observations:
+                    wandb_data['test/causal_embedding'] = observations['causal'][0]
+                # include the step index in the log
+                wandb_data['global_step'] = global_step
+                manager.wandb.log(wandb_data, step=global_step)
+                global_step += 1
 
 
                 print("cube pos:", observations['observation'][:,4:7])

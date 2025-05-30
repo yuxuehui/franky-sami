@@ -5,6 +5,7 @@ from copy import deepcopy
 import torch as th
 from gymnasium import spaces
 from torch import nn
+from torch.nn import functional as F
 import matplotlib.pyplot as plt
 import seaborn as sns
 import os
@@ -202,14 +203,61 @@ class EncoderCubeHeight(BaseModel):
         logits = self.fc(th.relu(H))
         return logits
 
+class VectorQuantizer(nn.Module):
+    """
+    VQ-VAE style vector quantization for embedding quantization.
+    """
+    def __init__(self, num_embeddings: int, embedding_dim: int, commitment_cost: float = 0.25):
+        super().__init__()
+        self.embedding_dim = embedding_dim
+        self.num_embeddings = num_embeddings
+        self.commitment_cost = commitment_cost
+        
+        # Initialize embedding table
+        self.embedding = nn.Embedding(num_embeddings, embedding_dim)
+        self.embedding.weight.data.uniform_(-1/num_embeddings, 1/num_embeddings)
+        
+    def forward(self, inputs):
+        """
+        inputs: [batch_size, seq_len, embedding_dim] or [batch_size, embedding_dim]
+        """
+        # Flatten input for quantization if needed
+        input_shape = inputs.shape
+        flat_input = inputs.reshape(-1, self.embedding_dim)
+        
+        # Calculate distances between input and embeddings
+        distances = (th.sum(flat_input**2, dim=1, keepdim=True) 
+                    + th.sum(self.embedding.weight**2, dim=1)
+                    - 2 * th.matmul(flat_input, self.embedding.weight.t()))
+        
+        # Find closest embeddings
+        encoding_indices = th.argmin(distances, dim=1).unsqueeze(1)
+        encodings = th.zeros(encoding_indices.shape[0], self.num_embeddings, device=inputs.device)
+        encodings.scatter_(1, encoding_indices, 1)
+        
+        # Quantize and unflatten
+        quantized = th.matmul(encodings, self.embedding.weight).reshape(input_shape)
+        
+        # Calculate VQ losses
+        e_latent_loss = F.mse_loss(quantized.detach(), inputs)
+        q_latent_loss = F.mse_loss(quantized, inputs.detach())
+        loss = q_latent_loss + self.commitment_cost * e_latent_loss
+        
+        # Straight through estimator
+        quantized = inputs + (quantized - inputs).detach()
+        
+        return quantized, loss, encoding_indices.reshape(*input_shape[:-1])
+
 class EncoderCubeHeightDis(BaseModel):
-    """action_space is the dimension of the embedding"""
+    """action_space is the dimension of the embedding with VQ-VAE quantization"""
     def __init__(
         self,
         observation_space: spaces.Space,
         action_space: spaces.Box,
         hidden_dim : int = 128,
-        optimizer_kwargs: dict = {'eps':1e-5, 'lr':1e-3}
+        optimizer_kwargs: dict = {'eps':1e-5, 'lr':1e-3},
+        num_embeddings: int = 6,  # Number of quantization embeddings
+        commitment_cost: float = 0.25
     ):
         super().__init__(
             observation_space,
@@ -221,6 +269,10 @@ class EncoderCubeHeightDis(BaseModel):
         self.observation_dim = sum([obs_shape[0] for obs_shape in obs_shapes.values()])
         self.lstm = nn.LSTM(1, hidden_dim, 1,
                             bidirectional=False, batch_first=True, bias=False)
+        
+        # Add vector quantizer
+        self.vector_quantizer = VectorQuantizer(num_embeddings, hidden_dim, commitment_cost)
+        
         self.fc = nn.Linear(hidden_dim,self.action_dim)
         self.weight_info_nce = nn.Linear(self.action_dim,self.action_dim,bias=False)
         
@@ -241,8 +293,13 @@ class EncoderCubeHeightDis(BaseModel):
         # Slice features along last dimension before feeding to LSTM
         x_slice = x[:, :, 6:7] - 0.028
         H,(h,c) = self.lstm(x_slice, (h,c))
-        logits = self.fc(th.relu(H)[np.arange(batch_size),0,:])
-        return logits, (h.squeeze(0),c.squeeze(0))
+        
+        # Apply quantization during inference (no gradient computation)
+        lstm_output = th.relu(H)[np.arange(batch_size),0,:]
+        quantized_output, _, _ = self.vector_quantizer(lstm_output)
+        # logits = self.fc(quantized_output)
+        
+        return quantized_output, (h.squeeze(0),c.squeeze(0))
 
     @profile
     def forward(self, obs):
@@ -259,17 +316,28 @@ class EncoderCubeHeightDis(BaseModel):
         # x shape: [batch_size, seq_len, feature_dim]
         x_slice = x[:, :, 6:7]  - 0.028
         H, (_, _) = self.lstm(x_slice)
-        logits = self.fc(th.relu(H))
-        return logits
+        
+        # Apply quantization during training
+        lstm_output = th.relu(H)
+        quantized_output, vq_loss, encoding_indices = self.vector_quantizer(lstm_output)
+        logits = self.fc(quantized_output)
+        
+        # Store VQ loss for later use in training
+        self.vq_loss = vq_loss
+        self.encoding_indices = encoding_indices
+        
+        return quantized_output
     
 class EncoderCubeHeightDistance(BaseModel):
-    """action_space is the dimension of the embedding"""
+    """action_space is the dimension of the embedding with VQ-VAE quantization and distance features"""
     def __init__(
         self,
         observation_space: spaces.Space,
         action_space: spaces.Box,
         hidden_dim : int = 128,
-        optimizer_kwargs: dict = {'eps':1e-5, 'lr':1e-3}
+        optimizer_kwargs: dict = {'eps':1e-5, 'lr':1e-3},
+        num_embeddings: int = 6,  # Number of quantization embeddings
+        commitment_cost: float = 0.25
     ):
         super().__init__(
             observation_space,
@@ -281,6 +349,10 @@ class EncoderCubeHeightDistance(BaseModel):
         self.observation_dim = sum([obs_shape[0] for obs_shape in obs_shapes.values()])
         self.lstm = nn.LSTM(2, hidden_dim, 1,
                             bidirectional=False, batch_first=True, bias=False)
+        
+        # Add vector quantizer
+        self.vector_quantizer = VectorQuantizer(num_embeddings, hidden_dim, commitment_cost)
+        
         self.fc = nn.Linear(hidden_dim,self.action_dim)
         self.weight_info_nce = nn.Linear(self.action_dim,self.action_dim,bias=False)
         
@@ -312,8 +384,12 @@ class EncoderCubeHeightDistance(BaseModel):
         
         # Process through LSTM
         H,(h,c) = self.lstm(x_slice, (h,c))
-        logits = self.fc(th.relu(H)[np.arange(batch_size),0,:])
-        return logits, (h.squeeze(0),c.squeeze(0))
+        
+        # Apply quantization during inference (no gradient computation)
+        lstm_output = th.relu(H)[np.arange(batch_size),0,:]
+        quantized_output, _, _ = self.vector_quantizer(lstm_output)
+        
+        return quantized_output, (h.squeeze(0),c.squeeze(0))
 
     @profile
     def forward(self, obs):
@@ -339,8 +415,103 @@ class EncoderCubeHeightDistance(BaseModel):
         
         # Process through LSTM
         H, (_, _) = self.lstm(x_slice)
+        
+        # Apply quantization during training
+        lstm_output = th.relu(H)
+        quantized_output, vq_loss, encoding_indices = self.vector_quantizer(lstm_output)
+        
+        # Store VQ loss for later use in training
+        self.vq_loss = vq_loss
+        self.encoding_indices = encoding_indices
+        
+        return quantized_output
+
+class EncoderCubeAttention(BaseModel):
+    def __init__(
+        self,
+        observation_space: spaces.Space,
+        action_space: spaces.Box,
+        hidden_dim : int = 128,
+        optimizer_kwargs: dict = {'eps':1e-5, 'lr':1e-3}
+    ):
+        super().__init__(
+            observation_space,
+            action_space,
+            optimizer_kwargs=optimizer_kwargs
+        )
+        self.action_dim = get_action_dim(action_space)
+        obs_shapes = get_obs_shape(observation_space)
+        self.observation_dim = sum([obs_shape[0] for obs_shape in obs_shapes.values()])
+        # Input-level attention layers
+        self.attn_fc = nn.Linear((self.observation_dim - 14) + hidden_dim, self.observation_dim - 14, bias=True)
+        self.attn_softmax = nn.Softmax(dim=-1)
+        self.lstm = nn.LSTM(self.observation_dim - 14, hidden_dim, 1,
+                            bidirectional=False, batch_first=True, bias=False)
+        self.fc = nn.Linear(hidden_dim,self.action_dim)
+        self.weight_info_nce = nn.Linear(self.action_dim,self.action_dim,bias=False)
+        
+    @th.no_grad()
+    def forward_one_step(self, x, h, c):
+        """
+        Obtain the causal representation of the next step during the trajectory collection
+        """
+        keys = list(x.keys())
+        keys.remove('achieved_goal')
+        keys.remove('desired_goal')
+        keys.remove('action')
+        keys.sort()
+        x = th.cat(([x[_x] for _x in keys]),dim = -1).unsqueeze(1)
+        h = th.cat(([h[_h] for _h in h]),dim = -1).unsqueeze(0)
+        c = th.cat(([c[_c] for _c in c]),dim = -1).unsqueeze(0)
+        batch_size = x.size(0)
+        # Slice features along last dimension before feeding to LSTM
+        x_slice = x[:, :, 4:10]
+        # Compute attention scores over input channels
+        # x_slice: [batch, 1, input_dim], h: tuple of [1, batch, hidden_dim]
+        prev_h = h.squeeze(0)  # [batch, hidden_dim]
+        inp = x_slice.squeeze(1)  # [batch, input_dim]
+        attn_input = th.cat((inp, prev_h), dim=-1)  # [batch, input_dim + hidden_dim]
+        attn_scores = th.tanh(self.attn_fc(attn_input))  # [batch, input_dim]
+        attn_weights = self.attn_softmax(attn_scores)  # [batch, input_dim]
+        # Reweight input channels
+        x_slice = (inp * attn_weights).unsqueeze(1)  # [batch, 1, input_dim]
+        H,(h,c) = self.lstm(x_slice, (h,c))
+        logits = self.fc(th.relu(H)[np.arange(batch_size),0,:])
+        return logits, (h.squeeze(0),c.squeeze(0))
+
+    @profile
+    def forward(self, obs):
+        """
+        Obtain the causal representation of entire trajectory during train
+        """
+        keys = list(obs.keys()) # keys = ['achieved_goal', 'desired_goal', 'observation', 'action']
+        keys.remove('achieved_goal')
+        keys.remove('desired_goal')
+        keys.remove('action')
+        keys.sort()
+        x = th.cat([obs[_x] for _x in keys], dim=-1)
+        
+        # 提取相关特征并通过Transformer
+        x_slice = x[:, :, 4:10]
+        # Input-level attention before LSTM
+        batch_size, seq_len, input_dim = x_slice.size()
+        # Derive hidden_dim from attention layer weight
+        hidden_dim = self.attn_fc.weight.shape[1] - input_dim
+        # Zero previous hidden state for attention
+        prev_h = x_slice.new_zeros(batch_size, hidden_dim)  # [batch, hidden_dim]
+        # Flatten time steps for attention computation
+        inp = x_slice.reshape(batch_size * seq_len, input_dim)  # [batch*seq_len, input_dim]
+        prev_h_exp = prev_h.unsqueeze(1).expand(-1, seq_len, -1).reshape(batch_size * seq_len, hidden_dim)
+        attn_input = th.cat((inp, prev_h_exp), dim=-1)  # [batch*seq_len, input_dim+hidden_dim]
+        attn_scores = th.tanh(self.attn_fc(attn_input))  # [batch*seq_len, input_dim]
+        attn_weights = self.attn_softmax(attn_scores) \
+            .view(batch_size, seq_len, input_dim)  # [batch, seq_len, input_dim]
+        # Reweight LSTM input channels
+        x_slice = x_slice * attn_weights  # [batch, seq_len, input_dim]
+        H, (_, _) = self.lstm(x_slice)
         logits = self.fc(th.relu(H))
         return logits
+
 
 class TransformerEncoder(nn.Module):
     def __init__(self, input_dim, hidden_dim, nhead=4, num_layers=2, dropout=0.1):
@@ -532,8 +703,8 @@ class MultiInputPolicy(SACPolicy):
         trajectory_space['action'] = spaces.Box(-10,10,(self.action_dim,),dtype=np.float32)
 
         causal_space = spaces.Box(-10,10,(self.causal_out_dim,),dtype=np.float32)
-        self.encoder = EncoderCubeHeightDistance(trajectory_space, causal_space, hidden_dim=self.causal_hidden_dim).to(self.device)
-        self.encoder_target = EncoderCubeHeightDistance(trajectory_space, causal_space, hidden_dim=self.causal_hidden_dim).to(self.device)
+        self.encoder = EncoderCubeHeightDis(trajectory_space, causal_space, hidden_dim=self.causal_hidden_dim).to(self.device)
+        self.encoder_target = EncoderCubeHeightDis(trajectory_space, causal_space, hidden_dim=self.causal_hidden_dim).to(self.device)
         self.encoder_target.load_state_dict(self.encoder.state_dict())
         self.encoder_target.set_training_mode(False)
         self.encoder.optimizer = self.optimizer_class(
@@ -640,6 +811,3 @@ class MultiInputPolicy(SACPolicy):
     def set_training_mode(self, mode: bool) -> None:
         self.encoder.set_training_mode(mode)
         return super().set_training_mode(mode)
-
-
-
