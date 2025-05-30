@@ -828,7 +828,7 @@
 # # #     [updated 2025/5/27] make sure the RL see all of the skills during training
 # # #     1. --train_envs [(0, 30), (1, 1), (1, 30), (1, 5)]
 # # #     2. Attention-weighted LSTM only input the observation of cube, remove the action, desired_goal and achieved_goal
-# # #     3. use algorithms in /home/xi/yxh_space/SaMI/SaMI/algorithm/method_traj_distance_transformer, and EncoderCubeAttention
+# # #     3. use algorithms in /home/xi/yxh_space/SaMI/SaMI/algorithm/method_traj_distance_weight, and EncoderCubeAttention
 # CUDA_VISIBLE_DEVICES=1 nohup python ../main.py \
 #     --env_name PandaPush-v3 \
 #     --env_hook PandaHook \
@@ -911,7 +911,7 @@
 # #     [updated 2025/5/27] make sure the RL see all of the skills during training
 # #     1. --train_envs [(0, 30), (1, 1), (1, 30), (1, 5)]
 # #     2. LSTM only input the height of cube & the distance of cube and robot, remove the action, desired_goal and achieved_goal
-# #     3. use algorithms in /home/xi/yxh_space/SaMI/SaMI/algorithm/method_traj_distance_transformer, and EncoderCubeHeightDistance
+# #     3. use algorithms in /home/xi/yxh_space/SaMI/SaMI/algorithm/method_traj_distance_weight, and EncoderCubeHeightDistance
 # CUDA_VISIBLE_DEVICES=0 nohup python ../main.py \
 #     --env_name PandaPush-v3 \
 #     --env_hook PandaHook \
@@ -988,7 +988,7 @@
 # #     [updated 2025/5/27] make sure the RL see all of the skills during training
 # #     1. --train_envs [(0, 30), (1, 1), (1, 30), (1, 5)]
 # #     2. DQ-LSTM only input the height of cube & the distance of cube and robot, remove the action, desired_goal and achieved_goal
-# #     3. use algorithms in /home/xi/yxh_space/SaMI/SaMI/algorithm/method_traj_distance_transformer, and EncoderCubeHeightDis
+# #     3. use algorithms in /home/xi/yxh_space/SaMI/SaMI/algorithm/method_traj_distance_weight, and EncoderCubeHeightDis
 CUDA_VISIBLE_DEVICES=1 nohup python ../main.py \
     --env_name PandaPush-v3 \
     --env_hook PandaHook \
