@@ -8,12 +8,27 @@ set -e  # 脚本出错即退出
 git config user.name "yuxuehui"
 git config user.email "1170574199@qq.com"
 
-# 设置远程仓库 URL
-git remote set-url origin https://github.com/yuxuehui/franky-sami.git
+# 设置远程仓库 URL (使用SSH而不是HTTPS)
+git remote set-url origin git@github.com:yuxuehui/franky-sami.git
 
 # 确保使用正确的 SSH 密钥
+echo "Setting up SSH agent..."
 eval "$(ssh-agent -s)" > /dev/null
-ssh-add ~/.ssh/id_rsa_yxh > /dev/null 2>&1
+
+# 添加SSH密钥到agent (可能需要输入密码短语)
+echo "Adding SSH key to agent (you may need to enter your passphrase)..."
+ssh-add ~/.ssh/id_rsa_yxh
+
+# 测试SSH连接
+echo "Testing SSH connection to GitHub..."
+ssh -T git@github.com -o StrictHostKeyChecking=no 2>&1 | grep -q "successfully authenticated"
+if [ $? -eq 0 ]; then
+    echo "✅ SSH connection to GitHub successful"
+else
+    echo "❌ SSH connection to GitHub failed"
+    echo "Please check your SSH key configuration"
+    exit 1
+fi
 
 # 当前分支
 branch=$(git symbolic-ref --short HEAD)
