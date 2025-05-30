@@ -23,13 +23,10 @@ venv/
 Thumbs.db
 
 # === Output and log files ===
-output/**/*.log.txt
-output/**/*.log
-output/**/*.txt
-output/**/*.pth
-output/**/*.npz
-output/**/*.npy
-output/**/*.pt
+output/
+output/**
+*.log.txt
+*.log
 
 # === Large model or checkpoint files ===
 checkpoints/
