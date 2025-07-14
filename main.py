@@ -7,12 +7,15 @@
 @Desc    :   Training & Zero-shot generalisation (Test)
 '''
 
-from juliacall import Main as jl, convert as jlconvert
-jl.seval("using MeshCat")
-jl.seval("using Rotations")
-jl.seval("using TORA")
+## [update 20250709] this is used for real franka
+# from juliacall import Main as jl
+# jl.seval('import Pkg; Pkg.activate("/home/llm_user/.julia/environments/v1.10")')
+# jl.seval('using MeshCat')
+# jl.seval("using Rotations")
+# jl.seval("using TORA")
 
-import os
+import sys, os
+sys.path.append(os.path.join(os.path.dirname(__file__), "markovianess"))
 from logger import Manager
 from tools.utils import set_random_seed
 
@@ -23,7 +26,8 @@ from stable_baselines3.common.vec_env import DummyVecEnv
 
 ### methods
 from algorithm import get_model
-from test_model import test_model
+# from test_model import test_model
+from test_model_causal import test_model
 from online_data_collect import collect_data,collect_sim_data
 from parsers import get_args
 
@@ -68,9 +72,9 @@ if __name__ == '__main__':
         else:   # Test
             model = get_model(manager,causal_keys=hook.causal_keys,max_step_num=max_step)
             model.set_logger(manager.setup_logger())
-            # test_model(model, manager, hook)
+            test_model(model, manager, hook)
             # collect_data(model, manager, hook)
-            collect_sim_data(model, manager, hook)
+            # collect_sim_data(model, manager, hook)
         
     except Exception as e:
         print(e)

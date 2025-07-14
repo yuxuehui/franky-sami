@@ -72,3 +72,11 @@ python main.py --env_name PandaPush-v3  --env_hook PandaHook  --method SaCCM --c
 python main.py --env_name PandaPush-v3  --env_hook PandaHook  --method SaCCM --save_video --config_path "/home/xi/yxh_space/SaMI/SaMI/output/PandaPush_obs22_object_size_6cm_gripper_constraint/SaCCM_trainenv_mix" 
 
 python main.py --env_name PandaPush-v3  --env_hook PandaHook  --method SaCCM --use_wandb --config_path "/home/xi/yxh_space/SaMI/SaMI/output/PandaPush_obs22_object_size_6cm_gripper_constraint/SaCCM_trainenv_mix_cube_height_coef_0_1" 
+
+python main.py --env_name PandaPush-v3  --env_hook PandaHook  --method SaCCM --config_path "/home/llm_user/yxh/franky-sami/saved_models/EncoderCubeAttention_cube_obs_6cm_gripper_constraint/SaCCM_adv_coef_0_1"
+
+python main.py --env_name PandaPush-v3  --env_hook PandaHook  --method SaCCM --config_path "/home/llm_user/yxh/franky-sami/saved_models/PandaPush_obs22_object_size_6cm_gripper_constraint/SaCCM_trainenv_mix_cub_obs_coef_0_01"
+
+python main.py --env_name PandaPush-v3  --env_hook PandaHook  --method SaCCM --config_path "/home/llm_user/yxh/franky-sami/saved_models/PandaPush_obs22_object_size_6cm_gripper_constraint/SaCCM_trainenv_mix_cube_height_coef_0_1"
+
+python main.py --env_name PandaPush-v3  --env_hook PandaHook  --method SaCCM --config_path "/home/llm_user/yxh/franky-sami/saved_models/PandaPush_obs22_object_size_6cm_gripper_constraint/SaCCM_trainenv_mix"

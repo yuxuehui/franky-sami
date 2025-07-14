@@ -1,0 +1,337 @@
+Info of objects (30.0, 0.5, (0.018, 0.018, 0.018), (0.0, 0.0, 0.0), (0.0, 0.0, 0.0, 1.0), 0.0, 0.0, 0.0, -1.0, -1.0, 2, 0.001)
+Info of Table (0.0, 0.0, (0.0, 0.0, 0.0), (0.0, 0.0, 0.0), (0.0, 0.0, 0.0, 1.0), 0.0, 0.0, 0.001, -1.0, -1.0, 2, 0.001)
+reset successful!!!
+reset successful!!!
+reset successful!!!
+reset successful!!!
+reset successful!!!
+reset successful!!!
+reset successful!!!
+reset successful!!!
+reset successful!!!
+reset successful!!!
+##########friction:0.0 mass:30.0 ##########
+success_rate 1.0
+pick_and_place_rate 0.0
+roll_rate 0.999000999000999
+push_rate 0.0
+###################
+[(0, 30)] obs_array shape: (136, 16)
+[(0, 30)] Markov violation score: 0.033617
+Info of objects (5.0, 0.5, (0.003, 0.003, 0.003), (0.0, 0.0, 0.0), (0.0, 0.0, 0.0, 1.0), 0.0, 0.0, 0.0, -1.0, -1.0, 2, 0.001)
+Info of Table (0.0, 0.0, (0.0, 0.0, 0.0), (0.0, 0.0, 0.0), (0.0, 0.0, 0.0, 1.0), 0.0, 0.0, 0.001, -1.0, -1.0, 2, 0.001)
+reset successful!!!
+reset successful!!!
+reset successful!!!
+reset successful!!!
+reset successful!!!
+reset successful!!!
+reset successful!!!
+reset successful!!!
+reset successful!!!
+reset successful!!!
+##########friction:0.0 mass:5.0 ##########
+success_rate 0.7
+pick_and_place_rate 0.3996003996003996
+roll_rate 0.3996003996003996
+push_rate 0.1998001998001998
+###################
+[(0, 5)] obs_array shape: (230, 16)
+[(0, 5)] Markov violation score: 0.062209
+Info of objects (1.0, 0.5, (0.0006, 0.0006, 0.0006), (0.0, 0.0, 0.0), (0.0, 0.0, 0.0, 1.0), 0.0, 0.0, 0.0, -1.0, -1.0, 2, 0.001)
+Info of Table (0.0, 0.0, (0.0, 0.0, 0.0), (0.0, 0.0, 0.0), (0.0, 0.0, 0.0, 1.0), 0.0, 0.0, 0.001, -1.0, -1.0, 2, 0.001)
+reset successful!!!
+reset successful!!!
+reset successful!!!
+reset successful!!!
+reset successful!!!
+reset successful!!!
+reset successful!!!
+reset successful!!!
+reset successful!!!
+reset successful!!!
+##########friction:0.0 mass:1.0 ##########
+success_rate 0.8
+pick_and_place_rate 0.7992007992007992
+roll_rate 0.1998001998001998
+push_rate 0.0
+###################
+[(0, 1)] obs_array shape: (209, 16)
+[(0, 1)] Markov violation score: 0.061759
+Info of objects (50.0, 0.5, (0.030000000000000002, 0.030000000000000002, 0.030000000000000002), (0.0, 0.0, 0.0), (0.0, 0.0, 0.0, 1.0), 0.0, 0.0, 0.0, -1.0, -1.0, 2, 0.001)
+Info of Table (0.0, 0.0, (0.0, 0.0, 0.0), (0.0, 0.0, 0.0), (0.0, 0.0, 0.0, 1.0), 0.0, 0.0, 0.001, -1.0, -1.0, 2, 0.001)
+reset successful!!!
+reset successful!!!
+reset successful!!!
+reset successful!!!
+reset successful!!!
+reset successful!!!
+reset successful!!!
+reset successful!!!
+reset successful!!!
+reset successful!!!
+##########friction:0.0 mass:50.0 ##########
+success_rate 1.0
+pick_and_place_rate 0.0
+roll_rate 0.999000999000999
+push_rate 0.0
+###################
+[(0, 50)] obs_array shape: (178, 16)
+[(0, 50)] Markov violation score: 0.040501
+Info of objects (1.0, 0.5, (0.0006, 0.0006, 0.0006), (0.0, 0.0, 0.0), (0.0, 0.0, 0.0, 1.0), 0.0, 0.0, 0.0, -1.0, -1.0, 2, 0.001)
+Info of Table (0.0, 1.0, (0.0, 0.0, 0.0), (0.0, 0.0, 0.0), (0.0, 0.0, 0.0, 1.0), 0.0, 0.0, 0.001, -1.0, -1.0, 2, 0.001)
+reset successful!!!
+reset successful!!!
+reset successful!!!
+reset successful!!!
+reset successful!!!
+reset successful!!!
+reset successful!!!
+reset successful!!!
+reset successful!!!
+reset successful!!!
+##########friction:1.0 mass:1.0 ##########
+success_rate 1.0
+pick_and_place_rate 0.999000999000999
+roll_rate 0.0
+push_rate 0.0
+###################
+[(1, 1)] obs_array shape: (139, 16)
+[(1, 1)] Markov violation score: 0.060927
+Info of objects (5.0, 0.5, (0.003, 0.003, 0.003), (0.0, 0.0, 0.0), (0.0, 0.0, 0.0, 1.0), 0.0, 0.0, 0.0, -1.0, -1.0, 2, 0.001)
+Info of Table (0.0, 1.0, (0.0, 0.0, 0.0), (0.0, 0.0, 0.0), (0.0, 0.0, 0.0, 1.0), 0.0, 0.0, 0.001, -1.0, -1.0, 2, 0.001)
+reset successful!!!
+reset successful!!!
+reset successful!!!
+reset successful!!!
+reset successful!!!
+reset successful!!!
+reset successful!!!
+reset successful!!!
+reset successful!!!
+reset successful!!!
+##########friction:1.0 mass:5.0 ##########
+success_rate 1.0
+pick_and_place_rate 0.8991008991008991
+roll_rate 0.0
+push_rate 0.0999000999000999
+###################
+[(1, 5)] obs_array shape: (156, 16)
+[(1, 5)] Markov violation score: 0.057149
+Info of objects (30.0, 0.5, (0.018, 0.018, 0.018), (0.0, 0.0, 0.0), (0.0, 0.0, 0.0, 1.0), 0.0, 0.0, 0.0, -1.0, -1.0, 2, 0.001)
+Info of Table (0.0, 1.0, (0.0, 0.0, 0.0), (0.0, 0.0, 0.0), (0.0, 0.0, 0.0, 1.0), 0.0, 0.0, 0.001, -1.0, -1.0, 2, 0.001)
+reset successful!!!
+reset successful!!!
+reset successful!!!
+reset successful!!!
+reset successful!!!
+reset successful!!!
+reset successful!!!
+reset successful!!!
+reset successful!!!
+reset successful!!!
+##########friction:1.0 mass:30.0 ##########
+success_rate 0.8
+pick_and_place_rate 0.0
+roll_rate 0.999000999000999
+push_rate 0.0
+###################
+[(1, 30)] obs_array shape: (241, 16)
+[(1, 30)] Markov violation score: 0.061200
+Info of objects (50.0, 0.5, (0.030000000000000002, 0.030000000000000002, 0.030000000000000002), (0.0, 0.0, 0.0), (0.0, 0.0, 0.0, 1.0), 0.0, 0.0, 0.0, -1.0, -1.0, 2, 0.001)
+Info of Table (0.0, 1.0, (0.0, 0.0, 0.0), (0.0, 0.0, 0.0), (0.0, 0.0, 0.0, 1.0), 0.0, 0.0, 0.001, -1.0, -1.0, 2, 0.001)
+reset successful!!!
+reset successful!!!
+reset successful!!!
+reset successful!!!
+reset successful!!!
+reset successful!!!
+reset successful!!!
+reset successful!!!
+reset successful!!!
+reset successful!!!
+##########friction:1.0 mass:50.0 ##########
+success_rate 0.0
+pick_and_place_rate 0.0
+roll_rate 0.999000999000999
+push_rate 0.0
+###################
+[(1, 50)] obs_array shape: (500, 16)
+[(1, 50)] Markov violation score: 0.135452
+Info of objects (1.0, 0.5, (0.0006, 0.0006, 0.0006), (0.0, 0.0, 0.0), (0.0, 0.0, 0.0, 1.0), 0.0, 0.0, 0.0, -1.0, -1.0, 2, 0.001)
+Info of Table (0.0, 2.0, (0.0, 0.0, 0.0), (0.0, 0.0, 0.0), (0.0, 0.0, 0.0, 1.0), 0.0, 0.0, 0.001, -1.0, -1.0, 2, 0.001)
+reset successful!!!
+reset successful!!!
+reset successful!!!
+reset successful!!!
+reset successful!!!
+reset successful!!!
+reset successful!!!
+reset successful!!!
+reset successful!!!
+reset successful!!!
+##########friction:2.0 mass:1.0 ##########
+success_rate 0.9
+pick_and_place_rate 0.8991008991008991
+roll_rate 0.0999000999000999
+push_rate 0.0
+###################
+[(2, 1)] obs_array shape: (195, 16)
+[(2, 1)] Markov violation score: 0.038695
+Info of objects (5.0, 0.5, (0.003, 0.003, 0.003), (0.0, 0.0, 0.0), (0.0, 0.0, 0.0, 1.0), 0.0, 0.0, 0.0, -1.0, -1.0, 2, 0.001)
+Info of Table (0.0, 2.0, (0.0, 0.0, 0.0), (0.0, 0.0, 0.0), (0.0, 0.0, 0.0, 1.0), 0.0, 0.0, 0.001, -1.0, -1.0, 2, 0.001)
+reset successful!!!
+reset successful!!!
+reset successful!!!
+reset successful!!!
+reset successful!!!
+reset successful!!!
+reset successful!!!
+reset successful!!!
+reset successful!!!
+reset successful!!!
+##########friction:2.0 mass:5.0 ##########
+success_rate 0.9
+pick_and_place_rate 0.8991008991008991
+roll_rate 0.0
+push_rate 0.0999000999000999
+###################
+[(2, 5)] obs_array shape: (162, 16)
+[(2, 5)] Markov violation score: 0.071113
+Info of objects (30.0, 0.5, (0.018, 0.018, 0.018), (0.0, 0.0, 0.0), (0.0, 0.0, 0.0, 1.0), 0.0, 0.0, 0.0, -1.0, -1.0, 2, 0.001)
+Info of Table (0.0, 2.0, (0.0, 0.0, 0.0), (0.0, 0.0, 0.0), (0.0, 0.0, 0.0, 1.0), 0.0, 0.0, 0.001, -1.0, -1.0, 2, 0.001)
+reset successful!!!
+reset successful!!!
+reset successful!!!
+reset successful!!!
+reset successful!!!
+reset successful!!!
+reset successful!!!
+reset successful!!!
+reset successful!!!
+reset successful!!!
+##########friction:2.0 mass:30.0 ##########
+success_rate 0.2
+pick_and_place_rate 0.0
+roll_rate 0.8991008991008991
+push_rate 0.0999000999000999
+###################
+[(2, 30)] obs_array shape: (418, 16)
+[(2, 30)] Markov violation score: 0.322976
+Info of objects (50.0, 0.5, (0.030000000000000002, 0.030000000000000002, 0.030000000000000002), (0.0, 0.0, 0.0), (0.0, 0.0, 0.0, 1.0), 0.0, 0.0, 0.0, -1.0, -1.0, 2, 0.001)
+Info of Table (0.0, 2.0, (0.0, 0.0, 0.0), (0.0, 0.0, 0.0), (0.0, 0.0, 0.0, 1.0), 0.0, 0.0, 0.001, -1.0, -1.0, 2, 0.001)
+reset successful!!!
+reset successful!!!
+reset successful!!!
+reset successful!!!
+reset successful!!!
+reset successful!!!
+reset successful!!!
+reset successful!!!
+reset successful!!!
+reset successful!!!
+##########friction:2.0 mass:50.0 ##########
+success_rate 0.0
+pick_and_place_rate 0.0
+roll_rate 0.999000999000999
+push_rate 0.0
+###################
+[(2, 50)] obs_array shape: (500, 16)
+[(2, 50)] Markov violation score: 0.555357
+Info of objects (1.0, 0.5, (0.0006, 0.0006, 0.0006), (0.0, 0.0, 0.0), (0.0, 0.0, 0.0, 1.0), 0.0, 0.0, 0.0, -1.0, -1.0, 2, 0.001)
+Info of Table (0.0, 3.0, (0.0, 0.0, 0.0), (0.0, 0.0, 0.0), (0.0, 0.0, 0.0, 1.0), 0.0, 0.0, 0.001, -1.0, -1.0, 2, 0.001)
+reset successful!!!
+reset successful!!!
+reset successful!!!
+reset successful!!!
+reset successful!!!
+reset successful!!!
+reset successful!!!
+reset successful!!!
+reset successful!!!
+reset successful!!!
+##########friction:3.0 mass:1.0 ##########
+success_rate 0.9
+pick_and_place_rate 0.6993006993006993
+roll_rate 0.1998001998001998
+push_rate 0.0999000999000999
+###################
+[(3, 1)] obs_array shape: (177, 16)
+[(3, 1)] Markov violation score: 0.070015
+Info of objects (5.0, 0.5, (0.003, 0.003, 0.003), (0.0, 0.0, 0.0), (0.0, 0.0, 0.0, 1.0), 0.0, 0.0, 0.0, -1.0, -1.0, 2, 0.001)
+Info of Table (0.0, 3.0, (0.0, 0.0, 0.0), (0.0, 0.0, 0.0), (0.0, 0.0, 0.0, 1.0), 0.0, 0.0, 0.001, -1.0, -1.0, 2, 0.001)
+reset successful!!!
+reset successful!!!
+reset successful!!!
+reset successful!!!
+reset successful!!!
+reset successful!!!
+reset successful!!!
+reset successful!!!
+reset successful!!!
+reset successful!!!
+##########friction:3.0 mass:5.0 ##########
+success_rate 0.7
+pick_and_place_rate 0.8991008991008991
+roll_rate 0.0999000999000999
+push_rate 0.0
+###################
+[(3, 5)] obs_array shape: (240, 16)
+[(3, 5)] Markov violation score: 0.067136
+Info of objects (30.0, 0.5, (0.018, 0.018, 0.018), (0.0, 0.0, 0.0), (0.0, 0.0, 0.0, 1.0), 0.0, 0.0, 0.0, -1.0, -1.0, 2, 0.001)
+Info of Table (0.0, 3.0, (0.0, 0.0, 0.0), (0.0, 0.0, 0.0), (0.0, 0.0, 0.0, 1.0), 0.0, 0.0, 0.001, -1.0, -1.0, 2, 0.001)
+reset successful!!!
+reset successful!!!
+reset successful!!!
+reset successful!!!
+reset successful!!!
+reset successful!!!
+reset successful!!!
+reset successful!!!
+reset successful!!!
+reset successful!!!
+##########friction:3.0 mass:30.0 ##########
+success_rate 0.1
+pick_and_place_rate 0.0
+roll_rate 0.8991008991008991
+push_rate 0.0999000999000999
+###################
+[(3, 30)] obs_array shape: (451, 16)
+[(3, 30)] Markov violation score: 0.187417
+Info of objects (50.0, 0.5, (0.030000000000000002, 0.030000000000000002, 0.030000000000000002), (0.0, 0.0, 0.0), (0.0, 0.0, 0.0, 1.0), 0.0, 0.0, 0.0, -1.0, -1.0, 2, 0.001)
+Info of Table (0.0, 3.0, (0.0, 0.0, 0.0), (0.0, 0.0, 0.0), (0.0, 0.0, 0.0, 1.0), 0.0, 0.0, 0.001, -1.0, -1.0, 2, 0.001)
+reset successful!!!
+reset successful!!!
+reset successful!!!
+reset successful!!!
+reset successful!!!
+reset successful!!!
+reset successful!!!
+reset successful!!!
+reset successful!!!
+reset successful!!!
+##########friction:3.0 mass:50.0 ##########
+success_rate 0.0
+pick_and_place_rate 0.0
+roll_rate 0.999000999000999
+push_rate 0.0
+###################
+[(3, 50)] obs_array shape: (500, 16)
+[(3, 50)] Markov violation score: 0.746567
+All Markov violation scores by env:
+(0, 30): 0.033617
+(0, 5): 0.062209
+(0, 1): 0.061759
+(0, 50): 0.040501
+(1, 1): 0.060927
+(1, 5): 0.057149
+(1, 30): 0.061200
+(1, 50): 0.135452
+(2, 1): 0.038695
+(2, 5): 0.071113
+(2, 30): 0.322976
+(2, 50): 0.555357
+(3, 1): 0.070015
+(3, 5): 0.067136
+(3, 30): 0.187417
+(3, 50): 0.746567

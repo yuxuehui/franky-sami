@@ -7,7 +7,8 @@
 @Desc    :   None
 '''
 
-from .franka.franka_robot import FrankaPanda
+## [update 20250709] this is used for real franka
+# from .franka.franka_robot import FrankaPanda
 from .franka.sim_panda import Panda
 
 from typing import Any, Dict, Optional, Tuple

@@ -491,8 +491,8 @@ class MultiInputPolicy(SACPolicy):
         trajectory_space['action'] = spaces.Box(-10,10,(self.action_dim,),dtype=np.float32)
 
         causal_space = spaces.Box(-10,10,(self.causal_out_dim,),dtype=np.float32)
-        self.encoder = EncoderCubeHeight(trajectory_space, causal_space, hidden_dim=self.causal_hidden_dim).to(self.device)
-        self.encoder_target = EncoderCubeHeight(trajectory_space, causal_space, hidden_dim=self.causal_hidden_dim).to(self.device)
+        self.encoder = EncoderCube(trajectory_space, causal_space, hidden_dim=self.causal_hidden_dim).to(self.device)
+        self.encoder_target = EncoderCube(trajectory_space, causal_space, hidden_dim=self.causal_hidden_dim).to(self.device)
         self.encoder_target.load_state_dict(self.encoder.state_dict())
         self.encoder_target.set_training_mode(False)
         self.encoder.optimizer = self.optimizer_class(

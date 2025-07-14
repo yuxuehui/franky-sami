@@ -1,224 +1,256 @@
+friction:0,mass:1:
+  eps_states:
+  - rrrrrrrrrrrrrrPrrs
+  - rrrrrrrrrPPPPrPPPs
+  - rrrrrrrrrrrrrrrrrrrrrrrrrddddddddddddddddddddddddf
+  - rrrrrrrrrPPPrrrrs
+  - rrrrrrrrPrrPs
+  - s
+  - rrrrrrrrrrrrrrrs
+  - rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrdddddddddddddddf
+  - rrrrrrrrrrrPrs
+  - rrrrrrrrPs
+  pick_and_place_rate: 0.5994005994005994
+  push_rate: 0.0999000999000999
+  roll_rate: 0.2997002997002997
+  success_rate: 0.8
 friction:0,mass:30:
   eps_states:
-  - rrrrrrrrrrrrrrrrrrrrrrs
-  - rrrrrrrrrrs
-  - rrrrrrrrrrrrrrrrrs
-  - rrrrrrrrrrrrrrrs
-  - rrrrrrrrrrrrrrrrrrrrrrs
-  - rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrf
-  - rrrrrrrrrrrrs
-  - rrrrrrrrrrrrrrrrrrrrrrrrrrrrs
-  - rrrrrrs
-  - rrrrrrrrrrrrrrrrs
-  - rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrf
-  - rrrrrrrrrrrrrrrrrrrrrrrrrrs
-  - rrrrrrrrrs
-  - rrrrrrrrrrrrrrrrrs
-  - rrrrrrrrrrrrrrrrs
   - rrrrrrrrrrrrrrrrs
   - rrrrrrrrrrrrrrs
-  - rrrrrrrrrrrrrrrrrrrrrrrrrrrs
-  - rrrrrrrrrrrrrrrs
-  - rrrrrrrrrrrrrrrs
   - rrrrrrrrrrrrrrs
-  - rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrf
-  - rrrrrrrrrrrrrrrrrrrrrrrrs
-  - rrrrrrrrrrrrrrrrrrrrrs
-  - rrrrrrrrrrrrrrrrrrrrs
-  - rrrrrrrrrrrrrrrrrrrrrrrrrs
-  - rrrrrrrrrrrrrrs
-  - rrrrrrrrrrrrrrrrrrrrrrs
-  - rrrrrrrrrrrrrrrrrrrrrrs
-  - rrrrrrrrrs
+  - rrrrrrrrrrrrrrrrrrrs
   - rrrrrrrrrrrrrrrrrrrrrrrs
-  - rrrrrrrrrrrrrrrrrrrrs
-  - rrrrrrrrrrrrrrrrrrs
-  - rrrrrrrrrrrrrrrrs
-  - rrrrrrrrrrrrrrrrrrrrrs
-  - rrrrrrrrrrrrrrrrrrs
-  - rrrrrrrrrrrs
+  - rrrrrrrs
   - rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrf
-  - rrrrrrrrrrrrrs
-  - rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrddddddddddf
   - rrrrrrrrrrrrrrrrrrrrs
-  - rrrrrrrrrrrrs
-  - rrrrrrrrrrrrrrrrrrrrrrs
   - rrrrrrrrrrrrrrrrrs
-  - rrrrrrrrrrrrrrrrrrs
-  - rrrrrrrrrrrrrs
-  - rrrrrrrrrrrrrrrrrrrrrrrrrrrrrs
-  - rrrrrrrrrrrrrrrrs
-  - rrrrrrrrrrrrs
-  - rrrrrrrrrrrrrrrrrrrrrs
+  - rrrrrrrrrrrrrrrs
   pick_and_place_rate: 0.0
   push_rate: 0.0
-  roll_rate: 0.9998000399920016
+  roll_rate: 0.999000999000999
   success_rate: 0.9
+friction:0,mass:5:
+  eps_states:
+  - rrrrrrs
+  - s
+  - rrrrrrrrrrrrPrrs
+  - rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrf
+  - rrrrrrrrPPPPPPs
+  - rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrdf
+  - rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrf
+  - rrrrrrrrrrrPrrrrs
+  - rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrf
+  - rrrrrrrrPPPPPPs
+  pick_and_place_rate: 0.3996003996003996
+  push_rate: 0.0999000999000999
+  roll_rate: 0.4995004995004995
+  success_rate: 0.6
+friction:0,mass:50:
+  eps_states:
+  - rrrrrrrrrrrrrrrrrrrrrrrrrrrrrs
+  - rrrrrrrrrrrrrrrrrs
+  - rrrrrrrrrrrs
+  - rrrrrrrrrrrrrrrrrs
+  - rrrrrrrrrrrrrrrs
+  - rrrrrrrrrrrrrs
+  - rrrrrrrrrrrrrrrrrrrrrrrrs
+  - rrrrrrrrrrrrrrrrrs
+  - rrrrrrrrrrrrrrrrrrrrs
+  - rrrrrrs
+  pick_and_place_rate: 0.0
+  push_rate: 0.0
+  roll_rate: 0.999000999000999
+  success_rate: 1.0
 friction:1,mass:1:
   eps_states:
-  - rrrrrrrrrPPPPPPPrrs
-  - rrrrrrrrrrrrrrrrs
-  - rrrrrrrrPPPPPs
-  - rrrrrrrrrrrPrrrrrrrs
-  - rrrrrrrrrrrs
-  - rrrrrrrPrs
-  - s
-  - rrrrrrrrrrs
-  - rrrrrrrrrs
-  - rrrrrrrs
-  - rrrrrrrrrPrrPPPs
-  - rrrrrrrrPPPPs
-  - rrrrrrrrrrrPPs
   - rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrf
-  - rrrrrrrrPPPPrrrrrs
-  - rrrrrrrrrPPPPPPPPPs
-  - rrrrrrrrPPrrrs
-  - rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrf
-  - rrrrrrrrrrrrrrrs
-  - rrrrrrPrPPPPPPPs
-  - rrrrrrrrPPPPPPPPPrrrs
-  - rrrrrrrrrrrrrrrrrs
-  - rrrrrrrrPPPPs
-  - rrrrrrrrrrrPPPPPPs
-  - rrrrrrPPPPPs
-  - rrrrrrrrrrrrrrrs
-  - rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrf
-  - rrrrrPrPs
-  - rrrrrrrrrPrPPPs
-  - rrrrrrrrPPPPPPPs
-  - rrrrrrrrrPPPPPPrs
   - rrrrrrrrrrrrs
-  - rrrrrrrrrrrrPs
-  - rrrrrrrrrrPPrrrrrs
-  - rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrf
-  - rrrrrrrPPPPPs
-  - rrrrrrrPrrrrrrrrrs
-  - rrrrrrrrrrPPPPPs
-  - rrrrrrPPPPPs
-  - rrrrrrrrPPPPrrs
-  - rrrrrrrrrrPPrrrPPPPPrrs
-  - rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrf
-  - rrrrrrrrrrrPrrrrrrrrrrs
-  - rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrf
-  - rrrrrrrrrrrrrrrPrrs
-  - rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrf
-  - s
-  - rrrrrrrrrrrs
+  - rrrrrrrrPPPPs
+  - rrrrrPrrPPPPs
   - rrrrrrrrrs
-  - rrrrrrrrPs
-  pick_and_place_rate: 0.599880023995201
-  push_rate: 0.03999200159968007
-  roll_rate: 0.3599280143971206
-  success_rate: 0.86
+  - rrrrrrrrrrrrrrrrrrs
+  - rrrrrrrrrrrs
+  - rrrrrrrrPPs
+  - rrrrrrrrPPPPPPrrrs
+  - rrrrrrrPPPPPPPPPPPs
+  pick_and_place_rate: 0.4995004995004995
+  push_rate: 0.0
+  roll_rate: 0.4995004995004995
+  success_rate: 0.9
 friction:1,mass:30:
   eps_states:
-  - rrrrrrrrrrrrrrrrrrrrrrrrrrrrrs
-  - rrrrrrrrrrrrrrrrrrrrrs
-  - rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrs
-  - rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrf
-  - rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrf
-  - rrrrrrrrrrrrrrrrrrs
-  - rrrrrrrrrrrrrrs
+  - rrrrrrrrrrrrrrrrrrrrrrs
+  - rrrrrrrrrrrrrrrrrrrrs
   - rrrrrrrrrrrrrrrrrrrrrrrrrrs
-  - rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrf
-  - rrrrrrrrrrrrrrrrrrrrrrs
-  - rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrf
-  - rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrs
-  - rrrrrrrrrrrrrrrrs
-  - rrrrrrrrrrrrrrrrrrrrrs
-  - rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrf
-  - rrrrrrrrrrrrrrrrrrrrrrrs
-  - rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrf
-  - rrrrrrrrrrrrrrrrrs
-  - rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrf
-  - rrrrrrrrrrrrrrrrrrrrrrrrrrrrrs
-  - rrrrrrrrrrrrrrrrrrrrrrs
-  - rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrf
-  - rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrf
-  - rrrrrrrrrrrrrrrrrrrrrrrs
-  - rrrrrrrrrrrrrrrs
-  - rrrrrrrrrrrrrrrrrrs
-  - rrrrrrrrrrrrrrrrrrs
-  - rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrf
-  - rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrf
-  - rrrrrrrrrrrrrs
-  - rrrrrrrrrrrrrs
+  - rrrrrrrrrrrrrrrrrrrrrrrrs
   - rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrf
   - rrrrrrrrrrrrrrrrrrrs
-  - rrrrrrrrrrrrrrs
-  - rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrf
-  - rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrf
-  - rrrrrrrrrrrrrs
-  - s
-  - rrrrrrrrrrrrrrrrrrs
-  - rrrrrrrrrrrrrrrrrrrrrrs
+  - rrrrrrrrrrrrrrrrrrrrrrrrrrrrrs
+  - rrrrrrrrrrrrrrrrrs
   - rrrrrrrrrrrrrrrrrrrrrs
-  - rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrf
-  - rrrrrrrrrrrrrrrrrrrrs
-  - rrrrrrrrrrrrrrrrs
   - s
-  - rrrrrrrrrrrrrrrs
-  - rrrrrrrrrrrrrrrrrrrrs
-  - rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrf
-  - rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrs
-  - rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrf
   pick_and_place_rate: 0.0
-  push_rate: 0.03999200159968007
-  roll_rate: 0.9598080383923215
-  success_rate: 0.66
+  push_rate: 0.0999000999000999
+  roll_rate: 0.8991008991008991
+  success_rate: 0.9
 friction:1,mass:5:
   eps_states:
-  - rrrrrrrrPPPPPPPPPrs
-  - rrrrrrrrrrrPPs
-  - rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrf
-  - rrrrrrrrrPPPPPs
-  - rrrrrrrPPPPPs
-  - rrrrrrrrrrrPPPrrrs
-  - rrrrrrPrrrrrrs
-  - rrrrrrrPPPrPPPs
-  - rrrrrrrrPPPPPrs
+  - rrrrrrrPPPrPrrs
+  - rrrrrrrrrrPrPs
+  - rrrrrrrrrrrs
+  - rrrrrrrrrrrrrrrs
   - rrrrrrrrrPPPPs
-  - s
-  - rrrrrrrrPPPPPPrs
-  - rrrrrrrrrrrrrs
-  - rrrrrrrrrrPPs
-  - rrrrrrrrrrrPPPPPPrPs
-  - rrrrrrrrrPs
-  - rrrrrrrrrrrPPPrrrs
-  - rrrrrrrrrPPPPrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrf
-  - rrrrrrrrPPs
-  - rrrrrrrrrrs
-  - rrrrrrrrrrPPrPrrs
-  - rrrrrrrrrrrPrrPPrs
-  - rrrrrrrrrrrPPPPPPs
-  - s
-  - rrrrrrrrrs
-  - rrrrrrrrPrPPPrrs
-  - rrrrrrrrrrrPPPPPs
-  - rrrrrrrrrrPPPPPPrrrrs
-  - rrrrrrrrPPPPPrrrrrs
-  - rrrrrrrrPrs
-  - rrrrrrrPPPs
+  - rrrrrrrrrPPPPPPrrrrs
+  - rrrrrrrrrPPs
+  - rrrrrrrrrrrrrrrs
+  - rrrrrrrrrrPrrrrrrrrrrrrrrrs
+  - rrrrrrrrrPPrPPrrrrrrrrs
+  pick_and_place_rate: 0.6993006993006993
+  push_rate: 0.0
+  roll_rate: 0.2997002997002997
+  success_rate: 1.0
+friction:1,mass:50:
+  eps_states:
   - rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrf
-  - rrrrrrrrrPs
-  - rrrrrrrrPPPs
-  - rrrrrrrrrrrrrrrrs
-  - rrrrrrrrrrrrPPPs
-  - rrrrrrrrrPPPPPPs
-  - rrrrrrrrrrrrrrs
-  - rrrrrrrrPPPPPrrrrrrrs
-  - rrrrrrrrrPPPrrrrrrrs
+  - s
+  - s
+  - rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrf
+  - s
+  - rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrf
+  - rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrf
+  - rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrf
+  - rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrf
+  - rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrf
+  pick_and_place_rate: 0.0
+  push_rate: 0.2997002997002997
+  roll_rate: 0.6993006993006993
+  success_rate: 0.3
+friction:2,mass:1:
+  eps_states:
   - rrrrrrrrrPPPs
-  - rrrrrrrrrs
-  - rrrrrrrrrrPPPPPs
-  - s
+  - rrrrrrrPPs
+  - rrrrrrrrrrrPPPPPPPPPPrrrrrrrrrrrrrrrs
+  - rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrf
+  - rrrrrrrrPPPPPs
+  - rrrrrrrrrPPrPrrrrrrrrrrrrrrrrrrrrrrrPPPrs
+  - rrrrrrrrrrPPPPPPPPPrrrrrrrrrrrrrrrrPrs
+  - rrrrrrrrrrrPPPPrPPs
+  - rrrrrrrrrrrrrrrrrPPrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrf
+  - rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrPPrrrrrrrrrf
+  pick_and_place_rate: 0.8991008991008991
+  push_rate: 0.0
+  roll_rate: 0.0999000999000999
+  success_rate: 0.7
+friction:2,mass:30:
+  eps_states:
+  - rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrf
+  - rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrf
+  - rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrf
+  - rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrf
+  - rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrf
+  - rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrf
+  - rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrf
+  - rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrf
+  - rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrf
+  - rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrf
+  pick_and_place_rate: 0.0
+  push_rate: 0.0
+  roll_rate: 0.999000999000999
+  success_rate: 0.0
+friction:2,mass:5:
+  eps_states:
+  - rrrrrrrPPPPPrrrrrrrrrrrrrrrrrrrrrrrrrrPPrrrrrrrrrf
+  - rrrrrrrrrrPPPPPPrrrrrrrrrrs
+  - rrrrrrrrrPPs
+  - rrrrrrrrrrrPPPPrPs
+  - rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrf
+  - rrrrrrrrrPPs
+  - rrrrrrrrrrrrPPPrrrrrrrrrrrrPrPPrrrPs
+  - rrrrrrrrPPPPPPPPrrrrrrrrrrrrrrPrPrrPPs
+  - rrrrrrrrrrrrrrrPPPPPPrrrrrrPPrrrrrrrrrrrrrrrrrrrrf
+  - rrrrrrrrrPPrs
+  pick_and_place_rate: 0.8991008991008991
+  push_rate: 0.0
+  roll_rate: 0.0999000999000999
+  success_rate: 0.7
+friction:2,mass:50:
+  eps_states:
+  - rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrf
+  - rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrf
+  - rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrf
+  - rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrf
+  - rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrf
+  - rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrf
+  - rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrf
+  - rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrf
+  - rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrf
+  - rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrf
+  pick_and_place_rate: 0.0
+  push_rate: 0.0
+  roll_rate: 0.999000999000999
+  success_rate: 0.0
+friction:3,mass:1:
+  eps_states:
+  - rrrrrrrrrPPPrPPPs
+  - rrrrrrrrrrrrrrrrrrPrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrf
   - rrrrrrrrrrPPs
-  - rrrrrrrrrPPPPs
-  - rrrrrrrrrPPrPPrs
-  - rrrrrrrrPPs
-  - rrrrrrrrrrrrPs
-  - rrrrrrrrPPPPs
-  pick_and_place_rate: 0.7798440311937613
-  push_rate: 0.059988002399520096
-  roll_rate: 0.15996800639872027
-  success_rate: 0.94
+  - rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrf
+  - rrrrrrrrrrPPrPrrPrrrrrrrrrrrrrrrrrrrrs
+  - rrrrrrrrPPPPPPPs
+  - rrrrrrPPPPs
+  - rrrrrrrrrPPrPs
+  - rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrf
+  - rrrrrrrrrPrrrrrrrrrrrrrrrrrrs
+  pick_and_place_rate: 0.7992007992007992
+  push_rate: 0.0
+  roll_rate: 0.1998001998001998
+  success_rate: 0.7
+friction:3,mass:30:
+  eps_states:
+  - rrrrrrrrrrrrPrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrf
+  - rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrf
+  - rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrf
+  - s
+  - s
+  - rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrf
+  - rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrf
+  - rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrf
+  - rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrf
+  - rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrf
+  pick_and_place_rate: 0.0999000999000999
+  push_rate: 0.1998001998001998
+  roll_rate: 0.6993006993006993
+  success_rate: 0.2
+friction:3,mass:5:
+  eps_states:
+  - rrrrrrrrrrPPPPPrrrrrrrrrrrrrrrrrPPPrrrrrrrrrrrrrrf
+  - rrrrrrrPPPPPPrrrrrrPPrrPPs
+  - rrrrrrrrrPPPPPPPrrrrrrrrrrrrrrrrrPPs
+  - rrrrrrrrPrPPs
+  - rrrrrrrrrrPs
+  - rrrrrrrrPrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrf
+  - rrrrrrrrrPrPPPPPrrrrrrrPrrPrrrrrrrrrrrrrrrrrrrrrrf
+  - rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrf
+  - rrrrrrrrrrPrrPPPPPrrrrrrrrrrrrrPrrrPPPs
+  - rrrrrrrrrrrrrrrs
+  pick_and_place_rate: 0.7992007992007992
+  push_rate: 0.0
+  roll_rate: 0.1998001998001998
+  success_rate: 0.6
+friction:3,mass:50:
+  eps_states:
+  - rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrf
+  - rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrf
+  - rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrf
+  - rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrf
+  - rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrf
+  - rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrf
+  - rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrf
+  - rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrf
+  - rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrf
+  - rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrf
+  pick_and_place_rate: 0.0
+  push_rate: 0.0
+  roll_rate: 0.999000999000999
+  success_rate: 0.0
